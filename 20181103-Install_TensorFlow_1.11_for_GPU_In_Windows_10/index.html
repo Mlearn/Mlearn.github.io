@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://www.anmou.me').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="10月初，微软发布了新的 Win10 LTSC 2019[1]，相比之前安装使用的 Win10 2016 LTSB 来说，吸引我升级的主要动力是看重其任务管理器中增加了 GPU 监测功能，在进行 GPU 计算任务的时候就可以原生监控显卡的使用情况了，很方便。 使用 LTSC 版本的原因是系统够简约，但是不便之处在于想要使用高版本只能重装而无法通过升级进行（目前我没发现升级方法）。 这次重装系统，顺">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Win10 下安装 Tensorflow 1.11 GPU版">
+<meta property="og:url" content="https://www.anmou.me/20181103-Install_TensorFlow_1.11_for_GPU_In_Windows_10/index.html">
+<meta property="og:site_name" content="M&#39; Blog">
+<meta property="og:description" content="10月初，微软发布了新的 Win10 LTSC 2019[1]，相比之前安装使用的 Win10 2016 LTSB 来说，吸引我升级的主要动力是看重其任务管理器中增加了 GPU 监测功能，在进行 GPU 计算任务的时候就可以原生监控显卡的使用情况了，很方便。 使用 LTSC 版本的原因是系统够简约，但是不便之处在于想要使用高版本只能重装而无法通过升级进行（目前我没发现升级方法）。 这次重装系统，顺">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.anmou.me/20181103-Install_TensorFlow_1.11_for_GPU_In_Windows_10/TensorFlowGPURequirements.png">
+<meta property="og:image" content="https://www.anmou.me/20181103-Install_TensorFlow_1.11_for_GPU_In_Windows_10/CUDA_Install.png">
+<meta property="og:image" content="https://www.anmou.me/20181103-Install_TensorFlow_1.11_for_GPU_In_Windows_10/CUDA_Path.png">
+<meta property="og:image" content="https://www.anmou.me/20181103-Install_TensorFlow_1.11_for_GPU_In_Windows_10/cuDNN.png">
+<meta property="og:image" content="https://www.anmou.me/20181103-Install_TensorFlow_1.11_for_GPU_In_Windows_10/GPU_Usage_Show.png">
+<meta property="article:published_time" content="2018-11-03T01:18:13.000Z">
+<meta property="article:modified_time" content="2019-03-18T05:44:31.000Z">
+<meta property="article:author" content="Northan">
+<meta property="article:tag" content="Windows10">
+<meta property="article:tag" content=" Tensorflow">
+<meta property="article:tag" content=" GPU">
+<meta property="article:tag" content=" conda">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.anmou.me/20181103-Install_TensorFlow_1.11_for_GPU_In_Windows_10/TensorFlowGPURequirements.png">
+
+<link rel="canonical" href="https://www.anmou.me/20181103-Install_TensorFlow_1.11_for_GPU_In_Windows_10/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Win10 下安装 Tensorflow 1.11 GPU版 | M' Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">M' Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">人生天地间，忽如远行客</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">31</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">15</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.anmou.me/20181103-Install_TensorFlow_1.11_for_GPU_In_Windows_10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Northan">
+      <meta itemprop="description" content="热爱简洁，不喜杂乱。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="M' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Win10 下安装 Tensorflow 1.11 GPU版
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-11-03 09:18:13" itemprop="dateCreated datePublished" datetime="2018-11-03T09:18:13+08:00">2018-11-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-03-18 13:44:31" itemprop="dateModified" datetime="2019-03-18T13:44:31+08:00">2019-03-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Method/" itemprop="url" rel="index">
+                    <span itemprop="name">Method</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>10月初，微软发布了新的 <a href="https://quan.ithome.com/0/326/464.htm" target="_blank" rel="noopener">Win10 LTSC 2019</a><sup>[1]</sup>，相比之前安装使用的 Win10 2016 LTSB 来说，吸引我升级的主要动力是看重其任务管理器中增加了 GPU 监测功能，在进行 GPU 计算任务的时候就可以原生监控显卡的使用情况了，很方便。</p>
+<p>使用 LTSC 版本的原因是系统够简约，但是不便之处在于想要使用高版本只能重装而无法通过升级进行（目前我没发现升级方法）。</p>
+<p>这次重装系统，顺便记录一下全新安装 TensorFlow 的过程步骤。</p>
+<a id="more"></a>
+
+<p>当前最新的 TensorFlow 为 1.11 版，为了省事，采用官网提供的已经编译好的版本。从<a href="https://www.tensorflow.org/install/gpu" target="_blank" rel="noopener">官网</a>查看，其 GPU 版的硬件、软件依赖条件：</p>
+<p><img src="/20181103-Install_TensorFlow_1.11_for_GPU_In_Windows_10/TensorFlowGPURequirements.png" alt="TensorFlowGPURequirements"></p>
+<p>下面开始按步骤安装。</p>
+<h1 id="1-安装显卡驱动"><a href="#1-安装显卡驱动" class="headerlink" title="1. 安装显卡驱动"></a>1. 安装显卡驱动</h1><p>默认 Windows 10 安装好之后会自动安装好显卡驱动，其版本已经满足 9.0 的要求，不过为了保持最新避免潜在问题还是更新一下。这一步没什么好说的。去 <a href="https://www.nvidia.com/drivers" target="_blank" rel="noopener">NVIDIA® GPU drivers</a> 网站对应自己机器下载安装就好。</p>
+<h1 id="2-安装-CUDA-9-0-开发套件"><a href="#2-安装-CUDA-9-0-开发套件" class="headerlink" title="2. 安装 CUDA 9.0 开发套件"></a>2. 安装 CUDA 9.0 开发套件</h1><ol>
+<li>下载安装<br>目前的 TensorFlow 1.11 GPU 版本需要 9.0 版的 Toolkit，而 NVIDIA 官网给出的下载已经指向了 10.0 版本。除非从源码编译，否则从官网下载的 TensorFlow 1.11 GPU 版本在 10.0 的 Toolkit 下是无法正常工作的。从<a href="https://developer.nvidia.com/cuda-toolkit-archive" target="_blank" rel="noopener">这里</a> 找到所需 CUDA Toolkit 9.0 版本下载。按照默认组件和配置安装即可，默认安装到 C 盘。<br><img src="/20181103-Install_TensorFlow_1.11_for_GPU_In_Windows_10/CUDA_Install.png" alt="CUDA_Install"></li>
+<li>配置环境变量<br>右键[此电脑]-&gt;[属性]-&gt;[高级系统设置]-&gt;[环境变量]-&gt;[系统变量] 中选择 ‘Path’，编辑，保证加入以下 4 条内容：<br><img src="/20181103-Install_TensorFlow_1.11_for_GPU_In_Windows_10/CUDA_Path.png" alt="CUDA_Path"></li>
+</ol>
+<p><strong>本人测试，需要注销重新登陆以使环境变量设置生效。</strong> 安装成功后，在终端输入 <code>nvcc -V</code> 可以显示如下结果：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\xxx&gt;nvcc -V</span><br><span class="line">nvcc: NVIDIA (R) Cuda compiler driver</span><br><span class="line">Copyright (c) 2005-2017 NVIDIA Corporation</span><br><span class="line">Built on Fri_Sep__1_21:08:32_Central_Daylight_Time_2017</span><br><span class="line">Cuda compilation tools, release 9.0, V9.0.176</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-安装-cuDNN"><a href="#3-安装-cuDNN" class="headerlink" title="3. 安装 cuDNN"></a>3. 安装 cuDNN</h1><p>什么是 cuDNN，可以<a href="https://blog.csdn.net/fangjin_kl/article/details/53906874" target="_blank" rel="noopener">参考这篇文章</a><sup>[2]</sup>:</p>
+<blockquote>
+<p>NVIDIA cuDNN是用于深度神经网络的GPU加速库。它强调性能、易用性和低内存开销。NVIDIA cuDNN可以集成到更高级别的机器学习框架中，如加州大学伯克利分校的流行CAFFE软件。简单的，插入式设计可以让开发人员专注于设计和实现神经网络模型，而不是调整性能，同时还可以在GPU上实现高性能现代并行计算。</p>
+</blockquote>
+<p>cuDNN 需要注册才能下载，不想注册也可以网上搜索别人已经下载好的。安装比较简单，下载下来之后解压缩，将其中的所有内容拷贝到 CUDA 9.0 安装路径下（我这里是 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0）即可。这样放在一起的好处是不用再单独配置系统环境（上一步已经配置好了）。<br><img src="/20181103-Install_TensorFlow_1.11_for_GPU_In_Windows_10/cuDNN.png" alt="cuDNN"></p>
+<p>把文件 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\extras\CUPTI\libx64\cupti64_80.dll 拷贝到 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\bin 中。</p>
+<h1 id="4-安装-Python-3-6-x-版本"><a href="#4-安装-Python-3-6-x-版本" class="headerlink" title="4. 安装 Python 3.6.x 版本"></a>4. 安装 Python 3.6.x 版本</h1><p>这里我是通过 <a href="https://conda.io/miniconda.html" target="_blank" rel="noopener">Miniconda3</a> 来安装的。关于 Miniconda3 的安装介绍可以参考<a href="https://blog.csdn.net/u012325865/article/details/80454813" target="_blank" rel="noopener">这篇文章</a><sup>[3]</sup>。</p>
+<p>安装过程中路径设到了 D 盘，同时设置了加入 Miniconda3 到系统环境变量，这样可以直接在终端运行 <code>conda</code> 命令。Miniconda3 安装完成之后的默认环境是基于 Python 3.7 的。<del>通过执行 <code>conda update conda</code> 命令，Python 版本会回落到 3.6.7。虽然不知道为什么，但是省去了再手动安装 3.6.x 版本 Python 的步骤。</del> 通过执行 <code>conda install python=3.6</code> 命令，将默认 Python 版本回落到 3.6.x。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\xxx&gt;conda update conda</span><br><span class="line">Solving environment: <span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## Package Plan ##</span></span><br><span class="line"></span><br><span class="line">  environment location: D:\Programs\Miniconda3</span><br><span class="line"></span><br><span class="line">  added / updated specs:</span><br><span class="line">    - conda</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">The following packages will be downloaded:</span><br><span class="line"></span><br><span class="line">    package                    |            build</span><br><span class="line">    ---------------------------|-----------------</span><br><span class="line">    menuinst-1.4.14            |   py36hfa6e2cd_0          92 KB</span><br><span class="line">    conda-4.5.11               |           py36_0         1.0 MB</span><br><span class="line">    requests-2.19.1            |           py36_0          96 KB</span><br><span class="line">    pywin32-223                |   py36hfa6e2cd_1         9.3 MB</span><br><span class="line">    wheel-0.32.2               |           py36_0          52 KB</span><br><span class="line">    wincertstore-0.2           |   py36h7fe50ca_0          13 KB</span><br><span class="line">    setuptools-40.4.3          |           py36_0         576 KB</span><br><span class="line">    win_inet_pton-1.0.1        |           py36_1           6 KB</span><br><span class="line">    six-1.11.0                 |           py36_1          21 KB</span><br><span class="line">    chardet-3.0.4              |           py36_1         210 KB</span><br><span class="line">    urllib3-1.23               |           py36_0         152 KB</span><br><span class="line">    pycparser-2.19             |           py36_0         174 KB</span><br><span class="line">    cryptography-2.3.1         |   py36h7a1dbc1_2         522 KB</span><br><span class="line">    ruamel_yaml-0.15.46        |   py36hfa6e2cd_0         262 KB</span><br><span class="line">    cffi-1.11.5                |   py36h74b6da3_1         213 KB</span><br><span class="line">    pysocks-1.6.8              |           py36_0          23 KB</span><br><span class="line">    idna-2.7                   |           py36_0         132 KB</span><br><span class="line">    python-3.6.7               |       h33f27b4_1        20.9 MB</span><br><span class="line">    asn1crypto-0.24.0          |           py36_0         155 KB</span><br><span class="line">    certifi-2018.10.15         |           py36_0         138 KB</span><br><span class="line">    pyopenssl-18.0.0           |           py36_0          83 KB</span><br><span class="line">    vs2015_runtime-14.15.26706 |       h3a45250_0         2.2 MB</span><br><span class="line">    pycosat-0.6.3              |   py36hfa6e2cd_0          98 KB</span><br><span class="line">    pip-10.0.1                 |           py36_0         1.8 MB</span><br><span class="line">    vc-14.1                    |       h0510ff6_4           6 KB</span><br><span class="line">    openssl-1.1.1              |       he774522_0         5.7 MB</span><br><span class="line">    ------------------------------------------------------------</span><br><span class="line">                                           Total:        43.9 MB</span><br><span class="line"></span><br><span class="line">The following packages will be UPDATED:</span><br><span class="line"></span><br><span class="line">    asn1crypto:     0.24.0-py37_0          --&gt; 0.24.0-py36_0</span><br><span class="line">    certifi:        2018.8.24-py37_1       --&gt; 2018.10.15-py36_0</span><br><span class="line">    cffi:           1.11.5-py37h74b6da3_1  --&gt; 1.11.5-py36h74b6da3_1</span><br><span class="line">    chardet:        3.0.4-py37_1           --&gt; 3.0.4-py36_1</span><br><span class="line">    conda:          4.5.11-py37_0          --&gt; 4.5.11-py36_0</span><br><span class="line">    cryptography:   2.3.1-py37h74b6da3_0   --&gt; 2.3.1-py36h7a1dbc1_2</span><br><span class="line">    idna:           2.7-py37_0             --&gt; 2.7-py36_0</span><br><span class="line">    menuinst:       1.4.14-py37hfa6e2cd_0  --&gt; 1.4.14-py36hfa6e2cd_0</span><br><span class="line">    openssl:        1.0.2p-hfa6e2cd_0      --&gt; 1.1.1-he774522_0</span><br><span class="line">    pip:            10.0.1-py37_0          --&gt; 10.0.1-py36_0</span><br><span class="line">    pycosat:        0.6.3-py37hfa6e2cd_0   --&gt; 0.6.3-py36hfa6e2cd_0</span><br><span class="line">    pycparser:      2.18-py37_1            --&gt; 2.19-py36_0</span><br><span class="line">    pyopenssl:      18.0.0-py37_0          --&gt; 18.0.0-py36_0</span><br><span class="line">    pysocks:        1.6.8-py37_0           --&gt; 1.6.8-py36_0</span><br><span class="line">    pywin32:        223-py37hfa6e2cd_1     --&gt; 223-py36hfa6e2cd_1</span><br><span class="line">    requests:       2.19.1-py37_0          --&gt; 2.19.1-py36_0</span><br><span class="line">    ruamel_yaml:    0.15.46-py37hfa6e2cd_0 --&gt; 0.15.46-py36hfa6e2cd_0</span><br><span class="line">    setuptools:     40.2.0-py37_0          --&gt; 40.4.3-py36_0</span><br><span class="line">    six:            1.11.0-py37_1          --&gt; 1.11.0-py36_1</span><br><span class="line">    urllib3:        1.23-py37_0            --&gt; 1.23-py36_0</span><br><span class="line">    vc:             14-h0510ff6_3          --&gt; 14.1-h0510ff6_4</span><br><span class="line">    vs2015_runtime: 14.0.25123-3           --&gt; 14.15.26706-h3a45250_0</span><br><span class="line">    wheel:          0.31.1-py37_0          --&gt; 0.32.2-py36_0</span><br><span class="line">    win_inet_pton:  1.0.1-py37_1           --&gt; 1.0.1-py36_1</span><br><span class="line">    wincertstore:   0.2-py37_0             --&gt; 0.2-py36h7fe50ca_0</span><br><span class="line"></span><br><span class="line">The following packages will be DOWNGRADED:</span><br><span class="line"></span><br><span class="line">    python:         3.7.0-hea74fb7_0       --&gt; 3.6.7-h33f27b4_1</span><br><span class="line"></span><br><span class="line">Proceed ([y]/n)? y</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Downloading and Extracting Packages</span><br><span class="line">menuinst-1.4.14      | 92 KB     | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">conda-4.5.11         | 1.0 MB    | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">requests-2.19.1      | 96 KB     | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">pywin32-223          | 9.3 MB    | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">wheel-0.32.2         | 52 KB     | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">wincertstore-0.2     | 13 KB     | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">setuptools-40.4.3    | 576 KB    | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">win_inet_pton-1.0.1  | 6 KB      | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">six-1.11.0           | 21 KB     | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">chardet-3.0.4        | 210 KB    | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">urllib3-1.23         | 152 KB    | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">pycparser-2.19       | 174 KB    | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">cryptography-2.3.1   | 522 KB    | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">ruamel_yaml-0.15.46  | 262 KB    | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">cffi-1.11.5          | 213 KB    | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">pysocks-1.6.8        | 23 KB     | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">idna-2.7             | 132 KB    | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">python-3.6.7         | 20.9 MB   | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">asn1crypto-0.24.0    | 155 KB    | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">certifi-2018.10.15   | 138 KB    | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">pyopenssl-18.0.0     | 83 KB     | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">vs2015_runtime-14.15 | 2.2 MB    | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">pycosat-0.6.3        | 98 KB     | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">pip-10.0.1           | 1.8 MB    | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">vc-14.1              | 6 KB      | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">openssl-1.1.1        | 5.7 MB    | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">Preparing transaction: <span class="keyword">done</span></span><br><span class="line">Verifying transaction: <span class="keyword">done</span></span><br><span class="line">Executing transaction: <span class="keyword">done</span></span><br><span class="line"></span><br><span class="line">C:\Users\xxx&gt;</span><br></pre></td></tr></table></figure>
+
+<p>安装完成之后，<strong>需要注销重新登陆以使环境变量设置生效。</strong></p>
+<p>在终端中可以输入 <code>conda info</code> 来查看默认环境下的配置信息了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\xxx&gt;conda info</span><br><span class="line"></span><br><span class="line">     active environment : None</span><br><span class="line">       user config file : C:\Users\xxx\.condarc</span><br><span class="line"> populated config files :</span><br><span class="line">          conda version : 4.5.11</span><br><span class="line">    conda-build version : not installed</span><br><span class="line">         python version : 3.6.7.final.0</span><br><span class="line">       base environment : D:\Programs\Miniconda3  (writable)</span><br><span class="line">           channel URLs : https://repo.anaconda.com/pkgs/main/win-64</span><br><span class="line">                          https://repo.anaconda.com/pkgs/main/noarch</span><br><span class="line">                          https://repo.anaconda.com/pkgs/free/win-64</span><br><span class="line">                          https://repo.anaconda.com/pkgs/free/noarch</span><br><span class="line">                          https://repo.anaconda.com/pkgs/r/win-64</span><br><span class="line">                          https://repo.anaconda.com/pkgs/r/noarch</span><br><span class="line">                          https://repo.anaconda.com/pkgs/pro/win-64</span><br><span class="line">                          https://repo.anaconda.com/pkgs/pro/noarch</span><br><span class="line">                          https://repo.anaconda.com/pkgs/msys2/win-64</span><br><span class="line">                          https://repo.anaconda.com/pkgs/msys2/noarch</span><br><span class="line">          package cache : D:\Programs\Miniconda3\pkgs</span><br><span class="line">                          C:\Users\xxx\AppData\Local\conda\conda\pkgs</span><br><span class="line">       envs directories : D:\Programs\Miniconda3\envs</span><br><span class="line">                          C:\Users\xxx\AppData\Local\conda\conda\envs</span><br><span class="line">                          C:\Users\xxx\.conda\envs</span><br><span class="line">               platform : win-64</span><br><span class="line">             user-agent : conda/4.5.11 requests/2.19.1 CPython/3.6.7 Windows/10 Windows/10.0.17763</span><br><span class="line">          administrator : False</span><br><span class="line">             netrc file : None</span><br><span class="line">           offline mode : False</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">C:\Users\xxx&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-安装-tensorflow-gpu-1-11-0"><a href="#5-安装-tensorflow-gpu-1-11-0" class="headerlink" title="5. 安装 tensorflow-gpu 1.11.0"></a>5. 安装 tensorflow-gpu 1.11.0</h1><p>采用 <code>pip install</code> 命令安装。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\xxx&gt;pip install tensorflow-gpu</span><br><span class="line">Collecting tensorflow-gpu</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/3d/a0/60f72b76915a7c83e336e7f9ccf3a08305c30c7262cd15fedde44e026c3f/tensorflow_gpu-1.11.0-cp36-cp36m-win_amd64.whl (74.9MB)</span><br><span class="line">    100% |████████████████████████████████| 74.9MB 125kB/s</span><br><span class="line">Collecting termcolor&gt;=1.1.0 (from tensorflow-gpu)</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/8a/48/a76be51647d0eb9f10e2a4511bf3ffb8cc1e6b14e9e4fab46173aa79f981/termcolor-1.1.0.tar.gz</span><br><span class="line">Collecting absl-py&gt;=0.1.6 (from tensorflow-gpu)</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/0c/63/f505d2d4c21db849cf80bad517f0065a30be6b006b0a5637f1b95584a305/absl-py-0.6.1.tar.gz (94kB)</span><br><span class="line">    100% |████████████████████████████████| 102kB 1.1MB/s</span><br><span class="line">Collecting tensorboard&lt;1.12.0,&gt;=1.11.0 (from tensorflow-gpu)</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/9b/2f/4d788919b1feef04624d63ed6ea45a49d1d1c834199ec50716edb5d310f4/tensorboard-1.11.0-py3-none-any.whl (3.0MB)</span><br><span class="line">    100% |████████████████████████████████| 3.0MB 499kB/s</span><br><span class="line">Collecting numpy&gt;=1.13.3 (from tensorflow-gpu)</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/10/b6/feaabbe393afe1ad4c803cdd7c2ada688613448e0987b016a3980b2f08c6/numpy-1.15.3-cp36-none-win_amd64.whl (13.5MB)</span><br><span class="line">    100% |████████████████████████████████| 13.5MB 758kB/s</span><br><span class="line">Requirement already satisfied: six&gt;=1.10.0 <span class="keyword">in</span> d:\programs\miniconda3\lib\site-packages (from tensorflow-gpu) (1.11.0)</span><br><span class="line">Collecting astor&gt;=0.6.0 (from tensorflow-gpu)</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/35/6b/11530768cac581a12952a2aad00e1526b89d242d0b9f59534ef6e6a1752f/astor-0.7.1-py2.py3-none-any.whl</span><br><span class="line">Collecting keras-preprocessing&gt;=1.0.3 (from tensorflow-gpu)</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/<span class="built_in">fc</span>/94/74e0fa783d3fc07e41715973435dd051ca89c550881b3454233c39c73e69/Keras_Preprocessing-1.0.5-py2.py3-none-any.whl</span><br><span class="line">Collecting keras-applications&gt;=1.0.5 (from tensorflow-gpu)</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/3f/c4/2ff40221029f7098d58f8d7fb99b97e8100f3293f9856f0fb5834bef100b/Keras_Applications-1.0.6-py2.py3-none-any.whl (44kB)</span><br><span class="line">    100% |████████████████████████████████| 51kB 2.0MB/s</span><br><span class="line">Collecting protobuf&gt;=3.6.0 (from tensorflow-gpu)</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/e8/df/d606d07cff0fc8d22abcc54006c0247002d11a7f2d218eb008d48e76851d/protobuf-3.6.1-cp36-cp36m-win_amd64.whl (1.1MB)</span><br><span class="line">    100% |████████████████████████████████| 1.1MB 473kB/s</span><br><span class="line">Collecting setuptools&lt;=39.1.0 (from tensorflow-gpu)</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/8c/10/79282747f9169f21c053c562a0baa21815a8c7879be97abd930dbcf862e8/setuptools-39.1.0-py2.py3-none-any.whl (566kB)</span><br><span class="line">    100% |████████████████████████████████| 573kB 487kB/s</span><br><span class="line">Collecting grpcio&gt;=1.8.6 (from tensorflow-gpu)</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/f0/90/520757ccafb14f03e8e46a54bacd45f5f9cca6b96b58b83b66a272f059df/grpcio-1.16.0-cp36-cp36m-win_amd64.whl (1.5MB)</span><br><span class="line">    100% |████████████████████████████████| 1.5MB 627kB/s</span><br><span class="line">Requirement already satisfied: wheel&gt;=0.26 <span class="keyword">in</span> d:\programs\miniconda3\lib\site-packages (from tensorflow-gpu) (0.32.2)</span><br><span class="line">Collecting gast&gt;=0.2.0 (from tensorflow-gpu)</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/5c/78/ff794fcae2ce8aa6323e789d1f8b3b7765f601e7702726f430e814822b96/gast-0.2.0.tar.gz</span><br><span class="line">Collecting werkzeug&gt;=0.11.10 (from tensorboard&lt;1.12.0,&gt;=1.11.0-&gt;tensorflow-gpu)</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/20/c4/12e3e56473e52375aa29c4764e70d1b8f3efa6682bef8d0aae04fe335243/Werkzeug-0.14.1-py2.py3-none-any.whl (322kB)</span><br><span class="line">    100% |████████████████████████████████| 327kB 251kB/s</span><br><span class="line">Collecting markdown&gt;=2.6.8 (from tensorboard&lt;1.12.0,&gt;=1.11.0-&gt;tensorflow-gpu)</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/7a/6b/5600647404ba15545ec37d2f7f58844d690baf2f81f3a60b862e48f29287/Markdown-3.0.1-py2.py3-none-any.whl (89kB)</span><br><span class="line">    100% |████████████████████████████████| 92kB 808kB/s</span><br><span class="line">Collecting h5py (from keras-applications&gt;=1.0.5-&gt;tensorflow-gpu)</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/12/6c/00c38c5ce9322f1cc421d93217c44739646a106c61859622eccc297a5c05/h5py-2.8.0-cp36-cp36m-win_amd64.whl (2.3MB)</span><br><span class="line">    100% |████████████████████████████████| 2.3MB 519kB/s</span><br><span class="line">Building wheels <span class="keyword">for</span> collected packages: termcolor, absl-py, gast</span><br><span class="line">  Running setup.py bdist_wheel <span class="keyword">for</span> termcolor ... <span class="keyword">done</span></span><br><span class="line">  Stored <span class="keyword">in</span> directory: C:\Users\xxx\AppData\Local\pip\Cache\wheels\7c\06\54\bc84598ba1daf8f970247f550b175aaaee85f68b4b0c5ab2c6</span><br><span class="line">  Running setup.py bdist_wheel <span class="keyword">for</span> absl-py ... <span class="keyword">done</span></span><br><span class="line">  Stored <span class="keyword">in</span> directory: C:\Users\xxx\AppData\Local\pip\Cache\wheels\18\ea\5e\e36e1b8739e78cd2eba0a08fdc602c2b16a4b263912af8cb64</span><br><span class="line">  Running setup.py bdist_wheel <span class="keyword">for</span> gast ... <span class="keyword">done</span></span><br><span class="line">  Stored <span class="keyword">in</span> directory: C:\Users\xxx\AppData\Local\pip\Cache\wheels\9a\1f\0e\3cde98113222b853e98fc0a8e9924480a3e25f1b4008cedb4f</span><br><span class="line">Successfully built termcolor absl-py gast</span><br><span class="line">Installing collected packages: termcolor, absl-py, grpcio, werkzeug, markdown, setuptools, protobuf, numpy, tensorboard, astor, keras-preprocessing, h5py, keras-applications, gast, tensorflow-gpu</span><br><span class="line">  Found existing installation: setuptools 40.4.3</span><br><span class="line">    Uninstalling setuptools-40.4.3:</span><br><span class="line">      Successfully uninstalled setuptools-40.4.3</span><br><span class="line">Successfully installed absl-py-0.6.1 astor-0.7.1 gast-0.2.0 grpcio-1.16.0 h5py-2.8.0 keras-applications-1.0.6 keras-preprocessing-1.0.5 markdown-3.0.1 numpy-1.15.3 protobuf-3.6.1 setuptools-39.1.0 tensorboard-1.11.0 tensorflow-gpu-1.11.0 termcolor-1.1.0 werkzeug-0.14.1</span><br><span class="line"></span><br><span class="line">C:\Users\xxx&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="6-测试-tensorflow-gpu-是否安装正确"><a href="#6-测试-tensorflow-gpu-是否安装正确" class="headerlink" title="6. 测试 tensorflow-gpu 是否安装正确"></a>6. 测试 tensorflow-gpu 是否安装正确</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\xxx&gt;python</span><br><span class="line">Python 3.6.7 |Anaconda, Inc.| (default, Oct 28 2018, 19:44:12) [MSC v.1915 64 bit (AMD64)] on win32</span><br><span class="line">Type <span class="string">"help"</span>, <span class="string">"copyright"</span>, <span class="string">"credits"</span> or <span class="string">"license"</span> <span class="keyword">for</span> more information.</span><br><span class="line">&gt;&gt;&gt; import tensorflow as tf</span><br><span class="line">&gt;&gt;&gt; hello = tf.constant(<span class="string">'Hello,TensorFlow!'</span>)</span><br><span class="line">&gt;&gt;&gt; sess = tf.Session()</span><br><span class="line">2018-11-02 14:28:29.039266: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1411] Found device 0 with properties:</span><br><span class="line">name: GeForce GTX 750 Ti major: 5 minor: 0 memoryClockRate(GHz): 1.137</span><br><span class="line">pciBusID: 0000:01:00.0</span><br><span class="line">totalMemory: 2.00GiB freeMemory: 1.64GiB</span><br><span class="line">2018-11-02 14:28:29.047124: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1490] Adding visible gpu devices: 0</span><br><span class="line">2018-11-02 14:28:30.089044: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] Device interconnect StreamExecutor with strength 1 edge matrix:</span><br><span class="line">2018-11-02 14:28:30.093224: I tensorflow/core/common_runtime/gpu/gpu_device.cc:977]      0</span><br><span class="line">2018-11-02 14:28:30.095429: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990] 0:   N</span><br><span class="line">2018-11-02 14:28:30.097770: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1103] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 1392 MB memory) -&gt; physical GPU (device: 0, name: GeForce GTX 750 Ti, pci bus id: 0000:01:00.0, compute capability: 5.0)</span><br><span class="line">&gt;&gt;&gt; <span class="built_in">print</span>(sess.run(hello))</span><br><span class="line">b<span class="string">'Hello,TensorFlow!'</span></span><br><span class="line">&gt;&gt;&gt; a = tf.constant(10)</span><br><span class="line">&gt;&gt;&gt; b = tf.constant(32)</span><br><span class="line">&gt;&gt;&gt; <span class="built_in">print</span>(sess.run(a+b))</span><br><span class="line">42</span><br><span class="line">&gt;&gt;&gt; quit()</span><br><span class="line"></span><br><span class="line">C:\Users\xxx&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在安装完成之后，第一次运行 <code>sess = tf.Session()</code> 时，输出会卡在 <code>tensorflow/core/common_runtime/gpu/gpu_device.cc:1490] Adding visible gpu devices: 0</code> 这一步很久，之后每次调用就很快了。</p>
+<p>另外，在新版 Windows 10 中的任务管理器 [性能] 栏中可以很方便看到 GPU 的使用情况。箭头所指的变化位置及为运行命令 <code>sess = tf.Session()</code> 的时刻。<br><img src="/20181103-Install_TensorFlow_1.11_for_GPU_In_Windows_10/GPU_Usage_Show.png" alt="GPU_Usage_Show"></p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>1: <a href="https://quan.ithome.com/0/326/464.htm" target="_blank" rel="noopener">分享一个热腾腾的Win10企业版LTSC官方原版及精简版</a>;<br>2: <a href="https://blog.csdn.net/fangjin_kl/article/details/53906874" target="_blank" rel="noopener">CPU、GPU、CUDA，CuDNN 简介</a>;<br>3: <a href="https://blog.csdn.net/u012325865/article/details/80454813" target="_blank" rel="noopener">Windows 10下安装Miniconda3</a>;<br>4: <a href="https://blog.csdn.net/zw__chen/article/details/79374467" target="_blank" rel="noopener">win10+cuda9.0+cuDNN 7.0+Tensorflow1.5（GPU）安装</a>.</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Northan
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://www.anmou.me/20181103-Install_TensorFlow_1.11_for_GPU_In_Windows_10/" title="Win10 下安装 Tensorflow 1.11 GPU版">https://www.anmou.me/20181103-Install_TensorFlow_1.11_for_GPU_In_Windows_10/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Tensorflow/" rel="tag"># Tensorflow</a>
+              <a href="/tags/conda/" rel="tag"># conda</a>
+              <a href="/tags/Windows-10/" rel="tag"># Windows 10</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/20181022-Usage_of_'const'_in_C++/" rel="prev" title="C++ 变量声明中 const 的用法">
+      <i class="fa fa-chevron-left"></i> C++ 变量声明中 const 的用法
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/20190308-Gray-scale_Transformation_in_Image_Processing/" rel="next" title="图像处理中的灰度变换小结">
+      图像处理中的灰度变换小结 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-安装显卡驱动"><span class="nav-number">1.</span> <span class="nav-text">1. 安装显卡驱动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-安装-CUDA-9-0-开发套件"><span class="nav-number">2.</span> <span class="nav-text">2. 安装 CUDA 9.0 开发套件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-安装-cuDNN"><span class="nav-number">3.</span> <span class="nav-text">3. 安装 cuDNN</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-安装-Python-3-6-x-版本"><span class="nav-number">4.</span> <span class="nav-text">4. 安装 Python 3.6.x 版本</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-安装-tensorflow-gpu-1-11-0"><span class="nav-number">5.</span> <span class="nav-text">5. 安装 tensorflow-gpu 1.11.0</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-测试-tensorflow-gpu-是否安装正确"><span class="nav-number">6.</span> <span class="nav-text">6. 测试 tensorflow-gpu 是否安装正确</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">7.</span> <span class="nav-text">参考</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Northan"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Northan</p>
+  <div class="site-description" itemprop="description">热爱简洁，不喜杂乱。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/MLearn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;MLearn" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.v2ex.com/?r=Exp" title="https:&#x2F;&#x2F;www.v2ex.com&#x2F;?r&#x3D;Exp" rel="noopener" target="_blank">V2EX</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://mindhacks.cn/" title="http:&#x2F;&#x2F;mindhacks.cn&#x2F;" rel="noopener" target="_blank">MindHacks</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.matrix67.com/blog/" title="http:&#x2F;&#x2F;www.matrix67.com&#x2F;blog&#x2F;" rel="noopener" target="_blank">Matrix67</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.physixfan.com/" title="https:&#x2F;&#x2F;www.physixfan.com&#x2F;" rel="noopener" target="_blank">宇宙的心弦</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.yinwang.org/" title="http:&#x2F;&#x2F;www.yinwang.org&#x2F;" rel="noopener" target="_blank">当然我在扯淡</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.gtdlife.com/" title="http:&#x2F;&#x2F;www.gtdlife.com&#x2F;" rel="noopener" target="_blank">小强的时间管理博客</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Northan</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: 'a3799eac208aa18f03fa',
+      clientSecret: '076b48385dc971f7b000bc501281685c9d0fe4d9',
+      repo: 'Mlearn.github.io',
+      owner: 'Mlearn',
+      admin: ['Mlearn'],
+      id: '4a65574fd4d1a5259c55f64a0925318d',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>

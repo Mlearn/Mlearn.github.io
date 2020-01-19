@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://www.anmou.me').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="周六日两天的北京大雨下个不停，无法出门。正好听说深度学习领域的大牛 Andrew Ng 的新创业项目竟然是与 Coursera 合作的一个关于深度学习的系列课程，果断报名参加。花了两天的时间看完了第 1 门课程 Neural Networks and Deep Learning 的视频，也做完了相关作业。相较其它课程不同，也是其中比较有意思的一点是，每一周的课程结束都有一段 Andrew 采访当今">
+<meta property="og:type" content="article">
+<meta property="og:title" content="神经网络以及前向传播与反向传播">
+<meta property="og:url" content="https://www.anmou.me/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/index.html">
+<meta property="og:site_name" content="M&#39; Blog">
+<meta property="og:description" content="周六日两天的北京大雨下个不停，无法出门。正好听说深度学习领域的大牛 Andrew Ng 的新创业项目竟然是与 Coursera 合作的一个关于深度学习的系列课程，果断报名参加。花了两天的时间看完了第 1 门课程 Neural Networks and Deep Learning 的视频，也做完了相关作业。相较其它课程不同，也是其中比较有意思的一点是，每一周的课程结束都有一段 Andrew 采访当今">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.anmou.me/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Neural_Network.001.jpg">
+<meta property="og:image" content="https://www.anmou.me/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Neural_Network.002.jpg">
+<meta property="og:image" content="https://www.anmou.me/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Sigmoid.png">
+<meta property="og:image" content="https://www.anmou.me/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Tanh.png">
+<meta property="og:image" content="https://www.anmou.me/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/ReLU.png">
+<meta property="og:image" content="https://www.anmou.me/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Leaky_ReLU.png">
+<meta property="og:image" content="https://www.anmou.me/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Neural_Network.003.jpg">
+<meta property="og:image" content="https://www.anmou.me/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Neural_Network.004.jpg">
+<meta property="og:image" content="https://www.anmou.me/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Neural_Network.005.jpg">
+<meta property="article:published_time" content="2017-08-13T15:42:14.000Z">
+<meta property="article:modified_time" content="2018-10-16T15:03:46.000Z">
+<meta property="article:author" content="Northan">
+<meta property="article:tag" content="Backpropagation">
+<meta property="article:tag" content=" Forward Propagation">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.anmou.me/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Neural_Network.001.jpg">
+
+<link rel="canonical" href="https://www.anmou.me/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>神经网络以及前向传播与反向传播 | M' Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">M' Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">人生天地间，忽如远行客</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">31</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">15</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.anmou.me/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Northan">
+      <meta itemprop="description" content="热爱简洁，不喜杂乱。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="M' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          神经网络以及前向传播与反向传播
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-08-13 23:42:14" itemprop="dateCreated datePublished" datetime="2017-08-13T23:42:14+08:00">2017-08-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2018-10-16 23:03:46" itemprop="dateModified" datetime="2018-10-16T23:03:46+08:00">2018-10-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>周六日两天的北京大雨下个不停，无法出门。正好听说深度学习领域的大牛 <a href="http://www.andrewng.org/" target="_blank" rel="noopener">Andrew Ng</a> 的新<a href="https://www.deeplearning.ai/" target="_blank" rel="noopener">创业项目</a>竟然是与 Coursera 合作的一个关于深度学习的<a href="https://www.coursera.org/specializations/deep-learning" target="_blank" rel="noopener">系列课程</a>，果断报名参加。花了两天的时间看完了第 1 门课程 <a href="https://www.coursera.org/learn/neural-networks-deep-learning" target="_blank" rel="noopener">Neural Networks and Deep Learning</a> 的视频，也做完了相关作业。相较其它课程不同，也是其中比较有意思的一点是，每一周的课程结束都有一段 Andrew 采访当今人工智能领域权威人士的视频。通过采访视频，也能够了解到一些人工智能技术的发展历史，还是相当不错的。</p>
+<p>言归正传，下面进入正题。</p>
+<a id="more"></a>
+
+<h1 id="1-什么是神经网络"><a href="#1-什么是神经网络" class="headerlink" title="1. 什么是神经网络"></a>1. 什么是神经网络</h1><p>话不多说，上图为敬。一个典型的神经网络结构图如下所示：</p>
+<p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Neural_Network.001.jpg" alt="Neural Network"></p>
+<ul>
+<li><p><strong>层</strong>：神经网络是一个分层 (Layer) 结构，一般的神经网络都由输入层 (Input Layer)、隐藏层 (Hidden Layer)、输出层 (Output Layer)所组成。其中隐藏层的数量根据所构建的神经网络的复杂程度可以从零达到几百。</p>
+</li>
+<li><p><strong>节点</strong>：神经网络中的每一层都是由若干个节点 (Node) 所组成。我们可以把节点理解为对数据处理的单元，每个节点的作用就是接收所有传入的数值，经过计算处理后输出一个数值。同一层的所有节点的输出值组合起来就是一个 $N \times 1$ 维的向量，$N$ 为该层中节点的个数。特别的是，第 0 层（输入层）中的每个节点对输入的数值不做任何处理直接输出，也可以把第 0 层当作数据本身。比如最常见的图像数据，如果彩色图像数据像素为 $64 \times 64$，考虑到其中的三个颜色通道，那么向量化输入的数据应该是长度为 $64 \times 64 \times 3 = 12288$ 的列向量。</p>
+</li>
+<li><p><strong>连接</strong>：同一层之间的节点没有连接，非相邻层之间的节点也没有连接，相邻层之间的任意两个节点之间都有连接。通过这种连接使得一层中的节点存储的值传递到下一层中的各个节点。需要注意的是，数据在从一层传递到下一层的过程中是经过了加权的。</p>
+</li>
+</ul>
+<p>虽然从图中看起来，神经网络很复杂，但是如果把整个神经网络想象成一个黑盒子，它的唯一作用就是对不同的输入变量，返回相应的输出值，这就是函数的功能。<strong>神经网络本质上是一个复杂的函数，对输入变量返回输出结果</strong>。</p>
+<h1 id="2-神经网络中的前向传播"><a href="#2-神经网络中的前向传播" class="headerlink" title="2. 神经网络中的前向传播"></a>2. 神经网络中的前向传播</h1><p>所谓的前向传播 (Forward propagation)，指的是数据从输入层开始，依次经过隐藏层（如果有）最终到达输出层的过程。其中，数据每经过一层传播，其节点输出的值所代表的信息层次就越高阶和概括。举例来说，对于一个识别图像是否包含人脸的神经网络来说，输入数据组成的向量中每一个元素表示的只是图像的灰度值信息。经过一层处理之后，可能第二层中的每个节点输出的值代表的是各种不同的边缘信息。第三层输出值代表的是边缘信息组合成的更高阶部位信息，比如鼻子、眼睛等等。最后输出层代表的就是系统对输入数据的判断结果，即是否是一张人脸。这里需要指出的是，节点中输出的值是通过与其相连的前一层中所有的节点输出值的加权求和处理后的结果。这也是接下来需要着重介绍的。</p>
+<h2 id="2-1-节点中的细节"><a href="#2-1-节点中的细节" class="headerlink" title="2.1 节点中的细节"></a>2.1 节点中的细节</h2><p>如果深入到神经网络中的其中一个节点（以上图中的 $a_1^{[1]}$ 为例），我们会得到如下的一张结构图：</p>
+<p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Neural_Network.002.jpg" alt="Neural Node"></p>
+<p>从图中可以明显的观察到，一个节点其实是由两部分组成：一个是加权求和部分，一个是对求和结果进行处理的部分，我们称这部分为激活函数。下面分别介绍。</p>
+<h3 id="2-1-1-加权求和"><a href="#2-1-1-加权求和" class="headerlink" title="2.1.1 加权求和"></a>2.1.1 加权求和</h3><p>就上图来说，我们可以把前一层中每个节点 $(a_1^{[0]}$, $a_3^{[0]}$, $a_3^{[0]})$ 指向本节点 $(a_1^{[1]})$ 的箭头理解为上层节点的输出值对本节点的影响，不同的节点输出值对本节点的影响程度不同，即具有不同的权值。我们用带上下标的字母 $w$ 来表示这个权值，$w_{ij}^{[l]}$ 表示的是第 $l-1$ 层中第 $j$ 个节点的输出值对第 $l$ 层中第 $i$ 个节点的影响程度。图中的字母标记与该准则一致。</p>
+<p>仔细观察图中加权求和公式会发现其中含有一个常数项 $b_1^{[1]}$，我们可以把该常数项理解为节点 $a_1^{[1]}$ 对输入值敏感程度的一个纠正。推广开来，我们用 $b_i^{[l]}$ 表示第 $l$ 层中第 $i$ 个节点中的常数偏置，英文中称作 bias。</p>
+<p>我们用 $z_i^{[l]}$ 表示第 $l$ 层中第 $i$ 个节点中的加权求和结果。求和结果之后传给激活函数，经过激活函数的处理输出。</p>
+<h3 id="2-1-2-激活函数"><a href="#2-1-2-激活函数" class="headerlink" title="2.1.2 激活函数"></a>2.1.2 激活函数</h3><p>激活函数是节点之所以存在的根本原因。神经网络之所以叫神经网络，就在于其模拟了生物中的神经系统。在神经系统中的每个神经元都通过轴突与树突与很多其它的神经元相连，神经元接收一些神经元发出的电信号，同时发出一定的电信号给其它神经元。即使不懂生物学中的相关知识，凭借常识我们也能推断出，首先神经元发出的电信号不可能无限大，其次神经元也不能无脑转发所有接收到的电信号信息量，否则其存在的意义就没有了。</p>
+<p>具体到神经网络中节点的激活函数也是一样，激活函数如果不存在或者只是一个简单的线性函数，那么节点存在的意义也就没有了。从数学上也能证明这一点，如果节点的激活函数是线性函数，那么其与前一层所有的加权连接都能直接增加另一个权重直接与下一层的各节点相连。</p>
+<p>所以，神经网络中的激活函数必须存在，并且一定不能是线性函数。一般情况下我们以 $g()$ 来表示激活函数，根据目的的不同，激活函数可以选取下边几种具体函数形式中的一种：</p>
+<ul>
+<li><strong>sigmoid 函数</strong> 数学表达式以及函数曲线如下：</li>
+</ul>
+<p>$$\sigma(z)=\frac{1}{1+e^{-z}}$$</p>
+<p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Sigmoid.png" alt="Sigmoid"></p>
+<ul>
+<li><strong>tanh 函数</strong> 数学表达式以及函数曲线如下：</li>
+</ul>
+<p>$$\tanh(z)=\frac{e^{z}-e^{-z}}{e^{z}+e^{-z}}$$</p>
+<p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Tanh.png" alt="Tanh"></p>
+<ul>
+<li><strong>ReLU 函数</strong> 数学表达式以及函数曲线如下：</li>
+</ul>
+<p>$$<br>\max(0, z)= \begin{cases}<br>   0 &amp;\text{if } z\leq0  \<br>   z &amp;\text{if } z&gt;0<br>\end{cases}<br>$$</p>
+<p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/ReLU.png" alt="ReLU"></p>
+<ul>
+<li><strong>Leaky ReLU 函数</strong> 数学表达式以及函数曲线如下：</li>
+</ul>
+<p>$$<br>\max(0.01z, z)= \begin{cases}<br>   0.01z &amp;\text{if } z\leq0  \<br>   z &amp;\text{if } z&gt;0<br>\end{cases}<br>$$</p>
+<p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Leaky_ReLU.png" alt="Leaky_ReLU"></p>
+<h2 id="2-2-向量化表示"><a href="#2-2-向量化表示" class="headerlink" title="2.2 向量化表示"></a>2.2 向量化表示</h2><p>还是以节点 $a_1^{[1]}$ 为例，学过线性代数的我们很容易可以把 $z_1^{[1]}$ 的计算表达式写成：</p>
+<p>$$<br>z_1^{[1]}=\left[w_{11}^{[1]}, w_{12}^{[1]}, w_{13}^{[1]}\right]\begin{bmatrix}a_1^{[0]}\a_2^{[0]}\a_3^{[0]}\end{bmatrix} + b_1^{[1]}<br>$$</p>
+<p>同理，</p>
+<p>$$<br>z_2^{[1]}=\left[w_{21}^{[1]}, w_{22}^{[1]}, w_{23}^{[1]}\right]\begin{bmatrix}a_1^{[0]}\a_2^{[0]}\a_3^{[0]}\end{bmatrix} + b_2^{[1]}<br>$$</p>
+<p>以此类推，如果我们做如下定义：</p>
+<p>$$<br>\begin{aligned}<br>A^{[0]} &amp;= \left[a_1^{[0]}, a_2^{[0]}, a_3^{[0]}\right]^\mathrm{T} \<br>Z^{[1]} &amp;= \left[z_1^{[1]}, z_2^{[1]},…, z_5^{[1]}\right]^\mathrm{T} \<br>W^{[1]} &amp;= \begin{bmatrix}<br>w_{11}^{[1]}, &amp; w_{12}^{[1]}, &amp; w_{13}^{[1]}\<br>w_{21}^{[1]}, &amp; w_{22}^{[1]}, &amp; w_{23}^{[1]}\<br>\vdots, &amp; \vdots, &amp; \vdots\<br>w_{51}^{[1]}, &amp; w_{52}^{[1]}, &amp; w_{53}^{[1]}<br>\end{bmatrix} \<br>B^{[1]} &amp;= \left[B_1^{[1]}, B_2^{[1]},…, B_5^{[1]}\right]^\mathrm{T}\<br>\end{aligned}<br>$$</p>
+<p>自然就得到：</p>
+<p>$$<br>Z^{[1]}=W^{[1]}A^{[0]} + B^{[1]}<br>$$</p>
+<p>以及，第一层节点的输出值的向量化：</p>
+<p>$$<br>A^{[1]}=g^{[1]}\left(Z^{[1]}\right)<br>$$</p>
+<p>其中 $g^{[1]}$ 表示第1层各节点中的激活函数通用表达。</p>
+<p>我们可以很容易地把上边的推导过程一般化：</p>
+<p>$$<br>\begin{aligned}<br>Z^{[l]}&amp;=W^{[l]}A^{[l-1]} + B^{[l]} \<br>A^{[l]}&amp;=g^{[l]}\left(Z^{[l]}\right)<br>\end{aligned}<br>$$</p>
+<p>若第 $l$ 层中节点数为 $m$，第 $l-1$ 层中节点数为 $n$ 。那么，$Z^{[l]}$, $B^{[l]}$, $A^{[l]}$, 的维度为 $m\times 1$，$A^{[l-1]}$ 的维度为 $n\times 1$，$W^{[l]}$ 的维度为 $m \times n$ 。</p>
+<h2 id="2-3-前向传播的图形化表示"><a href="#2-3-前向传播的图形化表示" class="headerlink" title="2.3 前向传播的图形化表示"></a>2.3 前向传播的图形化表示</h2><p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Neural_Network.003.jpg" alt="Forward Propagation"></p>
+<h1 id="3-神经网络中的反向传播"><a href="#3-神经网络中的反向传播" class="headerlink" title="3. 神经网络中的反向传播"></a>3. 神经网络中的反向传播</h1><p>经过上一节的分析，我们可以得出这样的结论，所谓的前向层传播说的就是，输入数据在神经网络的各层的各个节点之间传播的过程，最终得到结果输出出去。在这个过程中，神经网络中的各个节点的参数，即 $W^{[l]}$、$B^{[l]}$ 是已知的。</p>
+<p>但是在实际的应用中，我们往往是知道了输入数据以及输出结果（针对监督学习来说，输出结果通畅指分类标签），想要求取一个结构设计好的神经网络的参数。这其实就是一个函数参数拟合问题。针对函数的参数拟合问题，数学上已经有了很成熟的通用方案。通常来说，对于比较简单的函数形式，数据量也不是很大的情况，可以尝试用<a href="https://zh.wikipedia.org/wiki/最小二乘法" target="_blank" rel="noopener">最小二乘法</a>来拟合求取函数的参数。但是对于复杂的函数形式，同时数据量非常巨大的情况，最小二乘法就不是一个很明智的选择，一般都会选择某种迭代求解的方案一步步逼近最优参数。其中用的最多，通常来说也是最有效的方法是<a href="https://zh.wikipedia.org/wiki/梯度下降法" target="_blank" rel="noopener">梯度下降法</a>。</p>
+<p>在神经网络参数确定的问题中，就采用的是梯度下降法。</p>
+<h2 id="3-1-为什么可以用梯度下降法"><a href="#3-1-为什么可以用梯度下降法" class="headerlink" title="3.1 为什么可以用梯度下降法"></a>3.1 为什么可以用梯度下降法</h2><p>梯度下降法是一个用来求取函数极值点的方法。简单来说，能够用梯度下降法来求取神经网络中各节点的参数的理由是，我们能够比较容易的构造出一个关于参数 $(W^{[l]}$, $B^{[l]})$ 的函数 $\mathcal{J}$ （神经网络的参数在这个函数中属于变量的角色），使得该函数在极值点处对应的参数 $(W^{[l]}$, $B^{[l]})$ 取值正好是对所有样本数据的最佳拟合值。一般我们称构造的函数为代价函数 (cost function)，或损失函数 (loss function)。</p>
+<p>具体的说，如果我们把神经网络的函数形式表达为：</p>
+<p>$$\hat{Y}=f \left( W^{[1]}, W^{[2]},…, W^{[L]}, B^{[1]}, B^{[2]},…, B^{[L]}, X \right)$$</p>
+<p>其中 $L$ 表示神经网络的层数，对于每一个样本 $X^{(m)}$ 都有一个对应的实际观测值 $Y^{(m)}$ 以及通过神经网络的计算结果 $\hat{Y}^{(m)}$。假设我们有 $M$ 个样本，我们可以取代价函数的形式如下：</p>
+<p>$$<br>\begin{aligned}<br>\mathcal{J} &amp;= \frac{1}{M}\sum_{m=0}^{M}\left(\hat{Y}^{(m)}-Y^{(m)}\right)^{2} \<br>&amp;= \frac{1}{M}\sum_{m=0}^{M}\left( f \left(W^{[1]}, W^{[2]},…, W^{[L]}, B^{[1]}, B^{[2]},…, B^{[L]}, X^{(m)}\right)-Y^{(m)}\right)^{2}<br>\end{aligned}<br>$$</p>
+<p>因为我们知道，平方和函数是一个只有一个极小值点的函数，在最小值点处，对应了神经网络的预测结果大部分都要与观测结果一致。也就是说，在极小值点处，神经网络的参数是最优的。当然实际应用中可以选取的代价函数具体形式有很多种，并不局限于平方和这一种方式。</p>
+<p>不管采用哪种形式的代价函数，我们的最终目的是通过梯度下降法来获得代价函数的极值点对应的参数值。</p>
+<p>梯度下降法的迭代形式为：</p>
+<p>$$<br>\begin{aligned}<br>W^{[l]}<em>{(i)} &amp;:= W^{[l]}</em>{(i-1)}-\alpha\frac{\partial \mathcal{J}}{\partial W^{[l]}} \<br>B^{[l]}<em>{(i)} &amp;:= B^{[l]}</em>{(i-1)}-\alpha\frac{\partial \mathcal{J}}{\partial B^{[l]}}<br>\end{aligned}<br>$$</p>
+<p>下标 $(i)$ 表示第 $(i)$ 次迭代。$\alpha$ 叫做迭代步长，控制了每次迭代变量改变的速度，一般会取一个较小的值。$\frac{\partial \mathcal{J}}{\partial W^{[l]}}$ 和 $\frac{\partial \mathcal{J}}{\partial B^{[l]}}$ 分别为函数 $\mathcal{J}$ 对变量 $W^{[l]}$ 和 $B^{[l]}$ 的偏导数。</p>
+<p>我们只要给定了 $W^{[l]}$ 和 $B^{[l]}$ 的初值，确定了迭代步长，给出计算偏导数的方法，那么就可以迭代求得一个理想的参数最优解。</p>
+<h2 id="3-2-应用反向传播计算偏导数"><a href="#3-2-应用反向传播计算偏导数" class="headerlink" title="3.2 应用反向传播计算偏导数"></a>3.2 应用反向传播计算偏导数</h2><p>实际应用中，$W^{[l]}$ 和 $B^{[l]}$ 的初值好确定，采用随机数即可（不可初始化为 $0$）。迭代步长可以通过经验确定。剩下的问题就是如何求解各个参数的偏导数了。</p>
+<p>为了回答这个问题，我们把函数 $\hat{Y}=f\left(W^{[1]}, W^{[2]},…, W^{[L]}, B^{[1]}, B^{[2]},…, B^{[L]}, X \right)$ 的形式再具象化一些：</p>
+<p>$$<br>\hat{Y}=g^{[L]}\left(W^{[L]}\left(g^{[L-1]}\left(W^{[L-1]}\left(…\right)\right)+B^{[L-1]}\right)+B^{[L]}\right)<br>$$</p>
+<p>回顾一下在 <strong>2.2</strong> 节最后我们得出了神经网络各层输出值之间的关系，$Z^{[l]}=W^{[l]}A^{[l-1]} + B^{[l]}$，$A^{[l]}=g^{[l]}(Z^{[l]})$ 。对比该公式，我们可以发现在这里 $\hat{Y}$ 就是 $A^{[L]}$。进一步我们可以把上边的公式写成递归形式：</p>
+<p>$$<br>\mathcal{J}=\frac{1}{M}\sum_{m=0}^{M}\left(A^{[L](m)}-Y^{(m)}\right)^{2} \<br>A^{[L]}=g^{[L]}(Z^{[L]}),\quad Z^{[L]}=W^{[L]}A^{[L-1]} + B^{[L]} \<br>A^{[L-1]}=g^{[L-1]}(Z^{[L-1]}),\quad Z^{[L-1]}=W^{[L-1]}A^{[L-2]} + B^{[L-1]} \<br>\vdots \<br>A^{[1]}=g^{[1]}(Z^{[1]}),\quad Z^{[1]}=W^{[1]}A^{[0]} + B^{[1]}<br>$$</p>
+<p>$A^{[0]}$ 就是 $X$。显然，我们可以应用函数的链式求导法则，一步步地求得从 $\mathcal{J}$ 对 $W^{[L]}$，$B^{[L]}$ 到对 $W^{[1]}$，$B^{[1]}$ 的偏导数。</p>
+<p>$$<br>\begin{aligned}<br>\frac{\partial \mathcal{J}}{\partial Z^{[l]}} &amp;=\frac{\partial \mathcal{J}}{\partial A^{[l]}}\frac{\partial A^{[l]}}{\partial Z^{[l]}}=\frac{\partial \mathcal{J}}{\partial A^{[l]}}g^{[l]\prime}(Z^{[l]}) \<br>\frac{\partial \mathcal{J}}{\partial W^{[l]}} &amp;=\frac{\partial \mathcal{J}}{\partial Z^{[l]}}\frac{\partial Z^{[l]}}{\partial W^{[l]}}=\frac{\partial \mathcal{J}}{\partial Z^{[l]}}A^{[l-1]\mathrm{T}} \<br>\frac{\partial \mathcal{J}}{\partial B^{[l]}} &amp;=\frac{\partial \mathcal{J}}{\partial Z^{[l]}}\frac{\partial Z^{[l]}}{\partial B^{[l]}}=\frac{\partial \mathcal{J}}{\partial Z^{[l]}}<br>\end{aligned}<br>$$</p>
+<p>这里边存在一个问题，当 $l=L$ 时，我们知道 $\mathcal{J}$ 关于 $\hat{Y}$ 也就是 $A^{[L]}$ 的具体形式（因为这个函数是我们构造出来的），可以很容易的求得其偏导数。当 $l&lt;L$ 时，我们无法直接从 $\mathcal{J}$ 求出来。不过我们发现，$Z^{[l]}$ 是 $A^{[l-1]}$ 的函数。根据链式求导法则，可以得到</p>
+<p>$$<br>\frac{\partial \mathcal{J}}{\partial A^{[l-1]}}<br>=\frac{\partial \mathcal{J}}{\partial Z^{[l]}}\frac{\partial Z^{[l]}}{\partial A^{[l-1]}}<br>=\frac{\partial \mathcal{J}}{\partial Z^{[l]}}W^{[l]}<br>$$</p>
+<p>也就是说，我们可以通过 $\frac{\partial \mathcal{J}}{\partial A^{[L]}}$ 一层层的反向计算直到求得 $\frac{\partial \mathcal{J}}{\partial A^{[l]}}$。至此为止，梯度下降法求解过程中的各个环节都打通了。</p>
+<h2 id="3-3-反向传播的图形化表示"><a href="#3-3-反向传播的图形化表示" class="headerlink" title="3.3 反向传播的图形化表示"></a>3.3 反向传播的图形化表示</h2><p>需要说明一点的是，图中采用了符号简写，对于变量 $a$，$\frac{\partial \mathcal{J}}{\partial a}=\mathrm{d}a$，这也是在课程 <a href="https://www.coursera.org/specializations/deep-learning" target="_blank" rel="noopener">deep learning</a> 中的表达方式。</p>
+<p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Neural_Network.004.jpg" alt="Backpropagation"></p>
+<h1 id="4-如何构建一个完整的神经网络系统"><a href="#4-如何构建一个完整的神经网络系统" class="headerlink" title="4. 如何构建一个完整的神经网络系统"></a>4. 如何构建一个完整的神经网络系统</h1><p>结合前向传播与反向传播的结构图，最终我们形成了如下的一个完整的神经网络参数计算相关的结构图，如下：</p>
+<p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Neural_Network.005.jpg" alt="Whole struct of Parameters"></p>
+<ul>
+<li><p>首先，我们需要先确定神经网络系统的大小尺寸，即需要构建的 Layer 数量，以及每个 Layer 中的 Node 数目。我们还需要确定在每一个 Layer 中选取的激活函数形式，一般来说，在最后一个 Layer 中都会选择 Sigmoid 函数作为激活函数。</p>
+</li>
+<li><p>其次，我们需要设定超参数 (Hyper parameters)，比如说迭代次数，迭代步长等。</p>
+</li>
+<li><p>最后，随机初始化神经网络参数，输入训练集数据对参数进行最优化求解。在这一步中，每一次迭代中都要进行一次完整的前向传播计算以及反向传播计算。当迭代完成之后，就可以用训练好的参数对测试数据集进行验证了。</p>
+</li>
+</ul>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<li><p>神经网络是一种复杂的函数表现形式。</p>
+</li>
+<li><p>前向传播是神经网络对数据的预测过程。</p>
+</li>
+<li><p>反向传播是计算损失函数对神经网络这个函数中的不同层中参数的偏导数的过程。</p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Northan
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://www.anmou.me/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/" title="神经网络以及前向传播与反向传播">https://www.anmou.me/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Neural-Network/" rel="tag"># Neural Network</a>
+              <a href="/tags/Deep-Learning/" rel="tag"># Deep Learning</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/20170801-Charset&Encoding/" rel="prev" title="字符集和字符编码学习总结">
+      <i class="fa fa-chevron-left"></i> 字符集和字符编码学习总结
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/20180718-Entropy_and_Related_Concept/" rel="next" title="信息熵及其相关概念">
+      信息熵及其相关概念 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-什么是神经网络"><span class="nav-number">1.</span> <span class="nav-text">1. 什么是神经网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-神经网络中的前向传播"><span class="nav-number">2.</span> <span class="nav-text">2. 神经网络中的前向传播</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-节点中的细节"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 节点中的细节</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1-加权求和"><span class="nav-number">2.1.1.</span> <span class="nav-text">2.1.1 加权求和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-2-激活函数"><span class="nav-number">2.1.2.</span> <span class="nav-text">2.1.2 激活函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-向量化表示"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 向量化表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-前向传播的图形化表示"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 前向传播的图形化表示</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-神经网络中的反向传播"><span class="nav-number">3.</span> <span class="nav-text">3. 神经网络中的反向传播</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-为什么可以用梯度下降法"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 为什么可以用梯度下降法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-应用反向传播计算偏导数"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 应用反向传播计算偏导数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-反向传播的图形化表示"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 反向传播的图形化表示</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-如何构建一个完整的神经网络系统"><span class="nav-number">4.</span> <span class="nav-text">4. 如何构建一个完整的神经网络系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Northan"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Northan</p>
+  <div class="site-description" itemprop="description">热爱简洁，不喜杂乱。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/MLearn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;MLearn" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.v2ex.com/?r=Exp" title="https:&#x2F;&#x2F;www.v2ex.com&#x2F;?r&#x3D;Exp" rel="noopener" target="_blank">V2EX</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://mindhacks.cn/" title="http:&#x2F;&#x2F;mindhacks.cn&#x2F;" rel="noopener" target="_blank">MindHacks</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.matrix67.com/blog/" title="http:&#x2F;&#x2F;www.matrix67.com&#x2F;blog&#x2F;" rel="noopener" target="_blank">Matrix67</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.physixfan.com/" title="https:&#x2F;&#x2F;www.physixfan.com&#x2F;" rel="noopener" target="_blank">宇宙的心弦</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.yinwang.org/" title="http:&#x2F;&#x2F;www.yinwang.org&#x2F;" rel="noopener" target="_blank">当然我在扯淡</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.gtdlife.com/" title="http:&#x2F;&#x2F;www.gtdlife.com&#x2F;" rel="noopener" target="_blank">小强的时间管理博客</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Northan</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: 'a3799eac208aa18f03fa',
+      clientSecret: '076b48385dc971f7b000bc501281685c9d0fe4d9',
+      repo: 'Mlearn.github.io',
+      owner: 'Mlearn',
+      admin: ['Mlearn'],
+      id: 'f37d0b8a2871ed7e4c927683fda15cbf',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>
