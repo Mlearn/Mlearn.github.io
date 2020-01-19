@@ -279,20 +279,15 @@
 <li>你可以改变你的程序，将一个BUG产生的影响修正从而测试其他BUG。</li>
 </ol>
 <a id="more"></a>
-
 <h1 id="1-GDB的安装"><a href="#1-GDB的安装" class="headerlink" title="1.GDB的安装"></a>1.GDB的安装</h1><p>homebrew安装方法：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install gdb</span><br></pre></td></tr></table></figure>
-
 <h1 id="2-解决GDB在Mac系统下无法调试的问题"><a href="#2-解决GDB在Mac系统下无法调试的问题" class="headerlink" title="2.解决GDB在Mac系统下无法调试的问题"></a>2.解决GDB在Mac系统下无法调试的问题</h1><p>gdb初次安装完成运行时，会出现下面类似的错误：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(gdb) run</span><br><span class="line">Starting program: /usr/<span class="built_in">local</span>/bin/fabnacci</span><br><span class="line">Unable to find Mach task port <span class="keyword">for</span> process-id 23330: (os/kern) failure (0x5).</span><br><span class="line"> (please check gdb is codesigned - see taskgated(8))</span><br></pre></td></tr></table></figure>
-
 <p>这是由Mac系统Darwin内核的特殊权限所限，解决方案是创建证书签名，具体方法参考<a href="https://segmentfault.com/q/1010000004136334" target="_blank" rel="noopener">解决GDB在Mac下不能调试的问题</a>。</p>
 <h1 id="3-解决GDB的调试失败问题"><a href="#3-解决GDB的调试失败问题" class="headerlink" title="3.解决GDB的调试失败问题"></a>3.解决GDB的调试失败问题</h1><p>经过上一步的操作，解决了gdb的签名问题，但是还会遇到下面的错误：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(gdb) run</span><br><span class="line">Starting program: /usr/<span class="built_in">local</span>/bin/fabnacci</span><br><span class="line">During startup program terminated with signal ?, Unknown signal.</span><br></pre></td></tr></table></figure>
-
 <p>解决方法很简单，运行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> startup-with-shell off</span><br></pre></td></tr></table></figure>
-
 <p>即可，方便起见可以将此命令写入到个人路径的<code>.gdbinit</code>文件中，如果没有可以新建。<br>（该部分参考了<a href="https://www.zhihu.com/question/51251303/answer/127069542" target="_blank" rel="noopener">gdb调试器调试失败？</a>）</p>
 <h2 id="4-GDB调试的命令"><a href="#4-GDB调试的命令" class="headerlink" title="4.GDB调试的命令"></a>4.GDB调试的命令</h2><p><a href="http://blog.csdn.net/haoel/article/details/2879/" target="_blank" rel="noopener">参考这里</a></p>
 
@@ -321,9 +316,9 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"># 编程</a>
               <a href="/tags/Mac/" rel="tag"># Mac</a>
               <a href="/tags/GDB/" rel="tag"># GDB</a>
+              <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"># 编程</a>
           </div>
 
         

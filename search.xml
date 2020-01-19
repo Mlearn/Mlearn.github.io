@@ -7,242 +7,245 @@
 <p>现在给电脑中还在使用的软件汇总一个表格，其中有使用很久的，也有新发现的。</p>
 <p>除了开发相关的软件比如 Matlab、Miniconda、Python、Visual Studio 等软件没有给出，列表中给出的软件基本涵盖了自己的使用范围。尤其是最近几年时间，发现了越来越多免费好用的软件。</p>
 <a id="more"></a>
-
 <p>（按首字母排序，二次更新）</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">软件名称</th>
-<th align="left">软件用途</th>
-<th align="left">软件说明</th>
+<th style="text-align:center">软件名称</th>
+<th style="text-align:left">软件用途</th>
+<th style="text-align:left">软件说明</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center"><a href="https://www.7-zip.org/" target="_blank" rel="noopener">7-Zip</a></td>
-<td align="left">压缩解压缩软件</td>
-<td align="left">除了图标丑点，简单好用，右键菜单还可以计算文件哈希值</td>
+<tbody>
+<tr>
+<td style="text-align:center"><a href="https://www.7-zip.org/" target="_blank" rel="noopener">7-Zip</a></td>
+<td style="text-align:left">压缩解压缩软件</td>
+<td style="text-align:left">除了图标丑点，简单好用，右键菜单还可以计算文件哈希值</td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.bandisoft.com/bandizip/" target="_blank" rel="noopener">Bandizip</a></td>
-<td align="left">压缩解压缩软件</td>
-<td align="left">图标好看，简单好用，提供的智能解压功能很好</td>
+<td style="text-align:center"><a href="https://www.bandisoft.com/bandizip/" target="_blank" rel="noopener">Bandizip</a></td>
+<td style="text-align:left">压缩解压缩软件</td>
+<td style="text-align:left">图标好看，简单好用，提供的智能解压功能很好</td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.bulkrenameutility.co.uk/Download.php" target="_blank" rel="noopener">Bulk Rename Utility</a></td>
-<td align="left">批量重命名工具</td>
-<td align="left">可以定义很多规则来批量更改文件名字</td>
+<td style="text-align:center"><a href="https://www.bulkrenameutility.co.uk/Download.php" target="_blank" rel="noopener">Bulk Rename Utility</a></td>
+<td style="text-align:left">批量重命名工具</td>
+<td style="text-align:left">可以定义很多规则来批量更改文件名字</td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.google.com/chrome/" target="_blank" rel="noopener">Chrome</a></td>
-<td align="left">网页浏览</td>
-<td align="left">这个不用说啥，装机之后第一件事就是打开 ie 下载 Chrome</td>
+<td style="text-align:center"><a href="https://www.google.com/chrome/" target="_blank" rel="noopener">Chrome</a></td>
+<td style="text-align:left">网页浏览</td>
+<td style="text-align:left">这个不用说啥，装机之后第一件事就是打开 ie 下载 Chrome</td>
 </tr>
 <tr>
-<td align="center"><a href="http://cn.ejie.me/" target="_blank" rel="noopener">Clover</a></td>
-<td align="left">Explorer 多 tab 页支持</td>
-<td align="left">因为Clover广告一度使用QTTabBar，但是QTTabBar很重并且卡，当Clover去掉广告之后又回归了</td>
+<td style="text-align:center"><a href="http://cn.ejie.me/" target="_blank" rel="noopener">Clover</a></td>
+<td style="text-align:left">Explorer 多 tab 页支持</td>
+<td style="text-align:left">因为Clover广告一度使用QTTabBar，但是QTTabBar很重并且卡，当Clover去掉广告之后又回归了</td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.chuyu.me/zh-Hans/" target="_blank" rel="noopener">Dism++</a></td>
-<td align="left">系统功能调整优化工具箱</td>
-<td align="left">软件介绍说调用的都是系统提供的接口，稳定可靠</td>
+<td style="text-align:center"><a href="https://www.chuyu.me/zh-Hans/" target="_blank" rel="noopener">Dism++</a></td>
+<td style="text-align:left">系统功能调整优化工具箱</td>
+<td style="text-align:left">软件介绍说调用的都是系统提供的接口，稳定可靠</td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.enpass.io/" target="_blank" rel="noopener">Enpass</a></td>
-<td align="left">跨平台密码管理工具</td>
-<td align="left">功能不逊于 1Password，良心定价</td>
+<td style="text-align:center"><a href="https://www.enpass.io/" target="_blank" rel="noopener">Enpass</a></td>
+<td style="text-align:left">跨平台密码管理工具</td>
+<td style="text-align:left">功能不逊于 1Password，良心定价</td>
 </tr>
 <tr>
-<td align="center"><a href="https://justgetflux.com/" target="_blank" rel="noopener">f.lux</a></td>
-<td align="left">桌面色温自动调节工具</td>
-<td align="left">保护视力</td>
+<td style="text-align:center"><a href="https://justgetflux.com/" target="_blank" rel="noopener">f.lux</a></td>
+<td style="text-align:left">桌面色温自动调节工具</td>
+<td style="text-align:left">保护视力</td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.lopesoft.com/index.php/en/download/filemenu-tools" target="_blank" rel="noopener">FileMenu Tools</a></td>
-<td align="left">右键菜单增强</td>
-<td align="left">增强了鼠标右键菜单的功能</td>
+<td style="text-align:center"><a href="https://www.lopesoft.com/index.php/en/download/filemenu-tools" target="_blank" rel="noopener">FileMenu Tools</a></td>
+<td style="text-align:left">右键菜单增强</td>
+<td style="text-align:left">增强了鼠标右键菜单的功能</td>
 </tr>
 <tr>
-<td align="center"><a href="https://gifcam.softonic.cn/" target="_blank" rel="noopener">GifCam</a></td>
-<td align="left">屏幕录制成 Gif</td>
-<td align="left">选取屏幕任意位置直接录制输出 Gif 图像</td>
+<td style="text-align:center"><a href="https://gifcam.softonic.cn/" target="_blank" rel="noopener">GifCam</a></td>
+<td style="text-align:left">屏幕录制成 Gif</td>
+<td style="text-align:left">选取屏幕任意位置直接录制输出 Gif 图像</td>
 </tr>
 <tr>
-<td align="center"><a href="http://www.keir.net/hash.html" target="_blank" rel="noopener">Hash V1.04</a></td>
-<td align="left">计算文件 Hash 值</td>
-<td align="left">可以计算文件的 MD5, SHA1, CRC32,可以被 7-Zip 右键菜单取代</td>
+<td style="text-align:center"><a href="http://www.keir.net/hash.html" target="_blank" rel="noopener">Hash V1.04</a></td>
+<td style="text-align:left">计算文件 Hash 值</td>
+<td style="text-align:left">可以计算文件的 MD5, SHA1, CRC32,可以被 7-Zip 右键菜单取代</td>
 </tr>
 <tr>
-<td align="center"><a href="https://joplinapp.org/" target="_blank" rel="noopener">Joplin</a></td>
-<td align="left">Evernote 替代</td>
-<td align="left">开源免费全平台，基本可以替换掉 Evernote 了，初步使用发现网页剪藏稍显简陋</td>
+<td style="text-align:center"><a href="https://joplinapp.org/" target="_blank" rel="noopener">Joplin</a></td>
+<td style="text-align:left">Evernote 替代</td>
+<td style="text-align:left">开源免费全平台，基本可以替换掉 Evernote 了，初步使用发现网页剪藏稍显简陋</td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.majorgeeks.com/files/details/minibin.html" target="_blank" rel="noopener">MiniBin</a></td>
-<td align="left">将桌面回收站放到任务栏</td>
-<td align="left">干掉垃圾桶，桌面终于干净了，没有找到官方网站</td>
+<td style="text-align:center"><a href="https://www.majorgeeks.com/files/details/minibin.html" target="_blank" rel="noopener">MiniBin</a></td>
+<td style="text-align:left">将桌面回收站放到任务栏</td>
+<td style="text-align:left">干掉垃圾桶，桌面终于干净了，没有找到官方网站</td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.mendeley.com/" target="_blank" rel="noopener">Mendeley Desktop</a></td>
-<td align="left">文献管理软件</td>
-<td align="left">主要用来管理下载下来的 pdf 论文文件</td>
+<td style="text-align:center"><a href="https://www.mendeley.com/" target="_blank" rel="noopener">Mendeley Desktop</a></td>
+<td style="text-align:left">文献管理软件</td>
+<td style="text-align:left">主要用来管理下载下来的 pdf 论文文件</td>
 </tr>
 <tr>
-<td align="center"><a href="https://notepad-plus-plus.org/" target="_blank" rel="noopener">Notepad++(x64)</a></td>
-<td align="left">文本编辑器</td>
-<td align="left">工作需要，主要用来查看编辑 xml 文件</td>
+<td style="text-align:center"><a href="https://notepad-plus-plus.org/" target="_blank" rel="noopener">Notepad++(x64)</a></td>
+<td style="text-align:left">文本编辑器</td>
+<td style="text-align:left">工作需要，主要用来查看编辑 xml 文件</td>
 </tr>
 <tr>
-<td align="center"><a href="http://www.wofficebox.com/" target="_blank" rel="noopener">OfficeBox</a></td>
-<td align="left">万彩办公大师工具箱</td>
-<td align="left">文件转换等功能都可以找到</td>
+<td style="text-align:center"><a href="http://www.wofficebox.com/" target="_blank" rel="noopener">OfficeBox</a></td>
+<td style="text-align:left">万彩办公大师工具箱</td>
+<td style="text-align:left">文件转换等功能都可以找到</td>
 </tr>
 <tr>
-<td align="center"><a href="https://products.office.com/zh-cn/get-started-with-office-2019" target="_blank" rel="noopener">Office(2019)</a></td>
-<td align="left">办公三大件</td>
-<td align="left">WPS 广告太多了，没有用下去的胃口</td>
+<td style="text-align:center"><a href="https://products.office.com/zh-cn/get-started-with-office-2019" target="_blank" rel="noopener">Office(2019)</a></td>
+<td style="text-align:left">办公三大件</td>
+<td style="text-align:left">WPS 广告太多了，没有用下去的胃口</td>
 </tr>
 <tr>
-<td align="center"><a href="https://otp.landian.vip/zh-cn/" target="_blank" rel="noopener">Office Tool Plus</a></td>
-<td align="left">Office 定制安装工具</td>
-<td align="left">可以有选择的安装 Office 中的组件，</td>
+<td style="text-align:center"><a href="https://otp.landian.vip/zh-cn/" target="_blank" rel="noopener">Office Tool Plus</a></td>
+<td style="text-align:left">Office 定制安装工具</td>
+<td style="text-align:left">可以有选择的安装 Office 中的组件，</td>
 </tr>
 <tr>
-<td align="center"><a href="https://products.office.com/zh-cn/onenote/digital-note-taking-app" target="_blank" rel="noopener">OneNote(2016)</a></td>
-<td align="left">笔记同步记录软件</td>
-<td align="left">自由度非常高的电子笔记本</td>
+<td style="text-align:center"><a href="https://products.office.com/zh-cn/onenote/digital-note-taking-app" target="_blank" rel="noopener">OneNote(2016)</a></td>
+<td style="text-align:left">笔记同步记录软件</td>
+<td style="text-align:left">自由度非常高的电子笔记本</td>
 </tr>
 <tr>
-<td align="center"><a href="https://onedrive.live.com/about/zh-cn/" target="_blank" rel="noopener">OneDrive</a></td>
-<td align="left">同步网盘</td>
-<td align="left">大厂服务，稳定可靠</td>
+<td style="text-align:center"><a href="https://onedrive.live.com/about/zh-cn/" target="_blank" rel="noopener">OneDrive</a></td>
+<td style="text-align:left">同步网盘</td>
+<td style="text-align:left">大厂服务，稳定可靠</td>
 </tr>
 <tr>
-<td align="center"><a href="https://potplayer.daum.net/" target="_blank" rel="noopener">PotPlayer</a></td>
-<td align="left">影音播放软件</td>
-<td align="left">界面简洁无广告，功能丰富开源</td>
+<td style="text-align:center"><a href="https://potplayer.daum.net/" target="_blank" rel="noopener">PotPlayer</a></td>
+<td style="text-align:left">影音播放软件</td>
+<td style="text-align:left">界面简洁无广告，功能丰富开源</td>
 </tr>
 <tr>
-<td align="center"><a href="https://pooi.moe/QuickLook/" target="_blank" rel="noopener">QuikLook</a></td>
-<td align="left">在文件上按空格预览</td>
-<td align="left">带来 Mac 上的使用感受</td>
+<td style="text-align:center"><a href="https://pooi.moe/QuickLook/" target="_blank" rel="noopener">QuikLook</a></td>
+<td style="text-align:left">在文件上按空格预览</td>
+<td style="text-align:left">带来 Mac 上的使用感受</td>
 </tr>
 <tr>
-<td align="center"><a href="https://quest-app.appspot.com/" target="_blank" rel="noopener">QTranstale</a></td>
-<td align="left">桌面翻译软件</td>
-<td align="left">除了没有本地词典外，其它完全满足要求</td>
+<td style="text-align:center"><a href="https://quest-app.appspot.com/" target="_blank" rel="noopener">QTranstale</a></td>
+<td style="text-align:left">桌面翻译软件</td>
+<td style="text-align:left">除了没有本地词典外，其它完全满足要求</td>
 </tr>
 <tr>
-<td align="center"><a href="https://github.com/shadowsocks/shadowsocks-windows" target="_blank" rel="noopener">Shadowsocks</a></td>
-<td align="left">快乐上网工具</td>
-<td align="left">Happy</td>
+<td style="text-align:center"><a href="https://github.com/shadowsocks/shadowsocks-windows" target="_blank" rel="noopener">Shadowsocks</a></td>
+<td style="text-align:left">快乐上网工具</td>
+<td style="text-align:left">Happy</td>
 </tr>
 <tr>
-<td align="center"><a href="https://zh.snipaste.com/" target="_blank" rel="noopener">Snipaste</a></td>
-<td align="left">桌面截图贴图工具</td>
-<td align="left">最好用的截图软件，告别 QQ、输入法的截图工具</td>
+<td style="text-align:center"><a href="https://zh.snipaste.com/" target="_blank" rel="noopener">Snipaste</a></td>
+<td style="text-align:left">桌面截图贴图工具</td>
+<td style="text-align:left">最好用的截图软件，告别 QQ、输入法的截图工具</td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.sumatrapdfreader.org/free-pdf-reader.html" target="_blank" rel="noopener">SumatraPDF</a></td>
-<td align="left">PDF 文件阅读</td>
-<td align="left">简单小巧快读</td>
+<td style="text-align:center"><a href="https://www.sumatrapdfreader.org/free-pdf-reader.html" target="_blank" rel="noopener">SumatraPDF</a></td>
+<td style="text-align:left">PDF 文件阅读</td>
+<td style="text-align:left">简单小巧快读</td>
 </tr>
 <tr>
-<td align="center"><a href="https://zhuanlan.zhihu.com/p/31809890" target="_blank" rel="noopener">SciHub Desktop</a></td>
-<td align="left">文献自由下载</td>
-<td align="left">可以自由下载一些被出版商高额定价的论文</td>
+<td style="text-align:center"><a href="https://zhuanlan.zhihu.com/p/31809890" target="_blank" rel="noopener">SciHub Desktop</a></td>
+<td style="text-align:left">文献自由下载</td>
+<td style="text-align:left">可以自由下载一些被出版商高额定价的论文</td>
 </tr>
 <tr>
-<td align="center"><a href="https://github.com/canton7/SyncTrayzor" target="_blank" rel="noopener">SyncTrayzor</a></td>
-<td align="left">局域网内文件同步</td>
-<td align="left">Syncthing的 UI 封装，只在局域网内使用过，貌似也可以在公网使用</td>
+<td style="text-align:center"><a href="https://github.com/canton7/SyncTrayzor" target="_blank" rel="noopener">SyncTrayzor</a></td>
+<td style="text-align:left">局域网内文件同步</td>
+<td style="text-align:left">Syncthing的 UI 封装，只在局域网内使用过，貌似也可以在公网使用</td>
 </tr>
 <tr>
-<td align="center"><a href="http://www.uderzo.it/main_products/space_sniffer/" target="_blank" rel="noopener">SpaceSniffer</a></td>
-<td align="left">磁盘空间占用分析</td>
-<td align="left">在 xp 时代就开始用了，可以很快速定位到磁盘使用量大的文件夹</td>
+<td style="text-align:center"><a href="http://www.uderzo.it/main_products/space_sniffer/" target="_blank" rel="noopener">SpaceSniffer</a></td>
+<td style="text-align:left">磁盘空间占用分析</td>
+<td style="text-align:left">在 xp 时代就开始用了，可以很快速定位到磁盘使用量大的文件夹</td>
 </tr>
 <tr>
-<td align="center"><a href="https://hovancik.net/stretchly/" target="_blank" rel="noopener">stretchly</a></td>
-<td align="left">定时休息提醒工具</td>
-<td align="left">保护视力</td>
+<td style="text-align:center"><a href="https://hovancik.net/stretchly/" target="_blank" rel="noopener">stretchly</a></td>
+<td style="text-align:left">定时休息提醒工具</td>
+<td style="text-align:left">保护视力</td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.teamviewer.com/cn/" target="_blank" rel="noopener">TeamViewer</a></td>
-<td align="left">远程桌面</td>
-<td align="left">个人用户现在被检测商业用途太过频繁，已失去实用意义</td>
+<td style="text-align:center"><a href="https://www.teamviewer.com/cn/" target="_blank" rel="noopener">TeamViewer</a></td>
+<td style="text-align:left">远程桌面</td>
+<td style="text-align:left">个人用户现在被检测商业用途太过频繁，已失去实用意义</td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.uvnc.com/" target="_blank" rel="noopener">UltraVNC</a></td>
-<td align="left">局域网内远程桌面连接</td>
-<td align="left">为了解决 Matlab 使用微软远程桌面无法启动的问题</td>
+<td style="text-align:center"><a href="https://www.uvnc.com/" target="_blank" rel="noopener">UltraVNC</a></td>
+<td style="text-align:left">局域网内远程桌面连接</td>
+<td style="text-align:left">为了解决 Matlab 使用微软远程桌面无法启动的问题</td>
 </tr>
 <tr>
-<td align="center"><a href="https://u.tools/" target="_blank" rel="noopener">uTools</a></td>
-<td align="left">桌面快捷启动工具</td>
-<td align="left">使用了一段时间发现比 listary 好用，切换到此工具</td>
+<td style="text-align:center"><a href="https://u.tools/" target="_blank" rel="noopener">uTools</a></td>
+<td style="text-align:left">桌面快捷启动工具</td>
+<td style="text-align:left">使用了一段时间发现比 listary 好用，切换到此工具</td>
 </tr>
 <tr>
-<td align="center"><a href="https://meta.appinn.net/t/unsplash4win/3321/2" target="_blank" rel="noopener">Unsplash4Win</a></td>
-<td align="left">桌面壁纸自动更换</td>
-<td align="left">Wallcat 用了很久发现经常假死或者下载的图片不完整，切换到 Unsplash4Win</td>
+<td style="text-align:center"><a href="https://meta.appinn.net/t/unsplash4win/3321/2" target="_blank" rel="noopener">Unsplash4Win</a></td>
+<td style="text-align:left">桌面壁纸自动更换</td>
+<td style="text-align:left">Wallcat 用了很久发现经常假死或者下载的图片不完整，切换到 Unsplash4Win</td>
 </tr>
 <tr>
-<td align="center"><a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VS Code</a></td>
-<td align="left">代码编辑器</td>
-<td align="left">轻量级代码编辑器</td>
+<td style="text-align:center"><a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VS Code</a></td>
+<td style="text-align:left">代码编辑器</td>
+<td style="text-align:left">轻量级代码编辑器</td>
 </tr>
 <tr>
-<td align="center"><a href="https://tamlok.github.io/vnote/zh_cn/" target="_blank" rel="noopener">VNote</a></td>
-<td align="left">Markdown 阅读与编辑</td>
-<td align="left">一款不同于市面上其它软件的 Markdown 编辑与阅读软件</td>
+<td style="text-align:center"><a href="https://tamlok.github.io/vnote/zh_cn/" target="_blank" rel="noopener">VNote</a></td>
+<td style="text-align:left">Markdown 阅读与编辑</td>
+<td style="text-align:left">一款不同于市面上其它软件的 Markdown 编辑与阅读软件</td>
 </tr>
 <tr>
-<td align="center"><a href="https://beta.wall.cat/" target="_blank" rel="noopener">Wallcat</a></td>
-<td align="left">桌面壁纸自动更换</td>
-<td align="left">简单到不能再简单</td>
+<td style="text-align:center"><a href="https://beta.wall.cat/" target="_blank" rel="noopener">Wallcat</a></td>
+<td style="text-align:left">桌面壁纸自动更换</td>
+<td style="text-align:left">简单到不能再简单</td>
 </tr>
 <tr>
-<td align="center"><a href="http://www.winsetupfromusb.com/" target="_blank" rel="noopener">WinSetupFromUSB</a></td>
-<td align="left">制作多系统安装盘</td>
-<td align="left">可以把多版本的 Windows iso，Linux iso 文件烧录到 U 盘中</td>
+<td style="text-align:center"><a href="http://www.winsetupfromusb.com/" target="_blank" rel="noopener">WinSetupFromUSB</a></td>
+<td style="text-align:left">制作多系统安装盘</td>
+<td style="text-align:left">可以把多版本的 Windows iso，Linux iso 文件烧录到 U 盘中</td>
 </tr>
 <tr>
-<td align="center"><a href="https://mail.163.com/dashi/" target="_blank" rel="noopener">网易邮箱大师</a></td>
-<td align="left">邮件收发客户端</td>
-<td align="left">使用过 FoxMail、YoMail都不太好，试用网易邮箱大师</td>
+<td style="text-align:center"><a href="https://mail.163.com/dashi/" target="_blank" rel="noopener">网易邮箱大师</a></td>
+<td style="text-align:left">邮件收发客户端</td>
+<td style="text-align:left">使用过 FoxMail、YoMail都不太好，试用网易邮箱大师</td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.futunn.com/" target="_blank" rel="noopener">富途牛牛</a></td>
-<td align="left">股票行情交易软件</td>
-<td align="left">腾讯旗下，界面感觉是同类软件中最现代化的，使用率不高，就没事看看</td>
+<td style="text-align:center"><a href="https://www.futunn.com/" target="_blank" rel="noopener">富途牛牛</a></td>
+<td style="text-align:left">股票行情交易软件</td>
+<td style="text-align:left">腾讯旗下，界面感觉是同类软件中最现代化的，使用率不高，就没事看看</td>
 </tr>
 <tr>
-<td align="center"><a href="http://www.xinshuru.com/index.html?p=win" target="_blank" rel="noopener">手心输入法</a></td>
-<td align="left">简洁无广告的输入法</td>
-<td align="left">从 Windows 7 开始使用， Windows 10 之后采用系统输入法</td>
+<td style="text-align:center"><a href="http://www.xinshuru.com/index.html?p=win" target="_blank" rel="noopener">手心输入法</a></td>
+<td style="text-align:left">简洁无广告的输入法</td>
+<td style="text-align:left">从 Windows 7 开始使用， Windows 10 之后采用系统输入法</td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.jianguoyun.com/" target="_blank" rel="noopener">坚果云</a></td>
-<td align="left">同步网盘</td>
-<td align="left">同步文档类文件非常实用，快速方便，支持 WebDAV</td>
+<td style="text-align:center"><a href="https://www.jianguoyun.com/" target="_blank" rel="noopener">坚果云</a></td>
+<td style="text-align:left">同步网盘</td>
+<td style="text-align:left">同步文档类文件非常实用，快速方便，支持 WebDAV</td>
 </tr>
 <tr>
-<td align="center"><a href="http://www.youxiao.cn/" target="_blank" rel="noopener">优效日历</a></td>
-<td align="left">增强系统右下角日期时间显示</td>
-<td align="left">农历终于有了</td>
+<td style="text-align:center"><a href="http://www.youxiao.cn/" target="_blank" rel="noopener">优效日历</a></td>
+<td style="text-align:left">增强系统右下角日期时间显示</td>
+<td style="text-align:left">农历终于有了</td>
 </tr>
 <tr>
-<td align="center"><a href="http://www.6fcsj.com/" target="_blank" rel="noopener">小黄条</a></td>
-<td align="left">桌面便签</td>
-<td align="left">简洁，透明色</td>
+<td style="text-align:center"><a href="http://www.6fcsj.com/" target="_blank" rel="noopener">小黄条</a></td>
+<td style="text-align:left">桌面便签</td>
+<td style="text-align:left">简洁，透明色</td>
 </tr>
 <tr>
-<td align="center"><a href="https://sunlogin.oray.com/zh_CN" target="_blank" rel="noopener">向日葵</a></td>
-<td align="left">远程桌面</td>
-<td align="left">Mac 版太过卡顿，作为 TeamViewer 的替代使用</td>
+<td style="text-align:center"><a href="https://sunlogin.oray.com/zh_CN" target="_blank" rel="noopener">向日葵</a></td>
+<td style="text-align:left">远程桌面</td>
+<td style="text-align:left">Mac 版太过卡顿，作为 TeamViewer 的替代使用</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 ]]></content>
   </entry>
   <entry>
@@ -252,24 +255,20 @@
 <p>简单起见，本文只考虑单通道灰度图像，同时图片的像素值归一化到 [0 1] 范围内。若要应用于不同灰度范围图像，只需在处理前对图像进行归一，在处理之后进行灰度范围还原即可。这里不作过多讨论。</p>
 <p>通俗来说，灰度变换就是找到一种方式（或称为变换函数）$s=T(r)$ ，将图像中所有灰度值为 $r$ 的像素的灰度值变为 $s$，同时保证其像素位置不变。</p>
 <a id="more"></a>
-
 <p>参考《数字图像处理的MATLAB实现(第2版)》中的介绍个人理解，简单灰度变换方法大体分为两类：1、依据具体的函数形式变换；2、依据灰度分布直方图信息进行变换。更复杂的情况不做讨论。</p>
 <h1 id="1-函数变换形式"><a href="#1-函数变换形式" class="headerlink" title="1. 函数变换形式"></a>1. 函数变换形式</h1><p>以下介绍的各中方法要求所处理的输入图像灰度范围需要保持在 [0 1] 之间。当输出图像灰度范围超出或小于 [0 1] 范围，需要进行归一化，即灰度范围的线性扩展或收缩。</p>
-<h2 id="1-1-Gamma-变换"><a href="#1-1-Gamma-变换" class="headerlink" title="1.1 Gamma 变换"></a>1.1 Gamma 变换</h2><h3 id="a-变换公式："><a href="#a-变换公式：" class="headerlink" title="a) 变换公式："></a>a) 变换公式：</h3><p>$$s=r^{\gamma}$$</p>
-<h3 id="b-变换曲线："><a href="#b-变换曲线：" class="headerlink" title="b) 变换曲线："></a>b) 变换曲线：</h3><p><img src="/20190308-Gray-scale_Transformation_in_Image_Processing/Gamma_Transform.png" alt="Gamma_Transform"></p>
+<h2 id="1-1-Gamma-变换"><a href="#1-1-Gamma-变换" class="headerlink" title="1.1 Gamma 变换"></a>1.1 Gamma 变换</h2><h3 id="a-变换公式："><a href="#a-变换公式：" class="headerlink" title="a) 变换公式："></a>a) 变换公式：</h3><script type="math/tex; mode=display">s=r^{\gamma}</script><h3 id="b-变换曲线："><a href="#b-变换曲线：" class="headerlink" title="b) 变换曲线："></a>b) 变换曲线：</h3><p><img src="/20190308-Gray-scale_Transformation_in_Image_Processing/Gamma_Transform.png" alt="Gamma_Transform"></p>
 <h3 id="c-变换说明："><a href="#c-变换说明：" class="headerlink" title="c) 变换说明："></a>c) 变换说明：</h3><ul>
 <li>当输入范围归一时，输出结果自动归一；</li>
 <li>参数 $\gamma$ 小于 1 时，扩展低灰度值范围，压缩高灰度值范围；</li>
 <li>参数 $\gamma$ 大于 1 时，扩展高灰度值范围，压缩低灰度值范围。</li>
 </ul>
-<h2 id="1-2-对数变换"><a href="#1-2-对数变换" class="headerlink" title="1.2 对数变换"></a>1.2 对数变换</h2><h3 id="a-变换公式：-1"><a href="#a-变换公式：-1" class="headerlink" title="a) 变换公式："></a>a) 变换公式：</h3><p>$$s=\log_{v+1}(1+vr)$$</p>
-<h3 id="b-变换曲线：-1"><a href="#b-变换曲线：-1" class="headerlink" title="b) 变换曲线："></a>b) 变换曲线：</h3><p><img src="/20190308-Gray-scale_Transformation_in_Image_Processing/Log_Transform.png" alt="Log_Transform"></p>
+<h2 id="1-2-对数变换"><a href="#1-2-对数变换" class="headerlink" title="1.2 对数变换"></a>1.2 对数变换</h2><h3 id="a-变换公式：-1"><a href="#a-变换公式：-1" class="headerlink" title="a) 变换公式："></a>a) 变换公式：</h3><script type="math/tex; mode=display">s=\log_{v+1}(1+vr)</script><h3 id="b-变换曲线：-1"><a href="#b-变换曲线：-1" class="headerlink" title="b) 变换曲线："></a>b) 变换曲线：</h3><p><img src="/20190308-Gray-scale_Transformation_in_Image_Processing/Log_Transform.png" alt="Log_Transform"></p>
 <h3 id="c-变换说明：-1"><a href="#c-变换说明：-1" class="headerlink" title="c) 变换说明："></a>c) 变换说明：</h3><ul>
 <li>当输入范围归一时，输出结果自动归一；</li>
 <li>对数变换只能扩展低灰度范围，压缩高灰度值范围；</li>
 </ul>
-<h2 id="1-3-对比度拉伸"><a href="#1-3-对比度拉伸" class="headerlink" title="1.3 对比度拉伸"></a>1.3 对比度拉伸</h2><h3 id="a-变换公式：-2"><a href="#a-变换公式：-2" class="headerlink" title="a) 变换公式："></a>a) 变换公式：</h3><p>$$s=\frac{1}{1+(m/r)^E}$$</p>
-<p>此公式并不能保证变换之后的灰度范围仍充满 [0 1]，需要再进行灰度范围的归一。<strong>b)</strong> 中所画曲线已经是对输出归一化到 [0 1] 区间之后的结果。</p>
+<h2 id="1-3-对比度拉伸"><a href="#1-3-对比度拉伸" class="headerlink" title="1.3 对比度拉伸"></a>1.3 对比度拉伸</h2><h3 id="a-变换公式：-2"><a href="#a-变换公式：-2" class="headerlink" title="a) 变换公式："></a>a) 变换公式：</h3><script type="math/tex; mode=display">s=\frac{1}{1+(m/r)^E}</script><p>此公式并不能保证变换之后的灰度范围仍充满 [0 1]，需要再进行灰度范围的归一。<strong>b)</strong> 中所画曲线已经是对输出归一化到 [0 1] 区间之后的结果。</p>
 <h3 id="b-变换曲线：-2"><a href="#b-变换曲线：-2" class="headerlink" title="b) 变换曲线："></a>b) 变换曲线：</h3><p>（所有曲线取参数 $m=0.5$ 情况下）</p>
 <p><img src="/20190308-Gray-scale_Transformation_in_Image_Processing/Exp_Transform.png" alt></p>
 <h3 id="c-变换说明：-2"><a href="#c-变换说明：-2" class="headerlink" title="c) 变换说明："></a>c) 变换说明：</h3><ul>
@@ -278,8 +277,7 @@
 <li>此变换在参数 $E$ 取小值时的变换行为明显不同于取较大值时的行为。</li>
 </ul>
 <h2 id="1-4-对比度拉伸（采用-Sigmoid-函数进行变换）"><a href="#1-4-对比度拉伸（采用-Sigmoid-函数进行变换）" class="headerlink" title="1.4 对比度拉伸（采用 Sigmoid 函数进行变换）"></a>1.4 对比度拉伸（采用 Sigmoid 函数进行变换）</h2><p>通过研究 <strong>1.3</strong> 中的变换公式，发现其设计的目的主要是为了将输入图像某个中间范围内的灰度范围进行拓展。但是其参数 $E$ 在取小值和大值时的表现并不同，$E$ 取大值时的表现才是设计应达到的目的。进一步发现当 $E$ 取值较大时，曲线与 Sigmoid 曲线类似，何不直接采用 Sigmoid 函数进行灰度变换呢？</p>
-<h3 id="a-变换公式：-3"><a href="#a-变换公式：-3" class="headerlink" title="a) 变换公式："></a>a) 变换公式：</h3><p>$$s=\frac{1}{1+e^{-E(r-m)}}$$</p>
-<p>此公式并不能保证变换之后的灰度范围仍充满 [0 1]，需要再进行灰度范围的归一。<strong>b)</strong> 中所画曲线已经是对输出归一化到 [0 1] 区间之后的结果。</p>
+<h3 id="a-变换公式：-3"><a href="#a-变换公式：-3" class="headerlink" title="a) 变换公式："></a>a) 变换公式：</h3><script type="math/tex; mode=display">s=\frac{1}{1+e^{-E(r-m)}}</script><p>此公式并不能保证变换之后的灰度范围仍充满 [0 1]，需要再进行灰度范围的归一。<strong>b)</strong> 中所画曲线已经是对输出归一化到 [0 1] 区间之后的结果。</p>
 <h3 id="b-变换曲线：-3"><a href="#b-变换曲线：-3" class="headerlink" title="b) 变换曲线："></a>b) 变换曲线：</h3><p>（所有曲线取参数 $m=0.5$ 情况下）</p>
 <p><img src="/20190308-Gray-scale_Transformation_in_Image_Processing/Sigmoid_Transform.png" alt></p>
 <h3 id="c-变换说明：-3"><a href="#c-变换说明：-3" class="headerlink" title="c) 变换说明："></a>c) 变换说明：</h3><ul>
@@ -290,12 +288,12 @@
 <h1 id="2-根据直方图进行灰度值变换"><a href="#2-根据直方图进行灰度值变换" class="headerlink" title="2. 根据直方图进行灰度值变换"></a>2. 根据直方图进行灰度值变换</h1><h2 id="2-1-直方图均衡化"><a href="#2-1-直方图均衡化" class="headerlink" title="2.1 直方图均衡化"></a>2.1 直方图均衡化</h2><p>第一次看到直方图均衡化的公式介绍，半天没有反应过来。明白了其中的道理之后发现本质上是一个很简单的事情。以连续分布为例，均衡化的目的本质上是将一个在 [0 1] 范围内的任意灰度分布转换到在 [0 1] 范围内的均匀分布，同时保证在原分布中的像素灰度大小关系在转换之后保持不变。即，如果图像中的任意两个像素 A、B，在灰度转换之前 A 的灰度小于 B，转换之后同样也要保证 A 的灰度小于 B。</p>
 <p>设给定输入图像的灰度级的分布，也可以叫概率密度函数（PDF）为 $P_r(r), r \in [0,1]$ ，输出图像的概率密度函数为 $P_s(s), s \in [0,1]$。根据均衡化的定义，要求对任意 $s$，有 $P_s(s)=1$。</p>
 <p>对变换来说，自然满足相邻灰度级的像素经过变换之后其灰度级仍然为相邻的：</p>
-<p>$$<br>P_s(s){\rm d}s = P_r(r){\rm d}r<br>$$</p>
-<p>变换前图像中灰度值从 0 累积到 $r$ 的像素数量应该等于变换后图像中灰度值从 0 累积到 $s$ 的像素数量。如下图z中所示，变换前后的阴影部分，也即各自概率密度积分值相等：</p>
+<script type="math/tex; mode=display">
+P_s(s){\rm d}s = P_r(r){\rm d}r</script><p>变换前图像中灰度值从 0 累积到 $r$ 的像素数量应该等于变换后图像中灰度值从 0 累积到 $s$ 的像素数量。如下图z中所示，变换前后的阴影部分，也即各自概率密度积分值相等：</p>
 <p><img src="/20190308-Gray-scale_Transformation_in_Image_Processing/Histogram_Equalization.png" alt></p>
 <p>同时注意到 $P_s(s)=1$， 可以得到</p>
-<p>$$<br>s = \int_0^s {\rm d}v = \int_0^s P_s(v){\rm d}v = \int_0^r P_r(w){\rm d}w<br>$$</p>
-<p>此即为直方图均衡化的灰度变化公式，这是一个累积分布函数。它说的是，对原图像中灰度级为 $r$ 的像素，经过均衡化之后，其灰度级变为 $s$，值为原图灰度级的累积分布函数。</p>
+<script type="math/tex; mode=display">
+s = \int_0^s {\rm d}v = \int_0^s P_s(v){\rm d}v = \int_0^r P_r(w){\rm d}w</script><p>此即为直方图均衡化的灰度变化公式，这是一个累积分布函数。它说的是，对原图像中灰度级为 $r$ 的像素，经过均衡化之后，其灰度级变为 $s$，值为原图灰度级的累积分布函数。</p>
 <h2 id="2-2-直方图规定化"><a href="#2-2-直方图规定化" class="headerlink" title="2.2 直方图规定化"></a>2.2 直方图规定化</h2><p>待续</p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>1: <a href="https://blog.csdn.net/zhoufan900428/article/details/12709361" target="_blank" rel="noopener">[数字图像处理]灰度变换——反转，对数变换，伽马变换，灰度拉伸，灰度切割，位图切割</a>;<br>2: <a href="https://blog.csdn.net/hhw999/article/details/52122525" target="_blank" rel="noopener">对数及对比度拉伸变换</a>;<br>3: <a href="https://blog.csdn.net/feiyanjia/article/details/82083811" target="_blank" rel="noopener">对比度调整的各种方法（一）</a>;<br>4: <a href="https://blog.csdn.net/EbowTang/article/details/38236441" target="_blank" rel="noopener">数字图像处理，经典对比度增强算法</a>;<br>5: <a href="https://blog.csdn.net/saltriver/article/details/79677199" target="_blank" rel="noopener">图像增强之对比度拉伸</a></p>
 ]]></content>
@@ -315,7 +313,6 @@
 <p>使用 LTSC 版本的原因是系统够简约，但是不便之处在于想要使用高版本只能重装而无法通过升级进行（目前我没发现升级方法）。</p>
 <p>这次重装系统，顺便记录一下全新安装 TensorFlow 的过程步骤。</p>
 <a id="more"></a>
-
 <p>当前最新的 TensorFlow 为 1.11 版，为了省事，采用官网提供的已经编译好的版本。从<a href="https://www.tensorflow.org/install/gpu" target="_blank" rel="noopener">官网</a>查看，其 GPU 版的硬件、软件依赖条件：</p>
 <p><img src="/20181103-Install_TensorFlow_1.11_for_GPU_In_Windows_10/TensorFlowGPURequirements.png" alt="TensorFlowGPURequirements"></p>
 <p>下面开始按步骤安装。</p>
@@ -326,7 +323,6 @@
 </ol>
 <p><strong>本人测试，需要注销重新登陆以使环境变量设置生效。</strong> 安装成功后，在终端输入 <code>nvcc -V</code> 可以显示如下结果：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">C:\Users\xxx&gt;nvcc -V</span><br><span class="line">nvcc: NVIDIA (R) Cuda compiler driver</span><br><span class="line">Copyright (c) 2005-2017 NVIDIA Corporation</span><br><span class="line">Built on Fri_Sep__1_21:08:32_Central_Daylight_Time_2017</span><br><span class="line">Cuda compilation tools, release 9.0, V9.0.176</span><br></pre></td></tr></table></figure>
-
 <h1 id="3-安装-cuDNN"><a href="#3-安装-cuDNN" class="headerlink" title="3. 安装 cuDNN"></a>3. 安装 cuDNN</h1><p>什么是 cuDNN，可以<a href="https://blog.csdn.net/fangjin_kl/article/details/53906874" target="_blank" rel="noopener">参考这篇文章</a><sup>[2]</sup>:</p>
 <blockquote>
 <p>NVIDIA cuDNN是用于深度神经网络的GPU加速库。它强调性能、易用性和低内存开销。NVIDIA cuDNN可以集成到更高级别的机器学习框架中，如加州大学伯克利分校的流行CAFFE软件。简单的，插入式设计可以让开发人员专注于设计和实现神经网络模型，而不是调整性能，同时还可以在GPU上实现高性能现代并行计算。</p>
@@ -336,16 +332,12 @@
 <h1 id="4-安装-Python-3-6-x-版本"><a href="#4-安装-Python-3-6-x-版本" class="headerlink" title="4. 安装 Python 3.6.x 版本"></a>4. 安装 Python 3.6.x 版本</h1><p>这里我是通过 <a href="https://conda.io/miniconda.html" target="_blank" rel="noopener">Miniconda3</a> 来安装的。关于 Miniconda3 的安装介绍可以参考<a href="https://blog.csdn.net/u012325865/article/details/80454813" target="_blank" rel="noopener">这篇文章</a><sup>[3]</sup>。</p>
 <p>安装过程中路径设到了 D 盘，同时设置了加入 Miniconda3 到系统环境变量，这样可以直接在终端运行 <code>conda</code> 命令。Miniconda3 安装完成之后的默认环境是基于 Python 3.7 的。<del>通过执行 <code>conda update conda</code> 命令，Python 版本会回落到 3.6.7。虽然不知道为什么，但是省去了再手动安装 3.6.x 版本 Python 的步骤。</del> 通过执行 <code>conda install python=3.6</code> 命令，将默认 Python 版本回落到 3.6.x。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">C:\Users\xxx&gt;conda update conda</span><br><span class="line">Solving environment: <span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## Package Plan ##</span></span><br><span class="line"></span><br><span class="line">  environment location: D:\Programs\Miniconda3</span><br><span class="line"></span><br><span class="line">  added / updated specs:</span><br><span class="line">    - conda</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">The following packages will be downloaded:</span><br><span class="line"></span><br><span class="line">    package                    |            build</span><br><span class="line">    ---------------------------|-----------------</span><br><span class="line">    menuinst-1.4.14            |   py36hfa6e2cd_0          92 KB</span><br><span class="line">    conda-4.5.11               |           py36_0         1.0 MB</span><br><span class="line">    requests-2.19.1            |           py36_0          96 KB</span><br><span class="line">    pywin32-223                |   py36hfa6e2cd_1         9.3 MB</span><br><span class="line">    wheel-0.32.2               |           py36_0          52 KB</span><br><span class="line">    wincertstore-0.2           |   py36h7fe50ca_0          13 KB</span><br><span class="line">    setuptools-40.4.3          |           py36_0         576 KB</span><br><span class="line">    win_inet_pton-1.0.1        |           py36_1           6 KB</span><br><span class="line">    six-1.11.0                 |           py36_1          21 KB</span><br><span class="line">    chardet-3.0.4              |           py36_1         210 KB</span><br><span class="line">    urllib3-1.23               |           py36_0         152 KB</span><br><span class="line">    pycparser-2.19             |           py36_0         174 KB</span><br><span class="line">    cryptography-2.3.1         |   py36h7a1dbc1_2         522 KB</span><br><span class="line">    ruamel_yaml-0.15.46        |   py36hfa6e2cd_0         262 KB</span><br><span class="line">    cffi-1.11.5                |   py36h74b6da3_1         213 KB</span><br><span class="line">    pysocks-1.6.8              |           py36_0          23 KB</span><br><span class="line">    idna-2.7                   |           py36_0         132 KB</span><br><span class="line">    python-3.6.7               |       h33f27b4_1        20.9 MB</span><br><span class="line">    asn1crypto-0.24.0          |           py36_0         155 KB</span><br><span class="line">    certifi-2018.10.15         |           py36_0         138 KB</span><br><span class="line">    pyopenssl-18.0.0           |           py36_0          83 KB</span><br><span class="line">    vs2015_runtime-14.15.26706 |       h3a45250_0         2.2 MB</span><br><span class="line">    pycosat-0.6.3              |   py36hfa6e2cd_0          98 KB</span><br><span class="line">    pip-10.0.1                 |           py36_0         1.8 MB</span><br><span class="line">    vc-14.1                    |       h0510ff6_4           6 KB</span><br><span class="line">    openssl-1.1.1              |       he774522_0         5.7 MB</span><br><span class="line">    ------------------------------------------------------------</span><br><span class="line">                                           Total:        43.9 MB</span><br><span class="line"></span><br><span class="line">The following packages will be UPDATED:</span><br><span class="line"></span><br><span class="line">    asn1crypto:     0.24.0-py37_0          --&gt; 0.24.0-py36_0</span><br><span class="line">    certifi:        2018.8.24-py37_1       --&gt; 2018.10.15-py36_0</span><br><span class="line">    cffi:           1.11.5-py37h74b6da3_1  --&gt; 1.11.5-py36h74b6da3_1</span><br><span class="line">    chardet:        3.0.4-py37_1           --&gt; 3.0.4-py36_1</span><br><span class="line">    conda:          4.5.11-py37_0          --&gt; 4.5.11-py36_0</span><br><span class="line">    cryptography:   2.3.1-py37h74b6da3_0   --&gt; 2.3.1-py36h7a1dbc1_2</span><br><span class="line">    idna:           2.7-py37_0             --&gt; 2.7-py36_0</span><br><span class="line">    menuinst:       1.4.14-py37hfa6e2cd_0  --&gt; 1.4.14-py36hfa6e2cd_0</span><br><span class="line">    openssl:        1.0.2p-hfa6e2cd_0      --&gt; 1.1.1-he774522_0</span><br><span class="line">    pip:            10.0.1-py37_0          --&gt; 10.0.1-py36_0</span><br><span class="line">    pycosat:        0.6.3-py37hfa6e2cd_0   --&gt; 0.6.3-py36hfa6e2cd_0</span><br><span class="line">    pycparser:      2.18-py37_1            --&gt; 2.19-py36_0</span><br><span class="line">    pyopenssl:      18.0.0-py37_0          --&gt; 18.0.0-py36_0</span><br><span class="line">    pysocks:        1.6.8-py37_0           --&gt; 1.6.8-py36_0</span><br><span class="line">    pywin32:        223-py37hfa6e2cd_1     --&gt; 223-py36hfa6e2cd_1</span><br><span class="line">    requests:       2.19.1-py37_0          --&gt; 2.19.1-py36_0</span><br><span class="line">    ruamel_yaml:    0.15.46-py37hfa6e2cd_0 --&gt; 0.15.46-py36hfa6e2cd_0</span><br><span class="line">    setuptools:     40.2.0-py37_0          --&gt; 40.4.3-py36_0</span><br><span class="line">    six:            1.11.0-py37_1          --&gt; 1.11.0-py36_1</span><br><span class="line">    urllib3:        1.23-py37_0            --&gt; 1.23-py36_0</span><br><span class="line">    vc:             14-h0510ff6_3          --&gt; 14.1-h0510ff6_4</span><br><span class="line">    vs2015_runtime: 14.0.25123-3           --&gt; 14.15.26706-h3a45250_0</span><br><span class="line">    wheel:          0.31.1-py37_0          --&gt; 0.32.2-py36_0</span><br><span class="line">    win_inet_pton:  1.0.1-py37_1           --&gt; 1.0.1-py36_1</span><br><span class="line">    wincertstore:   0.2-py37_0             --&gt; 0.2-py36h7fe50ca_0</span><br><span class="line"></span><br><span class="line">The following packages will be DOWNGRADED:</span><br><span class="line"></span><br><span class="line">    python:         3.7.0-hea74fb7_0       --&gt; 3.6.7-h33f27b4_1</span><br><span class="line"></span><br><span class="line">Proceed ([y]/n)? y</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Downloading and Extracting Packages</span><br><span class="line">menuinst-1.4.14      | 92 KB     | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">conda-4.5.11         | 1.0 MB    | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">requests-2.19.1      | 96 KB     | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">pywin32-223          | 9.3 MB    | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">wheel-0.32.2         | 52 KB     | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">wincertstore-0.2     | 13 KB     | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">setuptools-40.4.3    | 576 KB    | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">win_inet_pton-1.0.1  | 6 KB      | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">six-1.11.0           | 21 KB     | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">chardet-3.0.4        | 210 KB    | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">urllib3-1.23         | 152 KB    | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">pycparser-2.19       | 174 KB    | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">cryptography-2.3.1   | 522 KB    | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">ruamel_yaml-0.15.46  | 262 KB    | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">cffi-1.11.5          | 213 KB    | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">pysocks-1.6.8        | 23 KB     | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">idna-2.7             | 132 KB    | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">python-3.6.7         | 20.9 MB   | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">asn1crypto-0.24.0    | 155 KB    | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">certifi-2018.10.15   | 138 KB    | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">pyopenssl-18.0.0     | 83 KB     | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">vs2015_runtime-14.15 | 2.2 MB    | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">pycosat-0.6.3        | 98 KB     | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">pip-10.0.1           | 1.8 MB    | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">vc-14.1              | 6 KB      | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">openssl-1.1.1        | 5.7 MB    | <span class="comment">############################################################################ | 100%</span></span><br><span class="line">Preparing transaction: <span class="keyword">done</span></span><br><span class="line">Verifying transaction: <span class="keyword">done</span></span><br><span class="line">Executing transaction: <span class="keyword">done</span></span><br><span class="line"></span><br><span class="line">C:\Users\xxx&gt;</span><br></pre></td></tr></table></figure>
-
 <p>安装完成之后，<strong>需要注销重新登陆以使环境变量设置生效。</strong></p>
 <p>在终端中可以输入 <code>conda info</code> 来查看默认环境下的配置信息了。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">C:\Users\xxx&gt;conda info</span><br><span class="line"></span><br><span class="line">     active environment : None</span><br><span class="line">       user config file : C:\Users\xxx\.condarc</span><br><span class="line"> populated config files :</span><br><span class="line">          conda version : 4.5.11</span><br><span class="line">    conda-build version : not installed</span><br><span class="line">         python version : 3.6.7.final.0</span><br><span class="line">       base environment : D:\Programs\Miniconda3  (writable)</span><br><span class="line">           channel URLs : https://repo.anaconda.com/pkgs/main/win-64</span><br><span class="line">                          https://repo.anaconda.com/pkgs/main/noarch</span><br><span class="line">                          https://repo.anaconda.com/pkgs/free/win-64</span><br><span class="line">                          https://repo.anaconda.com/pkgs/free/noarch</span><br><span class="line">                          https://repo.anaconda.com/pkgs/r/win-64</span><br><span class="line">                          https://repo.anaconda.com/pkgs/r/noarch</span><br><span class="line">                          https://repo.anaconda.com/pkgs/pro/win-64</span><br><span class="line">                          https://repo.anaconda.com/pkgs/pro/noarch</span><br><span class="line">                          https://repo.anaconda.com/pkgs/msys2/win-64</span><br><span class="line">                          https://repo.anaconda.com/pkgs/msys2/noarch</span><br><span class="line">          package cache : D:\Programs\Miniconda3\pkgs</span><br><span class="line">                          C:\Users\xxx\AppData\Local\conda\conda\pkgs</span><br><span class="line">       envs directories : D:\Programs\Miniconda3\envs</span><br><span class="line">                          C:\Users\xxx\AppData\Local\conda\conda\envs</span><br><span class="line">                          C:\Users\xxx\.conda\envs</span><br><span class="line">               platform : win-64</span><br><span class="line">             user-agent : conda/4.5.11 requests/2.19.1 CPython/3.6.7 Windows/10 Windows/10.0.17763</span><br><span class="line">          administrator : False</span><br><span class="line">             netrc file : None</span><br><span class="line">           offline mode : False</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">C:\Users\xxx&gt;</span><br></pre></td></tr></table></figure>
-
 <h1 id="5-安装-tensorflow-gpu-1-11-0"><a href="#5-安装-tensorflow-gpu-1-11-0" class="headerlink" title="5. 安装 tensorflow-gpu 1.11.0"></a>5. 安装 tensorflow-gpu 1.11.0</h1><p>采用 <code>pip install</code> 命令安装。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">C:\Users\xxx&gt;pip install tensorflow-gpu</span><br><span class="line">Collecting tensorflow-gpu</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/3d/a0/60f72b76915a7c83e336e7f9ccf3a08305c30c7262cd15fedde44e026c3f/tensorflow_gpu-1.11.0-cp36-cp36m-win_amd64.whl (74.9MB)</span><br><span class="line">    100% |████████████████████████████████| 74.9MB 125kB/s</span><br><span class="line">Collecting termcolor&gt;=1.1.0 (from tensorflow-gpu)</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/8a/48/a76be51647d0eb9f10e2a4511bf3ffb8cc1e6b14e9e4fab46173aa79f981/termcolor-1.1.0.tar.gz</span><br><span class="line">Collecting absl-py&gt;=0.1.6 (from tensorflow-gpu)</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/0c/63/f505d2d4c21db849cf80bad517f0065a30be6b006b0a5637f1b95584a305/absl-py-0.6.1.tar.gz (94kB)</span><br><span class="line">    100% |████████████████████████████████| 102kB 1.1MB/s</span><br><span class="line">Collecting tensorboard&lt;1.12.0,&gt;=1.11.0 (from tensorflow-gpu)</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/9b/2f/4d788919b1feef04624d63ed6ea45a49d1d1c834199ec50716edb5d310f4/tensorboard-1.11.0-py3-none-any.whl (3.0MB)</span><br><span class="line">    100% |████████████████████████████████| 3.0MB 499kB/s</span><br><span class="line">Collecting numpy&gt;=1.13.3 (from tensorflow-gpu)</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/10/b6/feaabbe393afe1ad4c803cdd7c2ada688613448e0987b016a3980b2f08c6/numpy-1.15.3-cp36-none-win_amd64.whl (13.5MB)</span><br><span class="line">    100% |████████████████████████████████| 13.5MB 758kB/s</span><br><span class="line">Requirement already satisfied: six&gt;=1.10.0 <span class="keyword">in</span> d:\programs\miniconda3\lib\site-packages (from tensorflow-gpu) (1.11.0)</span><br><span class="line">Collecting astor&gt;=0.6.0 (from tensorflow-gpu)</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/35/6b/11530768cac581a12952a2aad00e1526b89d242d0b9f59534ef6e6a1752f/astor-0.7.1-py2.py3-none-any.whl</span><br><span class="line">Collecting keras-preprocessing&gt;=1.0.3 (from tensorflow-gpu)</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/<span class="built_in">fc</span>/94/74e0fa783d3fc07e41715973435dd051ca89c550881b3454233c39c73e69/Keras_Preprocessing-1.0.5-py2.py3-none-any.whl</span><br><span class="line">Collecting keras-applications&gt;=1.0.5 (from tensorflow-gpu)</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/3f/c4/2ff40221029f7098d58f8d7fb99b97e8100f3293f9856f0fb5834bef100b/Keras_Applications-1.0.6-py2.py3-none-any.whl (44kB)</span><br><span class="line">    100% |████████████████████████████████| 51kB 2.0MB/s</span><br><span class="line">Collecting protobuf&gt;=3.6.0 (from tensorflow-gpu)</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/e8/df/d606d07cff0fc8d22abcc54006c0247002d11a7f2d218eb008d48e76851d/protobuf-3.6.1-cp36-cp36m-win_amd64.whl (1.1MB)</span><br><span class="line">    100% |████████████████████████████████| 1.1MB 473kB/s</span><br><span class="line">Collecting setuptools&lt;=39.1.0 (from tensorflow-gpu)</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/8c/10/79282747f9169f21c053c562a0baa21815a8c7879be97abd930dbcf862e8/setuptools-39.1.0-py2.py3-none-any.whl (566kB)</span><br><span class="line">    100% |████████████████████████████████| 573kB 487kB/s</span><br><span class="line">Collecting grpcio&gt;=1.8.6 (from tensorflow-gpu)</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/f0/90/520757ccafb14f03e8e46a54bacd45f5f9cca6b96b58b83b66a272f059df/grpcio-1.16.0-cp36-cp36m-win_amd64.whl (1.5MB)</span><br><span class="line">    100% |████████████████████████████████| 1.5MB 627kB/s</span><br><span class="line">Requirement already satisfied: wheel&gt;=0.26 <span class="keyword">in</span> d:\programs\miniconda3\lib\site-packages (from tensorflow-gpu) (0.32.2)</span><br><span class="line">Collecting gast&gt;=0.2.0 (from tensorflow-gpu)</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/5c/78/ff794fcae2ce8aa6323e789d1f8b3b7765f601e7702726f430e814822b96/gast-0.2.0.tar.gz</span><br><span class="line">Collecting werkzeug&gt;=0.11.10 (from tensorboard&lt;1.12.0,&gt;=1.11.0-&gt;tensorflow-gpu)</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/20/c4/12e3e56473e52375aa29c4764e70d1b8f3efa6682bef8d0aae04fe335243/Werkzeug-0.14.1-py2.py3-none-any.whl (322kB)</span><br><span class="line">    100% |████████████████████████████████| 327kB 251kB/s</span><br><span class="line">Collecting markdown&gt;=2.6.8 (from tensorboard&lt;1.12.0,&gt;=1.11.0-&gt;tensorflow-gpu)</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/7a/6b/5600647404ba15545ec37d2f7f58844d690baf2f81f3a60b862e48f29287/Markdown-3.0.1-py2.py3-none-any.whl (89kB)</span><br><span class="line">    100% |████████████████████████████████| 92kB 808kB/s</span><br><span class="line">Collecting h5py (from keras-applications&gt;=1.0.5-&gt;tensorflow-gpu)</span><br><span class="line">  Downloading https://files.pythonhosted.org/packages/12/6c/00c38c5ce9322f1cc421d93217c44739646a106c61859622eccc297a5c05/h5py-2.8.0-cp36-cp36m-win_amd64.whl (2.3MB)</span><br><span class="line">    100% |████████████████████████████████| 2.3MB 519kB/s</span><br><span class="line">Building wheels <span class="keyword">for</span> collected packages: termcolor, absl-py, gast</span><br><span class="line">  Running setup.py bdist_wheel <span class="keyword">for</span> termcolor ... <span class="keyword">done</span></span><br><span class="line">  Stored <span class="keyword">in</span> directory: C:\Users\xxx\AppData\Local\pip\Cache\wheels\7c\06\54\bc84598ba1daf8f970247f550b175aaaee85f68b4b0c5ab2c6</span><br><span class="line">  Running setup.py bdist_wheel <span class="keyword">for</span> absl-py ... <span class="keyword">done</span></span><br><span class="line">  Stored <span class="keyword">in</span> directory: C:\Users\xxx\AppData\Local\pip\Cache\wheels\18\ea\5e\e36e1b8739e78cd2eba0a08fdc602c2b16a4b263912af8cb64</span><br><span class="line">  Running setup.py bdist_wheel <span class="keyword">for</span> gast ... <span class="keyword">done</span></span><br><span class="line">  Stored <span class="keyword">in</span> directory: C:\Users\xxx\AppData\Local\pip\Cache\wheels\9a\1f\0e\3cde98113222b853e98fc0a8e9924480a3e25f1b4008cedb4f</span><br><span class="line">Successfully built termcolor absl-py gast</span><br><span class="line">Installing collected packages: termcolor, absl-py, grpcio, werkzeug, markdown, setuptools, protobuf, numpy, tensorboard, astor, keras-preprocessing, h5py, keras-applications, gast, tensorflow-gpu</span><br><span class="line">  Found existing installation: setuptools 40.4.3</span><br><span class="line">    Uninstalling setuptools-40.4.3:</span><br><span class="line">      Successfully uninstalled setuptools-40.4.3</span><br><span class="line">Successfully installed absl-py-0.6.1 astor-0.7.1 gast-0.2.0 grpcio-1.16.0 h5py-2.8.0 keras-applications-1.0.6 keras-preprocessing-1.0.5 markdown-3.0.1 numpy-1.15.3 protobuf-3.6.1 setuptools-39.1.0 tensorboard-1.11.0 tensorflow-gpu-1.11.0 termcolor-1.1.0 werkzeug-0.14.1</span><br><span class="line"></span><br><span class="line">C:\Users\xxx&gt;</span><br></pre></td></tr></table></figure>
-
 <h1 id="6-测试-tensorflow-gpu-是否安装正确"><a href="#6-测试-tensorflow-gpu-是否安装正确" class="headerlink" title="6. 测试 tensorflow-gpu 是否安装正确"></a>6. 测试 tensorflow-gpu 是否安装正确</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">C:\Users\xxx&gt;python</span><br><span class="line">Python 3.6.7 |Anaconda, Inc.| (default, Oct 28 2018, 19:44:12) [MSC v.1915 64 bit (AMD64)] on win32</span><br><span class="line">Type <span class="string">"help"</span>, <span class="string">"copyright"</span>, <span class="string">"credits"</span> or <span class="string">"license"</span> <span class="keyword">for</span> more information.</span><br><span class="line">&gt;&gt;&gt; import tensorflow as tf</span><br><span class="line">&gt;&gt;&gt; hello = tf.constant(<span class="string">'Hello,TensorFlow!'</span>)</span><br><span class="line">&gt;&gt;&gt; sess = tf.Session()</span><br><span class="line">2018-11-02 14:28:29.039266: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1411] Found device 0 with properties:</span><br><span class="line">name: GeForce GTX 750 Ti major: 5 minor: 0 memoryClockRate(GHz): 1.137</span><br><span class="line">pciBusID: 0000:01:00.0</span><br><span class="line">totalMemory: 2.00GiB freeMemory: 1.64GiB</span><br><span class="line">2018-11-02 14:28:29.047124: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1490] Adding visible gpu devices: 0</span><br><span class="line">2018-11-02 14:28:30.089044: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] Device interconnect StreamExecutor with strength 1 edge matrix:</span><br><span class="line">2018-11-02 14:28:30.093224: I tensorflow/core/common_runtime/gpu/gpu_device.cc:977]      0</span><br><span class="line">2018-11-02 14:28:30.095429: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990] 0:   N</span><br><span class="line">2018-11-02 14:28:30.097770: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1103] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 1392 MB memory) -&gt; physical GPU (device: 0, name: GeForce GTX 750 Ti, pci bus id: 0000:01:00.0, compute capability: 5.0)</span><br><span class="line">&gt;&gt;&gt; <span class="built_in">print</span>(sess.run(hello))</span><br><span class="line">b<span class="string">'Hello,TensorFlow!'</span></span><br><span class="line">&gt;&gt;&gt; a = tf.constant(10)</span><br><span class="line">&gt;&gt;&gt; b = tf.constant(32)</span><br><span class="line">&gt;&gt;&gt; <span class="built_in">print</span>(sess.run(a+b))</span><br><span class="line">42</span><br><span class="line">&gt;&gt;&gt; quit()</span><br><span class="line"></span><br><span class="line">C:\Users\xxx&gt;</span><br></pre></td></tr></table></figure>
-
 <p>在安装完成之后，第一次运行 <code>sess = tf.Session()</code> 时，输出会卡在 <code>tensorflow/core/common_runtime/gpu/gpu_device.cc:1490] Adding visible gpu devices: 0</code> 这一步很久，之后每次调用就很快了。</p>
 <p>另外，在新版 Windows 10 中的任务管理器 [性能] 栏中可以很方便看到 GPU 的使用情况。箭头所指的变化位置及为运行命令 <code>sess = tf.Session()</code> 的时刻。<br><img src="/20181103-Install_TensorFlow_1.11_for_GPU_In_Windows_10/GPU_Usage_Show.png" alt="GPU_Usage_Show"></p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>1: <a href="https://quan.ithome.com/0/326/464.htm" target="_blank" rel="noopener">分享一个热腾腾的Win10企业版LTSC官方原版及精简版</a>;<br>2: <a href="https://blog.csdn.net/fangjin_kl/article/details/53906874" target="_blank" rel="noopener">CPU、GPU、CUDA，CuDNN 简介</a>;<br>3: <a href="https://blog.csdn.net/u012325865/article/details/80454813" target="_blank" rel="noopener">Windows 10下安装Miniconda3</a>;<br>4: <a href="https://blog.csdn.net/zw__chen/article/details/79374467" target="_blank" rel="noopener">win10+cuda9.0+cuDNN 7.0+Tensorflow1.5（GPU）安装</a>.</p>
@@ -365,7 +357,6 @@
     <content><![CDATA[<p>一直以来对 C++ 中的 const 说明符理解不够清晰，尤其是在变量声明时处于何种位置起到何种作用，分辨不清。</p>
 <p>现在花费一些时间专门理清其中的关系，明白其中的道理之后，就再也不会混淆了。文中内容主要参考了<a href="https://blog.csdn.net/bianbian17556231/article/details/5398039" target="_blank" rel="noopener">这篇译文</a>。</p>
 <a id="more"></a>
-
 <h1 id="1-几个概念"><a href="#1-几个概念" class="headerlink" title="1. 几个概念"></a>1. 几个概念</h1><p>以 <code>static unsigned long int *x[N];</code> 为例，说明几个概念</p>
 <ul>
 <li><strong>声明符</strong>：一个声明符就是被声明的名称，可能伴有操作符和标识符，这里为 <code>*x[N]</code>；</li>
@@ -413,29 +404,18 @@
     <content><![CDATA[<p>近期升级了 Hexo 以及 Next 主题的版本，发现 Next 主题的变化比较大，记录一下自己的主题配置文件 <em>_config.yml</em> 的内容。</p>
 <p>只体现自己关心的配置，其它无关或不重要的信息省略。</p>
 <a id="more"></a>
-
 <h1 id="1-网页图标自定义"><a href="#1-网页图标自定义" class="headerlink" title="1. 网页图标自定义"></a>1. 网页图标自定义</h1><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># For example, you put your favicons into `hexo-site/source/images` directory.</span></span><br><span class="line"><span class="comment"># Then need to rename &amp; redefine they on any other names, otherwise icons from Next will rewrite your custom icons in Hexo.</span></span><br><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="attr">small:</span>  <span class="string">/images/favicon-16x16-next.png</span></span><br><span class="line">  <span class="attr">medium:</span>  <span class="string">/images/favicon-32x32-next.png</span></span><br><span class="line">  <span class="attr">apple_touch_icon:</span>  <span class="string">/images/apple-touch-icon-next.png</span></span><br><span class="line">  <span class="attr">safari_pinned_tab:</span>  <span class="string">/images/logo.svg</span></span><br><span class="line">  <span class="comment">#android_manifest: /images/manifest.json</span></span><br><span class="line">  <span class="comment">#ms_browserconfig: /images/browserconfig.xml</span></span><br></pre></td></tr></table></figure>
-
 <p> 一般将自己想要展示的图标文件放到 next 主题安装路径 <code>themes/next</code> 下的 <code>source/images</code> 文件夹下。</p>
 <p>主题路径下的 <code>source</code> 包含了网站主题配置所需的各种文件：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">➜  next git:(master) ✗ tree <span class="built_in">source</span> -L 1</span><br><span class="line"><span class="built_in">source</span></span><br><span class="line">├── css</span><br><span class="line">├── fonts</span><br><span class="line">├── images</span><br><span class="line">├── js</span><br><span class="line">└── lib</span><br></pre></td></tr></table></figure>
-
 <h1 id="2-网页页脚信息设置"><a href="#2-网页页脚信息设置" class="headerlink" title="2. 网页页脚信息设置"></a>2. 网页页脚信息设置</h1><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">footer:</span></span><br><span class="line">  <span class="comment"># Specify the date when the site was setup.</span></span><br><span class="line">  <span class="comment"># If not defined, current year will be used.</span></span><br><span class="line">  <span class="attr">since:</span>  <span class="number">2016</span></span><br><span class="line">  <span class="comment"># Icon between year and copyright info.</span></span><br><span class="line">  <span class="attr">icon:</span></span><br><span class="line">    <span class="comment"># Icon name in fontawesome, see:https://fontawesome.com/v4.7.0/icons</span></span><br><span class="line">    <span class="comment"># `heart` is recommended with animation in red(#ff0000).</span></span><br><span class="line">    <span class="attr">name:</span>  <span class="string">heart</span></span><br><span class="line">    <span class="comment"># If you want to animate the icon, set it to true.</span></span><br><span class="line">    <span class="attr">animated:</span>  <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Change the color of icon, using Hex Code.</span></span><br><span class="line">    <span class="attr">color:</span>  <span class="string">"#808080"</span></span><br><span class="line">  <span class="comment"># If not defined, will be used `author` from Hexo main config.</span></span><br><span class="line">  <span class="attr">copyright:</span></span><br><span class="line">  <span class="comment"># -------------------------------------------------------------</span></span><br><span class="line">  <span class="attr">powered:</span></span><br><span class="line">    <span class="comment"># Hexo link (Powered by Hexo).</span></span><br><span class="line">    <span class="attr">enable:</span>  <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Version info of Hexo after Hexo link (vX.X.X).</span></span><br><span class="line">    <span class="attr">version:</span>  <span class="literal">true</span></span><br><span class="line">  <span class="attr">theme:</span></span><br><span class="line">    <span class="comment"># Theme &amp; scheme info link (Theme - NexT.scheme).</span></span><br><span class="line">    <span class="attr">enable:</span>  <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Version info of NexT after scheme info (vX.X.X).</span></span><br><span class="line">    <span class="attr">version:</span>  <span class="literal">true</span></span><br><span class="line">  <span class="comment"># -------------------------------------------------------------</span></span><br><span class="line">  <span class="comment"># Any custom text can be defined here.</span></span><br><span class="line">  <span class="comment">#custom_text: Hosted by &lt;a target="_blank" rel="external nofollow" href="https://pages.coding.me"&gt;&lt;b&gt;Coding Pages&lt;/b&gt;&lt;/a&gt;</span></span><br></pre></td></tr></table></figure>
-
 <h1 id="3-边栏头像设置"><a href="#3-边栏头像设置" class="headerlink" title="3. 边栏头像设置"></a>3. 边栏头像设置</h1><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Sidebar Avatar</span></span><br><span class="line"><span class="attr">avatar:</span></span><br><span class="line">  <span class="comment"># in theme directory(source/images): /images/avatar.gif</span></span><br><span class="line">  <span class="comment"># in site directory(source/uploads): /uploads/avatar.gif</span></span><br><span class="line">  <span class="comment"># You can also use other linking images.</span></span><br><span class="line">  <span class="attr">url:</span>  <span class="string">/images/avatar.png</span>  <span class="comment">#/images/avatar.gif</span></span><br><span class="line">  <span class="comment"># If true, the avatar would be dispalyed in circle.</span></span><br><span class="line">  <span class="attr">rounded:</span>  <span class="literal">false</span></span><br><span class="line">  <span class="comment"># The value of opacity should be choose from 0 to 1 to set the opacity of the avatar.</span></span><br><span class="line">  <span class="attr">opacity:</span>  <span class="number">1</span></span><br><span class="line">  <span class="comment"># If true, the avatar would be rotated with the cursor.</span></span><br><span class="line">  <span class="attr">rotated:</span>  <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
 <h1 id="4-边栏显示目录："><a href="#4-边栏显示目录：" class="headerlink" title="4. 边栏显示目录："></a>4. 边栏显示目录：</h1><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Table Of Contents in the Sidebar</span></span><br><span class="line"><span class="attr">toc:</span></span><br><span class="line">  <span class="attr">enable:</span>  <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Automatically add list number to toc.</span></span><br><span class="line">  <span class="attr">number:</span>  <span class="literal">false</span></span><br><span class="line">  <span class="comment"># If true, all words will placed on next lines if header width longer then sidebar width.</span></span><br><span class="line">  <span class="attr">wrap:</span>  <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
 <h1 id="5-文章浏览进度显示"><a href="#5-文章浏览进度显示" class="headerlink" title="5. 文章浏览进度显示"></a>5. 文章浏览进度显示</h1><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Back to top in sidebar (only for Pisces | Gemini).</span></span><br><span class="line"><span class="attr">b2t:</span>  <span class="literal">true</span></span><br><span class="line"><span class="comment"># Scroll percent label in b2t button.</span></span><br><span class="line"><span class="attr">scrollpercent:</span>  <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
 <h1 id="6-Donate-二维码"><a href="#6-Donate-二维码" class="headerlink" title="6. Donate 二维码"></a>6. Donate 二维码</h1><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Reward</span></span><br><span class="line"><span class="comment">#reward_comment: Donate comment here</span></span><br><span class="line"><span class="attr">wechatpay:</span>  <span class="string">/images/wechatpay.jpg</span></span><br><span class="line"><span class="attr">alipay:</span>  <span class="string">/images/alipay.jpg</span></span><br><span class="line"><span class="comment">#bitcoin: /images/bitcoin.png</span></span><br></pre></td></tr></table></figure>
-
 <h1 id="7-本地搜索"><a href="#7-本地搜索" class="headerlink" title="7. 本地搜索"></a>7. 本地搜索</h1><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Local search</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/hexo-generator-searchdb</span></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span>  <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
 <h1 id="8-阅读进度条显示"><a href="#8-阅读进度条显示" class="headerlink" title="8. 阅读进度条显示"></a>8. 阅读进度条显示</h1><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Reading progress bar</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/theme-next-reading-progress</span></span><br><span class="line"><span class="attr">reading_progress:</span></span><br><span class="line">  <span class="attr">enable:</span>  <span class="literal">true</span></span><br><span class="line">  <span class="attr">color:</span>  <span class="string">"#37c6c0"</span></span><br><span class="line">  <span class="attr">height:</span>  <span class="string">2px</span></span><br></pre></td></tr></table></figure>
-
 <h1 id="9-页面加载进度条显示"><a href="#9-页面加载进度条显示" class="headerlink" title="9. 页面加载进度条显示"></a>9. 页面加载进度条显示</h1><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Progress bar in the top during page loading.</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/theme-next-pace</span></span><br><span class="line"><span class="attr">pace:</span>  <span class="literal">true</span></span><br><span class="line">  <span class="attr">pace_theme:</span>  <span class="string">pace-theme-minimal</span></span><br></pre></td></tr></table></figure>
-
 <h1 id="10-待续。。。"><a href="#10-待续。。。" class="headerlink" title="10. 待续。。。"></a>10. 待续。。。</h1>]]></content>
       <categories>
         <category>Method</category>
@@ -454,20 +434,16 @@
 </blockquote>
 <p>零零散散的，网上很多人都有介绍使用 Hexo 搭建博客的步骤技巧，每个人都根据自己的需要有特别的定制。本人也在此总结一下自己的搭建使用过程，一是做个记录，为以后回顾做个归档；二是为有同样需求的同学给一些参考。</p>
 <a id="more"></a>
-
 <p>接下来按照搭建和定制顺序开始介绍。<strong>（行文日，Hexo 版本为 3.7.1，主题 Next 版本为 6.4.2）</strong></p>
 <h1 id="1-Hexo-主程序安装"><a href="#1-Hexo-主程序安装" class="headerlink" title="1. Hexo 主程序安装"></a>1. Hexo 主程序安装</h1><p>Hexo 是基于 Node.js 和 Git，安装 Hexo 之前需要在机器上安装以上软件。官网给出了简单的安装方法和步骤。Git 安装比较简单，Node.js 推荐使用 <a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm</a> 包管理工具来安装（Windows 系统推荐单独的<a href="https://github.com/coreybutler/nvm-windows" target="_blank" rel="noopener">nvm-windows</a>工具）。</p>
 <p>安装好nvm 之后就可以在终端执行命令安装 Node.js：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nvm install stable</span><br></pre></td></tr></table></figure>
-
 <p>关于 nvm、npm、Node.js 的关系参考文末链接 [1].</p>
 <p>另外需要注意的是 Mac 系统下 nvm 要使用官网推荐安装方法，不要用 Brew 安装。必备软件安装完毕之后，即可使用 npm 安装 Hexo：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
 <p>CLI = Command Line Interface 命令行界面<sup>[2]</sup>。</p>
 <p>接下来使用下面命令来创建博客的工作目录 <code>[blog_path]</code>：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init [blog_path]</span><br><span class="line"><span class="built_in">cd</span> [blog_path]</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
 <p>Hexo 的使用方法参考官网就行。</p>
 <h1 id="2-Hexo-主题-Next"><a href="#2-Hexo-主题-Next" class="headerlink" title="2. Hexo 主题 Next"></a>2. Hexo 主题 Next</h1><p>Hexo 支持众多的主题风格，可以自由切换，不过由于都是个人开发的，不同主题的完善程度不一致。经过一番对比，发现风格、稳定性、扩展性最适合我的是 <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">Next</a> 主题中的 Gemini 风格。主题安装使用方法见 Next 官网。</p>
 <p>自己网站主题风格的配置介绍见<a href="http://anmou.net/20181017-Private_Setting_to_Next/" target="_blank" rel="noopener">Hexo博客Next主题个性化配置</a>。配置文件备份<a href="https://github.com/Mlearn/BlogComments/blob/master/themes/next/_config.yml" target="_blank" rel="noopener">地址</a>。</p>
@@ -480,44 +456,31 @@
 </ol>
 <h1 id="4-MathJax-公式渲染"><a href="#4-MathJax-公式渲染" class="headerlink" title="4. MathJax 公式渲染"></a>4. MathJax 公式渲染</h1><p>由于 Hexo 默认的 md 渲染引擎等原因，想要正确呈现出 md 文件中的行间与行内公式，需要以下几个主要步骤<sup>[3]</sup>：</p>
 <h2 id="4-1-卸载默认引擎，安装新的引擎"><a href="#4-1-卸载默认引擎，安装新的引擎" class="headerlink" title="4.1 卸载默认引擎，安装新的引擎:"></a>4.1 卸载默认引擎，安装新的引擎:</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure>
-
 <h2 id="4-2-微调对行间公式的解析语法；"><a href="#4-2-微调对行间公式的解析语法；" class="headerlink" title="4.2 微调对行间公式的解析语法；"></a>4.2 微调对行间公式的解析语法；</h2><p>到博客根目录下，找到node_modules\kramed\lib\rules\inline.js，把第11行的escape变量的值做相应的修改：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//  escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,</span></span><br><span class="line">  <span class="built_in">escape</span>: <span class="regexp">/^\\([`*\[\]()#$+\-.!_&gt;])/</span>,</span><br></pre></td></tr></table></figure>
-
-<p>这一步是在原基础上取消了对,{,}的转义(escape)。同时把第20行的em变量也要做相应的修改。</p>
+<p>这一步是在原基础上取消了对\,{,}的转义(escape)。同时把第20行的em变量也要做相应的修改。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//  em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span></span><br><span class="line">  em: <span class="regexp">/^\*((?:\*\*|[\s\S])+?)\*(?!\*)/</span>,</span><br></pre></td></tr></table></figure>
-
 <p>重新启动 hexo。</p>
 <h2 id="4-3-在主题中打开-mathjax-开关；"><a href="#4-3-在主题中打开-mathjax-开关；" class="headerlink" title="4.3 在主题中打开 mathjax 开关；"></a>4.3 在主题中打开 mathjax 开关；</h2><p>进入主题 Next 目录下，打开配置文件 <em>_config.yml</em>，把 mathjax 默认 false 值改为true：</p>
 <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Math Equations Render Support</span></span><br><span class="line"><span class="attr">math:</span></span><br><span class="line">  <span class="attr">enable:</span>  <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Default(true) will load mathjax/katex script on demand</span></span><br><span class="line">  <span class="comment"># That is it only render those page who has 'mathjax: true' in Front Matter.</span></span><br><span class="line">  <span class="comment"># If you set it to false, it will load mathjax/katex srcipt EVERY PAGE.</span></span><br><span class="line">  <span class="attr">per_page:</span>  <span class="literal">true</span></span><br><span class="line">  <span class="attr">engine:</span>  <span class="string">mathjax</span></span><br></pre></td></tr></table></figure>
-
-
 <h2 id="4-4-在-md-文档-Front-matter-中打开-mathjax-开关。"><a href="#4-4-在-md-文档-Front-matter-中打开-mathjax-开关。" class="headerlink" title="4.4 在 md 文档 Front-matter 中打开 mathjax 开关。"></a>4.4 在 md 文档 Front-matter 中打开 mathjax 开关。</h2><p> 如下所示，加入 <code>mathjax: true</code> 语句：</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: index.html</span><br><span class="line">date: 2016-12-28 21:01:30</span><br><span class="line">tags:</span><br><span class="line">mathjax: true</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
 <h1 id="5-博客评论系统"><a href="#5-博客评论系统" class="headerlink" title="5. 博客评论系统"></a>5. 博客评论系统</h1><p>考虑到各种第三方评论系统的寿命无常（以前介绍的多说博客评论系统已经挂掉）。采用基于 Github Issue 的评论插件成为一种较好以及有逼格的选择。最开始采用的 <a href="https://github.com/imsun/gitment" target="_blank" rel="noopener">gitment</a>，貌似作者已经不再支持，转战 <a href="https://github.com/gitalk/gitalk" target="_blank" rel="noopener">gitalk</a> (找到了项目开始的地方<a href="https://www.v2ex.com/t/378728" target="_blank" rel="noopener">V2EX</a>)。</p>
 <p>关于 gitalk 的详细配置与使用可以参考<a href="https://asdfv1929.github.io/2018/01/20/gitalk/" target="_blank" rel="noopener">这篇文献</a><sup>[4]</sup></p>
 <h1 id="6-本地搜索支持"><a href="#6-本地搜索支持" class="headerlink" title="6. 本地搜索支持"></a>6. 本地搜索支持</h1><p>默认搜索功能太弱，卡的不行。安装插件 <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener">hexo-generator-search</a>：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-search --save</span><br></pre></td></tr></table></figure>
-
 <p>然后在 next 主题目录下的文件 <em>_config.yml</em> 中设置：</p>
 <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Local search</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/hexo-generator-searchdb</span></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line"><span class="attr">enable:</span>  <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
 <h1 id="7-博客底部添加固定链接"><a href="#7-博客底部添加固定链接" class="headerlink" title="7. 博客底部添加固定链接"></a>7. 博客底部添加固定链接</h1><p>可以给每篇博文底部自动添加本博文的固定链接，附带链接还可以写一些版权说明信息。安装插件 <a href="https://github.com/acwong00/hexo-addlink" target="_blank" rel="noopener">hexo-addlink</a>：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-addlink --save</span><br></pre></td></tr></table></figure>
-
 <p>然后在 Hexo 目录下的 <em>_config.yml</em> 中添加如下信息：</p>
 <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">addlink:</span></span><br><span class="line"><span class="attr">before_text:</span>  <span class="string">&lt;HR</span> <span class="string">SIZE=5&gt;&lt;small&gt;&lt;strong&gt;本文作者：Northan&lt;br&gt;本文链接：</span>  <span class="comment"># text before the post link</span></span><br><span class="line"><span class="attr">after_text:</span>  <span class="string">&lt;br&gt;版权声明：作者拥有版权，请注明出处转载。</span>  <span class="comment"># text after the post link</span></span><br></pre></td></tr></table></figure>
-
 <p>最终效果参见本文末尾。</p>
 <h1 id="8-html-文件瘦身"><a href="#8-html-文件瘦身" class="headerlink" title="8. html 文件瘦身"></a>8. html 文件瘦身</h1><p>到此为止，博客想要实现的功能基本配置完成。</p>
 <p>默认生成的 html 文件中有很多不起作用的符号，比如空格注释等等。安装插件 <a href="https://github.com/rozbo/hexo-neat" target="_blank" rel="noopener">Hexo-neat</a> 可以对产生的 html 文件进行瘦身。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-neat --save</span><br></pre></td></tr></table></figure>
-
 <p>然后在 Hexo 目录下的 <em>_config.yml</em> 中添加如下信息：</p>
 <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">neat_enable:</span>  <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-
 <h1 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h1><p>1: <a href="https://www.cnblogs.com/qqpw/p/6597295.html" target="_blank" rel="noopener">nvm、npm、nodejs的关系</a><br>2: <a href="https://segmentfault.com/q/1010000009487303" target="_blank" rel="noopener">hexo和hexo-cli的关系？</a><br>3: <a href="https://www.jianshu.com/p/7ab21c7f0674" target="_blank" rel="noopener">在Hexo中渲染MathJax数学公式</a><br>4: <a href="https://asdfv1929.github.io/2018/01/20/gitalk/" target="_blank" rel="noopener">Hexo NexT主题中集成gitalk评论系统</a></p>
 ]]></content>
       <categories>
@@ -533,7 +496,6 @@
     <url>/20180722-Decision_Tree/</url>
     <content><![CDATA[<p><strong>决策树 (Decision tree)</strong> 是一种基本的分类与回归方法。它是一个树形结构，对于指定特征空间上的数据点来说，总能顺着决策树的根节点一步步分配到子节点最终到达叶节点，而叶节点表示了该数据点所属的分类。在每一次分配到子节点的过程中可以看作是对数据点中特有的特征属性值进行的 <code>if-then</code> 判断。</p>
 <a id="more"></a>
-
 <p>决策树可以认为是 <code>if-then</code> 规则的集合，也可以认为时定义在特征空间与类空间上的条件概率分布。其主要优点是模型具有可读性，分类速度快。如何得到该决策树叫做决策树学习，决策树学习时，利用训练数据，根据损失函数最小化的原则建立决策树模型。预测试，对新的数据，利用决策树模型进行分类。</p>
 <p>接下来按照周志华老师的《机器学习》第 4 章<sup>[1]</sup> 来梳理一下对决策树的学习：</p>
 <h1 id="1-决策树学习"><a href="#1-决策树学习" class="headerlink" title="1. 决策树学习"></a>1. 决策树学习</h1><p>决策树学习的目的是为了生成一颗泛化能力强，即处理未见示例能力强的决策树，其基本流程遵循简单而直观的 <strong>分而治之 (Divide and Conquer)</strong> 策略，如下图所示：</p>
@@ -545,242 +507,263 @@
 <li>(行 6) 当前属性集为空，或是所有样本在所有属性上取值相同，无法划分。在这种情况下，把当前结点标记为叶结点，并且将其类别设定为该结点所含样本最多的类别；</li>
 <li>(行 12) 当前结点包含的样本集和为空，不能划分，把当前结点标记为叶结点，但是将其类别设定为其父结点所含样本最多的类别，周志华老师的《机器学习》中在该条件下执行了 <code>return</code>，但是按照我的理解由于这里处于 <code>for</code> 循环中，虽然属性中的一个取值样本集合为空，但是其它取值情况下还有有可能有样本集合的，如果这里执行了 <code>return</code>，那么就跳过了其它取值判断的可能。</li>
 </ol>
-<p>另外，其中第 14 行 $A \backslash \lbrace a_\ast \rbrace$ 表示从 $A$ 中去除 $a_\ast$ 属性。</p>
-<h1 id="2-最优划分属性的选择"><a href="#2-最优划分属性的选择" class="headerlink" title="2. 最优划分属性的选择"></a>2. 最优划分属性的选择</h1><p>从递归生成伪代码图示中可以看出，(行 8)选择最优划分属性 $a_\ast$ 是最关键的一步。如何选择决定了决策树的效率与准确率。一般而言我们希望选择一个属性 $a_\ast$ 之后，其分支节点所包含的样本尽可能属于同一类别，即结点的 <strong>纯度 (Purity)</strong> 越来越高。</p>
+<p>另外，其中第 14 行 $A \backslash \lbrace a<em>\ast \rbrace$ 表示从 $A$ 中去除 $a</em>\ast$ 属性。</p>
+<h1 id="2-最优划分属性的选择"><a href="#2-最优划分属性的选择" class="headerlink" title="2. 最优划分属性的选择"></a>2. 最优划分属性的选择</h1><p>从递归生成伪代码图示中可以看出，(行 8)选择最优划分属性 $a<em>\ast$ 是最关键的一步。如何选择决定了决策树的效率与准确率。一般而言我们希望选择一个属性 $a</em>\ast$ 之后，其分支节点所包含的样本尽可能属于同一类别，即结点的 <strong>纯度 (Purity)</strong> 越来越高。</p>
 <p>根绝最优属性 $a_\ast$ 选择方法的不同，决策树大致分为了 <strong>ID3</strong> [Quinlan, 1986]、<strong>C4.5</strong> [Quinlan, 1993]、<strong>CART</strong> [Breiman et al., 1984]。</p>
 <p>接下来分别介绍三种方法，在之前，先给出周志华老师《机器学习》中表 $4.1$ 中的西瓜数据如下：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">编号</th>
-<th align="center">色泽</th>
-<th align="center">根蒂</th>
-<th align="center">敲声</th>
-<th align="center">纹理</th>
-<th align="center">脐部</th>
-<th align="center">触感</th>
-<th align="center">好瓜</th>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">色泽</th>
+<th style="text-align:center">根蒂</th>
+<th style="text-align:center">敲声</th>
+<th style="text-align:center">纹理</th>
+<th style="text-align:center">脐部</th>
+<th style="text-align:center">触感</th>
+<th style="text-align:center">好瓜</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">1</td>
-<td align="center">青绿</td>
-<td align="center">蜷缩</td>
-<td align="center">浊响</td>
-<td align="center">清晰</td>
-<td align="center">凹陷</td>
-<td align="center">硬滑</td>
-<td align="center">是</td>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">青绿</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">凹陷</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">2</td>
-<td align="center">乌黑</td>
-<td align="center">蜷缩</td>
-<td align="center">沉闷</td>
-<td align="center">清晰</td>
-<td align="center">凹陷</td>
-<td align="center">硬滑</td>
-<td align="center">是</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">乌黑</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">沉闷</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">凹陷</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">3</td>
-<td align="center">乌黑</td>
-<td align="center">蜷缩</td>
-<td align="center">浊响</td>
-<td align="center">清晰</td>
-<td align="center">凹陷</td>
-<td align="center">硬滑</td>
-<td align="center">是</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">乌黑</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">凹陷</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">4</td>
-<td align="center">青绿</td>
-<td align="center">蜷缩</td>
-<td align="center">沉闷</td>
-<td align="center">清晰</td>
-<td align="center">凹陷</td>
-<td align="center">硬滑</td>
-<td align="center">是</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">青绿</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">沉闷</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">凹陷</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">5</td>
-<td align="center">浅白</td>
-<td align="center">蜷缩</td>
-<td align="center">浊响</td>
-<td align="center">清晰</td>
-<td align="center">凹陷</td>
-<td align="center">硬滑</td>
-<td align="center">是</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">浅白</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">凹陷</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">6</td>
-<td align="center">青绿</td>
-<td align="center">稍蜷</td>
-<td align="center">浊响</td>
-<td align="center">清晰</td>
-<td align="center">稍凹</td>
-<td align="center">软粘</td>
-<td align="center">是</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">青绿</td>
+<td style="text-align:center">稍蜷</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">稍凹</td>
+<td style="text-align:center">软粘</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">7</td>
-<td align="center">乌黑</td>
-<td align="center">稍蜷</td>
-<td align="center">浊响</td>
-<td align="center">稍糊</td>
-<td align="center">稍凹</td>
-<td align="center">软粘</td>
-<td align="center">是</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">乌黑</td>
+<td style="text-align:center">稍蜷</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">稍糊</td>
+<td style="text-align:center">稍凹</td>
+<td style="text-align:center">软粘</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">8</td>
-<td align="center">乌黑</td>
-<td align="center">稍蜷</td>
-<td align="center">浊响</td>
-<td align="center">清晰</td>
-<td align="center">稍凹</td>
-<td align="center">硬滑</td>
-<td align="center">是</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">乌黑</td>
+<td style="text-align:center">稍蜷</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">稍凹</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">9</td>
-<td align="center">乌黑</td>
-<td align="center">稍蜷</td>
-<td align="center">沉闷</td>
-<td align="center">稍糊</td>
-<td align="center">稍凹</td>
-<td align="center">硬滑</td>
-<td align="center">否</td>
+<td style="text-align:center">9</td>
+<td style="text-align:center">乌黑</td>
+<td style="text-align:center">稍蜷</td>
+<td style="text-align:center">沉闷</td>
+<td style="text-align:center">稍糊</td>
+<td style="text-align:center">稍凹</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center">10</td>
-<td align="center">青绿</td>
-<td align="center">硬挺</td>
-<td align="center">清脆</td>
-<td align="center">清晰</td>
-<td align="center">平坦</td>
-<td align="center">软粘</td>
-<td align="center">否</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">青绿</td>
+<td style="text-align:center">硬挺</td>
+<td style="text-align:center">清脆</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">平坦</td>
+<td style="text-align:center">软粘</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center">11</td>
-<td align="center">浅白</td>
-<td align="center">硬挺</td>
-<td align="center">清脆</td>
-<td align="center">模糊</td>
-<td align="center">平坦</td>
-<td align="center">硬滑</td>
-<td align="center">否</td>
+<td style="text-align:center">11</td>
+<td style="text-align:center">浅白</td>
+<td style="text-align:center">硬挺</td>
+<td style="text-align:center">清脆</td>
+<td style="text-align:center">模糊</td>
+<td style="text-align:center">平坦</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center">12</td>
-<td align="center">浅白</td>
-<td align="center">蜷缩</td>
-<td align="center">浊响</td>
-<td align="center">模糊</td>
-<td align="center">平坦</td>
-<td align="center">软粘</td>
-<td align="center">否</td>
+<td style="text-align:center">12</td>
+<td style="text-align:center">浅白</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">模糊</td>
+<td style="text-align:center">平坦</td>
+<td style="text-align:center">软粘</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center">13</td>
-<td align="center">青绿</td>
-<td align="center">稍蜷</td>
-<td align="center">浊响</td>
-<td align="center">稍糊</td>
-<td align="center">凹陷</td>
-<td align="center">硬滑</td>
-<td align="center">否</td>
+<td style="text-align:center">13</td>
+<td style="text-align:center">青绿</td>
+<td style="text-align:center">稍蜷</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">稍糊</td>
+<td style="text-align:center">凹陷</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center">14</td>
-<td align="center">浅白</td>
-<td align="center">稍蜷</td>
-<td align="center">沉闷</td>
-<td align="center">稍糊</td>
-<td align="center">凹陷</td>
-<td align="center">硬滑</td>
-<td align="center">否</td>
+<td style="text-align:center">14</td>
+<td style="text-align:center">浅白</td>
+<td style="text-align:center">稍蜷</td>
+<td style="text-align:center">沉闷</td>
+<td style="text-align:center">稍糊</td>
+<td style="text-align:center">凹陷</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center">15</td>
-<td align="center">乌黑</td>
-<td align="center">稍蜷</td>
-<td align="center">浊响</td>
-<td align="center">清晰</td>
-<td align="center">稍凹</td>
-<td align="center">软粘</td>
-<td align="center">否</td>
+<td style="text-align:center">15</td>
+<td style="text-align:center">乌黑</td>
+<td style="text-align:center">稍蜷</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">稍凹</td>
+<td style="text-align:center">软粘</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center">16</td>
-<td align="center">浅白</td>
-<td align="center">蜷缩</td>
-<td align="center">浊响</td>
-<td align="center">模糊</td>
-<td align="center">平坦</td>
-<td align="center">硬滑</td>
-<td align="center">否</td>
+<td style="text-align:center">16</td>
+<td style="text-align:center">浅白</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">模糊</td>
+<td style="text-align:center">平坦</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center">17</td>
-<td align="center">青绿</td>
-<td align="center">蜷缩</td>
-<td align="center">沉闷</td>
-<td align="center">稍糊</td>
-<td align="center">稍凹</td>
-<td align="center">硬滑</td>
-<td align="center">否</td>
+<td style="text-align:center">17</td>
+<td style="text-align:center">青绿</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">沉闷</td>
+<td style="text-align:center">稍糊</td>
+<td style="text-align:center">稍凹</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">否</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h2 id="2-1-信息增益-ID3"><a href="#2-1-信息增益-ID3" class="headerlink" title="2.1 信息增益 - ID3"></a>2.1 信息增益 - ID3</h2><h3 id="2-1-1-什么是信息增益"><a href="#2-1-1-什么是信息增益" class="headerlink" title="2.1.1 什么是信息增益"></a>2.1.1 什么是信息增益</h3><p>按照周志华老师《机器学习》中第 $4.2.1$ 小节中所述，假定离散属性 $a$ 有 $V$ 个可能的取值 $\lbrace a_1,a_2,…,a_V \rbrace$，若使用 $a$ 来对样本集 $D$ 进行划分，会产生 $V$ 个分支结点，其中第 $v$ 个分支结点包含了 $D$ 中所有在属性 $a$ 上取值为 $a_v$ 的样本，记为 $D_v$，其对应的信息熵为：</p>
-<p>$$<br>H(D_v)=-\sum_{k \in \mathcal{Y}}p(k\mid v)\log p(k \mid v)=-\sum_{k \in \mathcal{Y}}\frac{|D_{vk}|}{|D_v|}\log \frac{|D_{vk}|}{|D_v|}<br>$$</p>
-<p>其中 $D_{vk}$ 表示 $D_v$ 中分类为 $k$ 的样本。再考虑到不同的分支 $v$ 结点所包含的样本数不同，给分支结点赋予权重 $|D_v|/|D|$，于是可以计算出属性 $a$ 对样本集 $D$ 进行划分所获得的 <strong>信息增益 (Information gain)</strong>：</p>
-<p>$$<br>\textrm{Gain}(D,a)=H(D)-\sum_{v=1}^V \frac{|D_v|}{|D|}H(|D_v|)=H(D)-H(D,a)=I(D,a)<br>$$</p>
-<p>其实，信息增益就是训练数据集 $D$ 中的类别与某一属性之间（或者两个属性之间的，因为最终决策树的目的是要进行分类，所以在决策树的每一个分支判断时都用类别与对应的属性进行信息增益比较）的互信息。我们知道，互信息表示了两事件发生所代表的信息之间的重复部分，当两事件信息重复的部分越大，那么采用一种事件为标准来划分另一种事件所能确定的部分也就越大，也就是说采用属性 $a$ 来进行划分所获得的“纯度提升”越大。考虑极端情况，当属性 $a$ 与类别完全没有关系时，其互信息为 $0$，这时候采用 $a$ 属性作为划分标准对于数据集的类别确认完全没有帮助；当属性 $a$  的各属性分别与数据集的类别一一对应时，也就是其概率分布完全相同，那么根据互信息的计算公式，其互信息等于各自的熵，也就是说，如果我们采用 $a$ 进行数据的划分，那么数据可以完全干净的划分出来，也就不再含有额外的不可知信息了。</p>
+<script type="math/tex; mode=display">
+H(D_v)=-\sum_{k \in \mathcal{Y}}p(k\mid v)\log p(k \mid v)=-\sum_{k \in \mathcal{Y}}\frac{|D_{vk}|}{|D_v|}\log \frac{|D_{vk}|}{|D_v|}</script><p>其中 $D_{vk}$ 表示 $D_v$ 中分类为 $k$ 的样本。再考虑到不同的分支 $v$ 结点所包含的样本数不同，给分支结点赋予权重 $|D_v|/|D|$，于是可以计算出属性 $a$ 对样本集 $D$ 进行划分所获得的 <strong>信息增益 (Information gain)</strong>：</p>
+<script type="math/tex; mode=display">
+\textrm{Gain}(D,a)=H(D)-\sum_{v=1}^V \frac{|D_v|}{|D|}H(|D_v|)=H(D)-H(D,a)=I(D,a)</script><p>其实，信息增益就是训练数据集 $D$ 中的类别与某一属性之间（或者两个属性之间的，因为最终决策树的目的是要进行分类，所以在决策树的每一个分支判断时都用类别与对应的属性进行信息增益比较）的互信息。我们知道，互信息表示了两事件发生所代表的信息之间的重复部分，当两事件信息重复的部分越大，那么采用一种事件为标准来划分另一种事件所能确定的部分也就越大，也就是说采用属性 $a$ 来进行划分所获得的“纯度提升”越大。考虑极端情况，当属性 $a$ 与类别完全没有关系时，其互信息为 $0$，这时候采用 $a$ 属性作为划分标准对于数据集的类别确认完全没有帮助；当属性 $a$  的各属性分别与数据集的类别一一对应时，也就是其概率分布完全相同，那么根据互信息的计算公式，其互信息等于各自的熵，也就是说，如果我们采用 $a$ 进行数据的划分，那么数据可以完全干净的划分出来，也就不再含有额外的不可知信息了。</p>
 <p>当决策树中选择最优划分属性（行 8）按照信息增益最大来进行时，决策树属于 <strong>ID3 决策树</strong>。</p>
 <h3 id="2-1-2-ID3-树中最优划分属性计算举例"><a href="#2-1-2-ID3-树中最优划分属性计算举例" class="headerlink" title="2.1.2 ID3 树中最优划分属性计算举例"></a>2.1.2 ID3 树中最优划分属性计算举例</h3><p>根据上节给出的西瓜数据集，我们学习一个对瓜好坏判断的决策树。在这个例子中分类个数为 $2$ (是好瓜、不是好瓜)，即 $\mathcal{Y}=2$。在决策树学习开始时，根结点包含 $D$  中所有样例，正例占 $p_1=\frac{8}{17}$，反例占 $p_2=\frac{9}{17}$。根结点的信息熵（下面我们都以比特为单位计算）为：</p>
-<p>$$<br>H(D)=-\sum_{k=1}^2p(k)\log_2 p(k)=-\left(\frac{7}{17}\log_2\frac{7}{17}+\frac{9}{17}\log_2\frac{9}{17}\right)=0.998<br>$$</p>
-<p>然后我们要计算出与当前属性集合 {色泽、根蒂、敲声、纹理、脐部、触感}中每个属性的信息增益，也就是对应的互信息。以属性“色泽”为例，它有 $3$ 个可能取值：{青绿、乌黑、浅白}。以该属性对数据集进行划分，可以得到 $3$ 个子集，分别为：$D_1$(色泽=青绿)、$D_2$(色泽=乌黑)、$D_3$(色泽=浅白)。</p>
+<script type="math/tex; mode=display">
+H(D)=-\sum_{k=1}^2p(k)\log_2 p(k)=-\left(\frac{7}{17}\log_2\frac{7}{17}+\frac{9}{17}\log_2\frac{9}{17}\right)=0.998</script><p>然后我们要计算出与当前属性集合 {色泽、根蒂、敲声、纹理、脐部、触感}中每个属性的信息增益，也就是对应的互信息。以属性“色泽”为例，它有 $3$ 个可能取值：{青绿、乌黑、浅白}。以该属性对数据集进行划分，可以得到 $3$ 个子集，分别为：$D_1$(色泽=青绿)、$D_2$(色泽=乌黑)、$D_3$(色泽=浅白)。</p>
 <p>对子集 $D_1$ 来说，包含了编号为 $\lbrace1,4,6,10,13,17\rbrace$ 的 $6$ 个样例，其中正例为 $\lbrace1,4,6\rbrace$，占 $p_1=\frac{3}{6}$ ；反例为 $\lbrace10,13,17\rbrace$，占 $p_1=\frac{3}{6}$。计算其熵为：</p>
-<p>$$<br>H(D_1)=-\left(\frac{3}{6}\log_2\frac{3}{6}+\frac{3}{6}\log_2\frac{3}{6}\right)=1.000<br>$$</p>
-<p>依次可以计算另外两个子集的信息熵为：</p>
-<p>$$<br>\begin{aligned}<br>H(D_2)&amp;=0.918 \<br>H(D_3)&amp;=0.722<br>\end{aligned}<br>$$</p>
-<p>最终可以计算数据集 $D$ 的类别信息在属性“色泽”熵的信息增益（也可以理解为类别与“色泽”属性之间的互信息）为：</p>
-<p>$$<br>\begin{aligned}<br>\textrm{Gain}(D,色泽) &amp;=H(D)-\sum_{v=1}^3p(v)H(D_v) \<br>&amp;=0.998-\left(\frac{6}{17}\times1.000+\frac{6}{17}\times0.918+\frac{5}{17}\times0.722\right) \<br>&amp;=0.109<br>\end{aligned}<br>$$</p>
-<p>重复上述的计算步骤，我们可以计算出其他属性的信息增益：</p>
-<p>$$<br>\begin{aligned}<br>\textrm{Gain}(D,根蒂) &amp;=0.143; \<br>\textrm{Gain}(D,敲声) &amp;=0.141; \<br>\textrm{Gain}(D,纹理) &amp;=0.381; \<br>\textrm{Gain}(D,脐部) &amp;=0.289; \<br>\textrm{Gain}(D,触感) &amp;=0.006. \<br>\end{aligned}<br>$$</p>
-<p>经过比较，发现采用“纹理”进行划分得到的信息增益最大，于是它被选为划分属性。下图给出了根据“纹理”属性划分之后的数据子集：</p>
+<script type="math/tex; mode=display">
+H(D_1)=-\left(\frac{3}{6}\log_2\frac{3}{6}+\frac{3}{6}\log_2\frac{3}{6}\right)=1.000</script><p>依次可以计算另外两个子集的信息熵为：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+H(D_2)&=0.918 \\
+H(D_3)&=0.722
+\end{aligned}</script><p>最终可以计算数据集 $D$ 的类别信息在属性“色泽”熵的信息增益（也可以理解为类别与“色泽”属性之间的互信息）为：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\textrm{Gain}(D,色泽) &=H(D)-\sum_{v=1}^3p(v)H(D_v) \\
+&=0.998-\left(\frac{6}{17}\times1.000+\frac{6}{17}\times0.918+\frac{5}{17}\times0.722\right) \\
+&=0.109
+\end{aligned}</script><p>重复上述的计算步骤，我们可以计算出其他属性的信息增益：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\textrm{Gain}(D,根蒂) &=0.143; \\
+\textrm{Gain}(D,敲声) &=0.141; \\
+\textrm{Gain}(D,纹理) &=0.381; \\
+\textrm{Gain}(D,脐部) &=0.289; \\
+\textrm{Gain}(D,触感) &=0.006. \\
+\end{aligned}</script><p>经过比较，发现采用“纹理”进行划分得到的信息增益最大，于是它被选为划分属性。下图给出了根据“纹理”属性划分之后的数据子集：</p>
 <p><img src="/20180722-Decision_Tree/Root_node_decision.png" alt="Root_node_decision"></p>
 <p>对每一个数据子集按照上边的步骤继续划分下去就能得到最终的决策树（需要注意的是每次样例子集中的属性不包含父结点中划分所依赖的属性），如下图所示：</p>
 <p><img src="/20180722-Decision_Tree/Decision-tree.png" alt="Decision-tree"></p>
 <h2 id="2-2-信息增益率-C4-5"><a href="#2-2-信息增益率-C4-5" class="headerlink" title="2.2 信息增益率 - C4.5"></a>2.2 信息增益率 - C4.5</h2><p>采用信息增益来进行划分属性的决策有一个潜在的问题，当某一个属性的取值种类非常多时，对应每一个属性取值的样本子集，其分类的信息熵可能会变得很小。为了说明，采用一种极端情况，假设我们对上一节中要分类的西瓜数据进行决策树生成时，把“编号”也当作一种可以作为划分依据的属性。则在这种情况下，每一个编号属性对应一个实例，且其分类是确定的，那么对于每一个“编号”属性取值来说，其分类信息熵为 $0$，计算“编号”分类所带来的信息增益为：</p>
-<p>$$<br>\begin{aligned}<br>\textrm{Gain}(D,a)&amp;=H(D)-\sum_{v=1}^V \frac{|D_v|}{|D|}H(|D_v|) \<br>&amp;=-\frac{8}{17}\log_2\frac{8}{17}-\frac{8}{17}\log_2\frac{8}{17}-\sum_{v=1}^{17}\frac{1}{17}\times0 \<br>&amp;=0.9975<br>\end{aligned}<br>$$</p>
-<p>最后计算出来的信息增益很大。但是显然，用“编号”属性来作为结点的划分是没有意义的。思考其中的问题在于，对数函数并不是线性的，信息量的减少速度大于类别数量的增加速度。信息增益准则对取值数目较多的属性有所偏好，为了减小这种偏好，<strong>C4.5 决策树</strong> 采用 <strong>信息增益率 (gain ratio)</strong> 来选择最优划分属性。其定义如下：</p>
-<p>$$<br>\textrm{Gain}_\textrm{ratio}(D,a)=\frac{\rm{Gain}(D,a)}{\rm{IV}(a)}<br>$$</p>
-<p>其中，</p>
-<p>$$<br>\textrm{IV}(a)=-\sum_{v=1}^V \frac{|D_v|}{|D|}\log \frac{|D_v|}{|D|}=H(a)<br>$$</p>
-<p>到这里，我们就可以发现，信息增益率是用属性分类的信息熵对由属性分类引起的互信息熵进行了归一。属性的种类越多其信息熵通常也会越大。对西瓜数据，有：$H(触感)=0.874\ (V=2)$，$H(色泽)=1.580\ (V=3)$，$H(编号)=4.088\ (V=17)$。</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\textrm{Gain}(D,a)&=H(D)-\sum_{v=1}^V \frac{|D_v|}{|D|}H(|D_v|) \\
+&=-\frac{8}{17}\log_2\frac{8}{17}-\frac{8}{17}\log_2\frac{8}{17}-\sum_{v=1}^{17}\frac{1}{17}\times0 \\
+&=0.9975
+\end{aligned}</script><p>最后计算出来的信息增益很大。但是显然，用“编号”属性来作为结点的划分是没有意义的。思考其中的问题在于，对数函数并不是线性的，信息量的减少速度大于类别数量的增加速度。信息增益准则对取值数目较多的属性有所偏好，为了减小这种偏好，<strong>C4.5 决策树</strong> 采用 <strong>信息增益率 (gain ratio)</strong> 来选择最优划分属性。其定义如下：</p>
+<script type="math/tex; mode=display">
+\textrm{Gain}_\textrm{ratio}(D,a)=\frac{\rm{Gain}(D,a)}{\rm{IV}(a)}</script><p>其中，</p>
+<script type="math/tex; mode=display">
+\textrm{IV}(a)=-\sum_{v=1}^V \frac{|D_v|}{|D|}\log \frac{|D_v|}{|D|}=H(a)</script><p>到这里，我们就可以发现，信息增益率是用属性分类的信息熵对由属性分类引起的互信息熵进行了归一。属性的种类越多其信息熵通常也会越大。对西瓜数据，有：$H(触感)=0.874\ (V=2)$，$H(色泽)=1.580\ (V=3)$，$H(编号)=4.088\ (V=17)$。</p>
 <p>最后一点需要注意的是，增益率准则虽然减少了对取值数目较多的属性依赖，但是增加了对取值数目较少的属性偏好。因此， C4.5 并没有直接选择增益率最大的候选划分属性，而是使用了一个启发式：先从候选划分属性中找出 <strong>信息增益</strong> 高于 <strong>平均水平</strong> 的属性，再从中选择 <strong>增益率</strong> 最高的。</p>
 <h2 id="2-3-基尼指数-CART"><a href="#2-3-基尼指数-CART" class="headerlink" title="2.3 基尼指数 - CART"></a>2.3 基尼指数 - CART</h2><p>最后介绍一种选择划分属性的依据是使用 <strong>基尼指数 (Gini index)</strong>。数据集合 $D$ 的纯度可用基尼指数来度量：</p>
-<p>$$<br>\textrm{Gini}(D) = \sum_{k=1}^{|\mathcal{Y}|}\sum_{k^\prime\neq k}p_kp_{k^\prime}=1-\sum_{k=1}^{\mathcal{Y}}p_k^2<br>$$</p>
-<p>直观来看，$\textrm{Gini}(D)$ 反映了从数据集 $D$ 中随机抽取两个样本，其类别标记不一致的概率。因此，$\textrm{Gini}(D)$ 越小，则数据集 $D$ 的纯度越高。</p>
+<script type="math/tex; mode=display">
+\textrm{Gini}(D) = \sum_{k=1}^{|\mathcal{Y}|}\sum_{k^\prime\neq k}p_kp_{k^\prime}=1-\sum_{k=1}^{\mathcal{Y}}p_k^2</script><p>直观来看，$\textrm{Gini}(D)$ 反映了从数据集 $D$ 中随机抽取两个样本，其类别标记不一致的概率。因此，$\textrm{Gini}(D)$ 越小，则数据集 $D$ 的纯度越高。</p>
 <p>对特定属性 $a$ 的基尼指数定义如下：</p>
-<p>$$<br>\textrm{Gini}<em>\textrm{index}(D,a) = \sum</em>{v=1}^{V}\frac{|D_v|}{|D|}\textrm{Gini}(D_v)<br>$$</p>
-<p>我们在候选属性集合 $A$ 中，选择那个使得划分后基尼指数最小的属性作为最优划分属性，即：</p>
-<p>$$<br>a_\ast=\arg \min \limits_{a \in A}{\textrm{Gini}_\textrm{index}(D,a)}<br>$$</p>
-<p>采用基尼指数作为划分属性的判据的决策树是一种 CART 决策树。</p>
+<script type="math/tex; mode=display">
+\textrm{Gini}_\textrm{index}(D,a) = \sum_{v=1}^{V}\frac{|D_v|}{|D|}\textrm{Gini}(D_v)</script><p>我们在候选属性集合 $A$ 中，选择那个使得划分后基尼指数最小的属性作为最优划分属性，即：</p>
+<script type="math/tex; mode=display">
+a_\ast=\arg \min \limits_{a \in A}{\textrm{Gini}_\textrm{index}(D,a)}</script><p>采用基尼指数作为划分属性的判据的决策树是一种 CART 决策树。</p>
 <h1 id="3-决策树剪枝"><a href="#3-决策树剪枝" class="headerlink" title="3. 决策树剪枝"></a>3. 决策树剪枝</h1><h2 id="3-1-决策树的损失函数"><a href="#3-1-决策树的损失函数" class="headerlink" title="3.1 决策树的损失函数"></a>3.1 决策树的损失函数</h2><p>刚开始我提到，决策树可以看作是一系列 <code>if-then</code> 规则的集合。这个规则集合有一个重要的性质：互斥并且完备。意思就是说，拿来任意一个实例，顺着规则的起点（根结点）出发，最终都有且只有一条路径到达某一个具体的叶结点（具体的分类），并且不会出现实例无法分类的情况。</p>
-<p>如果不考虑泛化能力，在训练集上生成的所有不同规则集合对应的决策树中，挑选出最优的决策树，可以根据所有叶结点中的预测误差来衡量，即模型与训练数据的拟合程度。设树 $T$ 的叶结点个数为 $|T|$，$t$ 是树 $T$ 的一个叶结点，该叶结点有 $N_t$ 个样本点，其中 $k$ 类的样本点有 $N_{tk}$ 个，$k=1,2,…,K$，$K$ 为样本空间中的所属分类数量。叶结点 $t$ 上的经验熵 $H_t(T)$ 为</p>
-<p>$$<br>H_t(T)=-\sum_k\frac{N_{tk}}{Nt}\log\frac{N_{tk}}{N_t}<br>$$</p>
-<p>代表了该叶结点的分类还有多少信息量不知道（混乱程度），可以这么考虑一个理想的极端情况，当该叶结点中只有一个分类 $k_n$ 时，那么 $N_{tk_n}=N_t$，其它的 $N_{k_1},…,N_{k_{n-1}},N_{k_{n+1}},…,N_{k_K}$ 全部为 $0$，最终 $H_t(T)=0$，这个结论与分类已经完全的结果是相吻合的。那么我们可以说，经验熵 $H_t(T)$ 就代表了连接该叶结点的整个路径对数据分类的彻底性。</p>
+<p>如果不考虑泛化能力，在训练集上生成的所有不同规则集合对应的决策树中，挑选出最优的决策树，可以根据所有叶结点中的预测误差来衡量，即模型与训练数据的拟合程度。设树 $T$ 的叶结点个数为 $|T|$，$t$ 是树 $T$ 的一个叶结点，该叶结点有 $N<em>t$ 个样本点，其中 $k$ 类的样本点有 $N</em>{tk}$ 个，$k=1,2,…,K$，$K$ 为样本空间中的所属分类数量。叶结点 $t$ 上的经验熵 $H_t(T)$ 为</p>
+<script type="math/tex; mode=display">
+H_t(T)=-\sum_k\frac{N_{tk}}{Nt}\log\frac{N_{tk}}{N_t}</script><p>代表了该叶结点的分类还有多少信息量不知道（混乱程度），可以这么考虑一个理想的极端情况，当该叶结点中只有一个分类 $k<em>n$ 时，那么 $N</em>{tk<em>n}=N_t$，其它的 $N</em>{k<em>1},…,N</em>{k<em>{n-1}},N</em>{k<em>{n+1}},…,N</em>{k_K}$ 全部为 $0$，最终 $H_t(T)=0$，这个结论与分类已经完全的结果是相吻合的。那么我们可以说，经验熵 $H_t(T)$ 就代表了连接该叶结点的整个路径对数据分类的彻底性。</p>
 <p>考虑到所有的叶结点每个叶结点中的样例个数不同，我们采用</p>
-<p>$$<br>C(T)=\sum_{t=1}^{|T|}N_tH_t(T)=-\sum_{t=1}^{|T|}\sum_{k=1}^K N_{tk}\log\frac{N_{tk}}{N_t}<br>$$</p>
-<p>来衡量模型对训练数据的整体测量误差。</p>
+<script type="math/tex; mode=display">
+C(T)=\sum_{t=1}^{|T|}N_tH_t(T)=-\sum_{t=1}^{|T|}\sum_{k=1}^K N_{tk}\log\frac{N_{tk}}{N_t}</script><p>来衡量模型对训练数据的整体测量误差。</p>
 <p>但是如果仅仅用 $C(T)$ 来作为优化目标函数，就会导致模型走向过拟合的结果。因为我们可以尽可能的对每一个分支划分到最细结来使得每一个叶结点的 $H_t(T)=0$，最终使得 $C(T)=0$ 最小。</p>
 <p>为了避免过拟合，我们需要给优化目标函数增加一个正则项，正则项应该包含模型的复杂度信息。对于决策树来说，其叶结点的数量 $|T|$ 越多就越复杂，我们用添加正则项的</p>
-<p>$$<br>C_\alpha(T)=C(T)+\alpha|T|<br>$$</p>
-<p>来作为优化的目标函数，也就是树的损失函数。参数 $\alpha$ 控制了两者之间的影响程度。较大的 $\alpha$ 促使选择较简单的模型（树），较小的 $\alpha$ 促使选择较复杂的模型（树）。</p>
+<script type="math/tex; mode=display">
+C_\alpha(T)=C(T)+\alpha|T|</script><p>来作为优化的目标函数，也就是树的损失函数。参数 $\alpha$ 控制了两者之间的影响程度。较大的 $\alpha$ 促使选择较简单的模型（树），较小的 $\alpha$ 促使选择较复杂的模型（树）。</p>
 <p>决策树的生成过程并不是一个准确的求解树的损失函数的最优化方法。三种决策树学习方法都是一种启发式的求解步骤，在每一步扩大树的规模的时候都是找当前步能使分类结果提升最明显的选择。</p>
 <p>如果以文章最开始标示的三个递归学习返回条件进行树的学习，那么最后学习的树是一个以 $C(T)$ 为损失函数的最优化过程。最后学习到的决策树对训练数据集能达到令人满意的结果，但是对于未知的测试集来说却未必有很好的分类能力。即数据集的泛化能力不能保证。</p>
 <p>为了提高决策树的泛化能力，需要对树进行 <strong>剪枝 (Pruning)</strong>，把过于细分的叶结点（通常是数据量过少导致噪声数据的影响增加）去掉而回退到其父结点或更高的结点，使其父结点或更高的结点变为叶结点。</p>
@@ -797,14 +780,14 @@
 <p>更具体地，李航老师《统计学习方法》中第 5.5.2 小节具体介绍了 CART 剪枝算法的步骤流程。刚开始看这部分内容的时候，不容易看懂，后来结合网上的解释回过头来发现其实很简单。下边是参考书中以及网上的解释总结的一套算法流程：</p>
 <p><img src="/20180722-Decision_Tree/Decision_tree_Post-Pruning.png" alt="Decision_tree_Post-Pruning"></p>
 <p>针对流程图中的第 8 步计算，按照书中的描述逻辑，对 $T_0$ 中的任意内部结点 $t$，以 $t$ 为单结点树（结点即为叶，没有分支）的损失函数是</p>
-<p>$$<br>C_\alpha(t)=C(t)+\alpha<br>$$</p>
-<p>以 $t$ 为根结点的子树 $T_t$ 的损失函数是</p>
-<p>$$<br>C_\alpha(T_t)=C(T_t)+\alpha|T_t|<br>$$</p>
-<p>当 $\alpha=0$或充分小时，有不等式</p>
-<p>$$<br>C_\alpha(T_t)&lt;C_\alpha(t)<br>$$</p>
-<p>当 $\alpha$ 增大到某一个值时，有</p>
-<p>$$<br>C_\alpha(T_t)=C_\alpha(t)<br>$$</p>
-<p>当 $\alpha$ 再继续增大时，不等式反向，所以只要 $\alpha=\frac{C(t)-C(T_t)}{|T_t|-1}$，$T_t$ 与 $t$ 有相同的损失函数值，而 $t$ 的结点更少，因此 $t$ 比 $T_t$ 更可取，对 $T_t$ 进行剪枝。</p>
+<script type="math/tex; mode=display">
+C_\alpha(t)=C(t)+\alpha</script><p>以 $t$ 为根结点的子树 $T_t$ 的损失函数是</p>
+<script type="math/tex; mode=display">
+C_\alpha(T_t)=C(T_t)+\alpha|T_t|</script><p>当 $\alpha=0$或充分小时，有不等式</p>
+<script type="math/tex; mode=display">
+C_\alpha(T_t)<C_\alpha(t)</script><p>当 $\alpha$ 增大到某一个值时，有</p>
+<script type="math/tex; mode=display">
+C_\alpha(T_t)=C_\alpha(t)</script><p>当 $\alpha$ 再继续增大时，不等式反向，所以只要 $\alpha=\frac{C(t)-C(T_t)}{|T_t|-1}$，$T_t$ 与 $t$ 有相同的损失函数值，而 $t$ 的结点更少，因此 $t$ 比 $T_t$ 更可取，对 $T_t$ 进行剪枝。</p>
 <p>这个位置容易让人疑惑，逻辑上让人不是很容易想明白，需要多看几遍。其实它的逻辑是这样的：</p>
 <p>剪枝的目的不是为了最小化损失函数，剪枝的目的是为了达到一个更好的泛化能力。而对于决策树来说，叶结点的数量越多，反应了决策树对训练数据的细节反应的越多，继而弱化了泛化能力。要想提高泛化能力就需要进行剪枝，而在 3.1 节中给出的损失函数中，$\alpha$ 值衡量了损失函数中叶结点数量的权重，$\alpha$ 值越大，在最小化损失函数时，需要更多的考虑叶结点数量的影响。$\alpha$ 可以看作一个系数，不同的 $\alpha$ 对应于不同的损失函数。而对于所有的这些损失函数来说，在训练集上进行决策树生成时候的步骤都一样，差别只是在判断某些结点是否进行展开的区别。</p>
 <p>这个有点类似于对一个函数的泰勒级数展开，而 $\alpha$ 值控制着展开的次数项，越小的值展开的次数项越多（往回收缩的高次项越少）。因为决策树的结点个数是有限的，对应到 $\alpha$ 的值来说也是有限的。上述求 $\alpha$ 过程就是得到具体收缩每一个分支对应的值。</p>
@@ -813,205 +796,239 @@
 <p>借鉴周志华老师《机器学习》中的图 4.5 来对 CART 剪枝算法进行梳理如下。</p>
 <p><img src="/20180722-Decision_Tree/Decision-tree_Pruning.png" alt="Decision_tree_Pruning"></p>
 <p>该图展示的是表 4.2 中的西瓜数据集对应的决策树。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">编号</th>
-<th align="center">色泽</th>
-<th align="center">根蒂</th>
-<th align="center">敲声</th>
-<th align="center">纹理</th>
-<th align="center">脐部</th>
-<th align="center">触感</th>
-<th align="center">好瓜</th>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">色泽</th>
+<th style="text-align:center">根蒂</th>
+<th style="text-align:center">敲声</th>
+<th style="text-align:center">纹理</th>
+<th style="text-align:center">脐部</th>
+<th style="text-align:center">触感</th>
+<th style="text-align:center">好瓜</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">1</td>
-<td align="center">青绿</td>
-<td align="center">蜷缩</td>
-<td align="center">浊响</td>
-<td align="center">清晰</td>
-<td align="center">凹陷</td>
-<td align="center">硬滑</td>
-<td align="center">是</td>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">青绿</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">凹陷</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">2</td>
-<td align="center">乌黑</td>
-<td align="center">蜷缩</td>
-<td align="center">沉闷</td>
-<td align="center">清晰</td>
-<td align="center">凹陷</td>
-<td align="center">硬滑</td>
-<td align="center">是</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">乌黑</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">沉闷</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">凹陷</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">3</td>
-<td align="center">乌黑</td>
-<td align="center">蜷缩</td>
-<td align="center">浊响</td>
-<td align="center">清晰</td>
-<td align="center">凹陷</td>
-<td align="center">硬滑</td>
-<td align="center">是</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">乌黑</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">凹陷</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">6</td>
-<td align="center">青绿</td>
-<td align="center">稍蜷</td>
-<td align="center">浊响</td>
-<td align="center">清晰</td>
-<td align="center">稍凹</td>
-<td align="center">软粘</td>
-<td align="center">是</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">青绿</td>
+<td style="text-align:center">稍蜷</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">稍凹</td>
+<td style="text-align:center">软粘</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">7</td>
-<td align="center">乌黑</td>
-<td align="center">稍蜷</td>
-<td align="center">浊响</td>
-<td align="center">稍糊</td>
-<td align="center">稍凹</td>
-<td align="center">软粘</td>
-<td align="center">是</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">乌黑</td>
+<td style="text-align:center">稍蜷</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">稍糊</td>
+<td style="text-align:center">稍凹</td>
+<td style="text-align:center">软粘</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">10</td>
-<td align="center">青绿</td>
-<td align="center">硬挺</td>
-<td align="center">清脆</td>
-<td align="center">清晰</td>
-<td align="center">平坦</td>
-<td align="center">软粘</td>
-<td align="center">否</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">青绿</td>
+<td style="text-align:center">硬挺</td>
+<td style="text-align:center">清脆</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">平坦</td>
+<td style="text-align:center">软粘</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center">14</td>
-<td align="center">浅白</td>
-<td align="center">稍蜷</td>
-<td align="center">沉闷</td>
-<td align="center">稍糊</td>
-<td align="center">凹陷</td>
-<td align="center">硬滑</td>
-<td align="center">否</td>
+<td style="text-align:center">14</td>
+<td style="text-align:center">浅白</td>
+<td style="text-align:center">稍蜷</td>
+<td style="text-align:center">沉闷</td>
+<td style="text-align:center">稍糊</td>
+<td style="text-align:center">凹陷</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center">15</td>
-<td align="center">乌黑</td>
-<td align="center">稍蜷</td>
-<td align="center">浊响</td>
-<td align="center">清晰</td>
-<td align="center">稍凹</td>
-<td align="center">软粘</td>
-<td align="center">否</td>
+<td style="text-align:center">15</td>
+<td style="text-align:center">乌黑</td>
+<td style="text-align:center">稍蜷</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">稍凹</td>
+<td style="text-align:center">软粘</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center">16</td>
-<td align="center">浅白</td>
-<td align="center">蜷缩</td>
-<td align="center">浊响</td>
-<td align="center">模糊</td>
-<td align="center">平坦</td>
-<td align="center">硬滑</td>
-<td align="center">否</td>
+<td style="text-align:center">16</td>
+<td style="text-align:center">浅白</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">模糊</td>
+<td style="text-align:center">平坦</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center">17</td>
-<td align="center">青绿</td>
-<td align="center">蜷缩</td>
-<td align="center">沉闷</td>
-<td align="center">稍糊</td>
-<td align="center">稍凹</td>
-<td align="center">硬滑</td>
-<td align="center">否</td>
+<td style="text-align:center">17</td>
+<td style="text-align:center">青绿</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">沉闷</td>
+<td style="text-align:center">稍糊</td>
+<td style="text-align:center">稍凹</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
-<td align="center">4</td>
-<td align="center">青绿</td>
-<td align="center">蜷缩</td>
-<td align="center">沉闷</td>
-<td align="center">清晰</td>
-<td align="center">凹陷</td>
-<td align="center">硬滑</td>
-<td align="center">是</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">青绿</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">沉闷</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">凹陷</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">5</td>
-<td align="center">浅白</td>
-<td align="center">蜷缩</td>
-<td align="center">浊响</td>
-<td align="center">清晰</td>
-<td align="center">凹陷</td>
-<td align="center">硬滑</td>
-<td align="center">是</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">浅白</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">凹陷</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">8</td>
-<td align="center">乌黑</td>
-<td align="center">稍蜷</td>
-<td align="center">浊响</td>
-<td align="center">清晰</td>
-<td align="center">稍凹</td>
-<td align="center">硬滑</td>
-<td align="center">是</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">乌黑</td>
+<td style="text-align:center">稍蜷</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">稍凹</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">9</td>
-<td align="center">乌黑</td>
-<td align="center">稍蜷</td>
-<td align="center">沉闷</td>
-<td align="center">稍糊</td>
-<td align="center">稍凹</td>
-<td align="center">硬滑</td>
-<td align="center">否</td>
+<td style="text-align:center">9</td>
+<td style="text-align:center">乌黑</td>
+<td style="text-align:center">稍蜷</td>
+<td style="text-align:center">沉闷</td>
+<td style="text-align:center">稍糊</td>
+<td style="text-align:center">稍凹</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center">11</td>
-<td align="center">浅白</td>
-<td align="center">硬挺</td>
-<td align="center">清脆</td>
-<td align="center">模糊</td>
-<td align="center">平坦</td>
-<td align="center">硬滑</td>
-<td align="center">否</td>
+<td style="text-align:center">11</td>
+<td style="text-align:center">浅白</td>
+<td style="text-align:center">硬挺</td>
+<td style="text-align:center">清脆</td>
+<td style="text-align:center">模糊</td>
+<td style="text-align:center">平坦</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center">12</td>
-<td align="center">浅白</td>
-<td align="center">蜷缩</td>
-<td align="center">浊响</td>
-<td align="center">模糊</td>
-<td align="center">平坦</td>
-<td align="center">软粘</td>
-<td align="center">否</td>
+<td style="text-align:center">12</td>
+<td style="text-align:center">浅白</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">模糊</td>
+<td style="text-align:center">平坦</td>
+<td style="text-align:center">软粘</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center">13</td>
-<td align="center">青绿</td>
-<td align="center">稍蜷</td>
-<td align="center">浊响</td>
-<td align="center">稍糊</td>
-<td align="center">凹陷</td>
-<td align="center">硬滑</td>
-<td align="center">否</td>
+<td style="text-align:center">13</td>
+<td style="text-align:center">青绿</td>
+<td style="text-align:center">稍蜷</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">稍糊</td>
+<td style="text-align:center">凹陷</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">否</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>下面按照给出的算法流程来对该决策树进行剪枝操作。我们采用 3.1 小节中关于 $C(T)$ 和 $C_\alpha(T)$ 的定义。</p>
-<p><strong>1. 第一层递归：</strong> 树 $T_0=\lbrace 1,2,3,4,5\rbrace$，其在训练集数据上的执行情况见下图：<br><img src="/20180722-Decision_Tree/Decision-tree_Execute.png" alt="Decision_tree_Execute"><br> 对其每一个内部结点计算其剪枝后的整体树的损失函数减少程度 $g(t)$。<br> 以结点 $5$ 为例，一例好一例坏，<br>  $$<br> \begin{aligned}<br> C(5)&amp;=-\sum_{t=1}^1\sum_{k \in (好、坏)}N_{tk}\log_2\frac{N_{tk}}{N_t} \<br> &amp;=-1\times\log_2(1/2)-1\times\log_2(1/2)) \<br> &amp;=2; \<br> C(T_5)&amp;=-\sum_{t=1}^3\sum_{k \in (好、坏)}N_{tk}\log_2\frac{N_{tk}}{N_t} \<br> &amp;=-\left(1\times\log_2(1/1)+0\times\log_2(0/1)\right)-\left(0\times\log_2(0/1)+1\times\log_2(1/1)\right)-0 \<br> &amp;=0; \<br> |T_5|&amp;=3; \<br> g(5)&amp;=\frac{C(5)-C(T_5)}{|T_5|-1}=\frac{2-0}{3-1}=1.<br> \end{aligned}<br> $$<br>同理，可以计算出:<br> $$<br>  \begin{aligned}<br> g(4)&amp;=\frac{C(4)-C(T_4)}{|T_4|-1}=\frac{2.7549-0}{5-1}=0.6887 \<br> g(3)&amp;=\frac{C(3)-C(T_3)}{|T_3|-1}=\frac{4-0}{7-1}=0.5714 \<br> g(2)&amp;=\frac{C(2)-C(T_2)}{|T_2|-1}=\frac{3.2451-0}{3-1}=1.6226 \<br> g(1)&amp;=\frac{C(1)-C(T_1)}{|T_1|-1}=\frac{10-0}{11-1}=1<br>  \end{aligned}<br> $$<br>比较之后发现，最小的是 $g(3)$，对应的结点是 $t(3)$，对其进行剪枝后得到新的树 $T_1$ 在训练集数据上的执行情况见下图：<br><img src="/20180722-Decision_Tree/Decision-tree_Pruned_1.png" alt="Decision_tree_Learning_Pruned_1"></p>
-<p><strong>2. 第二层递归：</strong> 以树 $T_1=\lbrace 1,2\rbrace$ 为新的输入，重复第一层递归中的计算步骤：<br>$$<br>\begin{aligned}<br> g(2)&amp;=\frac{C(2)-C(T_2)}{|T_2|-1}=\frac{3.2451-0}{3-1}=1.6226 \<br> g(1)&amp;=\frac{C(1)-C(T_1)}{|T_1|-1}=\frac{10-0}{5-1}=2.5<br>\end{aligned}<br> $$<br>比较之后发现，最小的是 $g(2)$，对应的结点是 $t(2)$，对其进行剪枝后得到新的树 $T_2$ 在训练集数据上的执行情见下图:<br><img src="/20180722-Decision_Tree/Decision-tree_Pruned_2.png" alt="Decision_tree_Learning_Pruned_2"></p>
-<p><strong>3. 第三层递归：</strong> 以树 $T_2=\lbrace 1\rbrace$ 为新的输入，重复第一层递归中的计算步骤：<br>$$<br> g(1)=\frac{C(1)-C(T_1)}{|T_1|-1}=\frac{10-0}{3-1}=5<br> $$<br> 现在只有一个 $g(1)$，所以其也是最小的一个。对应的结点是 $t(1)$，对其进行剪枝后得到新的树 $T_3$ 在训练集数据上的执行情见下图:<br> <img src="/20180722-Decision_Tree/Decision-tree_Pruned_3.png" alt="Decision_tree_Learning_Pruned_3"><br>到此为止，$T_3$ 已经是一个根结点单独构成的树，触发了递归退出条件。最后得到的 $T_\textrm{list}=(T_0,T_1,T_2,T_3)$， $\alpha_\textrm{list}=(0,0.5714,1.6226,5)$，从结果看 $\alpha_\textrm{list}$ 中的值确实是从小到大排列，但为什么是这样的内层逻辑还需要深入思考一下。</p>
-<p><strong>4. 验证集数据交叉验证：</strong><br>以 $T_\textrm{list}$ 中的每一个决策树来预测验证集上的数据得到准确率（正确分类样本数量除以整个样本数量）列表<br>$$<br>\begin{aligned}<br>P_\textrm{list}&amp;=\left((4,9,11,12)正确,(4,8,9,11,12)正确,(4,5,8,9,11,12)正确,(4,5,8)正确\right) \<br>&amp;=(\frac{4}{7},\frac{5}{7},\frac{6}{7},\frac{3}{7})<br>\end{aligned}<br>$$<br>所以最终选择 $T_2$ 作为最优子树：<br> <img src="/20180722-Decision_Tree/Decision-tree_Best.png" alt="Decision-tree_Best"></p>
+<p><strong>1. 第一层递归：</strong> 树 $T_0=\lbrace 1,2,3,4,5\rbrace$，其在训练集数据上的执行情况见下图：<br><img src="/20180722-Decision_Tree/Decision-tree_Execute.png" alt="Decision_tree_Execute"><br> 对其每一个内部结点计算其剪枝后的整体树的损失函数减少程度 $g(t)$。<br> 以结点 $5$ 为例，一例好一例坏，</p>
+<script type="math/tex; mode=display">
+ \begin{aligned}
+ C(5)&=-\sum_{t=1}^1\sum_{k \in (好、坏)}N_{tk}\log_2\frac{N_{tk}}{N_t} \\
+ &=-1\times\log_2(1/2)-1\times\log_2(1/2)) \\
+ &=2; \\
+ C(T_5)&=-\sum_{t=1}^3\sum_{k \in (好、坏)}N_{tk}\log_2\frac{N_{tk}}{N_t} \\
+ &=-\left(1\times\log_2(1/1)+0\times\log_2(0/1)\right)-\left(0\times\log_2(0/1)+1\times\log_2(1/1)\right)-0 \\
+ &=0; \\
+ |T_5|&=3; \\
+ g(5)&=\frac{C(5)-C(T_5)}{|T_5|-1}=\frac{2-0}{3-1}=1.
+ \end{aligned}</script><p>同理，可以计算出:</p>
+<script type="math/tex; mode=display">
+  \begin{aligned}
+ g(4)&=\frac{C(4)-C(T_4)}{|T_4|-1}=\frac{2.7549-0}{5-1}=0.6887 \\
+ g(3)&=\frac{C(3)-C(T_3)}{|T_3|-1}=\frac{4-0}{7-1}=0.5714 \\
+ g(2)&=\frac{C(2)-C(T_2)}{|T_2|-1}=\frac{3.2451-0}{3-1}=1.6226 \\
+ g(1)&=\frac{C(1)-C(T_1)}{|T_1|-1}=\frac{10-0}{11-1}=1
+  \end{aligned}</script><p>比较之后发现，最小的是 $g(3)$，对应的结点是 $t(3)$，对其进行剪枝后得到新的树 $T_1$ 在训练集数据上的执行情况见下图：<br><img src="/20180722-Decision_Tree/Decision-tree_Pruned_1.png" alt="Decision_tree_Learning_Pruned_1"></p>
+<p><strong>2. 第二层递归：</strong> 以树 $T_1=\lbrace 1,2\rbrace$ 为新的输入，重复第一层递归中的计算步骤：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ g(2)&=\frac{C(2)-C(T_2)}{|T_2|-1}=\frac{3.2451-0}{3-1}=1.6226 \\
+ g(1)&=\frac{C(1)-C(T_1)}{|T_1|-1}=\frac{10-0}{5-1}=2.5
+\end{aligned}</script><p>比较之后发现，最小的是 $g(2)$，对应的结点是 $t(2)$，对其进行剪枝后得到新的树 $T_2$ 在训练集数据上的执行情见下图:<br><img src="/20180722-Decision_Tree/Decision-tree_Pruned_2.png" alt="Decision_tree_Learning_Pruned_2"></p>
+<p><strong>3. 第三层递归：</strong> 以树 $T_2=\lbrace 1\rbrace$ 为新的输入，重复第一层递归中的计算步骤：</p>
+<script type="math/tex; mode=display">
+ g(1)=\frac{C(1)-C(T_1)}{|T_1|-1}=\frac{10-0}{3-1}=5</script><p> 现在只有一个 $g(1)$，所以其也是最小的一个。对应的结点是 $t(1)$，对其进行剪枝后得到新的树 $T<em>3$ 在训练集数据上的执行情见下图:<br> <img src="/20180722-Decision_Tree/Decision-tree_Pruned_3.png" alt="Decision_tree_Learning_Pruned_3"><br>到此为止，$T_3$ 已经是一个根结点单独构成的树，触发了递归退出条件。最后得到的 $T</em>\textrm{list}=(T<em>0,T_1,T_2,T_3)$， $\alpha</em>\textrm{list}=(0,0.5714,1.6226,5)$，从结果看 $\alpha_\textrm{list}$ 中的值确实是从小到大排列，但为什么是这样的内层逻辑还需要深入思考一下。</p>
+<p><strong>4. 验证集数据交叉验证：</strong><br>以 $T_\textrm{list}$ 中的每一个决策树来预测验证集上的数据得到准确率（正确分类样本数量除以整个样本数量）列表</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+P_\textrm{list}&=\left((4,9,11,12)正确,(4,8,9,11,12)正确,(4,5,8,9,11,12)正确,(4,5,8)正确\right) \\
+&=(\frac{4}{7},\frac{5}{7},\frac{6}{7},\frac{3}{7})
+\end{aligned}</script><p>所以最终选择 $T_2$ 作为最优子树：<br> <img src="/20180722-Decision_Tree/Decision-tree_Best.png" alt="Decision-tree_Best"></p>
 <h3 id="3-3-3-两种剪枝策略对比"><a href="#3-3-3-两种剪枝策略对比" class="headerlink" title="3.3.3 两种剪枝策略对比"></a>3.3.3 两种剪枝策略对比</h3><ul>
 <li>后剪枝决策树通常比预剪枝决策树保留了更多的分支；</li>
 <li>后剪枝决策树的欠拟合风险很小，泛化性能往往优于预剪枝决策树；</li>
@@ -1032,12 +1049,10 @@
   <entry>
     <title>信息熵及其相关概念</title>
     <url>/20180718-Entropy_and_Related_Concept/</url>
-    <content><![CDATA[<p>机器学习中，绕不开的一个概念就是<strong>熵 (Entropy)</strong>，<strong>信息熵</strong>。信息熵常被用来作为一个系统的信息含量的量化指标，从而可以进一步用来作为系统方程优化的目标或者参数选择的判据。在决策树的生成过程中，就使用了熵来作为样本最优属性划分的判据。下面按照本人的理解来系统梳理一下有关熵的概念。</p>
-<a id="more"></a>
-
+    <content><![CDATA[<p>机器学习中，绕不开的一个概念就是<strong>熵 (Entropy)</strong>，<strong>信息熵</strong>。信息熵常被用来作为一个系统的信息含量的量化指标，从而可以进一步用来作为系统方程优化的目标或者参数选择的判据。在决策树的生成过程中，就使用了熵来作为样本最优属性划分的判据。下面按照本人的理解来系统梳理一下有关熵的概念。<br><a id="more"></a></p>
 <h1 id="1-熵的定义是怎么来的？"><a href="#1-熵的定义是怎么来的？" class="headerlink" title="1. 熵的定义是怎么来的？"></a>1. 熵的定义是怎么来的？</h1><p>信息熵的定义公式：</p>
-<p>$$<br>H(X)=-\sum_{x\in\chi}p(x)\log{p(x)}<br>$$</p>
-<p>并且规定 $0\log(0)=0$。</p>
+<script type="math/tex; mode=display">
+H(X)=-\sum_{x\in\chi}p(x)\log{p(x)}</script><p>并且规定 $0\log(0)=0$。</p>
 <p>首次看到这个定义，我感到莫名其妙，为什么熵要定义成这么复杂的形式，并且其中还出现了对数函数这种非常不直观的表述？</p>
 <h2 id="1-1-信息熵的三个性质"><a href="#1-1-信息熵的三个性质" class="headerlink" title="1.1 信息熵的三个性质"></a>1.1 信息熵的三个性质</h2><p>信息论之父克劳德·香农给出的信息熵的三个性质<sup>[1]</sup>：</p>
 <ol>
@@ -1045,63 +1060,120 @@
 <li>非负性，信息熵可以看作为一种广度量，非负性是一种合理的必然；</li>
 <li>累加性，即多随机事件同时发生存在的总不确定性的量度是可以表示为各事件不确定性的量度的和，这也是广度量的一种体现。</li>
 </ol>
-<p>香农从数学上严格证明了满足上述三个条件的随机变量不确定性度量函数具有唯一形式<br>$$<br>H(X)=-C\sum_{x\in\chi}p(x)\log{p(x)}<br>$$</p>
-<p>其中的 $C$ 为常数，我们将其归一化为 $C=1$ 即得到了信息熵公式。</p>
+<p>香农从数学上严格证明了满足上述三个条件的随机变量不确定性度量函数具有唯一形式</p>
+<script type="math/tex; mode=display">
+H(X)=-C\sum_{x\in\chi}p(x)\log{p(x)}</script><p>其中的 $C$ 为常数，我们将其归一化为 $C=1$ 即得到了信息熵公式。</p>
 <h2 id="1-2-对信息熵三条性质的理解"><a href="#1-2-对信息熵三条性质的理解" class="headerlink" title="1.2 对信息熵三条性质的理解"></a>1.2 对信息熵三条性质的理解</h2><p>单调性说的是，事件发生的概率越低，其发生时所能给出的信息量越大。举一个极端的例子，“太阳从西边升起”所携带的信息量就远大于“太阳从东边升起”，因为后者是一个万年不变的事实，不用特意述说大家都知道；而前者是一个相当不可能发生的事情，如果发生了，那代表了太多的可能性，可能太阳系有重大变故，可能物理法则发生了变化，等等。从某种角度来考虑，单调性也暗含了一种对信息含量的先验假设，即默认某些事实是不含信息量的（默认事实其实也是一种信息，我理解的默认事实应该指的是概率分布），这其实是把默认情况的信息量定标为 $0$ 了。</p>
 <p>对累加性的解释，考虑到信息熵的定义涉及到了事件发生的概率，我们可以假设信息熵是事件发生概率的函数：</p>
-<p>$$<br>H(X)=H(p(x))<br>$$</p>
-<p>对于两个相互独立的事件 $X=A, Y=B$ 来说，其同时发生的概率：</p>
-<p>$$<br>p(X=A, Y=B)=p(X=A)\cdotp(Y=B)<br>$$</p>
-<p>其同时发生的信息熵，根据累加性可知：</p>
-<p>$$<br>H\left(p(X=A, Y=B)\right)=H\left(p(X=A)\cdotp(Y=B)\right)=H\left(p(X=A)\right)+H\left(p(Y=B)\right)<br>$$</p>
-<p>一种函数形式，满足两个变量乘积函数值等于两个变量函数值的和，那么这种函数形式应该是对数函数。再考虑到概率都是小于等于 $1$ 的，取对数之后小于 $0$，考虑到信息熵的第二条性质，所以需要在前边加上负号。</p>
+<script type="math/tex; mode=display">
+H(X)=H(p(x))</script><p>对于两个相互独立的事件 $X=A, Y=B$ 来说，其同时发生的概率：</p>
+<script type="math/tex; mode=display">
+p(X=A, Y=B)=p(X=A)\cdotp(Y=B)</script><p>其同时发生的信息熵，根据累加性可知：</p>
+<script type="math/tex; mode=display">
+H\left(p(X=A, Y=B)\right)=H\left(p(X=A)\cdotp(Y=B)\right)=H\left(p(X=A)\right)+H\left(p(Y=B)\right)</script><p>一种函数形式，满足两个变量乘积函数值等于两个变量函数值的和，那么这种函数形式应该是对数函数。再考虑到概率都是小于等于 $1$ 的，取对数之后小于 $0$，考虑到信息熵的第二条性质，所以需要在前边加上负号。</p>
 <h2 id="1-3-回看信息熵定义"><a href="#1-3-回看信息熵定义" class="headerlink" title="1.3 回看信息熵定义"></a>1.3 回看信息熵定义</h2><p>回过头来再看信息熵的公式，其中对概率取负对数表示了一种可能事件发生时候携带出的信息量。把各种可能表示出的信息量乘以其发生的概率之后求和，就表示了整个系统所有信息量的一种期望值。从这个角度来说信息熵还可以作为一个系统复杂程度的度量，如果系统越复杂，出现不同情况的种类越多，那么他的信息熵是比较大的。如果一个系统越简单，出现情况种类很少（极端情况为 $1$ 种情况，那么对应概率为 $1$，那么对应的信息熵为 $0$），此时的信息熵较小<sup>[2]</sup>。</p>
 <h1 id="2-伯努利分布熵的计算-3"><a href="#2-伯努利分布熵的计算-3" class="headerlink" title="2. 伯努利分布熵的计算[3]"></a>2. 伯努利分布熵的计算<sup>[3]</sup></h1><p>熵的定义公式中对数函数不局限于采用特定的底，不同的底对应了熵的不同度量单位。如果以 $2$ 为底，熵的单位称作比特 (bit)，如果以自然对数 $e$ 为底，熵的单位称作纳特 (nat)。</p>
 <p>从熵的定义中可以看出，熵是关于变量 $X$ 概率分布的函数，而与 $X$ 的取值没有关系，所以也可以将 $X$ 的熵记作 $H(p)$</p>
 <p>熵越大代表随机变量的不确定性越大，当变量可取值的种类一定时，其取每种值的概率分布越平均，其熵值越大。熵的取值范围为：</p>
-<p>$$<br>0\leq H(p)\leq \log(n)<br>$$</p>
-<p>$n$ 表示取值的种类。</p>
+<script type="math/tex; mode=display">
+0\leq H(p)\leq \log(n)</script><p>$n$ 表示取值的种类。</p>
 <p>作为一个具体的例子，当随机变量只取两个值，例如 $1$，$0$ 时，即 $X$ 的分布为：</p>
-<p>$$<br>P(X=1)=p, \quad P(X=0)=1-p, \quad 0\leq p \leq 1<br>$$</p>
-<p>熵为：</p>
-<p>$$<br>H(p)=-p\log_2p-(1-p)\log_2(1-p)<br>$$</p>
-<p>这时，熵 $H(P)$ 随概率 $p$ 变化的曲线如下图所示（单位为比特），</p>
-<p><img src="/20180718-Entropy_and_Related_Concept/RelationShip_Entropy&Probability.png" alt="熵与概率的关系"></p>
+<script type="math/tex; mode=display">
+P(X=1)=p, \quad P(X=0)=1-p, \quad 0\leq p \leq 1</script><p>熵为：</p>
+<script type="math/tex; mode=display">
+H(p)=-p\log_2p-(1-p)\log_2(1-p)</script><p>这时，熵 $H(P)$ 随概率 $p$ 变化的曲线如下图所示（单位为比特），</p>
+<p><img src="/20180718-Entropy_and_Related_Concept/RelationShip_Entropy&amp;Probability.png" alt="熵与概率的关系"></p>
 <p>当 $p=0$ 或 $p=1$ 时， $H(p)=0$，随机变量完全没有不确定性。当 $p=0.5$ 时，$H(p)=1$， 熵取值最大，随机变量不确定性最大。</p>
 <h1 id="3-两随机变量系统中熵的相关概念-4"><a href="#3-两随机变量系统中熵的相关概念-4" class="headerlink" title="3. 两随机变量系统中熵的相关概念[4]"></a>3. 两随机变量系统中熵的相关概念<sup>[4]</sup></h1><p>以上介绍了关于单随机变量系统的熵的计算，现实中的系统很多是含有多随机变量的。为了简化问题，以两随机变量系统来说，介绍几个与熵相关的概念。</p>
 <h2 id="3-1-互信息"><a href="#3-1-互信息" class="headerlink" title="3.1 互信息"></a>3.1 互信息</h2><p>两个离散随机变量 $X$ 和 $Y$ 的<strong>互信息 (Mutual Information)</strong> 定义为：</p>
-<p>$$<br>I(X,Y)=\sum_{y\in Y}\sum_{x\in X}p(x,y)\log\left(\frac{p(x,y)}{p(x)p(y)}\right)<br>$$</p>
-<p>为了理解互信息的涵义，我们把公式中的对数项分解</p>
-<p> $$<br>\begin{aligned}<br> \log(\frac{p(x,y)}{p(x)p(y)}) &amp; =\log\left(p(x,y) - (\log p(x)+\log p(y)\right) \<br>&amp; = -\log p(x)-\log p(y)-\left(-\log p(x,y)\right)<br>\end{aligned}<br> $$</p>
-<p>我们知道概率取负对数表征了当前概率发生所代表的信息量。上式表明，两事件的互信息为各自事件单独发生所代表的信息量之和减去两事件同时发生所代表的信息量之后剩余的信息量，这表明了两事件单独发生给出的信息量之和是有重复的，互信息度量了这种重复的信息量大小。最后再求概率和表示了两事件互信息量的期望。从式中也可以看出，当两事件完全独立时，$p(x,y)=p(x)\cdot p(y)$，互信息计算为 $0$，这也是与常识判断相吻合的。</p>
+<script type="math/tex; mode=display">
+I(X,Y)=\sum_{y\in Y}\sum_{x\in X}p(x,y)\log\left(\frac{p(x,y)}{p(x)p(y)}\right)</script><p>为了理解互信息的涵义，我们把公式中的对数项分解</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ \log(\frac{p(x,y)}{p(x)p(y)}) & =\log\left(p(x,y) - (\log p(x)+\log p(y)\right) \\
+& = -\log p(x)-\log p(y)-\left(-\log p(x,y)\right)
+\end{aligned}</script><p>我们知道概率取负对数表征了当前概率发生所代表的信息量。上式表明，两事件的互信息为各自事件单独发生所代表的信息量之和减去两事件同时发生所代表的信息量之后剩余的信息量，这表明了两事件单独发生给出的信息量之和是有重复的，互信息度量了这种重复的信息量大小。最后再求概率和表示了两事件互信息量的期望。从式中也可以看出，当两事件完全独立时，$p(x,y)=p(x)\cdot p(y)$，互信息计算为 $0$，这也是与常识判断相吻合的。</p>
 <h2 id="3-2-联合熵"><a href="#3-2-联合熵" class="headerlink" title="3.2 联合熵"></a>3.2 联合熵</h2><p>两个离散随机变量 $X$ 和 $Y$ 的<strong>联合熵 (Joint Entropy)</strong> 为：</p>
-<p>$$<br>H(X,Y)=-\sum_{y\in Y}\sum_{x\in X}p(x,y)\log p(x,y)<br>$$</p>
-<p>联合熵表征了两事件同时发生系统的不确定度。</p>
+<script type="math/tex; mode=display">
+H(X,Y)=-\sum_{y\in Y}\sum_{x\in X}p(x,y)\log p(x,y)</script><p>联合熵表征了两事件同时发生系统的不确定度。</p>
 <h2 id="3-3-条件熵"><a href="#3-3-条件熵" class="headerlink" title="3.3 条件熵"></a>3.3 条件熵</h2><p><strong>条件熵 (Conditional Entropy)</strong> $H(Y|X)$ 表示在已知随机变量 $X$ 的条件下随机变量 $Y$ 的不确定性。</p>
-<p>$$<br>H(Y \mid X)=\sum_{x\in X}p(x)H(Y \mid x)=-\sum_{x\in X}p(x)\sum_{y\in Y}p(y \mid x)\log p(y \mid x)<br>$$</p>
-<h2 id="3-4-互信息、联合熵、条件熵之间的关系"><a href="#3-4-互信息、联合熵、条件熵之间的关系" class="headerlink" title="3.4 互信息、联合熵、条件熵之间的关系"></a>3.4 互信息、联合熵、条件熵之间的关系</h2><p>对互信息定义公式继续进行推导：</p>
-<p>$$<br>\begin{aligned}<br>I(X,Y) &amp; =\sum_{y\in Y}\sum_{x\in X}p(x,y)\log \frac{p(x,y)}{p(x)p(y)} \<br>&amp; = \sum_{x\in X}\sum_{y\in Y}p(x,y)\left(\log p(x,y)-\log p(x)-\log p(y)\right) \<br>&amp; =\sum_{x\in X}\sum_{y\in Y}p(x,y)\log p(x,y)-\sum_{x\in X}\sum_{y\in Y}p(x,y)\log p(x)-\sum_{x\in X}\sum_{y\in Y}p(x,y)\log p(y) \<br>&amp; =\sum_{x\in X}\sum_{y\in Y}p(x,y)\log p(x,y)-\sum_{x\in X}p(x)\log p(x) -\sum_{x\in X}p(y)\log p(y) \<br>&amp; = H(X)+H(Y)-H(X,Y)<br>\end{aligned}<br>$$</p>
-<p>对条件熵定义公式继续进行推导：</p>
-<p>$$<br>\begin{aligned}<br>H(Y \mid X) &amp; =-\sum_{x\in X}p(x)\sum_{y\in Y}p(y \mid x)\log p(y \mid x) \<br>&amp; =-\sum_{x\in X}\sum_{y\in Y}p(x,y)\log \frac{p(x,y)}{p(x)} \<br>&amp; =-\sum_{x\in X}\sum_{y\in Y}p(x,y)\left(\log p(x,y)-\log p(x)\right) \<br>&amp; =-\sum_{x\in X}\sum_{y\in Y}p(x,y)\log p(x,y)-\sum_{x\in X}\sum_{y\in Y}p(x,y)\log p(x) \<br>&amp; =-\sum_{x\in X}\sum_{y\in Y}p(x,y)\log p(x,y)+\sum_{x\in X}p(x)\log p(x) \<br>&amp; =H(X,Y)-H(X)<br>\end{aligned}<br>$$</p>
-<p>联合上述结果，总结如下：</p>
-<p>$$<br>\begin{aligned}<br>I(X,Y) &amp; = H(X)+H(Y)-H(X,Y) \<br>&amp; = H(Y)-H(Y \mid X) \<br>&amp; = H(X)-H(X \mid Y) \<br>&amp; = H(X,Y)-H(Y \mid X)-H(X \mid Y)<br>\end{aligned}<br>$$</p>
-<p>上述变量之间的关系，可以用 Venn 图来表示：</p>
+<script type="math/tex; mode=display">
+H(Y \mid X)=\sum_{x\in X}p(x)H(Y \mid x)=-\sum_{x\in X}p(x)\sum_{y\in Y}p(y \mid x)\log p(y \mid x)</script><h2 id="3-4-互信息、联合熵、条件熵之间的关系"><a href="#3-4-互信息、联合熵、条件熵之间的关系" class="headerlink" title="3.4 互信息、联合熵、条件熵之间的关系"></a>3.4 互信息、联合熵、条件熵之间的关系</h2><p>对互信息定义公式继续进行推导：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+I(X,Y) & =\sum_{y\in Y}\sum_{x\in X}p(x,y)\log \frac{p(x,y)}{p(x)p(y)} \\
+& = \sum_{x\in X}\sum_{y\in Y}p(x,y)\left(\log p(x,y)-\log p(x)-\log p(y)\right) \\
+& =\sum_{x\in X}\sum_{y\in Y}p(x,y)\log p(x,y)-\sum_{x\in X}\sum_{y\in Y}p(x,y)\log p(x)-\sum_{x\in X}\sum_{y\in Y}p(x,y)\log p(y) \\
+& =\sum_{x\in X}\sum_{y\in Y}p(x,y)\log p(x,y)-\sum_{x\in X}p(x)\log p(x) -\sum_{x\in X}p(y)\log p(y) \\
+& = H(X)+H(Y)-H(X,Y)
+\end{aligned}</script><p>对条件熵定义公式继续进行推导：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+H(Y \mid X) & =-\sum_{x\in X}p(x)\sum_{y\in Y}p(y \mid x)\log p(y \mid x) \\
+& =-\sum_{x\in X}\sum_{y\in Y}p(x,y)\log \frac{p(x,y)}{p(x)} \\
+& =-\sum_{x\in X}\sum_{y\in Y}p(x,y)\left(\log p(x,y)-\log p(x)\right) \\
+& =-\sum_{x\in X}\sum_{y\in Y}p(x,y)\log p(x,y)-\sum_{x\in X}\sum_{y\in Y}p(x,y)\log p(x) \\
+& =-\sum_{x\in X}\sum_{y\in Y}p(x,y)\log p(x,y)+\sum_{x\in X}p(x)\log p(x) \\
+& =H(X,Y)-H(X)
+\end{aligned}</script><p>联合上述结果，总结如下：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+I(X,Y) & = H(X)+H(Y)-H(X,Y) \\
+& = H(Y)-H(Y \mid X) \\
+& = H(X)-H(X \mid Y) \\
+& = H(X,Y)-H(Y \mid X)-H(X \mid Y)
+\end{aligned}</script><p>上述变量之间的关系，可以用 Venn 图来表示：</p>
 <p><img src="/20180718-Entropy_and_Related_Concept/Venn_Diagram.png" alt="Venn Diagram"></p>
 <p>另外，在分类任务的决策树学习过程中，采用信息增益的概念来决定选用哪个特征作为后续的决策依据。这里的信息增益等价于训练数据集中类与特征的互信息。</p>
 <h1 id="4-两分布系统中熵的相关概念-5"><a href="#4-两分布系统中熵的相关概念-5" class="headerlink" title="4. 两分布系统中熵的相关概念[5]"></a>4. 两分布系统中熵的相关概念<sup>[5]</sup></h1><h2 id="4-1-交叉熵"><a href="#4-1-交叉熵" class="headerlink" title="4.1 交叉熵"></a>4.1 交叉熵</h2><p>考虑一种情况，对于一个样本集，存在两个概率分布 $p(x)$ 和 $q(x)$，其中 $p(x)$ 为真实分布，$q(x)$ 为非真实分布。基于真实分布 $p(x)$ 我们可以计算这个样本集的信息熵也就是编码长度的期望为：</p>
-<p>$$<br>H(p)=-\sum_xp(x)\log p(x)<br>$$<br>回顾一下负对数项表征了所含的信息量，如果我们用非真实分布 $q(x)$ 来代表样本集的信息量的话，那么：</p>
-<p>$$<br>H(p,q)=-\sum_xp(x)\log q(x)<br>$$<br>因为其中表示信息量的项来自于非真实分布 $q(x)$，而对其期望值的计算采用的是真实分布 $p(x)$，所以称其为<strong>交叉熵 (Cross Entropy)</strong>。</p>
+<script type="math/tex; mode=display">
+H(p)=-\sum_xp(x)\log p(x)</script><p>回顾一下负对数项表征了所含的信息量，如果我们用非真实分布 $q(x)$ 来代表样本集的信息量的话，那么：</p>
+<script type="math/tex; mode=display">
+H(p,q)=-\sum_xp(x)\log q(x)</script><p>因为其中表示信息量的项来自于非真实分布 $q(x)$，而对其期望值的计算采用的是真实分布 $p(x)$，所以称其为<strong>交叉熵 (Cross Entropy)</strong>。</p>
 <p>举个例子，考虑一个随机变量 $x$，其真实分布 $p(x)=(\frac{1}{2},\frac{1}{4},\frac{1}{8},\frac{1}{8})$，非真实分布 $q(x)=(\frac{1}{4},\frac{1}{4},\frac{1}{4},\frac{1}{4})$，那么其真实信息熵</p>
-<p>$$<br>\begin{aligned}<br>H(p) &amp; =-\frac{1}{2}\log_2\frac{1}{2}-\frac{1}{4}\log_2\frac{1}{4}-\frac{1}{8}\log_2\frac{1}{8}-\frac{1}{8}\log_2\frac{1}{8} \<br>&amp; =\frac{1}{2}+\frac{1}{2}+\frac{3}{8}+\frac{3}{8} \<br>&amp; =1.75\ bits<br>\end{aligned}<br>$$<br>交叉熵</p>
-<p>$$<br>\begin{aligned}<br>H(p,q)&amp;=-\frac{1}{2}\log_2\frac{1}{4}-\frac{1}{4}\log_2\frac{1}{4}-\frac{1}{8}\log_2\frac{1}{4}-\frac{1}{8}\log_2\frac{1}{4} \<br>&amp;=1+\frac{1}{2}+\frac{1}{4}+\frac{1}{4} \<br>&amp;=2\ bits<br>\end{aligned}<br>$$<br>如果我们真实分布为 $q(x)$ 而非真实分布为 $p(x)$，真实信息熵为</p>
-<p>$$<br>\begin{aligned}<br>H(q) &amp; =-\frac{1}{4}\log_2\frac{1}{4}-\frac{1}{4}\log_2\frac{1}{4}-\frac{1}{4}\log_2\frac{1}{4}-\frac{1}{4}\log_2\frac{1}{4} \<br>&amp; =\frac{1}{2}+\frac{1}{2}+\frac{1}{2}+\frac{1}{2} \<br>&amp; =2\ bits<br>\end{aligned}<br>$$</p>
-<p>交叉熵为</p>
-<p>$$<br>\begin{aligned}<br>H(q,p)&amp;=-\frac{1}{4}\log_2\frac{1}{2}-\frac{1}{4}\log_2\frac{1}{4}-\frac{1}{4}\log_2\frac{1}{8}-\frac{1}{4}\log_2\frac{1}{8} \<br>&amp;=\frac{1}{4}+\frac{1}{2}+\frac{3}{4}+\frac{3}{4} \<br>&amp;=2.25\ bits<br>\end{aligned}<br>$$<br>从这个例子中，我们可以看到交叉熵比原本真实的信息熵要大。直观来看，当我们对分布估计不准确时，总会引入额外的不必要信息期望（可以理解为引入了额外的偏差），再加上原本真实的信息期望，最终的信息期望值要比真实系统分布所需的信息期望值要大。</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+H(p) & =-\frac{1}{2}\log_2\frac{1}{2}-\frac{1}{4}\log_2\frac{1}{4}-\frac{1}{8}\log_2\frac{1}{8}-\frac{1}{8}\log_2\frac{1}{8} \\
+& =\frac{1}{2}+\frac{1}{2}+\frac{3}{8}+\frac{3}{8} \\
+& =1.75\ bits
+\end{aligned}</script><p>交叉熵</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+H(p,q)&=-\frac{1}{2}\log_2\frac{1}{4}-\frac{1}{4}\log_2\frac{1}{4}-\frac{1}{8}\log_2\frac{1}{4}-\frac{1}{8}\log_2\frac{1}{4} \\
+&=1+\frac{1}{2}+\frac{1}{4}+\frac{1}{4} \\
+&=2\ bits
+\end{aligned}</script><p>如果我们真实分布为 $q(x)$ 而非真实分布为 $p(x)$，真实信息熵为</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+H(q) & =-\frac{1}{4}\log_2\frac{1}{4}-\frac{1}{4}\log_2\frac{1}{4}-\frac{1}{4}\log_2\frac{1}{4}-\frac{1}{4}\log_2\frac{1}{4} \\
+& =\frac{1}{2}+\frac{1}{2}+\frac{1}{2}+\frac{1}{2} \\
+& =2\ bits
+\end{aligned}</script><p>交叉熵为</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+H(q,p)&=-\frac{1}{4}\log_2\frac{1}{2}-\frac{1}{4}\log_2\frac{1}{4}-\frac{1}{4}\log_2\frac{1}{8}-\frac{1}{4}\log_2\frac{1}{8} \\
+&=\frac{1}{4}+\frac{1}{2}+\frac{3}{4}+\frac{3}{4} \\
+&=2.25\ bits
+\end{aligned}</script><p>从这个例子中，我们可以看到交叉熵比原本真实的信息熵要大。直观来看，当我们对分布估计不准确时，总会引入额外的不必要信息期望（可以理解为引入了额外的偏差），再加上原本真实的信息期望，最终的信息期望值要比真实系统分布所需的信息期望值要大。</p>
 <h2 id="4-2-相对熵"><a href="#4-2-相对熵" class="headerlink" title="4.2 相对熵"></a>4.2 相对熵</h2><p><strong>相对熵 (Relative Entropy)</strong> 也称 <strong>KL 散度</strong>，设 $p(x)$、$q(x)$ 是离散随机变量 $X$ 的两个概率分布，则 $p$ 对 $q$ 的相对熵为：</p>
-<p>$$<br>D_{KL}(p \Vert q)=\sum_x p(x)\log\frac{p(x)}{q(x)}=E_{p(x)}\log\frac{p(x)}{q(x)}<br>$$<br>相对熵既然是熵，也是满足大于等于 $0$ 的，证明如下：</p>
-<p>$$<br>\begin{aligned}<br>D_{KL}(p \Vert q)&amp;=\sum_x p(x)\log\frac{p(x)}{q(x)} \<br>&amp;=-\sum_x p(x)\log\frac{q(x)}{p(x)} \<br>&amp;=-E_{p(x)}(\log\frac{q(x)}{p(x)}) \<br>&amp;\geq-\log E_{p(x)}\left(\frac{q(x)}{p(x)}\right) \<br>&amp;=-\log\sum_x p(x)\frac{q(x)}{p(x)} \<br>&amp;=-\log\sum_x q(x)<br>\end{aligned}<br>$$<br>因为 $\sum_x p(x)=1$，所以 $D_{KL}(p \Vert q) \geq 0$。</p>
+<script type="math/tex; mode=display">
+D_{KL}(p \Vert q)=\sum_x p(x)\log\frac{p(x)}{q(x)}=E_{p(x)}\log\frac{p(x)}{q(x)}</script><p>相对熵既然是熵，也是满足大于等于 $0$ 的，证明如下：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+D_{KL}(p \Vert q)&=\sum_x p(x)\log\frac{p(x)}{q(x)} \\
+&=-\sum_x p(x)\log\frac{q(x)}{p(x)} \\
+&=-E_{p(x)}(\log\frac{q(x)}{p(x)}) \\
+&\geq-\log E_{p(x)}\left(\frac{q(x)}{p(x)}\right) \\
+&=-\log\sum_x p(x)\frac{q(x)}{p(x)} \\
+&=-\log\sum_x q(x)
+\end{aligned}</script><p>因为 $\sum<em>x p(x)=1$，所以 $D</em>{KL}(p \Vert q) \geq 0$。</p>
 <h2 id="4-3-相对熵与交叉熵的关系"><a href="#4-3-相对熵与交叉熵的关系" class="headerlink" title="4.3 相对熵与交叉熵的关系"></a>4.3 相对熵与交叉熵的关系</h2><p>对相对熵公式进一步变形为：</p>
-<p>$$<br>\begin{aligned}<br>D_{KL}(p \Vert q)&amp;=\sum_x p(x)\log\frac{p(x)}{q(x)} \<br>&amp;=-\sum_x p(x)\log q(x)-\left(-\sum_x p(x)\log p(x)\right) \<br>&amp;=H(p,q)-H(p)<br>\end{aligned}<br>$$<br>到这一步我们也可以看出，因为 $D_{KL}(p \Vert q) \geq 0$，所以 $H(p,q) \geq H(p)$。</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+D_{KL}(p \Vert q)&=\sum_x p(x)\log\frac{p(x)}{q(x)} \\
+&=-\sum_x p(x)\log q(x)-\left(-\sum_x p(x)\log p(x)\right) \\
+&=H(p,q)-H(p)
+\end{aligned}</script><p>到这一步我们也可以看出，因为 $D_{KL}(p \Vert q) \geq 0$，所以 $H(p,q) \geq H(p)$。</p>
 <p>同时，也更容易的看出来相对熵表示的其实是当我们用一个非真实的分布表示系统时，其得到的信息量期望值相比采用真实分布表示时候多出的部分。</p>
 <p>在机器学习中，训练数据的分布已经固定下来，那么真实分布的熵 $H(p)$ 是一个定值。最小化相对熵 $D_{KL}(p \Vert q)$ 等价于最小化交叉熵 $H(p,q)$。</p>
 <p>相对熵与交叉熵的更多信息可以参考链接 [5]、[6] 中所述。</p>
@@ -1118,9 +1190,7 @@
     <title>神经网络以及前向传播与反向传播</title>
     <url>/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/</url>
     <content><![CDATA[<p>周六日两天的北京大雨下个不停，无法出门。正好听说深度学习领域的大牛 <a href="http://www.andrewng.org/" target="_blank" rel="noopener">Andrew Ng</a> 的新<a href="https://www.deeplearning.ai/" target="_blank" rel="noopener">创业项目</a>竟然是与 Coursera 合作的一个关于深度学习的<a href="https://www.coursera.org/specializations/deep-learning" target="_blank" rel="noopener">系列课程</a>，果断报名参加。花了两天的时间看完了第 1 门课程 <a href="https://www.coursera.org/learn/neural-networks-deep-learning" target="_blank" rel="noopener">Neural Networks and Deep Learning</a> 的视频，也做完了相关作业。相较其它课程不同，也是其中比较有意思的一点是，每一周的课程结束都有一段 Andrew 采访当今人工智能领域权威人士的视频。通过采访视频，也能够了解到一些人工智能技术的发展历史，还是相当不错的。</p>
-<p>言归正传，下面进入正题。</p>
-<a id="more"></a>
-
+<p>言归正传，下面进入正题。<br><a id="more"></a></p>
 <h1 id="1-什么是神经网络"><a href="#1-什么是神经网络" class="headerlink" title="1. 什么是神经网络"></a>1. 什么是神经网络</h1><p>话不多说，上图为敬。一个典型的神经网络结构图如下所示：</p>
 <p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Neural_Network.001.jpg" alt="Neural Network"></p>
 <ul>
@@ -1136,7 +1206,7 @@
 <h2 id="2-1-节点中的细节"><a href="#2-1-节点中的细节" class="headerlink" title="2.1 节点中的细节"></a>2.1 节点中的细节</h2><p>如果深入到神经网络中的其中一个节点（以上图中的 $a_1^{[1]}$ 为例），我们会得到如下的一张结构图：</p>
 <p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Neural_Network.002.jpg" alt="Neural Node"></p>
 <p>从图中可以明显的观察到，一个节点其实是由两部分组成：一个是加权求和部分，一个是对求和结果进行处理的部分，我们称这部分为激活函数。下面分别介绍。</p>
-<h3 id="2-1-1-加权求和"><a href="#2-1-1-加权求和" class="headerlink" title="2.1.1 加权求和"></a>2.1.1 加权求和</h3><p>就上图来说，我们可以把前一层中每个节点 $(a_1^{[0]}$, $a_3^{[0]}$, $a_3^{[0]})$ 指向本节点 $(a_1^{[1]})$ 的箭头理解为上层节点的输出值对本节点的影响，不同的节点输出值对本节点的影响程度不同，即具有不同的权值。我们用带上下标的字母 $w$ 来表示这个权值，$w_{ij}^{[l]}$ 表示的是第 $l-1$ 层中第 $j$ 个节点的输出值对第 $l$ 层中第 $i$ 个节点的影响程度。图中的字母标记与该准则一致。</p>
+<h3 id="2-1-1-加权求和"><a href="#2-1-1-加权求和" class="headerlink" title="2.1.1 加权求和"></a>2.1.1 加权求和</h3><p>就上图来说，我们可以把前一层中每个节点 $(a<em>1^{[0]}$, $a_3^{[0]}$, $a_3^{[0]})$ 指向本节点 $(a_1^{[1]})$ 的箭头理解为上层节点的输出值对本节点的影响，不同的节点输出值对本节点的影响程度不同，即具有不同的权值。我们用带上下标的字母 $w$ 来表示这个权值，$w</em>{ij}^{[l]}$ 表示的是第 $l-1$ 层中第 $j$ 个节点的输出值对第 $l$ 层中第 $i$ 个节点的影响程度。图中的字母标记与该准则一致。</p>
 <p>仔细观察图中加权求和公式会发现其中含有一个常数项 $b_1^{[1]}$，我们可以把该常数项理解为节点 $a_1^{[1]}$ 对输入值敏感程度的一个纠正。推广开来，我们用 $b_i^{[l]}$ 表示第 $l$ 层中第 $i$ 个节点中的常数偏置，英文中称作 bias。</p>
 <p>我们用 $z_i^{[l]}$ 表示第 $l$ 层中第 $i$ 个节点中的加权求和结果。求和结果之后传给激活函数，经过激活函数的处理输出。</p>
 <h3 id="2-1-2-激活函数"><a href="#2-1-2-激活函数" class="headerlink" title="2.1.2 激活函数"></a>2.1.2 激活函数</h3><p>激活函数是节点之所以存在的根本原因。神经网络之所以叫神经网络，就在于其模拟了生物中的神经系统。在神经系统中的每个神经元都通过轴突与树突与很多其它的神经元相连，神经元接收一些神经元发出的电信号，同时发出一定的电信号给其它神经元。即使不懂生物学中的相关知识，凭借常识我们也能推断出，首先神经元发出的电信号不可能无限大，其次神经元也不能无脑转发所有接收到的电信号信息量，否则其存在的意义就没有了。</p>
@@ -1145,62 +1215,94 @@
 <ul>
 <li><strong>sigmoid 函数</strong> 数学表达式以及函数曲线如下：</li>
 </ul>
-<p>$$\sigma(z)=\frac{1}{1+e^{-z}}$$</p>
-<p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Sigmoid.png" alt="Sigmoid"></p>
+<script type="math/tex; mode=display">\sigma(z)=\frac{1}{1+e^{-z}}</script><p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Sigmoid.png" alt="Sigmoid"></p>
 <ul>
 <li><strong>tanh 函数</strong> 数学表达式以及函数曲线如下：</li>
 </ul>
-<p>$$\tanh(z)=\frac{e^{z}-e^{-z}}{e^{z}+e^{-z}}$$</p>
-<p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Tanh.png" alt="Tanh"></p>
+<script type="math/tex; mode=display">\tanh(z)=\frac{e^{z}-e^{-z}}{e^{z}+e^{-z}}</script><p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Tanh.png" alt="Tanh"></p>
 <ul>
 <li><strong>ReLU 函数</strong> 数学表达式以及函数曲线如下：</li>
 </ul>
-<p>$$<br>\max(0, z)= \begin{cases}<br>   0 &amp;\text{if } z\leq0  \<br>   z &amp;\text{if } z&gt;0<br>\end{cases}<br>$$</p>
-<p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/ReLU.png" alt="ReLU"></p>
+<script type="math/tex; mode=display">
+\max(0, z)= \begin{cases}
+   0 &\text{if } z\leq0  \\
+   z &\text{if } z>0
+\end{cases}</script><p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/ReLU.png" alt="ReLU"></p>
 <ul>
 <li><strong>Leaky ReLU 函数</strong> 数学表达式以及函数曲线如下：</li>
 </ul>
-<p>$$<br>\max(0.01z, z)= \begin{cases}<br>   0.01z &amp;\text{if } z\leq0  \<br>   z &amp;\text{if } z&gt;0<br>\end{cases}<br>$$</p>
-<p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Leaky_ReLU.png" alt="Leaky_ReLU"></p>
+<script type="math/tex; mode=display">
+\max(0.01z, z)= \begin{cases}
+   0.01z &\text{if } z\leq0  \\
+   z &\text{if } z>0
+\end{cases}</script><p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Leaky_ReLU.png" alt="Leaky_ReLU"></p>
 <h2 id="2-2-向量化表示"><a href="#2-2-向量化表示" class="headerlink" title="2.2 向量化表示"></a>2.2 向量化表示</h2><p>还是以节点 $a_1^{[1]}$ 为例，学过线性代数的我们很容易可以把 $z_1^{[1]}$ 的计算表达式写成：</p>
-<p>$$<br>z_1^{[1]}=\left[w_{11}^{[1]}, w_{12}^{[1]}, w_{13}^{[1]}\right]\begin{bmatrix}a_1^{[0]}\a_2^{[0]}\a_3^{[0]}\end{bmatrix} + b_1^{[1]}<br>$$</p>
-<p>同理，</p>
-<p>$$<br>z_2^{[1]}=\left[w_{21}^{[1]}, w_{22}^{[1]}, w_{23}^{[1]}\right]\begin{bmatrix}a_1^{[0]}\a_2^{[0]}\a_3^{[0]}\end{bmatrix} + b_2^{[1]}<br>$$</p>
-<p>以此类推，如果我们做如下定义：</p>
-<p>$$<br>\begin{aligned}<br>A^{[0]} &amp;= \left[a_1^{[0]}, a_2^{[0]}, a_3^{[0]}\right]^\mathrm{T} \<br>Z^{[1]} &amp;= \left[z_1^{[1]}, z_2^{[1]},…, z_5^{[1]}\right]^\mathrm{T} \<br>W^{[1]} &amp;= \begin{bmatrix}<br>w_{11}^{[1]}, &amp; w_{12}^{[1]}, &amp; w_{13}^{[1]}\<br>w_{21}^{[1]}, &amp; w_{22}^{[1]}, &amp; w_{23}^{[1]}\<br>\vdots, &amp; \vdots, &amp; \vdots\<br>w_{51}^{[1]}, &amp; w_{52}^{[1]}, &amp; w_{53}^{[1]}<br>\end{bmatrix} \<br>B^{[1]} &amp;= \left[B_1^{[1]}, B_2^{[1]},…, B_5^{[1]}\right]^\mathrm{T}\<br>\end{aligned}<br>$$</p>
-<p>自然就得到：</p>
-<p>$$<br>Z^{[1]}=W^{[1]}A^{[0]} + B^{[1]}<br>$$</p>
-<p>以及，第一层节点的输出值的向量化：</p>
-<p>$$<br>A^{[1]}=g^{[1]}\left(Z^{[1]}\right)<br>$$</p>
-<p>其中 $g^{[1]}$ 表示第1层各节点中的激活函数通用表达。</p>
+<script type="math/tex; mode=display">
+z_1^{[1]}=\left[w_{11}^{[1]}, w_{12}^{[1]}, w_{13}^{[1]}\right]\begin{bmatrix}a_1^{[0]}\\a_2^{[0]}\\a_3^{[0]}\end{bmatrix} + b_1^{[1]}</script><p>同理，</p>
+<script type="math/tex; mode=display">
+z_2^{[1]}=\left[w_{21}^{[1]}, w_{22}^{[1]}, w_{23}^{[1]}\right]\begin{bmatrix}a_1^{[0]}\\a_2^{[0]}\\a_3^{[0]}\end{bmatrix} + b_2^{[1]}</script><p>以此类推，如果我们做如下定义：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+A^{[0]} &= \left[a_1^{[0]}, a_2^{[0]}, a_3^{[0]}\right]^\mathrm{T} \\
+Z^{[1]} &= \left[z_1^{[1]}, z_2^{[1]},..., z_5^{[1]}\right]^\mathrm{T} \\
+W^{[1]} &= \begin{bmatrix}
+w_{11}^{[1]}, & w_{12}^{[1]}, & w_{13}^{[1]}\\
+w_{21}^{[1]}, & w_{22}^{[1]}, & w_{23}^{[1]}\\
+\vdots, & \vdots, & \vdots\\
+w_{51}^{[1]}, & w_{52}^{[1]}, & w_{53}^{[1]}
+\end{bmatrix} \\
+B^{[1]} &= \left[B_1^{[1]}, B_2^{[1]},..., B_5^{[1]}\right]^\mathrm{T}\\
+\end{aligned}</script><p>自然就得到：</p>
+<script type="math/tex; mode=display">
+Z^{[1]}=W^{[1]}A^{[0]} + B^{[1]}</script><p>以及，第一层节点的输出值的向量化：</p>
+<script type="math/tex; mode=display">
+A^{[1]}=g^{[1]}\left(Z^{[1]}\right)</script><p>其中 $g^{[1]}$ 表示第1层各节点中的激活函数通用表达。</p>
 <p>我们可以很容易地把上边的推导过程一般化：</p>
-<p>$$<br>\begin{aligned}<br>Z^{[l]}&amp;=W^{[l]}A^{[l-1]} + B^{[l]} \<br>A^{[l]}&amp;=g^{[l]}\left(Z^{[l]}\right)<br>\end{aligned}<br>$$</p>
-<p>若第 $l$ 层中节点数为 $m$，第 $l-1$ 层中节点数为 $n$ 。那么，$Z^{[l]}$, $B^{[l]}$, $A^{[l]}$, 的维度为 $m\times 1$，$A^{[l-1]}$ 的维度为 $n\times 1$，$W^{[l]}$ 的维度为 $m \times n$ 。</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+Z^{[l]}&=W^{[l]}A^{[l-1]} + B^{[l]} \\
+A^{[l]}&=g^{[l]}\left(Z^{[l]}\right)
+\end{aligned}</script><p>若第 $l$ 层中节点数为 $m$，第 $l-1$ 层中节点数为 $n$ 。那么，$Z^{[l]}$, $B^{[l]}$, $A^{[l]}$, 的维度为 $m\times 1$，$A^{[l-1]}$ 的维度为 $n\times 1$，$W^{[l]}$ 的维度为 $m \times n$ 。</p>
 <h2 id="2-3-前向传播的图形化表示"><a href="#2-3-前向传播的图形化表示" class="headerlink" title="2.3 前向传播的图形化表示"></a>2.3 前向传播的图形化表示</h2><p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Neural_Network.003.jpg" alt="Forward Propagation"></p>
 <h1 id="3-神经网络中的反向传播"><a href="#3-神经网络中的反向传播" class="headerlink" title="3. 神经网络中的反向传播"></a>3. 神经网络中的反向传播</h1><p>经过上一节的分析，我们可以得出这样的结论，所谓的前向层传播说的就是，输入数据在神经网络的各层的各个节点之间传播的过程，最终得到结果输出出去。在这个过程中，神经网络中的各个节点的参数，即 $W^{[l]}$、$B^{[l]}$ 是已知的。</p>
 <p>但是在实际的应用中，我们往往是知道了输入数据以及输出结果（针对监督学习来说，输出结果通畅指分类标签），想要求取一个结构设计好的神经网络的参数。这其实就是一个函数参数拟合问题。针对函数的参数拟合问题，数学上已经有了很成熟的通用方案。通常来说，对于比较简单的函数形式，数据量也不是很大的情况，可以尝试用<a href="https://zh.wikipedia.org/wiki/最小二乘法" target="_blank" rel="noopener">最小二乘法</a>来拟合求取函数的参数。但是对于复杂的函数形式，同时数据量非常巨大的情况，最小二乘法就不是一个很明智的选择，一般都会选择某种迭代求解的方案一步步逼近最优参数。其中用的最多，通常来说也是最有效的方法是<a href="https://zh.wikipedia.org/wiki/梯度下降法" target="_blank" rel="noopener">梯度下降法</a>。</p>
 <p>在神经网络参数确定的问题中，就采用的是梯度下降法。</p>
 <h2 id="3-1-为什么可以用梯度下降法"><a href="#3-1-为什么可以用梯度下降法" class="headerlink" title="3.1 为什么可以用梯度下降法"></a>3.1 为什么可以用梯度下降法</h2><p>梯度下降法是一个用来求取函数极值点的方法。简单来说，能够用梯度下降法来求取神经网络中各节点的参数的理由是，我们能够比较容易的构造出一个关于参数 $(W^{[l]}$, $B^{[l]})$ 的函数 $\mathcal{J}$ （神经网络的参数在这个函数中属于变量的角色），使得该函数在极值点处对应的参数 $(W^{[l]}$, $B^{[l]})$ 取值正好是对所有样本数据的最佳拟合值。一般我们称构造的函数为代价函数 (cost function)，或损失函数 (loss function)。</p>
 <p>具体的说，如果我们把神经网络的函数形式表达为：</p>
-<p>$$\hat{Y}=f \left( W^{[1]}, W^{[2]},…, W^{[L]}, B^{[1]}, B^{[2]},…, B^{[L]}, X \right)$$</p>
-<p>其中 $L$ 表示神经网络的层数，对于每一个样本 $X^{(m)}$ 都有一个对应的实际观测值 $Y^{(m)}$ 以及通过神经网络的计算结果 $\hat{Y}^{(m)}$。假设我们有 $M$ 个样本，我们可以取代价函数的形式如下：</p>
-<p>$$<br>\begin{aligned}<br>\mathcal{J} &amp;= \frac{1}{M}\sum_{m=0}^{M}\left(\hat{Y}^{(m)}-Y^{(m)}\right)^{2} \<br>&amp;= \frac{1}{M}\sum_{m=0}^{M}\left( f \left(W^{[1]}, W^{[2]},…, W^{[L]}, B^{[1]}, B^{[2]},…, B^{[L]}, X^{(m)}\right)-Y^{(m)}\right)^{2}<br>\end{aligned}<br>$$</p>
-<p>因为我们知道，平方和函数是一个只有一个极小值点的函数，在最小值点处，对应了神经网络的预测结果大部分都要与观测结果一致。也就是说，在极小值点处，神经网络的参数是最优的。当然实际应用中可以选取的代价函数具体形式有很多种，并不局限于平方和这一种方式。</p>
+<script type="math/tex; mode=display">\hat{Y}=f \left( W^{[1]}, W^{[2]},..., W^{[L]}, B^{[1]}, B^{[2]},..., B^{[L]}, X \right)</script><p>其中 $L$ 表示神经网络的层数，对于每一个样本 $X^{(m)}$ 都有一个对应的实际观测值 $Y^{(m)}$ 以及通过神经网络的计算结果 $\hat{Y}^{(m)}$。假设我们有 $M$ 个样本，我们可以取代价函数的形式如下：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\mathcal{J} &= \frac{1}{M}\sum_{m=0}^{M}\left(\hat{Y}^{(m)}-Y^{(m)}\right)^{2} \\
+&= \frac{1}{M}\sum_{m=0}^{M}\left( f \left(W^{[1]}, W^{[2]},..., W^{[L]}, B^{[1]}, B^{[2]},..., B^{[L]}, X^{(m)}\right)-Y^{(m)}\right)^{2}
+\end{aligned}</script><p>因为我们知道，平方和函数是一个只有一个极小值点的函数，在最小值点处，对应了神经网络的预测结果大部分都要与观测结果一致。也就是说，在极小值点处，神经网络的参数是最优的。当然实际应用中可以选取的代价函数具体形式有很多种，并不局限于平方和这一种方式。</p>
 <p>不管采用哪种形式的代价函数，我们的最终目的是通过梯度下降法来获得代价函数的极值点对应的参数值。</p>
 <p>梯度下降法的迭代形式为：</p>
-<p>$$<br>\begin{aligned}<br>W^{[l]}<em>{(i)} &amp;:= W^{[l]}</em>{(i-1)}-\alpha\frac{\partial \mathcal{J}}{\partial W^{[l]}} \<br>B^{[l]}<em>{(i)} &amp;:= B^{[l]}</em>{(i-1)}-\alpha\frac{\partial \mathcal{J}}{\partial B^{[l]}}<br>\end{aligned}<br>$$</p>
-<p>下标 $(i)$ 表示第 $(i)$ 次迭代。$\alpha$ 叫做迭代步长，控制了每次迭代变量改变的速度，一般会取一个较小的值。$\frac{\partial \mathcal{J}}{\partial W^{[l]}}$ 和 $\frac{\partial \mathcal{J}}{\partial B^{[l]}}$ 分别为函数 $\mathcal{J}$ 对变量 $W^{[l]}$ 和 $B^{[l]}$ 的偏导数。</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+W^{[l]}_{(i)} &:= W^{[l]}_{(i-1)}-\alpha\frac{\partial \mathcal{J}}{\partial W^{[l]}} \\
+B^{[l]}_{(i)} &:= B^{[l]}_{(i-1)}-\alpha\frac{\partial \mathcal{J}}{\partial B^{[l]}}
+\end{aligned}</script><p>下标 $(i)$ 表示第 $(i)$ 次迭代。$\alpha$ 叫做迭代步长，控制了每次迭代变量改变的速度，一般会取一个较小的值。$\frac{\partial \mathcal{J}}{\partial W^{[l]}}$ 和 $\frac{\partial \mathcal{J}}{\partial B^{[l]}}$ 分别为函数 $\mathcal{J}$ 对变量 $W^{[l]}$ 和 $B^{[l]}$ 的偏导数。</p>
 <p>我们只要给定了 $W^{[l]}$ 和 $B^{[l]}$ 的初值，确定了迭代步长，给出计算偏导数的方法，那么就可以迭代求得一个理想的参数最优解。</p>
 <h2 id="3-2-应用反向传播计算偏导数"><a href="#3-2-应用反向传播计算偏导数" class="headerlink" title="3.2 应用反向传播计算偏导数"></a>3.2 应用反向传播计算偏导数</h2><p>实际应用中，$W^{[l]}$ 和 $B^{[l]}$ 的初值好确定，采用随机数即可（不可初始化为 $0$）。迭代步长可以通过经验确定。剩下的问题就是如何求解各个参数的偏导数了。</p>
 <p>为了回答这个问题，我们把函数 $\hat{Y}=f\left(W^{[1]}, W^{[2]},…, W^{[L]}, B^{[1]}, B^{[2]},…, B^{[L]}, X \right)$ 的形式再具象化一些：</p>
-<p>$$<br>\hat{Y}=g^{[L]}\left(W^{[L]}\left(g^{[L-1]}\left(W^{[L-1]}\left(…\right)\right)+B^{[L-1]}\right)+B^{[L]}\right)<br>$$</p>
-<p>回顾一下在 <strong>2.2</strong> 节最后我们得出了神经网络各层输出值之间的关系，$Z^{[l]}=W^{[l]}A^{[l-1]} + B^{[l]}$，$A^{[l]}=g^{[l]}(Z^{[l]})$ 。对比该公式，我们可以发现在这里 $\hat{Y}$ 就是 $A^{[L]}$。进一步我们可以把上边的公式写成递归形式：</p>
-<p>$$<br>\mathcal{J}=\frac{1}{M}\sum_{m=0}^{M}\left(A^{[L](m)}-Y^{(m)}\right)^{2} \<br>A^{[L]}=g^{[L]}(Z^{[L]}),\quad Z^{[L]}=W^{[L]}A^{[L-1]} + B^{[L]} \<br>A^{[L-1]}=g^{[L-1]}(Z^{[L-1]}),\quad Z^{[L-1]}=W^{[L-1]}A^{[L-2]} + B^{[L-1]} \<br>\vdots \<br>A^{[1]}=g^{[1]}(Z^{[1]}),\quad Z^{[1]}=W^{[1]}A^{[0]} + B^{[1]}<br>$$</p>
-<p>$A^{[0]}$ 就是 $X$。显然，我们可以应用函数的链式求导法则，一步步地求得从 $\mathcal{J}$ 对 $W^{[L]}$，$B^{[L]}$ 到对 $W^{[1]}$，$B^{[1]}$ 的偏导数。</p>
-<p>$$<br>\begin{aligned}<br>\frac{\partial \mathcal{J}}{\partial Z^{[l]}} &amp;=\frac{\partial \mathcal{J}}{\partial A^{[l]}}\frac{\partial A^{[l]}}{\partial Z^{[l]}}=\frac{\partial \mathcal{J}}{\partial A^{[l]}}g^{[l]\prime}(Z^{[l]}) \<br>\frac{\partial \mathcal{J}}{\partial W^{[l]}} &amp;=\frac{\partial \mathcal{J}}{\partial Z^{[l]}}\frac{\partial Z^{[l]}}{\partial W^{[l]}}=\frac{\partial \mathcal{J}}{\partial Z^{[l]}}A^{[l-1]\mathrm{T}} \<br>\frac{\partial \mathcal{J}}{\partial B^{[l]}} &amp;=\frac{\partial \mathcal{J}}{\partial Z^{[l]}}\frac{\partial Z^{[l]}}{\partial B^{[l]}}=\frac{\partial \mathcal{J}}{\partial Z^{[l]}}<br>\end{aligned}<br>$$</p>
-<p>这里边存在一个问题，当 $l=L$ 时，我们知道 $\mathcal{J}$ 关于 $\hat{Y}$ 也就是 $A^{[L]}$ 的具体形式（因为这个函数是我们构造出来的），可以很容易的求得其偏导数。当 $l&lt;L$ 时，我们无法直接从 $\mathcal{J}$ 求出来。不过我们发现，$Z^{[l]}$ 是 $A^{[l-1]}$ 的函数。根据链式求导法则，可以得到</p>
-<p>$$<br>\frac{\partial \mathcal{J}}{\partial A^{[l-1]}}<br>=\frac{\partial \mathcal{J}}{\partial Z^{[l]}}\frac{\partial Z^{[l]}}{\partial A^{[l-1]}}<br>=\frac{\partial \mathcal{J}}{\partial Z^{[l]}}W^{[l]}<br>$$</p>
-<p>也就是说，我们可以通过 $\frac{\partial \mathcal{J}}{\partial A^{[L]}}$ 一层层的反向计算直到求得 $\frac{\partial \mathcal{J}}{\partial A^{[l]}}$。至此为止，梯度下降法求解过程中的各个环节都打通了。</p>
+<script type="math/tex; mode=display">
+\hat{Y}=g^{[L]}\left(W^{[L]}\left(g^{[L-1]}\left(W^{[L-1]}\left(...\right)\right)+B^{[L-1]}\right)+B^{[L]}\right)</script><p>回顾一下在 <strong>2.2</strong> 节最后我们得出了神经网络各层输出值之间的关系，$Z^{[l]}=W^{[l]}A^{[l-1]} + B^{[l]}$，$A^{[l]}=g^{[l]}(Z^{[l]})$ 。对比该公式，我们可以发现在这里 $\hat{Y}$ 就是 $A^{[L]}$。进一步我们可以把上边的公式写成递归形式：</p>
+<script type="math/tex; mode=display">
+\mathcal{J}=\frac{1}{M}\sum_{m=0}^{M}\left(A^{[L]\(m)}-Y^{(m)}\right)^{2} \\
+A^{[L]}=g^{[L]}(Z^{[L]}),\quad Z^{[L]}=W^{[L]}A^{[L-1]} + B^{[L]} \\
+A^{[L-1]}=g^{[L-1]}(Z^{[L-1]}),\quad Z^{[L-1]}=W^{[L-1]}A^{[L-2]} + B^{[L-1]} \\
+\vdots \\
+A^{[1]}=g^{[1]}(Z^{[1]}),\quad Z^{[1]}=W^{[1]}A^{[0]} + B^{[1]}</script><p>$A^{[0]}$ 就是 $X$。显然，我们可以应用函数的链式求导法则，一步步地求得从 $\mathcal{J}$ 对 $W^{[L]}$，$B^{[L]}$ 到对 $W^{[1]}$，$B^{[1]}$ 的偏导数。</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\frac{\partial \mathcal{J}}{\partial Z^{[l]}} &=\frac{\partial \mathcal{J}}{\partial A^{[l]}}\frac{\partial A^{[l]}}{\partial Z^{[l]}}=\frac{\partial \mathcal{J}}{\partial A^{[l]}}g^{[l]\prime}(Z^{[l]}) \\
+\frac{\partial \mathcal{J}}{\partial W^{[l]}} &=\frac{\partial \mathcal{J}}{\partial Z^{[l]}}\frac{\partial Z^{[l]}}{\partial W^{[l]}}=\frac{\partial \mathcal{J}}{\partial Z^{[l]}}A^{[l-1]\mathrm{T}} \\
+\frac{\partial \mathcal{J}}{\partial B^{[l]}} &=\frac{\partial \mathcal{J}}{\partial Z^{[l]}}\frac{\partial Z^{[l]}}{\partial B^{[l]}}=\frac{\partial \mathcal{J}}{\partial Z^{[l]}}
+\end{aligned}</script><p>这里边存在一个问题，当 $l=L$ 时，我们知道 $\mathcal{J}$ 关于 $\hat{Y}$ 也就是 $A^{[L]}$ 的具体形式（因为这个函数是我们构造出来的），可以很容易的求得其偏导数。当 $l&lt;L$ 时，我们无法直接从 $\mathcal{J}$ 求出来。不过我们发现，$Z^{[l]}$ 是 $A^{[l-1]}$ 的函数。根据链式求导法则，可以得到</p>
+<script type="math/tex; mode=display">
+\frac{\partial \mathcal{J}}{\partial A^{[l-1]}}
+=\frac{\partial \mathcal{J}}{\partial Z^{[l]}}\frac{\partial Z^{[l]}}{\partial A^{[l-1]}}
+=\frac{\partial \mathcal{J}}{\partial Z^{[l]}}W^{[l]}</script><p>也就是说，我们可以通过 $\frac{\partial \mathcal{J}}{\partial A^{[L]}}$ 一层层的反向计算直到求得 $\frac{\partial \mathcal{J}}{\partial A^{[l]}}$。至此为止，梯度下降法求解过程中的各个环节都打通了。</p>
 <h2 id="3-3-反向传播的图形化表示"><a href="#3-3-反向传播的图形化表示" class="headerlink" title="3.3 反向传播的图形化表示"></a>3.3 反向传播的图形化表示</h2><p>需要说明一点的是，图中采用了符号简写，对于变量 $a$，$\frac{\partial \mathcal{J}}{\partial a}=\mathrm{d}a$，这也是在课程 <a href="https://www.coursera.org/specializations/deep-learning" target="_blank" rel="noopener">deep learning</a> 中的表达方式。</p>
 <p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Neural_Network.004.jpg" alt="Backpropagation"></p>
 <h1 id="4-如何构建一个完整的神经网络系统"><a href="#4-如何构建一个完整的神经网络系统" class="headerlink" title="4. 如何构建一个完整的神经网络系统"></a>4. 如何构建一个完整的神经网络系统</h1><p>结合前向传播与反向传播的结构图，最终我们形成了如下的一个完整的神经网络参数计算相关的结构图，如下：</p>
@@ -1233,8 +1335,7 @@
   <entry>
     <title>字符集和字符编码学习总结</title>
     <url>/20170801-Charset&amp;Encoding/</url>
-    <content><![CDATA[<p>问题起源于，从网上下载的高清电影外挂字幕放到 QNap 中去，从 Qvideo 中访问竟全是乱码。查询得知，QNap 中的 Video Station 只能解析识别以 UTF-8 编码的字幕文件。虽然采用 QNap 上更强大的 Plex 可以自然解决该问题，还是促使我要弄明白文本编码到底是怎么一回事。本以为文本编码是一个简单的问题，却在网上查阅的过程中牵连出了一系列的问题。下面分别介绍。</p>
-<a id="more"></a>
+    <content><![CDATA[<p>问题起源于，从网上下载的高清电影外挂字幕放到 QNap 中去，从 Qvideo 中访问竟全是乱码。查询得知，QNap 中的 Video Station 只能解析识别以 UTF-8 编码的字幕文件。虽然采用 QNap 上更强大的 Plex 可以自然解决该问题，还是促使我要弄明白文本编码到底是怎么一回事。本以为文本编码是一个简单的问题，却在网上查阅的过程中牵连出了一系列的问题。下面分别介绍。<br><a id="more"></a></p>
 <h1 id="1-字符集与字符编码"><a href="#1-字符集与字符编码" class="headerlink" title="1. 字符集与字符编码"></a>1. 字符集与字符编码</h1><p>想要弄明白文本的编码是怎么回事，绕不过去字符集和字符编码这两个概念。</p>
 <ul>
 <li><p><strong>字符集</strong>：说白了就是某些特定字符的集合，如果把世界上不同国家文明的所有字符都放在一起组成一个集合，那么我们常见的 ASCII、GB2312、GBK、GB18030、BIG5 字符集都只是包含了该集合的一部分而已。而 Unicode 字符集是可以包含所有国家文明中的所有字符的。</p>
@@ -1272,6 +1373,7 @@
 </li>
 </ol>
 <p>下表总结了编码规则，字母x表示可用编码的位。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1279,7 +1381,8 @@
 <th>UTF-8 编码方式（二进制）</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>0000 0000-0000 007F</td>
 <td>0xxxxxxx</td>
 </tr>
@@ -1295,12 +1398,14 @@
 <td>0001 0000-0010 FFFF</td>
 <td>11110xxx 10xxxxxx 10xxxxxx 10xxxxxx</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>跟据上表，解读 UTF-8 编码非常简单。如果一个字节的第一位是0，则这个字节单独就是一个字符；如果第一位是1，则连续有多少个1，就表示当前字符占用多少个字节。</p>
 <p>下面以汉字”严”为例，演示如何实现 UTF-8 编码。<br>已知”严”的 unicode 是 4E25（100111000100101），根据上表，可以发现 4E25 处在第三行的范围内（0000 0800-0000 FFFF），因此”严”的 UTF-8 编码需要三个字节，即格式是”1110xxxx 10xxxxxx 10xxxxxx”。然后，从”严”的最后一个二进制位开始，依次从后向前填入格式中的x，多出的位补0。这样就得到了，”严”的UTF-8编码是”11100100 10111000 10100101”，转换成十六进制就是E4B8A5。</p>
 <h1 id="4-总结"><a href="#4-总结" class="headerlink" title="4. 总结"></a>4. 总结</h1><p>经过上边的介绍，我们可以大致认为，现在流行的一些编码方案都是在兼容 ASCII 的基础上来实现的。为了满足各国家地区的更多字符的编码需求，出现了 ANSI 编码标准，但是该编码标准在具体各地区国家的实现上是彼此不兼容的。为了满足世界各国字符编码的兼容性需求，Unicode 定义了一个统一、完备的字符集。为了实现 Unicode 字符集在编码上的需求，又诞生了 UTF-8、UTF-16等等编码方案。</p>
 <p>最后用一张图来说明。</p>
-<p><img src="/20170801-Charset&Encoding/Charset&Encoding.png" alt></p>
+<p><img src="/20170801-Charset&Encoding/Charset&amp;Encoding.png" alt></p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ol>
 <li><a href="http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html" target="_blank" rel="noopener">字符编码笔记：ASCII，Unicode和UTF-8</a></li>
 <li><a href="http://blog.csdn.net/qq_28098067/article/details/53486032" target="_blank" rel="noopener">字符集详解（一看就懂系列）</a></li>
@@ -1330,7 +1435,6 @@
     <url>/20170319-What_is_Protobuf/</url>
     <content><![CDATA[<p>刚开始学习 Caffe，遇到的第一个问题就是需要阅读 caffe.proto 文件来了解 Caffe 源码的数据结构，因为 Caffe 是采用 Protobuf 来承载其基本数据结构的。经过查阅网上相关资料，现总结一下到底什么是 Protobuf，以及其使用方法。</p>
 <a id="more"></a>
-
 <h1 id="1-什么是-Protobuf"><a href="#1-什么是-Protobuf" class="headerlink" title="1. 什么是 Protobuf"></a>1. 什么是 Protobuf</h1><p><strong>protobuf</strong> 是 <strong>Protocol Buffers</strong> 的简称，Protocal Buffers 是 Google 的一个<a href="https://github.com/google/protobuf" target="_blank" rel="noopener">开源项目</a>。其官方解释为：</p>
 <blockquote>
 <p>Protocol Buffers (a.k.a., protobuf) are Google’s language-neutral, platform-neutral, extensible mechanism for serializing structured data.</p>
@@ -1377,9 +1481,7 @@
   <entry>
     <title>2017 新年新语</title>
     <url>/20170101-Happy_New_Year_in_2017/</url>
-    <content><![CDATA[<p>眨眼之间，又到了新的一年。回望走过的2016，发生了太多事情，不能称得上是非常愉快的一年。失败的计划，错误的选择，跌跌撞撞，兜兜转转，绕了一圈，生活的难题总是逃不掉。就像那窗外浓厚的京霾，风来无踪，风去依然，味道还是熟悉的味道，如影随形，沁入你的心肺，每一次呼吸，都能感受到它的存在。</p>
-<a id="more"></a>
-<p>纵然2016年是近乎惨烈的一年，也不能阻止2017的到来。时间的车轮滚滚向前，站在新一年的大门口，唯有再次鼓起勇气，鼓足干劲，迈开步子走下去。</p>
+    <content><![CDATA[<p>眨眼之间，又到了新的一年。回望走过的2016，发生了太多事情，不能称得上是非常愉快的一年。失败的计划，错误的选择，跌跌撞撞，兜兜转转，绕了一圈，生活的难题总是逃不掉。就像那窗外浓厚的京霾，风来无踪，风去依然，味道还是熟悉的味道，如影随形，沁入你的心肺，每一次呼吸，都能感受到它的存在。<br><a id="more"></a><br>纵然2016年是近乎惨烈的一年，也不能阻止2017的到来。时间的车轮滚滚向前，站在新一年的大门口，唯有再次鼓起勇气，鼓足干劲，迈开步子走下去。</p>
 <p>希望在新的一年里，自己的心态能够回归常态，变得乐观一些，自信一些，能够坚持多学一点自己想要学习的东西，不会再被琐事打断。</p>
 <p>梦想还是要有的，万一实现了呢？</p>
 <p>以上。</p>
@@ -1394,9 +1496,8 @@
   <entry>
     <title>cmake, make, CMakeLists.txt, Makefile 简介</title>
     <url>/20161231-Intro_about_cmake_make_CMakeLists.txt_Makefile/</url>
-    <content><![CDATA[<p>在各种开源项目中，经常会发现项目中除了代码源文件，还包含了 <em>CMakeList.txt*、 *Makefile</em> 文件，在项目的编译时候需要用到的命令有 <strong>cmake</strong> 、 <strong>make</strong>。本文主要介绍一下两个文件和命令之间的关系。</p>
+    <content><![CDATA[<p>在各种开源项目中，经常会发现项目中除了代码源文件，还包含了 <em>CMakeList.txt</em>、 <em>Makefile</em> 文件，在项目的编译时候需要用到的命令有 <strong>cmake</strong> 、 <strong>make</strong>。本文主要介绍一下两个文件和命令之间的关系。</p>
 <a id="more"></a>
-
 <h1 id="cmake-make-CMakeList-txt-Makefile之间的关系"><a href="#cmake-make-CMakeList-txt-Makefile之间的关系" class="headerlink" title="cmake, make, CMakeList.txt, Makefile之间的关系"></a>cmake, make, CMakeList.txt, Makefile之间的关系</h1><p>编写程序的大体流程为：</p>
 <ol>
 <li>用编辑器（vim、emacs等）编写源代码文件（.h、.cpp等）；</li>
@@ -1404,11 +1505,11 @@
 <li>用链接器连接目标文件生成可执行文件（.exe等）。</li>
 </ol>
 <p>一个程序在编写时，可能需要编写很多的代码文件，以及依赖很多第三方的库。在这种情况下，手动依次编译每个文件会变的非常麻烦，效率低下。</p>
-<p><strong>make</strong> 是一个自动化的批量编译工具，可以实现用一个命令构建整个工程的目的。但是其执行需要依赖一个规则文件，这个文件就是 <em>Makefile*。 *Makefile</em> 文件里详细描述了构建的细节（文件的依赖关系，编译的先后顺序等）。</p>
+<p><strong>make</strong> 是一个自动化的批量编译工具，可以实现用一个命令构建整个工程的目的。但是其执行需要依赖一个规则文件，这个文件就是 <em>Makefile</em>。 <em>Makefile</em> 文件里详细描述了构建的细节（文件的依赖关系，编译的先后顺序等）。</p>
 <p>对于一个大工程来说，编写 <em>Makefile</em> 文件也是一项非常复杂的事情。</p>
 <p><strong>cmake</strong>(Cross-platform Make)是一个可以自动生成 <em>Makefile</em> 文件的工具，当然它不只能生成 <em>Makefile</em> ，还能跨平台生成主流IDE(VS, xcode…)构建工程所需的 <em>project</em> 文件。 <strong>cmake</strong> 的执行同样需要依赖规则文件，这个文件就是 <em>CMakeLists.txt</em> 。</p>
 <p>综上所述，大致可以总结 <strong>cmake</strong>, <strong>make</strong>, <strong>CMakeList.txt</strong>, <strong>Makefile</strong> 之间的关系，如下图所示：</p>
-<p>![工程构建](20161231-cmake, make, CMakeLists.txt, Makefile简介/ProjectBuild.png)</p>
+<p><img src="/20161231-Intro_about_cmake_make_CMakeLists.txt_Makefile/ProjectBuild.png" alt="工程构建"></p>
 <h1 id="参考文章链接："><a href="#参考文章链接：" class="headerlink" title="参考文章链接："></a>参考文章链接：</h1><ol>
 <li><a href="http://blog.sina.com.cn/s/blog_74a459380102uxlz.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_74a459380102uxlz.html</a></li>
 <li><a href="http://blog.csdn.net/android_ruben/article/details/51698498" target="_blank" rel="noopener">http://blog.csdn.net/android_ruben/article/details/51698498</a></li>
@@ -1419,9 +1520,9 @@
         <category>Programming</category>
       </categories>
       <tags>
+        <tag>编程</tag>
         <tag>cmake</tag>
         <tag>make</tag>
-        <tag>编程</tag>
       </tags>
   </entry>
   <entry>
@@ -1436,20 +1537,15 @@
 <li>你可以改变你的程序，将一个BUG产生的影响修正从而测试其他BUG。</li>
 </ol>
 <a id="more"></a>
-
 <h1 id="1-GDB的安装"><a href="#1-GDB的安装" class="headerlink" title="1.GDB的安装"></a>1.GDB的安装</h1><p>homebrew安装方法：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install gdb</span><br></pre></td></tr></table></figure>
-
 <h1 id="2-解决GDB在Mac系统下无法调试的问题"><a href="#2-解决GDB在Mac系统下无法调试的问题" class="headerlink" title="2.解决GDB在Mac系统下无法调试的问题"></a>2.解决GDB在Mac系统下无法调试的问题</h1><p>gdb初次安装完成运行时，会出现下面类似的错误：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">(gdb) run</span><br><span class="line">Starting program: /usr/<span class="built_in">local</span>/bin/fabnacci</span><br><span class="line">Unable to find Mach task port <span class="keyword">for</span> process-id 23330: (os/kern) failure (0x5).</span><br><span class="line"> (please check gdb is codesigned - see taskgated(8))</span><br></pre></td></tr></table></figure>
-
 <p>这是由Mac系统Darwin内核的特殊权限所限，解决方案是创建证书签名，具体方法参考<a href="https://segmentfault.com/q/1010000004136334" target="_blank" rel="noopener">解决GDB在Mac下不能调试的问题</a>。</p>
 <h1 id="3-解决GDB的调试失败问题"><a href="#3-解决GDB的调试失败问题" class="headerlink" title="3.解决GDB的调试失败问题"></a>3.解决GDB的调试失败问题</h1><p>经过上一步的操作，解决了gdb的签名问题，但是还会遇到下面的错误：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">(gdb) run</span><br><span class="line">Starting program: /usr/<span class="built_in">local</span>/bin/fabnacci</span><br><span class="line">During startup program terminated with signal ?, Unknown signal.</span><br></pre></td></tr></table></figure>
-
 <p>解决方法很简单，运行</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> startup-with-shell off</span><br></pre></td></tr></table></figure>
-
 <p>即可，方便起见可以将此命令写入到个人路径的<code>.gdbinit</code>文件中，如果没有可以新建。<br>（该部分参考了<a href="https://www.zhihu.com/question/51251303/answer/127069542" target="_blank" rel="noopener">gdb调试器调试失败？</a>）</p>
 <h2 id="4-GDB调试的命令"><a href="#4-GDB调试的命令" class="headerlink" title="4.GDB调试的命令"></a>4.GDB调试的命令</h2><p><a href="http://blog.csdn.net/haoel/article/details/2879/" target="_blank" rel="noopener">参考这里</a></p>
 ]]></content>
@@ -1457,17 +1553,17 @@
         <category>Programming</category>
       </categories>
       <tags>
-        <tag>编程</tag>
         <tag>Mac</tag>
         <tag>GDB</tag>
+        <tag>编程</tag>
       </tags>
   </entry>
   <entry>
     <title>My first blog</title>
     <url>/20160517-My_first_blog/</url>
     <content><![CDATA[<p>从今天开始，记录自己的所学所思所想。</p>
-<p>不求长久，唯有开始。</p>
-<a id="more"></a>]]></content>
+<p>不求长久，唯有开始。<br><a id="more"></a></p>
+]]></content>
       <categories>
         <category>Diary</category>
       </categories>

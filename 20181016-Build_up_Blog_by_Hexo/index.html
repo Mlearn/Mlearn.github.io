@@ -277,20 +277,16 @@
 </blockquote>
 <p>零零散散的，网上很多人都有介绍使用 Hexo 搭建博客的步骤技巧，每个人都根据自己的需要有特别的定制。本人也在此总结一下自己的搭建使用过程，一是做个记录，为以后回顾做个归档；二是为有同样需求的同学给一些参考。</p>
 <a id="more"></a>
-
 <p>接下来按照搭建和定制顺序开始介绍。<strong>（行文日，Hexo 版本为 3.7.1，主题 Next 版本为 6.4.2）</strong></p>
 <h1 id="1-Hexo-主程序安装"><a href="#1-Hexo-主程序安装" class="headerlink" title="1. Hexo 主程序安装"></a>1. Hexo 主程序安装</h1><p>Hexo 是基于 Node.js 和 Git，安装 Hexo 之前需要在机器上安装以上软件。官网给出了简单的安装方法和步骤。Git 安装比较简单，Node.js 推荐使用 <a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm</a> 包管理工具来安装（Windows 系统推荐单独的<a href="https://github.com/coreybutler/nvm-windows" target="_blank" rel="noopener">nvm-windows</a>工具）。</p>
 <p>安装好nvm 之后就可以在终端执行命令安装 Node.js：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm install stable</span><br></pre></td></tr></table></figure>
-
 <p>关于 nvm、npm、Node.js 的关系参考文末链接 [1].</p>
 <p>另外需要注意的是 Mac 系统下 nvm 要使用官网推荐安装方法，不要用 Brew 安装。必备软件安装完毕之后，即可使用 npm 安装 Hexo：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
 <p>CLI = Command Line Interface 命令行界面<sup>[2]</sup>。</p>
 <p>接下来使用下面命令来创建博客的工作目录 <code>[blog_path]</code>：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init [blog_path]</span><br><span class="line"><span class="built_in">cd</span> [blog_path]</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
 <p>Hexo 的使用方法参考官网就行。</p>
 <h1 id="2-Hexo-主题-Next"><a href="#2-Hexo-主题-Next" class="headerlink" title="2. Hexo 主题 Next"></a>2. Hexo 主题 Next</h1><p>Hexo 支持众多的主题风格，可以自由切换，不过由于都是个人开发的，不同主题的完善程度不一致。经过一番对比，发现风格、稳定性、扩展性最适合我的是 <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">Next</a> 主题中的 Gemini 风格。主题安装使用方法见 Next 官网。</p>
 <p>自己网站主题风格的配置介绍见<a href="http://anmou.net/20181017-Private_Setting_to_Next/" target="_blank" rel="noopener">Hexo博客Next主题个性化配置</a>。配置文件备份<a href="https://github.com/Mlearn/BlogComments/blob/master/themes/next/_config.yml" target="_blank" rel="noopener">地址</a>。</p>
@@ -303,44 +299,31 @@
 </ol>
 <h1 id="4-MathJax-公式渲染"><a href="#4-MathJax-公式渲染" class="headerlink" title="4. MathJax 公式渲染"></a>4. MathJax 公式渲染</h1><p>由于 Hexo 默认的 md 渲染引擎等原因，想要正确呈现出 md 文件中的行间与行内公式，需要以下几个主要步骤<sup>[3]</sup>：</p>
 <h2 id="4-1-卸载默认引擎，安装新的引擎"><a href="#4-1-卸载默认引擎，安装新的引擎" class="headerlink" title="4.1 卸载默认引擎，安装新的引擎:"></a>4.1 卸载默认引擎，安装新的引擎:</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure>
-
 <h2 id="4-2-微调对行间公式的解析语法；"><a href="#4-2-微调对行间公式的解析语法；" class="headerlink" title="4.2 微调对行间公式的解析语法；"></a>4.2 微调对行间公式的解析语法；</h2><p>到博客根目录下，找到node_modules\kramed\lib\rules\inline.js，把第11行的escape变量的值做相应的修改：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,</span></span><br><span class="line">  <span class="built_in">escape</span>: <span class="regexp">/^\\([`*\[\]()#$+\-.!_&gt;])/</span>,</span><br></pre></td></tr></table></figure>
-
-<p>这一步是在原基础上取消了对,{,}的转义(escape)。同时把第20行的em变量也要做相应的修改。</p>
+<p>这一步是在原基础上取消了对\,{,}的转义(escape)。同时把第20行的em变量也要做相应的修改。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span></span><br><span class="line">  em: <span class="regexp">/^\*((?:\*\*|[\s\S])+?)\*(?!\*)/</span>,</span><br></pre></td></tr></table></figure>
-
 <p>重新启动 hexo。</p>
 <h2 id="4-3-在主题中打开-mathjax-开关；"><a href="#4-3-在主题中打开-mathjax-开关；" class="headerlink" title="4.3 在主题中打开 mathjax 开关；"></a>4.3 在主题中打开 mathjax 开关；</h2><p>进入主题 Next 目录下，打开配置文件 <em>_config.yml</em>，把 mathjax 默认 false 值改为true：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Math Equations Render Support</span></span><br><span class="line"><span class="attr">math:</span></span><br><span class="line">  <span class="attr">enable:</span>  <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Default(true) will load mathjax/katex script on demand</span></span><br><span class="line">  <span class="comment"># That is it only render those page who has 'mathjax: true' in Front Matter.</span></span><br><span class="line">  <span class="comment"># If you set it to false, it will load mathjax/katex srcipt EVERY PAGE.</span></span><br><span class="line">  <span class="attr">per_page:</span>  <span class="literal">true</span></span><br><span class="line">  <span class="attr">engine:</span>  <span class="string">mathjax</span></span><br></pre></td></tr></table></figure>
-
-
 <h2 id="4-4-在-md-文档-Front-matter-中打开-mathjax-开关。"><a href="#4-4-在-md-文档-Front-matter-中打开-mathjax-开关。" class="headerlink" title="4.4 在 md 文档 Front-matter 中打开 mathjax 开关。"></a>4.4 在 md 文档 Front-matter 中打开 mathjax 开关。</h2><p> 如下所示，加入 <code>mathjax: true</code> 语句：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: index.html</span><br><span class="line">date: 2016-12-28 21:01:30</span><br><span class="line">tags:</span><br><span class="line">mathjax: true</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
 <h1 id="5-博客评论系统"><a href="#5-博客评论系统" class="headerlink" title="5. 博客评论系统"></a>5. 博客评论系统</h1><p>考虑到各种第三方评论系统的寿命无常（以前介绍的多说博客评论系统已经挂掉）。采用基于 Github Issue 的评论插件成为一种较好以及有逼格的选择。最开始采用的 <a href="https://github.com/imsun/gitment" target="_blank" rel="noopener">gitment</a>，貌似作者已经不再支持，转战 <a href="https://github.com/gitalk/gitalk" target="_blank" rel="noopener">gitalk</a> (找到了项目开始的地方<a href="https://www.v2ex.com/t/378728" target="_blank" rel="noopener">V2EX</a>)。</p>
 <p>关于 gitalk 的详细配置与使用可以参考<a href="https://asdfv1929.github.io/2018/01/20/gitalk/" target="_blank" rel="noopener">这篇文献</a><sup>[4]</sup></p>
 <h1 id="6-本地搜索支持"><a href="#6-本地搜索支持" class="headerlink" title="6. 本地搜索支持"></a>6. 本地搜索支持</h1><p>默认搜索功能太弱，卡的不行。安装插件 <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener">hexo-generator-search</a>：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-search --save</span><br></pre></td></tr></table></figure>
-
 <p>然后在 next 主题目录下的文件 <em>_config.yml</em> 中设置：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Local search</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/hexo-generator-searchdb</span></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line"><span class="attr">enable:</span>  <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
 <h1 id="7-博客底部添加固定链接"><a href="#7-博客底部添加固定链接" class="headerlink" title="7. 博客底部添加固定链接"></a>7. 博客底部添加固定链接</h1><p>可以给每篇博文底部自动添加本博文的固定链接，附带链接还可以写一些版权说明信息。安装插件 <a href="https://github.com/acwong00/hexo-addlink" target="_blank" rel="noopener">hexo-addlink</a>：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-addlink --save</span><br></pre></td></tr></table></figure>
-
 <p>然后在 Hexo 目录下的 <em>_config.yml</em> 中添加如下信息：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">addlink:</span></span><br><span class="line"><span class="attr">before_text:</span>  <span class="string">&lt;HR</span> <span class="string">SIZE=5&gt;&lt;small&gt;&lt;strong&gt;本文作者：Northan&lt;br&gt;本文链接：</span>  <span class="comment"># text before the post link</span></span><br><span class="line"><span class="attr">after_text:</span>  <span class="string">&lt;br&gt;版权声明：作者拥有版权，请注明出处转载。</span>  <span class="comment"># text after the post link</span></span><br></pre></td></tr></table></figure>
-
 <p>最终效果参见本文末尾。</p>
 <h1 id="8-html-文件瘦身"><a href="#8-html-文件瘦身" class="headerlink" title="8. html 文件瘦身"></a>8. html 文件瘦身</h1><p>到此为止，博客想要实现的功能基本配置完成。</p>
 <p>默认生成的 html 文件中有很多不起作用的符号，比如空格注释等等。安装插件 <a href="https://github.com/rozbo/hexo-neat" target="_blank" rel="noopener">Hexo-neat</a> 可以对产生的 html 文件进行瘦身。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-neat --save</span><br></pre></td></tr></table></figure>
-
 <p>然后在 Hexo 目录下的 <em>_config.yml</em> 中添加如下信息：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">neat_enable:</span>  <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-
 <h1 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h1><p>1: <a href="https://www.cnblogs.com/qqpw/p/6597295.html" target="_blank" rel="noopener">nvm、npm、nodejs的关系</a><br>2: <a href="https://segmentfault.com/q/1010000009487303" target="_blank" rel="noopener">hexo和hexo-cli的关系？</a><br>3: <a href="https://www.jianshu.com/p/7ab21c7f0674" target="_blank" rel="noopener">在Hexo中渲染MathJax数学公式</a><br>4: <a href="https://asdfv1929.github.io/2018/01/20/gitalk/" target="_blank" rel="noopener">Hexo NexT主题中集成gitalk评论系统</a></p>
 
     </div>

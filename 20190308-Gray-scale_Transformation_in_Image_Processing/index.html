@@ -282,24 +282,20 @@
 <p>简单起见，本文只考虑单通道灰度图像，同时图片的像素值归一化到 [0 1] 范围内。若要应用于不同灰度范围图像，只需在处理前对图像进行归一，在处理之后进行灰度范围还原即可。这里不作过多讨论。</p>
 <p>通俗来说，灰度变换就是找到一种方式（或称为变换函数）$s=T(r)$ ，将图像中所有灰度值为 $r$ 的像素的灰度值变为 $s$，同时保证其像素位置不变。</p>
 <a id="more"></a>
-
 <p>参考《数字图像处理的MATLAB实现(第2版)》中的介绍个人理解，简单灰度变换方法大体分为两类：1、依据具体的函数形式变换；2、依据灰度分布直方图信息进行变换。更复杂的情况不做讨论。</p>
 <h1 id="1-函数变换形式"><a href="#1-函数变换形式" class="headerlink" title="1. 函数变换形式"></a>1. 函数变换形式</h1><p>以下介绍的各中方法要求所处理的输入图像灰度范围需要保持在 [0 1] 之间。当输出图像灰度范围超出或小于 [0 1] 范围，需要进行归一化，即灰度范围的线性扩展或收缩。</p>
-<h2 id="1-1-Gamma-变换"><a href="#1-1-Gamma-变换" class="headerlink" title="1.1 Gamma 变换"></a>1.1 Gamma 变换</h2><h3 id="a-变换公式："><a href="#a-变换公式：" class="headerlink" title="a) 变换公式："></a>a) 变换公式：</h3><p>$$s=r^{\gamma}$$</p>
-<h3 id="b-变换曲线："><a href="#b-变换曲线：" class="headerlink" title="b) 变换曲线："></a>b) 变换曲线：</h3><p><img src="/20190308-Gray-scale_Transformation_in_Image_Processing/Gamma_Transform.png" alt="Gamma_Transform"></p>
+<h2 id="1-1-Gamma-变换"><a href="#1-1-Gamma-变换" class="headerlink" title="1.1 Gamma 变换"></a>1.1 Gamma 变换</h2><h3 id="a-变换公式："><a href="#a-变换公式：" class="headerlink" title="a) 变换公式："></a>a) 变换公式：</h3><script type="math/tex; mode=display">s=r^{\gamma}</script><h3 id="b-变换曲线："><a href="#b-变换曲线：" class="headerlink" title="b) 变换曲线："></a>b) 变换曲线：</h3><p><img src="/20190308-Gray-scale_Transformation_in_Image_Processing/Gamma_Transform.png" alt="Gamma_Transform"></p>
 <h3 id="c-变换说明："><a href="#c-变换说明：" class="headerlink" title="c) 变换说明："></a>c) 变换说明：</h3><ul>
 <li>当输入范围归一时，输出结果自动归一；</li>
 <li>参数 $\gamma$ 小于 1 时，扩展低灰度值范围，压缩高灰度值范围；</li>
 <li>参数 $\gamma$ 大于 1 时，扩展高灰度值范围，压缩低灰度值范围。</li>
 </ul>
-<h2 id="1-2-对数变换"><a href="#1-2-对数变换" class="headerlink" title="1.2 对数变换"></a>1.2 对数变换</h2><h3 id="a-变换公式：-1"><a href="#a-变换公式：-1" class="headerlink" title="a) 变换公式："></a>a) 变换公式：</h3><p>$$s=\log_{v+1}(1+vr)$$</p>
-<h3 id="b-变换曲线：-1"><a href="#b-变换曲线：-1" class="headerlink" title="b) 变换曲线："></a>b) 变换曲线：</h3><p><img src="/20190308-Gray-scale_Transformation_in_Image_Processing/Log_Transform.png" alt="Log_Transform"></p>
+<h2 id="1-2-对数变换"><a href="#1-2-对数变换" class="headerlink" title="1.2 对数变换"></a>1.2 对数变换</h2><h3 id="a-变换公式：-1"><a href="#a-变换公式：-1" class="headerlink" title="a) 变换公式："></a>a) 变换公式：</h3><script type="math/tex; mode=display">s=\log_{v+1}(1+vr)</script><h3 id="b-变换曲线：-1"><a href="#b-变换曲线：-1" class="headerlink" title="b) 变换曲线："></a>b) 变换曲线：</h3><p><img src="/20190308-Gray-scale_Transformation_in_Image_Processing/Log_Transform.png" alt="Log_Transform"></p>
 <h3 id="c-变换说明：-1"><a href="#c-变换说明：-1" class="headerlink" title="c) 变换说明："></a>c) 变换说明：</h3><ul>
 <li>当输入范围归一时，输出结果自动归一；</li>
 <li>对数变换只能扩展低灰度范围，压缩高灰度值范围；</li>
 </ul>
-<h2 id="1-3-对比度拉伸"><a href="#1-3-对比度拉伸" class="headerlink" title="1.3 对比度拉伸"></a>1.3 对比度拉伸</h2><h3 id="a-变换公式：-2"><a href="#a-变换公式：-2" class="headerlink" title="a) 变换公式："></a>a) 变换公式：</h3><p>$$s=\frac{1}{1+(m/r)^E}$$</p>
-<p>此公式并不能保证变换之后的灰度范围仍充满 [0 1]，需要再进行灰度范围的归一。<strong>b)</strong> 中所画曲线已经是对输出归一化到 [0 1] 区间之后的结果。</p>
+<h2 id="1-3-对比度拉伸"><a href="#1-3-对比度拉伸" class="headerlink" title="1.3 对比度拉伸"></a>1.3 对比度拉伸</h2><h3 id="a-变换公式：-2"><a href="#a-变换公式：-2" class="headerlink" title="a) 变换公式："></a>a) 变换公式：</h3><script type="math/tex; mode=display">s=\frac{1}{1+(m/r)^E}</script><p>此公式并不能保证变换之后的灰度范围仍充满 [0 1]，需要再进行灰度范围的归一。<strong>b)</strong> 中所画曲线已经是对输出归一化到 [0 1] 区间之后的结果。</p>
 <h3 id="b-变换曲线：-2"><a href="#b-变换曲线：-2" class="headerlink" title="b) 变换曲线："></a>b) 变换曲线：</h3><p>（所有曲线取参数 $m=0.5$ 情况下）</p>
 <p><img src="/20190308-Gray-scale_Transformation_in_Image_Processing/Exp_Transform.png" alt></p>
 <h3 id="c-变换说明：-2"><a href="#c-变换说明：-2" class="headerlink" title="c) 变换说明："></a>c) 变换说明：</h3><ul>
@@ -308,8 +304,7 @@
 <li>此变换在参数 $E$ 取小值时的变换行为明显不同于取较大值时的行为。</li>
 </ul>
 <h2 id="1-4-对比度拉伸（采用-Sigmoid-函数进行变换）"><a href="#1-4-对比度拉伸（采用-Sigmoid-函数进行变换）" class="headerlink" title="1.4 对比度拉伸（采用 Sigmoid 函数进行变换）"></a>1.4 对比度拉伸（采用 Sigmoid 函数进行变换）</h2><p>通过研究 <strong>1.3</strong> 中的变换公式，发现其设计的目的主要是为了将输入图像某个中间范围内的灰度范围进行拓展。但是其参数 $E$ 在取小值和大值时的表现并不同，$E$ 取大值时的表现才是设计应达到的目的。进一步发现当 $E$ 取值较大时，曲线与 Sigmoid 曲线类似，何不直接采用 Sigmoid 函数进行灰度变换呢？</p>
-<h3 id="a-变换公式：-3"><a href="#a-变换公式：-3" class="headerlink" title="a) 变换公式："></a>a) 变换公式：</h3><p>$$s=\frac{1}{1+e^{-E(r-m)}}$$</p>
-<p>此公式并不能保证变换之后的灰度范围仍充满 [0 1]，需要再进行灰度范围的归一。<strong>b)</strong> 中所画曲线已经是对输出归一化到 [0 1] 区间之后的结果。</p>
+<h3 id="a-变换公式：-3"><a href="#a-变换公式：-3" class="headerlink" title="a) 变换公式："></a>a) 变换公式：</h3><script type="math/tex; mode=display">s=\frac{1}{1+e^{-E(r-m)}}</script><p>此公式并不能保证变换之后的灰度范围仍充满 [0 1]，需要再进行灰度范围的归一。<strong>b)</strong> 中所画曲线已经是对输出归一化到 [0 1] 区间之后的结果。</p>
 <h3 id="b-变换曲线：-3"><a href="#b-变换曲线：-3" class="headerlink" title="b) 变换曲线："></a>b) 变换曲线：</h3><p>（所有曲线取参数 $m=0.5$ 情况下）</p>
 <p><img src="/20190308-Gray-scale_Transformation_in_Image_Processing/Sigmoid_Transform.png" alt></p>
 <h3 id="c-变换说明：-3"><a href="#c-变换说明：-3" class="headerlink" title="c) 变换说明："></a>c) 变换说明：</h3><ul>
@@ -320,12 +315,12 @@
 <h1 id="2-根据直方图进行灰度值变换"><a href="#2-根据直方图进行灰度值变换" class="headerlink" title="2. 根据直方图进行灰度值变换"></a>2. 根据直方图进行灰度值变换</h1><h2 id="2-1-直方图均衡化"><a href="#2-1-直方图均衡化" class="headerlink" title="2.1 直方图均衡化"></a>2.1 直方图均衡化</h2><p>第一次看到直方图均衡化的公式介绍，半天没有反应过来。明白了其中的道理之后发现本质上是一个很简单的事情。以连续分布为例，均衡化的目的本质上是将一个在 [0 1] 范围内的任意灰度分布转换到在 [0 1] 范围内的均匀分布，同时保证在原分布中的像素灰度大小关系在转换之后保持不变。即，如果图像中的任意两个像素 A、B，在灰度转换之前 A 的灰度小于 B，转换之后同样也要保证 A 的灰度小于 B。</p>
 <p>设给定输入图像的灰度级的分布，也可以叫概率密度函数（PDF）为 $P_r(r), r \in [0,1]$ ，输出图像的概率密度函数为 $P_s(s), s \in [0,1]$。根据均衡化的定义，要求对任意 $s$，有 $P_s(s)=1$。</p>
 <p>对变换来说，自然满足相邻灰度级的像素经过变换之后其灰度级仍然为相邻的：</p>
-<p>$$<br>P_s(s){\rm d}s = P_r(r){\rm d}r<br>$$</p>
-<p>变换前图像中灰度值从 0 累积到 $r$ 的像素数量应该等于变换后图像中灰度值从 0 累积到 $s$ 的像素数量。如下图z中所示，变换前后的阴影部分，也即各自概率密度积分值相等：</p>
+<script type="math/tex; mode=display">
+P_s(s){\rm d}s = P_r(r){\rm d}r</script><p>变换前图像中灰度值从 0 累积到 $r$ 的像素数量应该等于变换后图像中灰度值从 0 累积到 $s$ 的像素数量。如下图z中所示，变换前后的阴影部分，也即各自概率密度积分值相等：</p>
 <p><img src="/20190308-Gray-scale_Transformation_in_Image_Processing/Histogram_Equalization.png" alt></p>
 <p>同时注意到 $P_s(s)=1$， 可以得到</p>
-<p>$$<br>s = \int_0^s {\rm d}v = \int_0^s P_s(v){\rm d}v = \int_0^r P_r(w){\rm d}w<br>$$</p>
-<p>此即为直方图均衡化的灰度变化公式，这是一个累积分布函数。它说的是，对原图像中灰度级为 $r$ 的像素，经过均衡化之后，其灰度级变为 $s$，值为原图灰度级的累积分布函数。</p>
+<script type="math/tex; mode=display">
+s = \int_0^s {\rm d}v = \int_0^s P_s(v){\rm d}v = \int_0^r P_r(w){\rm d}w</script><p>此即为直方图均衡化的灰度变化公式，这是一个累积分布函数。它说的是，对原图像中灰度级为 $r$ 的像素，经过均衡化之后，其灰度级变为 $s$，值为原图灰度级的累积分布函数。</p>
 <h2 id="2-2-直方图规定化"><a href="#2-2-直方图规定化" class="headerlink" title="2.2 直方图规定化"></a>2.2 直方图规定化</h2><p>待续</p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>1: <a href="https://blog.csdn.net/zhoufan900428/article/details/12709361" target="_blank" rel="noopener">[数字图像处理]灰度变换——反转，对数变换，伽马变换，灰度拉伸，灰度切割，位图切割</a>;<br>2: <a href="https://blog.csdn.net/hhw999/article/details/52122525" target="_blank" rel="noopener">对数及对比度拉伸变换</a>;<br>3: <a href="https://blog.csdn.net/feiyanjia/article/details/82083811" target="_blank" rel="noopener">对比度调整的各种方法（一）</a>;<br>4: <a href="https://blog.csdn.net/EbowTang/article/details/38236441" target="_blank" rel="noopener">数字图像处理，经典对比度增强算法</a>;<br>5: <a href="https://blog.csdn.net/saltriver/article/details/79677199" target="_blank" rel="noopener">图像增强之对比度拉伸</a></p>
 

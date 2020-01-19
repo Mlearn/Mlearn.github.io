@@ -53,7 +53,7 @@
 <meta property="og:site_name" content="M&#39; Blog">
 <meta property="og:description" content="问题起源于，从网上下载的高清电影外挂字幕放到 QNap 中去，从 Qvideo 中访问竟全是乱码。查询得知，QNap 中的 Video Station 只能解析识别以 UTF-8 编码的字幕文件。虽然采用 QNap 上更强大的 Plex 可以自然解决该问题，还是促使我要弄明白文本编码到底是怎么一回事。本以为文本编码是一个简单的问题，却在网上查阅的过程中牵连出了一系列的问题。下面分别介绍。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.anmou.me/20170801-Charset&Encoding/Charset&Encoding.png">
+<meta property="og:image" content="https://www.anmou.me/20170801-Charset&Encoding/Charset&amp;Encoding.png">
 <meta property="article:published_time" content="2017-08-01T11:07:08.000Z">
 <meta property="article:modified_time" content="2018-10-22T12:27:26.000Z">
 <meta property="article:author" content="Northan">
@@ -61,7 +61,7 @@
 <meta property="article:tag" content=" GBK">
 <meta property="article:tag" content=" UTF-8">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.anmou.me/20170801-Charset&Encoding/Charset&Encoding.png">
+<meta name="twitter:image" content="https://www.anmou.me/20170801-Charset&Encoding/Charset&amp;Encoding.png">
 
 <link rel="canonical" href="https://www.anmou.me/20170801-Charset&Encoding/">
 
@@ -274,8 +274,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>问题起源于，从网上下载的高清电影外挂字幕放到 QNap 中去，从 Qvideo 中访问竟全是乱码。查询得知，QNap 中的 Video Station 只能解析识别以 UTF-8 编码的字幕文件。虽然采用 QNap 上更强大的 Plex 可以自然解决该问题，还是促使我要弄明白文本编码到底是怎么一回事。本以为文本编码是一个简单的问题，却在网上查阅的过程中牵连出了一系列的问题。下面分别介绍。</p>
-<a id="more"></a>
+        <p>问题起源于，从网上下载的高清电影外挂字幕放到 QNap 中去，从 Qvideo 中访问竟全是乱码。查询得知，QNap 中的 Video Station 只能解析识别以 UTF-8 编码的字幕文件。虽然采用 QNap 上更强大的 Plex 可以自然解决该问题，还是促使我要弄明白文本编码到底是怎么一回事。本以为文本编码是一个简单的问题，却在网上查阅的过程中牵连出了一系列的问题。下面分别介绍。<br><a id="more"></a></p>
 <h1 id="1-字符集与字符编码"><a href="#1-字符集与字符编码" class="headerlink" title="1. 字符集与字符编码"></a>1. 字符集与字符编码</h1><p>想要弄明白文本的编码是怎么回事，绕不过去字符集和字符编码这两个概念。</p>
 <ul>
 <li><p><strong>字符集</strong>：说白了就是某些特定字符的集合，如果把世界上不同国家文明的所有字符都放在一起组成一个集合，那么我们常见的 ASCII、GB2312、GBK、GB18030、BIG5 字符集都只是包含了该集合的一部分而已。而 Unicode 字符集是可以包含所有国家文明中的所有字符的。</p>
@@ -313,6 +312,7 @@
 </li>
 </ol>
 <p>下表总结了编码规则，字母x表示可用编码的位。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -320,7 +320,8 @@
 <th>UTF-8 编码方式（二进制）</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>0000 0000-0000 007F</td>
 <td>0xxxxxxx</td>
 </tr>
@@ -336,12 +337,14 @@
 <td>0001 0000-0010 FFFF</td>
 <td>11110xxx 10xxxxxx 10xxxxxx 10xxxxxx</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>跟据上表，解读 UTF-8 编码非常简单。如果一个字节的第一位是0，则这个字节单独就是一个字符；如果第一位是1，则连续有多少个1，就表示当前字符占用多少个字节。</p>
 <p>下面以汉字”严”为例，演示如何实现 UTF-8 编码。<br>已知”严”的 unicode 是 4E25（100111000100101），根据上表，可以发现 4E25 处在第三行的范围内（0000 0800-0000 FFFF），因此”严”的 UTF-8 编码需要三个字节，即格式是”1110xxxx 10xxxxxx 10xxxxxx”。然后，从”严”的最后一个二进制位开始，依次从后向前填入格式中的x，多出的位补0。这样就得到了，”严”的UTF-8编码是”11100100 10111000 10100101”，转换成十六进制就是E4B8A5。</p>
 <h1 id="4-总结"><a href="#4-总结" class="headerlink" title="4. 总结"></a>4. 总结</h1><p>经过上边的介绍，我们可以大致认为，现在流行的一些编码方案都是在兼容 ASCII 的基础上来实现的。为了满足各国家地区的更多字符的编码需求，出现了 ANSI 编码标准，但是该编码标准在具体各地区国家的实现上是彼此不兼容的。为了满足世界各国字符编码的兼容性需求，Unicode 定义了一个统一、完备的字符集。为了实现 Unicode 字符集在编码上的需求，又诞生了 UTF-8、UTF-16等等编码方案。</p>
 <p>最后用一张图来说明。</p>
-<p><img src="/20170801-Charset&Encoding/Charset&Encoding.png" alt></p>
+<p><img src="/20170801-Charset&Encoding/Charset&amp;Encoding.png" alt></p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ol>
 <li><a href="http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html" target="_blank" rel="noopener">字符编码笔记：ASCII，Unicode和UTF-8</a></li>
 <li><a href="http://blog.csdn.net/qq_28098067/article/details/53486032" target="_blank" rel="noopener">字符集详解（一看就懂系列）</a></li>

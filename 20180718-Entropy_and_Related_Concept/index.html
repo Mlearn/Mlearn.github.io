@@ -53,7 +53,7 @@
 <meta property="og:site_name" content="M&#39; Blog">
 <meta property="og:description" content="机器学习中，绕不开的一个概念就是熵 (Entropy)，信息熵。信息熵常被用来作为一个系统的信息含量的量化指标，从而可以进一步用来作为系统方程优化的目标或者参数选择的判据。在决策树的生成过程中，就使用了熵来作为样本最优属性划分的判据。下面按照本人的理解来系统梳理一下有关熵的概念。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.anmou.me/20180718-Entropy_and_Related_Concept/RelationShip_Entropy&Probability.png">
+<meta property="og:image" content="https://www.anmou.me/20180718-Entropy_and_Related_Concept/RelationShip_Entropy&amp;Probability.png">
 <meta property="og:image" content="https://www.anmou.me/20180718-Entropy_and_Related_Concept/Venn_Diagram.png">
 <meta property="article:published_time" content="2018-07-18T15:59:03.000Z">
 <meta property="article:modified_time" content="2018-10-16T15:02:44.000Z">
@@ -62,7 +62,7 @@
 <meta property="article:tag" content=" Information gain">
 <meta property="article:tag" content=" Information gain ratio">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.anmou.me/20180718-Entropy_and_Related_Concept/RelationShip_Entropy&Probability.png">
+<meta name="twitter:image" content="https://www.anmou.me/20180718-Entropy_and_Related_Concept/RelationShip_Entropy&amp;Probability.png">
 
 <link rel="canonical" href="https://www.anmou.me/20180718-Entropy_and_Related_Concept/">
 
@@ -275,12 +275,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>机器学习中，绕不开的一个概念就是<strong>熵 (Entropy)</strong>，<strong>信息熵</strong>。信息熵常被用来作为一个系统的信息含量的量化指标，从而可以进一步用来作为系统方程优化的目标或者参数选择的判据。在决策树的生成过程中，就使用了熵来作为样本最优属性划分的判据。下面按照本人的理解来系统梳理一下有关熵的概念。</p>
-<a id="more"></a>
-
+        <p>机器学习中，绕不开的一个概念就是<strong>熵 (Entropy)</strong>，<strong>信息熵</strong>。信息熵常被用来作为一个系统的信息含量的量化指标，从而可以进一步用来作为系统方程优化的目标或者参数选择的判据。在决策树的生成过程中，就使用了熵来作为样本最优属性划分的判据。下面按照本人的理解来系统梳理一下有关熵的概念。<br><a id="more"></a></p>
 <h1 id="1-熵的定义是怎么来的？"><a href="#1-熵的定义是怎么来的？" class="headerlink" title="1. 熵的定义是怎么来的？"></a>1. 熵的定义是怎么来的？</h1><p>信息熵的定义公式：</p>
-<p>$$<br>H(X)=-\sum_{x\in\chi}p(x)\log{p(x)}<br>$$</p>
-<p>并且规定 $0\log(0)=0$。</p>
+<script type="math/tex; mode=display">
+H(X)=-\sum_{x\in\chi}p(x)\log{p(x)}</script><p>并且规定 $0\log(0)=0$。</p>
 <p>首次看到这个定义，我感到莫名其妙，为什么熵要定义成这么复杂的形式，并且其中还出现了对数函数这种非常不直观的表述？</p>
 <h2 id="1-1-信息熵的三个性质"><a href="#1-1-信息熵的三个性质" class="headerlink" title="1.1 信息熵的三个性质"></a>1.1 信息熵的三个性质</h2><p>信息论之父克劳德·香农给出的信息熵的三个性质<sup>[1]</sup>：</p>
 <ol>
@@ -288,63 +286,120 @@
 <li>非负性，信息熵可以看作为一种广度量，非负性是一种合理的必然；</li>
 <li>累加性，即多随机事件同时发生存在的总不确定性的量度是可以表示为各事件不确定性的量度的和，这也是广度量的一种体现。</li>
 </ol>
-<p>香农从数学上严格证明了满足上述三个条件的随机变量不确定性度量函数具有唯一形式<br>$$<br>H(X)=-C\sum_{x\in\chi}p(x)\log{p(x)}<br>$$</p>
-<p>其中的 $C$ 为常数，我们将其归一化为 $C=1$ 即得到了信息熵公式。</p>
+<p>香农从数学上严格证明了满足上述三个条件的随机变量不确定性度量函数具有唯一形式</p>
+<script type="math/tex; mode=display">
+H(X)=-C\sum_{x\in\chi}p(x)\log{p(x)}</script><p>其中的 $C$ 为常数，我们将其归一化为 $C=1$ 即得到了信息熵公式。</p>
 <h2 id="1-2-对信息熵三条性质的理解"><a href="#1-2-对信息熵三条性质的理解" class="headerlink" title="1.2 对信息熵三条性质的理解"></a>1.2 对信息熵三条性质的理解</h2><p>单调性说的是，事件发生的概率越低，其发生时所能给出的信息量越大。举一个极端的例子，“太阳从西边升起”所携带的信息量就远大于“太阳从东边升起”，因为后者是一个万年不变的事实，不用特意述说大家都知道；而前者是一个相当不可能发生的事情，如果发生了，那代表了太多的可能性，可能太阳系有重大变故，可能物理法则发生了变化，等等。从某种角度来考虑，单调性也暗含了一种对信息含量的先验假设，即默认某些事实是不含信息量的（默认事实其实也是一种信息，我理解的默认事实应该指的是概率分布），这其实是把默认情况的信息量定标为 $0$ 了。</p>
 <p>对累加性的解释，考虑到信息熵的定义涉及到了事件发生的概率，我们可以假设信息熵是事件发生概率的函数：</p>
-<p>$$<br>H(X)=H(p(x))<br>$$</p>
-<p>对于两个相互独立的事件 $X=A, Y=B$ 来说，其同时发生的概率：</p>
-<p>$$<br>p(X=A, Y=B)=p(X=A)\cdotp(Y=B)<br>$$</p>
-<p>其同时发生的信息熵，根据累加性可知：</p>
-<p>$$<br>H\left(p(X=A, Y=B)\right)=H\left(p(X=A)\cdotp(Y=B)\right)=H\left(p(X=A)\right)+H\left(p(Y=B)\right)<br>$$</p>
-<p>一种函数形式，满足两个变量乘积函数值等于两个变量函数值的和，那么这种函数形式应该是对数函数。再考虑到概率都是小于等于 $1$ 的，取对数之后小于 $0$，考虑到信息熵的第二条性质，所以需要在前边加上负号。</p>
+<script type="math/tex; mode=display">
+H(X)=H(p(x))</script><p>对于两个相互独立的事件 $X=A, Y=B$ 来说，其同时发生的概率：</p>
+<script type="math/tex; mode=display">
+p(X=A, Y=B)=p(X=A)\cdotp(Y=B)</script><p>其同时发生的信息熵，根据累加性可知：</p>
+<script type="math/tex; mode=display">
+H\left(p(X=A, Y=B)\right)=H\left(p(X=A)\cdotp(Y=B)\right)=H\left(p(X=A)\right)+H\left(p(Y=B)\right)</script><p>一种函数形式，满足两个变量乘积函数值等于两个变量函数值的和，那么这种函数形式应该是对数函数。再考虑到概率都是小于等于 $1$ 的，取对数之后小于 $0$，考虑到信息熵的第二条性质，所以需要在前边加上负号。</p>
 <h2 id="1-3-回看信息熵定义"><a href="#1-3-回看信息熵定义" class="headerlink" title="1.3 回看信息熵定义"></a>1.3 回看信息熵定义</h2><p>回过头来再看信息熵的公式，其中对概率取负对数表示了一种可能事件发生时候携带出的信息量。把各种可能表示出的信息量乘以其发生的概率之后求和，就表示了整个系统所有信息量的一种期望值。从这个角度来说信息熵还可以作为一个系统复杂程度的度量，如果系统越复杂，出现不同情况的种类越多，那么他的信息熵是比较大的。如果一个系统越简单，出现情况种类很少（极端情况为 $1$ 种情况，那么对应概率为 $1$，那么对应的信息熵为 $0$），此时的信息熵较小<sup>[2]</sup>。</p>
 <h1 id="2-伯努利分布熵的计算-3"><a href="#2-伯努利分布熵的计算-3" class="headerlink" title="2. 伯努利分布熵的计算[3]"></a>2. 伯努利分布熵的计算<sup>[3]</sup></h1><p>熵的定义公式中对数函数不局限于采用特定的底，不同的底对应了熵的不同度量单位。如果以 $2$ 为底，熵的单位称作比特 (bit)，如果以自然对数 $e$ 为底，熵的单位称作纳特 (nat)。</p>
 <p>从熵的定义中可以看出，熵是关于变量 $X$ 概率分布的函数，而与 $X$ 的取值没有关系，所以也可以将 $X$ 的熵记作 $H(p)$</p>
 <p>熵越大代表随机变量的不确定性越大，当变量可取值的种类一定时，其取每种值的概率分布越平均，其熵值越大。熵的取值范围为：</p>
-<p>$$<br>0\leq H(p)\leq \log(n)<br>$$</p>
-<p>$n$ 表示取值的种类。</p>
+<script type="math/tex; mode=display">
+0\leq H(p)\leq \log(n)</script><p>$n$ 表示取值的种类。</p>
 <p>作为一个具体的例子，当随机变量只取两个值，例如 $1$，$0$ 时，即 $X$ 的分布为：</p>
-<p>$$<br>P(X=1)=p, \quad P(X=0)=1-p, \quad 0\leq p \leq 1<br>$$</p>
-<p>熵为：</p>
-<p>$$<br>H(p)=-p\log_2p-(1-p)\log_2(1-p)<br>$$</p>
-<p>这时，熵 $H(P)$ 随概率 $p$ 变化的曲线如下图所示（单位为比特），</p>
-<p><img src="/20180718-Entropy_and_Related_Concept/RelationShip_Entropy&Probability.png" alt="熵与概率的关系"></p>
+<script type="math/tex; mode=display">
+P(X=1)=p, \quad P(X=0)=1-p, \quad 0\leq p \leq 1</script><p>熵为：</p>
+<script type="math/tex; mode=display">
+H(p)=-p\log_2p-(1-p)\log_2(1-p)</script><p>这时，熵 $H(P)$ 随概率 $p$ 变化的曲线如下图所示（单位为比特），</p>
+<p><img src="/20180718-Entropy_and_Related_Concept/RelationShip_Entropy&amp;Probability.png" alt="熵与概率的关系"></p>
 <p>当 $p=0$ 或 $p=1$ 时， $H(p)=0$，随机变量完全没有不确定性。当 $p=0.5$ 时，$H(p)=1$， 熵取值最大，随机变量不确定性最大。</p>
 <h1 id="3-两随机变量系统中熵的相关概念-4"><a href="#3-两随机变量系统中熵的相关概念-4" class="headerlink" title="3. 两随机变量系统中熵的相关概念[4]"></a>3. 两随机变量系统中熵的相关概念<sup>[4]</sup></h1><p>以上介绍了关于单随机变量系统的熵的计算，现实中的系统很多是含有多随机变量的。为了简化问题，以两随机变量系统来说，介绍几个与熵相关的概念。</p>
 <h2 id="3-1-互信息"><a href="#3-1-互信息" class="headerlink" title="3.1 互信息"></a>3.1 互信息</h2><p>两个离散随机变量 $X$ 和 $Y$ 的<strong>互信息 (Mutual Information)</strong> 定义为：</p>
-<p>$$<br>I(X,Y)=\sum_{y\in Y}\sum_{x\in X}p(x,y)\log\left(\frac{p(x,y)}{p(x)p(y)}\right)<br>$$</p>
-<p>为了理解互信息的涵义，我们把公式中的对数项分解</p>
-<p> $$<br>\begin{aligned}<br> \log(\frac{p(x,y)}{p(x)p(y)}) &amp; =\log\left(p(x,y) - (\log p(x)+\log p(y)\right) \<br>&amp; = -\log p(x)-\log p(y)-\left(-\log p(x,y)\right)<br>\end{aligned}<br> $$</p>
-<p>我们知道概率取负对数表征了当前概率发生所代表的信息量。上式表明，两事件的互信息为各自事件单独发生所代表的信息量之和减去两事件同时发生所代表的信息量之后剩余的信息量，这表明了两事件单独发生给出的信息量之和是有重复的，互信息度量了这种重复的信息量大小。最后再求概率和表示了两事件互信息量的期望。从式中也可以看出，当两事件完全独立时，$p(x,y)=p(x)\cdot p(y)$，互信息计算为 $0$，这也是与常识判断相吻合的。</p>
+<script type="math/tex; mode=display">
+I(X,Y)=\sum_{y\in Y}\sum_{x\in X}p(x,y)\log\left(\frac{p(x,y)}{p(x)p(y)}\right)</script><p>为了理解互信息的涵义，我们把公式中的对数项分解</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ \log(\frac{p(x,y)}{p(x)p(y)}) & =\log\left(p(x,y) - (\log p(x)+\log p(y)\right) \\
+& = -\log p(x)-\log p(y)-\left(-\log p(x,y)\right)
+\end{aligned}</script><p>我们知道概率取负对数表征了当前概率发生所代表的信息量。上式表明，两事件的互信息为各自事件单独发生所代表的信息量之和减去两事件同时发生所代表的信息量之后剩余的信息量，这表明了两事件单独发生给出的信息量之和是有重复的，互信息度量了这种重复的信息量大小。最后再求概率和表示了两事件互信息量的期望。从式中也可以看出，当两事件完全独立时，$p(x,y)=p(x)\cdot p(y)$，互信息计算为 $0$，这也是与常识判断相吻合的。</p>
 <h2 id="3-2-联合熵"><a href="#3-2-联合熵" class="headerlink" title="3.2 联合熵"></a>3.2 联合熵</h2><p>两个离散随机变量 $X$ 和 $Y$ 的<strong>联合熵 (Joint Entropy)</strong> 为：</p>
-<p>$$<br>H(X,Y)=-\sum_{y\in Y}\sum_{x\in X}p(x,y)\log p(x,y)<br>$$</p>
-<p>联合熵表征了两事件同时发生系统的不确定度。</p>
+<script type="math/tex; mode=display">
+H(X,Y)=-\sum_{y\in Y}\sum_{x\in X}p(x,y)\log p(x,y)</script><p>联合熵表征了两事件同时发生系统的不确定度。</p>
 <h2 id="3-3-条件熵"><a href="#3-3-条件熵" class="headerlink" title="3.3 条件熵"></a>3.3 条件熵</h2><p><strong>条件熵 (Conditional Entropy)</strong> $H(Y|X)$ 表示在已知随机变量 $X$ 的条件下随机变量 $Y$ 的不确定性。</p>
-<p>$$<br>H(Y \mid X)=\sum_{x\in X}p(x)H(Y \mid x)=-\sum_{x\in X}p(x)\sum_{y\in Y}p(y \mid x)\log p(y \mid x)<br>$$</p>
-<h2 id="3-4-互信息、联合熵、条件熵之间的关系"><a href="#3-4-互信息、联合熵、条件熵之间的关系" class="headerlink" title="3.4 互信息、联合熵、条件熵之间的关系"></a>3.4 互信息、联合熵、条件熵之间的关系</h2><p>对互信息定义公式继续进行推导：</p>
-<p>$$<br>\begin{aligned}<br>I(X,Y) &amp; =\sum_{y\in Y}\sum_{x\in X}p(x,y)\log \frac{p(x,y)}{p(x)p(y)} \<br>&amp; = \sum_{x\in X}\sum_{y\in Y}p(x,y)\left(\log p(x,y)-\log p(x)-\log p(y)\right) \<br>&amp; =\sum_{x\in X}\sum_{y\in Y}p(x,y)\log p(x,y)-\sum_{x\in X}\sum_{y\in Y}p(x,y)\log p(x)-\sum_{x\in X}\sum_{y\in Y}p(x,y)\log p(y) \<br>&amp; =\sum_{x\in X}\sum_{y\in Y}p(x,y)\log p(x,y)-\sum_{x\in X}p(x)\log p(x) -\sum_{x\in X}p(y)\log p(y) \<br>&amp; = H(X)+H(Y)-H(X,Y)<br>\end{aligned}<br>$$</p>
-<p>对条件熵定义公式继续进行推导：</p>
-<p>$$<br>\begin{aligned}<br>H(Y \mid X) &amp; =-\sum_{x\in X}p(x)\sum_{y\in Y}p(y \mid x)\log p(y \mid x) \<br>&amp; =-\sum_{x\in X}\sum_{y\in Y}p(x,y)\log \frac{p(x,y)}{p(x)} \<br>&amp; =-\sum_{x\in X}\sum_{y\in Y}p(x,y)\left(\log p(x,y)-\log p(x)\right) \<br>&amp; =-\sum_{x\in X}\sum_{y\in Y}p(x,y)\log p(x,y)-\sum_{x\in X}\sum_{y\in Y}p(x,y)\log p(x) \<br>&amp; =-\sum_{x\in X}\sum_{y\in Y}p(x,y)\log p(x,y)+\sum_{x\in X}p(x)\log p(x) \<br>&amp; =H(X,Y)-H(X)<br>\end{aligned}<br>$$</p>
-<p>联合上述结果，总结如下：</p>
-<p>$$<br>\begin{aligned}<br>I(X,Y) &amp; = H(X)+H(Y)-H(X,Y) \<br>&amp; = H(Y)-H(Y \mid X) \<br>&amp; = H(X)-H(X \mid Y) \<br>&amp; = H(X,Y)-H(Y \mid X)-H(X \mid Y)<br>\end{aligned}<br>$$</p>
-<p>上述变量之间的关系，可以用 Venn 图来表示：</p>
+<script type="math/tex; mode=display">
+H(Y \mid X)=\sum_{x\in X}p(x)H(Y \mid x)=-\sum_{x\in X}p(x)\sum_{y\in Y}p(y \mid x)\log p(y \mid x)</script><h2 id="3-4-互信息、联合熵、条件熵之间的关系"><a href="#3-4-互信息、联合熵、条件熵之间的关系" class="headerlink" title="3.4 互信息、联合熵、条件熵之间的关系"></a>3.4 互信息、联合熵、条件熵之间的关系</h2><p>对互信息定义公式继续进行推导：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+I(X,Y) & =\sum_{y\in Y}\sum_{x\in X}p(x,y)\log \frac{p(x,y)}{p(x)p(y)} \\
+& = \sum_{x\in X}\sum_{y\in Y}p(x,y)\left(\log p(x,y)-\log p(x)-\log p(y)\right) \\
+& =\sum_{x\in X}\sum_{y\in Y}p(x,y)\log p(x,y)-\sum_{x\in X}\sum_{y\in Y}p(x,y)\log p(x)-\sum_{x\in X}\sum_{y\in Y}p(x,y)\log p(y) \\
+& =\sum_{x\in X}\sum_{y\in Y}p(x,y)\log p(x,y)-\sum_{x\in X}p(x)\log p(x) -\sum_{x\in X}p(y)\log p(y) \\
+& = H(X)+H(Y)-H(X,Y)
+\end{aligned}</script><p>对条件熵定义公式继续进行推导：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+H(Y \mid X) & =-\sum_{x\in X}p(x)\sum_{y\in Y}p(y \mid x)\log p(y \mid x) \\
+& =-\sum_{x\in X}\sum_{y\in Y}p(x,y)\log \frac{p(x,y)}{p(x)} \\
+& =-\sum_{x\in X}\sum_{y\in Y}p(x,y)\left(\log p(x,y)-\log p(x)\right) \\
+& =-\sum_{x\in X}\sum_{y\in Y}p(x,y)\log p(x,y)-\sum_{x\in X}\sum_{y\in Y}p(x,y)\log p(x) \\
+& =-\sum_{x\in X}\sum_{y\in Y}p(x,y)\log p(x,y)+\sum_{x\in X}p(x)\log p(x) \\
+& =H(X,Y)-H(X)
+\end{aligned}</script><p>联合上述结果，总结如下：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+I(X,Y) & = H(X)+H(Y)-H(X,Y) \\
+& = H(Y)-H(Y \mid X) \\
+& = H(X)-H(X \mid Y) \\
+& = H(X,Y)-H(Y \mid X)-H(X \mid Y)
+\end{aligned}</script><p>上述变量之间的关系，可以用 Venn 图来表示：</p>
 <p><img src="/20180718-Entropy_and_Related_Concept/Venn_Diagram.png" alt="Venn Diagram"></p>
 <p>另外，在分类任务的决策树学习过程中，采用信息增益的概念来决定选用哪个特征作为后续的决策依据。这里的信息增益等价于训练数据集中类与特征的互信息。</p>
 <h1 id="4-两分布系统中熵的相关概念-5"><a href="#4-两分布系统中熵的相关概念-5" class="headerlink" title="4. 两分布系统中熵的相关概念[5]"></a>4. 两分布系统中熵的相关概念<sup>[5]</sup></h1><h2 id="4-1-交叉熵"><a href="#4-1-交叉熵" class="headerlink" title="4.1 交叉熵"></a>4.1 交叉熵</h2><p>考虑一种情况，对于一个样本集，存在两个概率分布 $p(x)$ 和 $q(x)$，其中 $p(x)$ 为真实分布，$q(x)$ 为非真实分布。基于真实分布 $p(x)$ 我们可以计算这个样本集的信息熵也就是编码长度的期望为：</p>
-<p>$$<br>H(p)=-\sum_xp(x)\log p(x)<br>$$<br>回顾一下负对数项表征了所含的信息量，如果我们用非真实分布 $q(x)$ 来代表样本集的信息量的话，那么：</p>
-<p>$$<br>H(p,q)=-\sum_xp(x)\log q(x)<br>$$<br>因为其中表示信息量的项来自于非真实分布 $q(x)$，而对其期望值的计算采用的是真实分布 $p(x)$，所以称其为<strong>交叉熵 (Cross Entropy)</strong>。</p>
+<script type="math/tex; mode=display">
+H(p)=-\sum_xp(x)\log p(x)</script><p>回顾一下负对数项表征了所含的信息量，如果我们用非真实分布 $q(x)$ 来代表样本集的信息量的话，那么：</p>
+<script type="math/tex; mode=display">
+H(p,q)=-\sum_xp(x)\log q(x)</script><p>因为其中表示信息量的项来自于非真实分布 $q(x)$，而对其期望值的计算采用的是真实分布 $p(x)$，所以称其为<strong>交叉熵 (Cross Entropy)</strong>。</p>
 <p>举个例子，考虑一个随机变量 $x$，其真实分布 $p(x)=(\frac{1}{2},\frac{1}{4},\frac{1}{8},\frac{1}{8})$，非真实分布 $q(x)=(\frac{1}{4},\frac{1}{4},\frac{1}{4},\frac{1}{4})$，那么其真实信息熵</p>
-<p>$$<br>\begin{aligned}<br>H(p) &amp; =-\frac{1}{2}\log_2\frac{1}{2}-\frac{1}{4}\log_2\frac{1}{4}-\frac{1}{8}\log_2\frac{1}{8}-\frac{1}{8}\log_2\frac{1}{8} \<br>&amp; =\frac{1}{2}+\frac{1}{2}+\frac{3}{8}+\frac{3}{8} \<br>&amp; =1.75\ bits<br>\end{aligned}<br>$$<br>交叉熵</p>
-<p>$$<br>\begin{aligned}<br>H(p,q)&amp;=-\frac{1}{2}\log_2\frac{1}{4}-\frac{1}{4}\log_2\frac{1}{4}-\frac{1}{8}\log_2\frac{1}{4}-\frac{1}{8}\log_2\frac{1}{4} \<br>&amp;=1+\frac{1}{2}+\frac{1}{4}+\frac{1}{4} \<br>&amp;=2\ bits<br>\end{aligned}<br>$$<br>如果我们真实分布为 $q(x)$ 而非真实分布为 $p(x)$，真实信息熵为</p>
-<p>$$<br>\begin{aligned}<br>H(q) &amp; =-\frac{1}{4}\log_2\frac{1}{4}-\frac{1}{4}\log_2\frac{1}{4}-\frac{1}{4}\log_2\frac{1}{4}-\frac{1}{4}\log_2\frac{1}{4} \<br>&amp; =\frac{1}{2}+\frac{1}{2}+\frac{1}{2}+\frac{1}{2} \<br>&amp; =2\ bits<br>\end{aligned}<br>$$</p>
-<p>交叉熵为</p>
-<p>$$<br>\begin{aligned}<br>H(q,p)&amp;=-\frac{1}{4}\log_2\frac{1}{2}-\frac{1}{4}\log_2\frac{1}{4}-\frac{1}{4}\log_2\frac{1}{8}-\frac{1}{4}\log_2\frac{1}{8} \<br>&amp;=\frac{1}{4}+\frac{1}{2}+\frac{3}{4}+\frac{3}{4} \<br>&amp;=2.25\ bits<br>\end{aligned}<br>$$<br>从这个例子中，我们可以看到交叉熵比原本真实的信息熵要大。直观来看，当我们对分布估计不准确时，总会引入额外的不必要信息期望（可以理解为引入了额外的偏差），再加上原本真实的信息期望，最终的信息期望值要比真实系统分布所需的信息期望值要大。</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+H(p) & =-\frac{1}{2}\log_2\frac{1}{2}-\frac{1}{4}\log_2\frac{1}{4}-\frac{1}{8}\log_2\frac{1}{8}-\frac{1}{8}\log_2\frac{1}{8} \\
+& =\frac{1}{2}+\frac{1}{2}+\frac{3}{8}+\frac{3}{8} \\
+& =1.75\ bits
+\end{aligned}</script><p>交叉熵</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+H(p,q)&=-\frac{1}{2}\log_2\frac{1}{4}-\frac{1}{4}\log_2\frac{1}{4}-\frac{1}{8}\log_2\frac{1}{4}-\frac{1}{8}\log_2\frac{1}{4} \\
+&=1+\frac{1}{2}+\frac{1}{4}+\frac{1}{4} \\
+&=2\ bits
+\end{aligned}</script><p>如果我们真实分布为 $q(x)$ 而非真实分布为 $p(x)$，真实信息熵为</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+H(q) & =-\frac{1}{4}\log_2\frac{1}{4}-\frac{1}{4}\log_2\frac{1}{4}-\frac{1}{4}\log_2\frac{1}{4}-\frac{1}{4}\log_2\frac{1}{4} \\
+& =\frac{1}{2}+\frac{1}{2}+\frac{1}{2}+\frac{1}{2} \\
+& =2\ bits
+\end{aligned}</script><p>交叉熵为</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+H(q,p)&=-\frac{1}{4}\log_2\frac{1}{2}-\frac{1}{4}\log_2\frac{1}{4}-\frac{1}{4}\log_2\frac{1}{8}-\frac{1}{4}\log_2\frac{1}{8} \\
+&=\frac{1}{4}+\frac{1}{2}+\frac{3}{4}+\frac{3}{4} \\
+&=2.25\ bits
+\end{aligned}</script><p>从这个例子中，我们可以看到交叉熵比原本真实的信息熵要大。直观来看，当我们对分布估计不准确时，总会引入额外的不必要信息期望（可以理解为引入了额外的偏差），再加上原本真实的信息期望，最终的信息期望值要比真实系统分布所需的信息期望值要大。</p>
 <h2 id="4-2-相对熵"><a href="#4-2-相对熵" class="headerlink" title="4.2 相对熵"></a>4.2 相对熵</h2><p><strong>相对熵 (Relative Entropy)</strong> 也称 <strong>KL 散度</strong>，设 $p(x)$、$q(x)$ 是离散随机变量 $X$ 的两个概率分布，则 $p$ 对 $q$ 的相对熵为：</p>
-<p>$$<br>D_{KL}(p \Vert q)=\sum_x p(x)\log\frac{p(x)}{q(x)}=E_{p(x)}\log\frac{p(x)}{q(x)}<br>$$<br>相对熵既然是熵，也是满足大于等于 $0$ 的，证明如下：</p>
-<p>$$<br>\begin{aligned}<br>D_{KL}(p \Vert q)&amp;=\sum_x p(x)\log\frac{p(x)}{q(x)} \<br>&amp;=-\sum_x p(x)\log\frac{q(x)}{p(x)} \<br>&amp;=-E_{p(x)}(\log\frac{q(x)}{p(x)}) \<br>&amp;\geq-\log E_{p(x)}\left(\frac{q(x)}{p(x)}\right) \<br>&amp;=-\log\sum_x p(x)\frac{q(x)}{p(x)} \<br>&amp;=-\log\sum_x q(x)<br>\end{aligned}<br>$$<br>因为 $\sum_x p(x)=1$，所以 $D_{KL}(p \Vert q) \geq 0$。</p>
+<script type="math/tex; mode=display">
+D_{KL}(p \Vert q)=\sum_x p(x)\log\frac{p(x)}{q(x)}=E_{p(x)}\log\frac{p(x)}{q(x)}</script><p>相对熵既然是熵，也是满足大于等于 $0$ 的，证明如下：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+D_{KL}(p \Vert q)&=\sum_x p(x)\log\frac{p(x)}{q(x)} \\
+&=-\sum_x p(x)\log\frac{q(x)}{p(x)} \\
+&=-E_{p(x)}(\log\frac{q(x)}{p(x)}) \\
+&\geq-\log E_{p(x)}\left(\frac{q(x)}{p(x)}\right) \\
+&=-\log\sum_x p(x)\frac{q(x)}{p(x)} \\
+&=-\log\sum_x q(x)
+\end{aligned}</script><p>因为 $\sum<em>x p(x)=1$，所以 $D</em>{KL}(p \Vert q) \geq 0$。</p>
 <h2 id="4-3-相对熵与交叉熵的关系"><a href="#4-3-相对熵与交叉熵的关系" class="headerlink" title="4.3 相对熵与交叉熵的关系"></a>4.3 相对熵与交叉熵的关系</h2><p>对相对熵公式进一步变形为：</p>
-<p>$$<br>\begin{aligned}<br>D_{KL}(p \Vert q)&amp;=\sum_x p(x)\log\frac{p(x)}{q(x)} \<br>&amp;=-\sum_x p(x)\log q(x)-\left(-\sum_x p(x)\log p(x)\right) \<br>&amp;=H(p,q)-H(p)<br>\end{aligned}<br>$$<br>到这一步我们也可以看出，因为 $D_{KL}(p \Vert q) \geq 0$，所以 $H(p,q) \geq H(p)$。</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+D_{KL}(p \Vert q)&=\sum_x p(x)\log\frac{p(x)}{q(x)} \\
+&=-\sum_x p(x)\log q(x)-\left(-\sum_x p(x)\log p(x)\right) \\
+&=H(p,q)-H(p)
+\end{aligned}</script><p>到这一步我们也可以看出，因为 $D_{KL}(p \Vert q) \geq 0$，所以 $H(p,q) \geq H(p)$。</p>
 <p>同时，也更容易的看出来相对熵表示的其实是当我们用一个非真实的分布表示系统时，其得到的信息量期望值相比采用真实分布表示时候多出的部分。</p>
 <p>在机器学习中，训练数据的分布已经固定下来，那么真实分布的熵 $H(p)$ 是一个定值。最小化相对熵 $D_{KL}(p \Vert q)$ 等价于最小化交叉熵 $H(p,q)$。</p>
 <p>相对熵与交叉熵的更多信息可以参考链接 [5]、[6] 中所述。</p>

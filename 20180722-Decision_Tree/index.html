@@ -286,7 +286,6 @@
       
         <p><strong>决策树 (Decision tree)</strong> 是一种基本的分类与回归方法。它是一个树形结构，对于指定特征空间上的数据点来说，总能顺着决策树的根节点一步步分配到子节点最终到达叶节点，而叶节点表示了该数据点所属的分类。在每一次分配到子节点的过程中可以看作是对数据点中特有的特征属性值进行的 <code>if-then</code> 判断。</p>
 <a id="more"></a>
-
 <p>决策树可以认为是 <code>if-then</code> 规则的集合，也可以认为时定义在特征空间与类空间上的条件概率分布。其主要优点是模型具有可读性，分类速度快。如何得到该决策树叫做决策树学习，决策树学习时，利用训练数据，根据损失函数最小化的原则建立决策树模型。预测试，对新的数据，利用决策树模型进行分类。</p>
 <p>接下来按照周志华老师的《机器学习》第 4 章<sup>[1]</sup> 来梳理一下对决策树的学习：</p>
 <h1 id="1-决策树学习"><a href="#1-决策树学习" class="headerlink" title="1. 决策树学习"></a>1. 决策树学习</h1><p>决策树学习的目的是为了生成一颗泛化能力强，即处理未见示例能力强的决策树，其基本流程遵循简单而直观的 <strong>分而治之 (Divide and Conquer)</strong> 策略，如下图所示：</p>
@@ -298,242 +297,263 @@
 <li>(行 6) 当前属性集为空，或是所有样本在所有属性上取值相同，无法划分。在这种情况下，把当前结点标记为叶结点，并且将其类别设定为该结点所含样本最多的类别；</li>
 <li>(行 12) 当前结点包含的样本集和为空，不能划分，把当前结点标记为叶结点，但是将其类别设定为其父结点所含样本最多的类别，周志华老师的《机器学习》中在该条件下执行了 <code>return</code>，但是按照我的理解由于这里处于 <code>for</code> 循环中，虽然属性中的一个取值样本集合为空，但是其它取值情况下还有有可能有样本集合的，如果这里执行了 <code>return</code>，那么就跳过了其它取值判断的可能。</li>
 </ol>
-<p>另外，其中第 14 行 $A \backslash \lbrace a_\ast \rbrace$ 表示从 $A$ 中去除 $a_\ast$ 属性。</p>
-<h1 id="2-最优划分属性的选择"><a href="#2-最优划分属性的选择" class="headerlink" title="2. 最优划分属性的选择"></a>2. 最优划分属性的选择</h1><p>从递归生成伪代码图示中可以看出，(行 8)选择最优划分属性 $a_\ast$ 是最关键的一步。如何选择决定了决策树的效率与准确率。一般而言我们希望选择一个属性 $a_\ast$ 之后，其分支节点所包含的样本尽可能属于同一类别，即结点的 <strong>纯度 (Purity)</strong> 越来越高。</p>
+<p>另外，其中第 14 行 $A \backslash \lbrace a<em>\ast \rbrace$ 表示从 $A$ 中去除 $a</em>\ast$ 属性。</p>
+<h1 id="2-最优划分属性的选择"><a href="#2-最优划分属性的选择" class="headerlink" title="2. 最优划分属性的选择"></a>2. 最优划分属性的选择</h1><p>从递归生成伪代码图示中可以看出，(行 8)选择最优划分属性 $a<em>\ast$ 是最关键的一步。如何选择决定了决策树的效率与准确率。一般而言我们希望选择一个属性 $a</em>\ast$ 之后，其分支节点所包含的样本尽可能属于同一类别，即结点的 <strong>纯度 (Purity)</strong> 越来越高。</p>
 <p>根绝最优属性 $a_\ast$ 选择方法的不同，决策树大致分为了 <strong>ID3</strong> [Quinlan, 1986]、<strong>C4.5</strong> [Quinlan, 1993]、<strong>CART</strong> [Breiman et al., 1984]。</p>
 <p>接下来分别介绍三种方法，在之前，先给出周志华老师《机器学习》中表 $4.1$ 中的西瓜数据如下：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">编号</th>
-<th align="center">色泽</th>
-<th align="center">根蒂</th>
-<th align="center">敲声</th>
-<th align="center">纹理</th>
-<th align="center">脐部</th>
-<th align="center">触感</th>
-<th align="center">好瓜</th>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">色泽</th>
+<th style="text-align:center">根蒂</th>
+<th style="text-align:center">敲声</th>
+<th style="text-align:center">纹理</th>
+<th style="text-align:center">脐部</th>
+<th style="text-align:center">触感</th>
+<th style="text-align:center">好瓜</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">1</td>
-<td align="center">青绿</td>
-<td align="center">蜷缩</td>
-<td align="center">浊响</td>
-<td align="center">清晰</td>
-<td align="center">凹陷</td>
-<td align="center">硬滑</td>
-<td align="center">是</td>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">青绿</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">凹陷</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">2</td>
-<td align="center">乌黑</td>
-<td align="center">蜷缩</td>
-<td align="center">沉闷</td>
-<td align="center">清晰</td>
-<td align="center">凹陷</td>
-<td align="center">硬滑</td>
-<td align="center">是</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">乌黑</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">沉闷</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">凹陷</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">3</td>
-<td align="center">乌黑</td>
-<td align="center">蜷缩</td>
-<td align="center">浊响</td>
-<td align="center">清晰</td>
-<td align="center">凹陷</td>
-<td align="center">硬滑</td>
-<td align="center">是</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">乌黑</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">凹陷</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">4</td>
-<td align="center">青绿</td>
-<td align="center">蜷缩</td>
-<td align="center">沉闷</td>
-<td align="center">清晰</td>
-<td align="center">凹陷</td>
-<td align="center">硬滑</td>
-<td align="center">是</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">青绿</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">沉闷</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">凹陷</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">5</td>
-<td align="center">浅白</td>
-<td align="center">蜷缩</td>
-<td align="center">浊响</td>
-<td align="center">清晰</td>
-<td align="center">凹陷</td>
-<td align="center">硬滑</td>
-<td align="center">是</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">浅白</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">凹陷</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">6</td>
-<td align="center">青绿</td>
-<td align="center">稍蜷</td>
-<td align="center">浊响</td>
-<td align="center">清晰</td>
-<td align="center">稍凹</td>
-<td align="center">软粘</td>
-<td align="center">是</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">青绿</td>
+<td style="text-align:center">稍蜷</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">稍凹</td>
+<td style="text-align:center">软粘</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">7</td>
-<td align="center">乌黑</td>
-<td align="center">稍蜷</td>
-<td align="center">浊响</td>
-<td align="center">稍糊</td>
-<td align="center">稍凹</td>
-<td align="center">软粘</td>
-<td align="center">是</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">乌黑</td>
+<td style="text-align:center">稍蜷</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">稍糊</td>
+<td style="text-align:center">稍凹</td>
+<td style="text-align:center">软粘</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">8</td>
-<td align="center">乌黑</td>
-<td align="center">稍蜷</td>
-<td align="center">浊响</td>
-<td align="center">清晰</td>
-<td align="center">稍凹</td>
-<td align="center">硬滑</td>
-<td align="center">是</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">乌黑</td>
+<td style="text-align:center">稍蜷</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">稍凹</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">9</td>
-<td align="center">乌黑</td>
-<td align="center">稍蜷</td>
-<td align="center">沉闷</td>
-<td align="center">稍糊</td>
-<td align="center">稍凹</td>
-<td align="center">硬滑</td>
-<td align="center">否</td>
+<td style="text-align:center">9</td>
+<td style="text-align:center">乌黑</td>
+<td style="text-align:center">稍蜷</td>
+<td style="text-align:center">沉闷</td>
+<td style="text-align:center">稍糊</td>
+<td style="text-align:center">稍凹</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center">10</td>
-<td align="center">青绿</td>
-<td align="center">硬挺</td>
-<td align="center">清脆</td>
-<td align="center">清晰</td>
-<td align="center">平坦</td>
-<td align="center">软粘</td>
-<td align="center">否</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">青绿</td>
+<td style="text-align:center">硬挺</td>
+<td style="text-align:center">清脆</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">平坦</td>
+<td style="text-align:center">软粘</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center">11</td>
-<td align="center">浅白</td>
-<td align="center">硬挺</td>
-<td align="center">清脆</td>
-<td align="center">模糊</td>
-<td align="center">平坦</td>
-<td align="center">硬滑</td>
-<td align="center">否</td>
+<td style="text-align:center">11</td>
+<td style="text-align:center">浅白</td>
+<td style="text-align:center">硬挺</td>
+<td style="text-align:center">清脆</td>
+<td style="text-align:center">模糊</td>
+<td style="text-align:center">平坦</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center">12</td>
-<td align="center">浅白</td>
-<td align="center">蜷缩</td>
-<td align="center">浊响</td>
-<td align="center">模糊</td>
-<td align="center">平坦</td>
-<td align="center">软粘</td>
-<td align="center">否</td>
+<td style="text-align:center">12</td>
+<td style="text-align:center">浅白</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">模糊</td>
+<td style="text-align:center">平坦</td>
+<td style="text-align:center">软粘</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center">13</td>
-<td align="center">青绿</td>
-<td align="center">稍蜷</td>
-<td align="center">浊响</td>
-<td align="center">稍糊</td>
-<td align="center">凹陷</td>
-<td align="center">硬滑</td>
-<td align="center">否</td>
+<td style="text-align:center">13</td>
+<td style="text-align:center">青绿</td>
+<td style="text-align:center">稍蜷</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">稍糊</td>
+<td style="text-align:center">凹陷</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center">14</td>
-<td align="center">浅白</td>
-<td align="center">稍蜷</td>
-<td align="center">沉闷</td>
-<td align="center">稍糊</td>
-<td align="center">凹陷</td>
-<td align="center">硬滑</td>
-<td align="center">否</td>
+<td style="text-align:center">14</td>
+<td style="text-align:center">浅白</td>
+<td style="text-align:center">稍蜷</td>
+<td style="text-align:center">沉闷</td>
+<td style="text-align:center">稍糊</td>
+<td style="text-align:center">凹陷</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center">15</td>
-<td align="center">乌黑</td>
-<td align="center">稍蜷</td>
-<td align="center">浊响</td>
-<td align="center">清晰</td>
-<td align="center">稍凹</td>
-<td align="center">软粘</td>
-<td align="center">否</td>
+<td style="text-align:center">15</td>
+<td style="text-align:center">乌黑</td>
+<td style="text-align:center">稍蜷</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">稍凹</td>
+<td style="text-align:center">软粘</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center">16</td>
-<td align="center">浅白</td>
-<td align="center">蜷缩</td>
-<td align="center">浊响</td>
-<td align="center">模糊</td>
-<td align="center">平坦</td>
-<td align="center">硬滑</td>
-<td align="center">否</td>
+<td style="text-align:center">16</td>
+<td style="text-align:center">浅白</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">模糊</td>
+<td style="text-align:center">平坦</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center">17</td>
-<td align="center">青绿</td>
-<td align="center">蜷缩</td>
-<td align="center">沉闷</td>
-<td align="center">稍糊</td>
-<td align="center">稍凹</td>
-<td align="center">硬滑</td>
-<td align="center">否</td>
+<td style="text-align:center">17</td>
+<td style="text-align:center">青绿</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">沉闷</td>
+<td style="text-align:center">稍糊</td>
+<td style="text-align:center">稍凹</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">否</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h2 id="2-1-信息增益-ID3"><a href="#2-1-信息增益-ID3" class="headerlink" title="2.1 信息增益 - ID3"></a>2.1 信息增益 - ID3</h2><h3 id="2-1-1-什么是信息增益"><a href="#2-1-1-什么是信息增益" class="headerlink" title="2.1.1 什么是信息增益"></a>2.1.1 什么是信息增益</h3><p>按照周志华老师《机器学习》中第 $4.2.1$ 小节中所述，假定离散属性 $a$ 有 $V$ 个可能的取值 $\lbrace a_1,a_2,…,a_V \rbrace$，若使用 $a$ 来对样本集 $D$ 进行划分，会产生 $V$ 个分支结点，其中第 $v$ 个分支结点包含了 $D$ 中所有在属性 $a$ 上取值为 $a_v$ 的样本，记为 $D_v$，其对应的信息熵为：</p>
-<p>$$<br>H(D_v)=-\sum_{k \in \mathcal{Y}}p(k\mid v)\log p(k \mid v)=-\sum_{k \in \mathcal{Y}}\frac{|D_{vk}|}{|D_v|}\log \frac{|D_{vk}|}{|D_v|}<br>$$</p>
-<p>其中 $D_{vk}$ 表示 $D_v$ 中分类为 $k$ 的样本。再考虑到不同的分支 $v$ 结点所包含的样本数不同，给分支结点赋予权重 $|D_v|/|D|$，于是可以计算出属性 $a$ 对样本集 $D$ 进行划分所获得的 <strong>信息增益 (Information gain)</strong>：</p>
-<p>$$<br>\textrm{Gain}(D,a)=H(D)-\sum_{v=1}^V \frac{|D_v|}{|D|}H(|D_v|)=H(D)-H(D,a)=I(D,a)<br>$$</p>
-<p>其实，信息增益就是训练数据集 $D$ 中的类别与某一属性之间（或者两个属性之间的，因为最终决策树的目的是要进行分类，所以在决策树的每一个分支判断时都用类别与对应的属性进行信息增益比较）的互信息。我们知道，互信息表示了两事件发生所代表的信息之间的重复部分，当两事件信息重复的部分越大，那么采用一种事件为标准来划分另一种事件所能确定的部分也就越大，也就是说采用属性 $a$ 来进行划分所获得的“纯度提升”越大。考虑极端情况，当属性 $a$ 与类别完全没有关系时，其互信息为 $0$，这时候采用 $a$ 属性作为划分标准对于数据集的类别确认完全没有帮助；当属性 $a$  的各属性分别与数据集的类别一一对应时，也就是其概率分布完全相同，那么根据互信息的计算公式，其互信息等于各自的熵，也就是说，如果我们采用 $a$ 进行数据的划分，那么数据可以完全干净的划分出来，也就不再含有额外的不可知信息了。</p>
+<script type="math/tex; mode=display">
+H(D_v)=-\sum_{k \in \mathcal{Y}}p(k\mid v)\log p(k \mid v)=-\sum_{k \in \mathcal{Y}}\frac{|D_{vk}|}{|D_v|}\log \frac{|D_{vk}|}{|D_v|}</script><p>其中 $D_{vk}$ 表示 $D_v$ 中分类为 $k$ 的样本。再考虑到不同的分支 $v$ 结点所包含的样本数不同，给分支结点赋予权重 $|D_v|/|D|$，于是可以计算出属性 $a$ 对样本集 $D$ 进行划分所获得的 <strong>信息增益 (Information gain)</strong>：</p>
+<script type="math/tex; mode=display">
+\textrm{Gain}(D,a)=H(D)-\sum_{v=1}^V \frac{|D_v|}{|D|}H(|D_v|)=H(D)-H(D,a)=I(D,a)</script><p>其实，信息增益就是训练数据集 $D$ 中的类别与某一属性之间（或者两个属性之间的，因为最终决策树的目的是要进行分类，所以在决策树的每一个分支判断时都用类别与对应的属性进行信息增益比较）的互信息。我们知道，互信息表示了两事件发生所代表的信息之间的重复部分，当两事件信息重复的部分越大，那么采用一种事件为标准来划分另一种事件所能确定的部分也就越大，也就是说采用属性 $a$ 来进行划分所获得的“纯度提升”越大。考虑极端情况，当属性 $a$ 与类别完全没有关系时，其互信息为 $0$，这时候采用 $a$ 属性作为划分标准对于数据集的类别确认完全没有帮助；当属性 $a$  的各属性分别与数据集的类别一一对应时，也就是其概率分布完全相同，那么根据互信息的计算公式，其互信息等于各自的熵，也就是说，如果我们采用 $a$ 进行数据的划分，那么数据可以完全干净的划分出来，也就不再含有额外的不可知信息了。</p>
 <p>当决策树中选择最优划分属性（行 8）按照信息增益最大来进行时，决策树属于 <strong>ID3 决策树</strong>。</p>
 <h3 id="2-1-2-ID3-树中最优划分属性计算举例"><a href="#2-1-2-ID3-树中最优划分属性计算举例" class="headerlink" title="2.1.2 ID3 树中最优划分属性计算举例"></a>2.1.2 ID3 树中最优划分属性计算举例</h3><p>根据上节给出的西瓜数据集，我们学习一个对瓜好坏判断的决策树。在这个例子中分类个数为 $2$ (是好瓜、不是好瓜)，即 $\mathcal{Y}=2$。在决策树学习开始时，根结点包含 $D$  中所有样例，正例占 $p_1=\frac{8}{17}$，反例占 $p_2=\frac{9}{17}$。根结点的信息熵（下面我们都以比特为单位计算）为：</p>
-<p>$$<br>H(D)=-\sum_{k=1}^2p(k)\log_2 p(k)=-\left(\frac{7}{17}\log_2\frac{7}{17}+\frac{9}{17}\log_2\frac{9}{17}\right)=0.998<br>$$</p>
-<p>然后我们要计算出与当前属性集合 {色泽、根蒂、敲声、纹理、脐部、触感}中每个属性的信息增益，也就是对应的互信息。以属性“色泽”为例，它有 $3$ 个可能取值：{青绿、乌黑、浅白}。以该属性对数据集进行划分，可以得到 $3$ 个子集，分别为：$D_1$(色泽=青绿)、$D_2$(色泽=乌黑)、$D_3$(色泽=浅白)。</p>
+<script type="math/tex; mode=display">
+H(D)=-\sum_{k=1}^2p(k)\log_2 p(k)=-\left(\frac{7}{17}\log_2\frac{7}{17}+\frac{9}{17}\log_2\frac{9}{17}\right)=0.998</script><p>然后我们要计算出与当前属性集合 {色泽、根蒂、敲声、纹理、脐部、触感}中每个属性的信息增益，也就是对应的互信息。以属性“色泽”为例，它有 $3$ 个可能取值：{青绿、乌黑、浅白}。以该属性对数据集进行划分，可以得到 $3$ 个子集，分别为：$D_1$(色泽=青绿)、$D_2$(色泽=乌黑)、$D_3$(色泽=浅白)。</p>
 <p>对子集 $D_1$ 来说，包含了编号为 $\lbrace1,4,6,10,13,17\rbrace$ 的 $6$ 个样例，其中正例为 $\lbrace1,4,6\rbrace$，占 $p_1=\frac{3}{6}$ ；反例为 $\lbrace10,13,17\rbrace$，占 $p_1=\frac{3}{6}$。计算其熵为：</p>
-<p>$$<br>H(D_1)=-\left(\frac{3}{6}\log_2\frac{3}{6}+\frac{3}{6}\log_2\frac{3}{6}\right)=1.000<br>$$</p>
-<p>依次可以计算另外两个子集的信息熵为：</p>
-<p>$$<br>\begin{aligned}<br>H(D_2)&amp;=0.918 \<br>H(D_3)&amp;=0.722<br>\end{aligned}<br>$$</p>
-<p>最终可以计算数据集 $D$ 的类别信息在属性“色泽”熵的信息增益（也可以理解为类别与“色泽”属性之间的互信息）为：</p>
-<p>$$<br>\begin{aligned}<br>\textrm{Gain}(D,色泽) &amp;=H(D)-\sum_{v=1}^3p(v)H(D_v) \<br>&amp;=0.998-\left(\frac{6}{17}\times1.000+\frac{6}{17}\times0.918+\frac{5}{17}\times0.722\right) \<br>&amp;=0.109<br>\end{aligned}<br>$$</p>
-<p>重复上述的计算步骤，我们可以计算出其他属性的信息增益：</p>
-<p>$$<br>\begin{aligned}<br>\textrm{Gain}(D,根蒂) &amp;=0.143; \<br>\textrm{Gain}(D,敲声) &amp;=0.141; \<br>\textrm{Gain}(D,纹理) &amp;=0.381; \<br>\textrm{Gain}(D,脐部) &amp;=0.289; \<br>\textrm{Gain}(D,触感) &amp;=0.006. \<br>\end{aligned}<br>$$</p>
-<p>经过比较，发现采用“纹理”进行划分得到的信息增益最大，于是它被选为划分属性。下图给出了根据“纹理”属性划分之后的数据子集：</p>
+<script type="math/tex; mode=display">
+H(D_1)=-\left(\frac{3}{6}\log_2\frac{3}{6}+\frac{3}{6}\log_2\frac{3}{6}\right)=1.000</script><p>依次可以计算另外两个子集的信息熵为：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+H(D_2)&=0.918 \\
+H(D_3)&=0.722
+\end{aligned}</script><p>最终可以计算数据集 $D$ 的类别信息在属性“色泽”熵的信息增益（也可以理解为类别与“色泽”属性之间的互信息）为：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\textrm{Gain}(D,色泽) &=H(D)-\sum_{v=1}^3p(v)H(D_v) \\
+&=0.998-\left(\frac{6}{17}\times1.000+\frac{6}{17}\times0.918+\frac{5}{17}\times0.722\right) \\
+&=0.109
+\end{aligned}</script><p>重复上述的计算步骤，我们可以计算出其他属性的信息增益：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\textrm{Gain}(D,根蒂) &=0.143; \\
+\textrm{Gain}(D,敲声) &=0.141; \\
+\textrm{Gain}(D,纹理) &=0.381; \\
+\textrm{Gain}(D,脐部) &=0.289; \\
+\textrm{Gain}(D,触感) &=0.006. \\
+\end{aligned}</script><p>经过比较，发现采用“纹理”进行划分得到的信息增益最大，于是它被选为划分属性。下图给出了根据“纹理”属性划分之后的数据子集：</p>
 <p><img src="/20180722-Decision_Tree/Root_node_decision.png" alt="Root_node_decision"></p>
 <p>对每一个数据子集按照上边的步骤继续划分下去就能得到最终的决策树（需要注意的是每次样例子集中的属性不包含父结点中划分所依赖的属性），如下图所示：</p>
 <p><img src="/20180722-Decision_Tree/Decision-tree.png" alt="Decision-tree"></p>
 <h2 id="2-2-信息增益率-C4-5"><a href="#2-2-信息增益率-C4-5" class="headerlink" title="2.2 信息增益率 - C4.5"></a>2.2 信息增益率 - C4.5</h2><p>采用信息增益来进行划分属性的决策有一个潜在的问题，当某一个属性的取值种类非常多时，对应每一个属性取值的样本子集，其分类的信息熵可能会变得很小。为了说明，采用一种极端情况，假设我们对上一节中要分类的西瓜数据进行决策树生成时，把“编号”也当作一种可以作为划分依据的属性。则在这种情况下，每一个编号属性对应一个实例，且其分类是确定的，那么对于每一个“编号”属性取值来说，其分类信息熵为 $0$，计算“编号”分类所带来的信息增益为：</p>
-<p>$$<br>\begin{aligned}<br>\textrm{Gain}(D,a)&amp;=H(D)-\sum_{v=1}^V \frac{|D_v|}{|D|}H(|D_v|) \<br>&amp;=-\frac{8}{17}\log_2\frac{8}{17}-\frac{8}{17}\log_2\frac{8}{17}-\sum_{v=1}^{17}\frac{1}{17}\times0 \<br>&amp;=0.9975<br>\end{aligned}<br>$$</p>
-<p>最后计算出来的信息增益很大。但是显然，用“编号”属性来作为结点的划分是没有意义的。思考其中的问题在于，对数函数并不是线性的，信息量的减少速度大于类别数量的增加速度。信息增益准则对取值数目较多的属性有所偏好，为了减小这种偏好，<strong>C4.5 决策树</strong> 采用 <strong>信息增益率 (gain ratio)</strong> 来选择最优划分属性。其定义如下：</p>
-<p>$$<br>\textrm{Gain}_\textrm{ratio}(D,a)=\frac{\rm{Gain}(D,a)}{\rm{IV}(a)}<br>$$</p>
-<p>其中，</p>
-<p>$$<br>\textrm{IV}(a)=-\sum_{v=1}^V \frac{|D_v|}{|D|}\log \frac{|D_v|}{|D|}=H(a)<br>$$</p>
-<p>到这里，我们就可以发现，信息增益率是用属性分类的信息熵对由属性分类引起的互信息熵进行了归一。属性的种类越多其信息熵通常也会越大。对西瓜数据，有：$H(触感)=0.874\ (V=2)$，$H(色泽)=1.580\ (V=3)$，$H(编号)=4.088\ (V=17)$。</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\textrm{Gain}(D,a)&=H(D)-\sum_{v=1}^V \frac{|D_v|}{|D|}H(|D_v|) \\
+&=-\frac{8}{17}\log_2\frac{8}{17}-\frac{8}{17}\log_2\frac{8}{17}-\sum_{v=1}^{17}\frac{1}{17}\times0 \\
+&=0.9975
+\end{aligned}</script><p>最后计算出来的信息增益很大。但是显然，用“编号”属性来作为结点的划分是没有意义的。思考其中的问题在于，对数函数并不是线性的，信息量的减少速度大于类别数量的增加速度。信息增益准则对取值数目较多的属性有所偏好，为了减小这种偏好，<strong>C4.5 决策树</strong> 采用 <strong>信息增益率 (gain ratio)</strong> 来选择最优划分属性。其定义如下：</p>
+<script type="math/tex; mode=display">
+\textrm{Gain}_\textrm{ratio}(D,a)=\frac{\rm{Gain}(D,a)}{\rm{IV}(a)}</script><p>其中，</p>
+<script type="math/tex; mode=display">
+\textrm{IV}(a)=-\sum_{v=1}^V \frac{|D_v|}{|D|}\log \frac{|D_v|}{|D|}=H(a)</script><p>到这里，我们就可以发现，信息增益率是用属性分类的信息熵对由属性分类引起的互信息熵进行了归一。属性的种类越多其信息熵通常也会越大。对西瓜数据，有：$H(触感)=0.874\ (V=2)$，$H(色泽)=1.580\ (V=3)$，$H(编号)=4.088\ (V=17)$。</p>
 <p>最后一点需要注意的是，增益率准则虽然减少了对取值数目较多的属性依赖，但是增加了对取值数目较少的属性偏好。因此， C4.5 并没有直接选择增益率最大的候选划分属性，而是使用了一个启发式：先从候选划分属性中找出 <strong>信息增益</strong> 高于 <strong>平均水平</strong> 的属性，再从中选择 <strong>增益率</strong> 最高的。</p>
 <h2 id="2-3-基尼指数-CART"><a href="#2-3-基尼指数-CART" class="headerlink" title="2.3 基尼指数 - CART"></a>2.3 基尼指数 - CART</h2><p>最后介绍一种选择划分属性的依据是使用 <strong>基尼指数 (Gini index)</strong>。数据集合 $D$ 的纯度可用基尼指数来度量：</p>
-<p>$$<br>\textrm{Gini}(D) = \sum_{k=1}^{|\mathcal{Y}|}\sum_{k^\prime\neq k}p_kp_{k^\prime}=1-\sum_{k=1}^{\mathcal{Y}}p_k^2<br>$$</p>
-<p>直观来看，$\textrm{Gini}(D)$ 反映了从数据集 $D$ 中随机抽取两个样本，其类别标记不一致的概率。因此，$\textrm{Gini}(D)$ 越小，则数据集 $D$ 的纯度越高。</p>
+<script type="math/tex; mode=display">
+\textrm{Gini}(D) = \sum_{k=1}^{|\mathcal{Y}|}\sum_{k^\prime\neq k}p_kp_{k^\prime}=1-\sum_{k=1}^{\mathcal{Y}}p_k^2</script><p>直观来看，$\textrm{Gini}(D)$ 反映了从数据集 $D$ 中随机抽取两个样本，其类别标记不一致的概率。因此，$\textrm{Gini}(D)$ 越小，则数据集 $D$ 的纯度越高。</p>
 <p>对特定属性 $a$ 的基尼指数定义如下：</p>
-<p>$$<br>\textrm{Gini}<em>\textrm{index}(D,a) = \sum</em>{v=1}^{V}\frac{|D_v|}{|D|}\textrm{Gini}(D_v)<br>$$</p>
-<p>我们在候选属性集合 $A$ 中，选择那个使得划分后基尼指数最小的属性作为最优划分属性，即：</p>
-<p>$$<br>a_\ast=\arg \min \limits_{a \in A}{\textrm{Gini}_\textrm{index}(D,a)}<br>$$</p>
-<p>采用基尼指数作为划分属性的判据的决策树是一种 CART 决策树。</p>
+<script type="math/tex; mode=display">
+\textrm{Gini}_\textrm{index}(D,a) = \sum_{v=1}^{V}\frac{|D_v|}{|D|}\textrm{Gini}(D_v)</script><p>我们在候选属性集合 $A$ 中，选择那个使得划分后基尼指数最小的属性作为最优划分属性，即：</p>
+<script type="math/tex; mode=display">
+a_\ast=\arg \min \limits_{a \in A}{\textrm{Gini}_\textrm{index}(D,a)}</script><p>采用基尼指数作为划分属性的判据的决策树是一种 CART 决策树。</p>
 <h1 id="3-决策树剪枝"><a href="#3-决策树剪枝" class="headerlink" title="3. 决策树剪枝"></a>3. 决策树剪枝</h1><h2 id="3-1-决策树的损失函数"><a href="#3-1-决策树的损失函数" class="headerlink" title="3.1 决策树的损失函数"></a>3.1 决策树的损失函数</h2><p>刚开始我提到，决策树可以看作是一系列 <code>if-then</code> 规则的集合。这个规则集合有一个重要的性质：互斥并且完备。意思就是说，拿来任意一个实例，顺着规则的起点（根结点）出发，最终都有且只有一条路径到达某一个具体的叶结点（具体的分类），并且不会出现实例无法分类的情况。</p>
-<p>如果不考虑泛化能力，在训练集上生成的所有不同规则集合对应的决策树中，挑选出最优的决策树，可以根据所有叶结点中的预测误差来衡量，即模型与训练数据的拟合程度。设树 $T$ 的叶结点个数为 $|T|$，$t$ 是树 $T$ 的一个叶结点，该叶结点有 $N_t$ 个样本点，其中 $k$ 类的样本点有 $N_{tk}$ 个，$k=1,2,…,K$，$K$ 为样本空间中的所属分类数量。叶结点 $t$ 上的经验熵 $H_t(T)$ 为</p>
-<p>$$<br>H_t(T)=-\sum_k\frac{N_{tk}}{Nt}\log\frac{N_{tk}}{N_t}<br>$$</p>
-<p>代表了该叶结点的分类还有多少信息量不知道（混乱程度），可以这么考虑一个理想的极端情况，当该叶结点中只有一个分类 $k_n$ 时，那么 $N_{tk_n}=N_t$，其它的 $N_{k_1},…,N_{k_{n-1}},N_{k_{n+1}},…,N_{k_K}$ 全部为 $0$，最终 $H_t(T)=0$，这个结论与分类已经完全的结果是相吻合的。那么我们可以说，经验熵 $H_t(T)$ 就代表了连接该叶结点的整个路径对数据分类的彻底性。</p>
+<p>如果不考虑泛化能力，在训练集上生成的所有不同规则集合对应的决策树中，挑选出最优的决策树，可以根据所有叶结点中的预测误差来衡量，即模型与训练数据的拟合程度。设树 $T$ 的叶结点个数为 $|T|$，$t$ 是树 $T$ 的一个叶结点，该叶结点有 $N<em>t$ 个样本点，其中 $k$ 类的样本点有 $N</em>{tk}$ 个，$k=1,2,…,K$，$K$ 为样本空间中的所属分类数量。叶结点 $t$ 上的经验熵 $H_t(T)$ 为</p>
+<script type="math/tex; mode=display">
+H_t(T)=-\sum_k\frac{N_{tk}}{Nt}\log\frac{N_{tk}}{N_t}</script><p>代表了该叶结点的分类还有多少信息量不知道（混乱程度），可以这么考虑一个理想的极端情况，当该叶结点中只有一个分类 $k<em>n$ 时，那么 $N</em>{tk<em>n}=N_t$，其它的 $N</em>{k<em>1},…,N</em>{k<em>{n-1}},N</em>{k<em>{n+1}},…,N</em>{k_K}$ 全部为 $0$，最终 $H_t(T)=0$，这个结论与分类已经完全的结果是相吻合的。那么我们可以说，经验熵 $H_t(T)$ 就代表了连接该叶结点的整个路径对数据分类的彻底性。</p>
 <p>考虑到所有的叶结点每个叶结点中的样例个数不同，我们采用</p>
-<p>$$<br>C(T)=\sum_{t=1}^{|T|}N_tH_t(T)=-\sum_{t=1}^{|T|}\sum_{k=1}^K N_{tk}\log\frac{N_{tk}}{N_t}<br>$$</p>
-<p>来衡量模型对训练数据的整体测量误差。</p>
+<script type="math/tex; mode=display">
+C(T)=\sum_{t=1}^{|T|}N_tH_t(T)=-\sum_{t=1}^{|T|}\sum_{k=1}^K N_{tk}\log\frac{N_{tk}}{N_t}</script><p>来衡量模型对训练数据的整体测量误差。</p>
 <p>但是如果仅仅用 $C(T)$ 来作为优化目标函数，就会导致模型走向过拟合的结果。因为我们可以尽可能的对每一个分支划分到最细结来使得每一个叶结点的 $H_t(T)=0$，最终使得 $C(T)=0$ 最小。</p>
 <p>为了避免过拟合，我们需要给优化目标函数增加一个正则项，正则项应该包含模型的复杂度信息。对于决策树来说，其叶结点的数量 $|T|$ 越多就越复杂，我们用添加正则项的</p>
-<p>$$<br>C_\alpha(T)=C(T)+\alpha|T|<br>$$</p>
-<p>来作为优化的目标函数，也就是树的损失函数。参数 $\alpha$ 控制了两者之间的影响程度。较大的 $\alpha$ 促使选择较简单的模型（树），较小的 $\alpha$ 促使选择较复杂的模型（树）。</p>
+<script type="math/tex; mode=display">
+C_\alpha(T)=C(T)+\alpha|T|</script><p>来作为优化的目标函数，也就是树的损失函数。参数 $\alpha$ 控制了两者之间的影响程度。较大的 $\alpha$ 促使选择较简单的模型（树），较小的 $\alpha$ 促使选择较复杂的模型（树）。</p>
 <p>决策树的生成过程并不是一个准确的求解树的损失函数的最优化方法。三种决策树学习方法都是一种启发式的求解步骤，在每一步扩大树的规模的时候都是找当前步能使分类结果提升最明显的选择。</p>
 <p>如果以文章最开始标示的三个递归学习返回条件进行树的学习，那么最后学习的树是一个以 $C(T)$ 为损失函数的最优化过程。最后学习到的决策树对训练数据集能达到令人满意的结果，但是对于未知的测试集来说却未必有很好的分类能力。即数据集的泛化能力不能保证。</p>
 <p>为了提高决策树的泛化能力，需要对树进行 <strong>剪枝 (Pruning)</strong>，把过于细分的叶结点（通常是数据量过少导致噪声数据的影响增加）去掉而回退到其父结点或更高的结点，使其父结点或更高的结点变为叶结点。</p>
@@ -550,14 +570,14 @@
 <p>更具体地，李航老师《统计学习方法》中第 5.5.2 小节具体介绍了 CART 剪枝算法的步骤流程。刚开始看这部分内容的时候，不容易看懂，后来结合网上的解释回过头来发现其实很简单。下边是参考书中以及网上的解释总结的一套算法流程：</p>
 <p><img src="/20180722-Decision_Tree/Decision_tree_Post-Pruning.png" alt="Decision_tree_Post-Pruning"></p>
 <p>针对流程图中的第 8 步计算，按照书中的描述逻辑，对 $T_0$ 中的任意内部结点 $t$，以 $t$ 为单结点树（结点即为叶，没有分支）的损失函数是</p>
-<p>$$<br>C_\alpha(t)=C(t)+\alpha<br>$$</p>
-<p>以 $t$ 为根结点的子树 $T_t$ 的损失函数是</p>
-<p>$$<br>C_\alpha(T_t)=C(T_t)+\alpha|T_t|<br>$$</p>
-<p>当 $\alpha=0$或充分小时，有不等式</p>
-<p>$$<br>C_\alpha(T_t)&lt;C_\alpha(t)<br>$$</p>
-<p>当 $\alpha$ 增大到某一个值时，有</p>
-<p>$$<br>C_\alpha(T_t)=C_\alpha(t)<br>$$</p>
-<p>当 $\alpha$ 再继续增大时，不等式反向，所以只要 $\alpha=\frac{C(t)-C(T_t)}{|T_t|-1}$，$T_t$ 与 $t$ 有相同的损失函数值，而 $t$ 的结点更少，因此 $t$ 比 $T_t$ 更可取，对 $T_t$ 进行剪枝。</p>
+<script type="math/tex; mode=display">
+C_\alpha(t)=C(t)+\alpha</script><p>以 $t$ 为根结点的子树 $T_t$ 的损失函数是</p>
+<script type="math/tex; mode=display">
+C_\alpha(T_t)=C(T_t)+\alpha|T_t|</script><p>当 $\alpha=0$或充分小时，有不等式</p>
+<script type="math/tex; mode=display">
+C_\alpha(T_t)<C_\alpha(t)</script><p>当 $\alpha$ 增大到某一个值时，有</p>
+<script type="math/tex; mode=display">
+C_\alpha(T_t)=C_\alpha(t)</script><p>当 $\alpha$ 再继续增大时，不等式反向，所以只要 $\alpha=\frac{C(t)-C(T_t)}{|T_t|-1}$，$T_t$ 与 $t$ 有相同的损失函数值，而 $t$ 的结点更少，因此 $t$ 比 $T_t$ 更可取，对 $T_t$ 进行剪枝。</p>
 <p>这个位置容易让人疑惑，逻辑上让人不是很容易想明白，需要多看几遍。其实它的逻辑是这样的：</p>
 <p>剪枝的目的不是为了最小化损失函数，剪枝的目的是为了达到一个更好的泛化能力。而对于决策树来说，叶结点的数量越多，反应了决策树对训练数据的细节反应的越多，继而弱化了泛化能力。要想提高泛化能力就需要进行剪枝，而在 3.1 节中给出的损失函数中，$\alpha$ 值衡量了损失函数中叶结点数量的权重，$\alpha$ 值越大，在最小化损失函数时，需要更多的考虑叶结点数量的影响。$\alpha$ 可以看作一个系数，不同的 $\alpha$ 对应于不同的损失函数。而对于所有的这些损失函数来说，在训练集上进行决策树生成时候的步骤都一样，差别只是在判断某些结点是否进行展开的区别。</p>
 <p>这个有点类似于对一个函数的泰勒级数展开，而 $\alpha$ 值控制着展开的次数项，越小的值展开的次数项越多（往回收缩的高次项越少）。因为决策树的结点个数是有限的，对应到 $\alpha$ 的值来说也是有限的。上述求 $\alpha$ 过程就是得到具体收缩每一个分支对应的值。</p>
@@ -566,205 +586,239 @@
 <p>借鉴周志华老师《机器学习》中的图 4.5 来对 CART 剪枝算法进行梳理如下。</p>
 <p><img src="/20180722-Decision_Tree/Decision-tree_Pruning.png" alt="Decision_tree_Pruning"></p>
 <p>该图展示的是表 4.2 中的西瓜数据集对应的决策树。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">编号</th>
-<th align="center">色泽</th>
-<th align="center">根蒂</th>
-<th align="center">敲声</th>
-<th align="center">纹理</th>
-<th align="center">脐部</th>
-<th align="center">触感</th>
-<th align="center">好瓜</th>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">色泽</th>
+<th style="text-align:center">根蒂</th>
+<th style="text-align:center">敲声</th>
+<th style="text-align:center">纹理</th>
+<th style="text-align:center">脐部</th>
+<th style="text-align:center">触感</th>
+<th style="text-align:center">好瓜</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">1</td>
-<td align="center">青绿</td>
-<td align="center">蜷缩</td>
-<td align="center">浊响</td>
-<td align="center">清晰</td>
-<td align="center">凹陷</td>
-<td align="center">硬滑</td>
-<td align="center">是</td>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">青绿</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">凹陷</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">2</td>
-<td align="center">乌黑</td>
-<td align="center">蜷缩</td>
-<td align="center">沉闷</td>
-<td align="center">清晰</td>
-<td align="center">凹陷</td>
-<td align="center">硬滑</td>
-<td align="center">是</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">乌黑</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">沉闷</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">凹陷</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">3</td>
-<td align="center">乌黑</td>
-<td align="center">蜷缩</td>
-<td align="center">浊响</td>
-<td align="center">清晰</td>
-<td align="center">凹陷</td>
-<td align="center">硬滑</td>
-<td align="center">是</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">乌黑</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">凹陷</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">6</td>
-<td align="center">青绿</td>
-<td align="center">稍蜷</td>
-<td align="center">浊响</td>
-<td align="center">清晰</td>
-<td align="center">稍凹</td>
-<td align="center">软粘</td>
-<td align="center">是</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">青绿</td>
+<td style="text-align:center">稍蜷</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">稍凹</td>
+<td style="text-align:center">软粘</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">7</td>
-<td align="center">乌黑</td>
-<td align="center">稍蜷</td>
-<td align="center">浊响</td>
-<td align="center">稍糊</td>
-<td align="center">稍凹</td>
-<td align="center">软粘</td>
-<td align="center">是</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">乌黑</td>
+<td style="text-align:center">稍蜷</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">稍糊</td>
+<td style="text-align:center">稍凹</td>
+<td style="text-align:center">软粘</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">10</td>
-<td align="center">青绿</td>
-<td align="center">硬挺</td>
-<td align="center">清脆</td>
-<td align="center">清晰</td>
-<td align="center">平坦</td>
-<td align="center">软粘</td>
-<td align="center">否</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">青绿</td>
+<td style="text-align:center">硬挺</td>
+<td style="text-align:center">清脆</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">平坦</td>
+<td style="text-align:center">软粘</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center">14</td>
-<td align="center">浅白</td>
-<td align="center">稍蜷</td>
-<td align="center">沉闷</td>
-<td align="center">稍糊</td>
-<td align="center">凹陷</td>
-<td align="center">硬滑</td>
-<td align="center">否</td>
+<td style="text-align:center">14</td>
+<td style="text-align:center">浅白</td>
+<td style="text-align:center">稍蜷</td>
+<td style="text-align:center">沉闷</td>
+<td style="text-align:center">稍糊</td>
+<td style="text-align:center">凹陷</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center">15</td>
-<td align="center">乌黑</td>
-<td align="center">稍蜷</td>
-<td align="center">浊响</td>
-<td align="center">清晰</td>
-<td align="center">稍凹</td>
-<td align="center">软粘</td>
-<td align="center">否</td>
+<td style="text-align:center">15</td>
+<td style="text-align:center">乌黑</td>
+<td style="text-align:center">稍蜷</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">稍凹</td>
+<td style="text-align:center">软粘</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center">16</td>
-<td align="center">浅白</td>
-<td align="center">蜷缩</td>
-<td align="center">浊响</td>
-<td align="center">模糊</td>
-<td align="center">平坦</td>
-<td align="center">硬滑</td>
-<td align="center">否</td>
+<td style="text-align:center">16</td>
+<td style="text-align:center">浅白</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">模糊</td>
+<td style="text-align:center">平坦</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center">17</td>
-<td align="center">青绿</td>
-<td align="center">蜷缩</td>
-<td align="center">沉闷</td>
-<td align="center">稍糊</td>
-<td align="center">稍凹</td>
-<td align="center">硬滑</td>
-<td align="center">否</td>
+<td style="text-align:center">17</td>
+<td style="text-align:center">青绿</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">沉闷</td>
+<td style="text-align:center">稍糊</td>
+<td style="text-align:center">稍凹</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
-<td align="center">4</td>
-<td align="center">青绿</td>
-<td align="center">蜷缩</td>
-<td align="center">沉闷</td>
-<td align="center">清晰</td>
-<td align="center">凹陷</td>
-<td align="center">硬滑</td>
-<td align="center">是</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">青绿</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">沉闷</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">凹陷</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">5</td>
-<td align="center">浅白</td>
-<td align="center">蜷缩</td>
-<td align="center">浊响</td>
-<td align="center">清晰</td>
-<td align="center">凹陷</td>
-<td align="center">硬滑</td>
-<td align="center">是</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">浅白</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">凹陷</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">8</td>
-<td align="center">乌黑</td>
-<td align="center">稍蜷</td>
-<td align="center">浊响</td>
-<td align="center">清晰</td>
-<td align="center">稍凹</td>
-<td align="center">硬滑</td>
-<td align="center">是</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">乌黑</td>
+<td style="text-align:center">稍蜷</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">清晰</td>
+<td style="text-align:center">稍凹</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">是</td>
 </tr>
 <tr>
-<td align="center">9</td>
-<td align="center">乌黑</td>
-<td align="center">稍蜷</td>
-<td align="center">沉闷</td>
-<td align="center">稍糊</td>
-<td align="center">稍凹</td>
-<td align="center">硬滑</td>
-<td align="center">否</td>
+<td style="text-align:center">9</td>
+<td style="text-align:center">乌黑</td>
+<td style="text-align:center">稍蜷</td>
+<td style="text-align:center">沉闷</td>
+<td style="text-align:center">稍糊</td>
+<td style="text-align:center">稍凹</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center">11</td>
-<td align="center">浅白</td>
-<td align="center">硬挺</td>
-<td align="center">清脆</td>
-<td align="center">模糊</td>
-<td align="center">平坦</td>
-<td align="center">硬滑</td>
-<td align="center">否</td>
+<td style="text-align:center">11</td>
+<td style="text-align:center">浅白</td>
+<td style="text-align:center">硬挺</td>
+<td style="text-align:center">清脆</td>
+<td style="text-align:center">模糊</td>
+<td style="text-align:center">平坦</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center">12</td>
-<td align="center">浅白</td>
-<td align="center">蜷缩</td>
-<td align="center">浊响</td>
-<td align="center">模糊</td>
-<td align="center">平坦</td>
-<td align="center">软粘</td>
-<td align="center">否</td>
+<td style="text-align:center">12</td>
+<td style="text-align:center">浅白</td>
+<td style="text-align:center">蜷缩</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">模糊</td>
+<td style="text-align:center">平坦</td>
+<td style="text-align:center">软粘</td>
+<td style="text-align:center">否</td>
 </tr>
 <tr>
-<td align="center">13</td>
-<td align="center">青绿</td>
-<td align="center">稍蜷</td>
-<td align="center">浊响</td>
-<td align="center">稍糊</td>
-<td align="center">凹陷</td>
-<td align="center">硬滑</td>
-<td align="center">否</td>
+<td style="text-align:center">13</td>
+<td style="text-align:center">青绿</td>
+<td style="text-align:center">稍蜷</td>
+<td style="text-align:center">浊响</td>
+<td style="text-align:center">稍糊</td>
+<td style="text-align:center">凹陷</td>
+<td style="text-align:center">硬滑</td>
+<td style="text-align:center">否</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>下面按照给出的算法流程来对该决策树进行剪枝操作。我们采用 3.1 小节中关于 $C(T)$ 和 $C_\alpha(T)$ 的定义。</p>
-<p><strong>1. 第一层递归：</strong> 树 $T_0=\lbrace 1,2,3,4,5\rbrace$，其在训练集数据上的执行情况见下图：<br><img src="/20180722-Decision_Tree/Decision-tree_Execute.png" alt="Decision_tree_Execute"><br> 对其每一个内部结点计算其剪枝后的整体树的损失函数减少程度 $g(t)$。<br> 以结点 $5$ 为例，一例好一例坏，<br>  $$<br> \begin{aligned}<br> C(5)&amp;=-\sum_{t=1}^1\sum_{k \in (好、坏)}N_{tk}\log_2\frac{N_{tk}}{N_t} \<br> &amp;=-1\times\log_2(1/2)-1\times\log_2(1/2)) \<br> &amp;=2; \<br> C(T_5)&amp;=-\sum_{t=1}^3\sum_{k \in (好、坏)}N_{tk}\log_2\frac{N_{tk}}{N_t} \<br> &amp;=-\left(1\times\log_2(1/1)+0\times\log_2(0/1)\right)-\left(0\times\log_2(0/1)+1\times\log_2(1/1)\right)-0 \<br> &amp;=0; \<br> |T_5|&amp;=3; \<br> g(5)&amp;=\frac{C(5)-C(T_5)}{|T_5|-1}=\frac{2-0}{3-1}=1.<br> \end{aligned}<br> $$<br>同理，可以计算出:<br> $$<br>  \begin{aligned}<br> g(4)&amp;=\frac{C(4)-C(T_4)}{|T_4|-1}=\frac{2.7549-0}{5-1}=0.6887 \<br> g(3)&amp;=\frac{C(3)-C(T_3)}{|T_3|-1}=\frac{4-0}{7-1}=0.5714 \<br> g(2)&amp;=\frac{C(2)-C(T_2)}{|T_2|-1}=\frac{3.2451-0}{3-1}=1.6226 \<br> g(1)&amp;=\frac{C(1)-C(T_1)}{|T_1|-1}=\frac{10-0}{11-1}=1<br>  \end{aligned}<br> $$<br>比较之后发现，最小的是 $g(3)$，对应的结点是 $t(3)$，对其进行剪枝后得到新的树 $T_1$ 在训练集数据上的执行情况见下图：<br><img src="/20180722-Decision_Tree/Decision-tree_Pruned_1.png" alt="Decision_tree_Learning_Pruned_1"></p>
-<p><strong>2. 第二层递归：</strong> 以树 $T_1=\lbrace 1,2\rbrace$ 为新的输入，重复第一层递归中的计算步骤：<br>$$<br>\begin{aligned}<br> g(2)&amp;=\frac{C(2)-C(T_2)}{|T_2|-1}=\frac{3.2451-0}{3-1}=1.6226 \<br> g(1)&amp;=\frac{C(1)-C(T_1)}{|T_1|-1}=\frac{10-0}{5-1}=2.5<br>\end{aligned}<br> $$<br>比较之后发现，最小的是 $g(2)$，对应的结点是 $t(2)$，对其进行剪枝后得到新的树 $T_2$ 在训练集数据上的执行情见下图:<br><img src="/20180722-Decision_Tree/Decision-tree_Pruned_2.png" alt="Decision_tree_Learning_Pruned_2"></p>
-<p><strong>3. 第三层递归：</strong> 以树 $T_2=\lbrace 1\rbrace$ 为新的输入，重复第一层递归中的计算步骤：<br>$$<br> g(1)=\frac{C(1)-C(T_1)}{|T_1|-1}=\frac{10-0}{3-1}=5<br> $$<br> 现在只有一个 $g(1)$，所以其也是最小的一个。对应的结点是 $t(1)$，对其进行剪枝后得到新的树 $T_3$ 在训练集数据上的执行情见下图:<br> <img src="/20180722-Decision_Tree/Decision-tree_Pruned_3.png" alt="Decision_tree_Learning_Pruned_3"><br>到此为止，$T_3$ 已经是一个根结点单独构成的树，触发了递归退出条件。最后得到的 $T_\textrm{list}=(T_0,T_1,T_2,T_3)$， $\alpha_\textrm{list}=(0,0.5714,1.6226,5)$，从结果看 $\alpha_\textrm{list}$ 中的值确实是从小到大排列，但为什么是这样的内层逻辑还需要深入思考一下。</p>
-<p><strong>4. 验证集数据交叉验证：</strong><br>以 $T_\textrm{list}$ 中的每一个决策树来预测验证集上的数据得到准确率（正确分类样本数量除以整个样本数量）列表<br>$$<br>\begin{aligned}<br>P_\textrm{list}&amp;=\left((4,9,11,12)正确,(4,8,9,11,12)正确,(4,5,8,9,11,12)正确,(4,5,8)正确\right) \<br>&amp;=(\frac{4}{7},\frac{5}{7},\frac{6}{7},\frac{3}{7})<br>\end{aligned}<br>$$<br>所以最终选择 $T_2$ 作为最优子树：<br> <img src="/20180722-Decision_Tree/Decision-tree_Best.png" alt="Decision-tree_Best"></p>
+<p><strong>1. 第一层递归：</strong> 树 $T_0=\lbrace 1,2,3,4,5\rbrace$，其在训练集数据上的执行情况见下图：<br><img src="/20180722-Decision_Tree/Decision-tree_Execute.png" alt="Decision_tree_Execute"><br> 对其每一个内部结点计算其剪枝后的整体树的损失函数减少程度 $g(t)$。<br> 以结点 $5$ 为例，一例好一例坏，</p>
+<script type="math/tex; mode=display">
+ \begin{aligned}
+ C(5)&=-\sum_{t=1}^1\sum_{k \in (好、坏)}N_{tk}\log_2\frac{N_{tk}}{N_t} \\
+ &=-1\times\log_2(1/2)-1\times\log_2(1/2)) \\
+ &=2; \\
+ C(T_5)&=-\sum_{t=1}^3\sum_{k \in (好、坏)}N_{tk}\log_2\frac{N_{tk}}{N_t} \\
+ &=-\left(1\times\log_2(1/1)+0\times\log_2(0/1)\right)-\left(0\times\log_2(0/1)+1\times\log_2(1/1)\right)-0 \\
+ &=0; \\
+ |T_5|&=3; \\
+ g(5)&=\frac{C(5)-C(T_5)}{|T_5|-1}=\frac{2-0}{3-1}=1.
+ \end{aligned}</script><p>同理，可以计算出:</p>
+<script type="math/tex; mode=display">
+  \begin{aligned}
+ g(4)&=\frac{C(4)-C(T_4)}{|T_4|-1}=\frac{2.7549-0}{5-1}=0.6887 \\
+ g(3)&=\frac{C(3)-C(T_3)}{|T_3|-1}=\frac{4-0}{7-1}=0.5714 \\
+ g(2)&=\frac{C(2)-C(T_2)}{|T_2|-1}=\frac{3.2451-0}{3-1}=1.6226 \\
+ g(1)&=\frac{C(1)-C(T_1)}{|T_1|-1}=\frac{10-0}{11-1}=1
+  \end{aligned}</script><p>比较之后发现，最小的是 $g(3)$，对应的结点是 $t(3)$，对其进行剪枝后得到新的树 $T_1$ 在训练集数据上的执行情况见下图：<br><img src="/20180722-Decision_Tree/Decision-tree_Pruned_1.png" alt="Decision_tree_Learning_Pruned_1"></p>
+<p><strong>2. 第二层递归：</strong> 以树 $T_1=\lbrace 1,2\rbrace$ 为新的输入，重复第一层递归中的计算步骤：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ g(2)&=\frac{C(2)-C(T_2)}{|T_2|-1}=\frac{3.2451-0}{3-1}=1.6226 \\
+ g(1)&=\frac{C(1)-C(T_1)}{|T_1|-1}=\frac{10-0}{5-1}=2.5
+\end{aligned}</script><p>比较之后发现，最小的是 $g(2)$，对应的结点是 $t(2)$，对其进行剪枝后得到新的树 $T_2$ 在训练集数据上的执行情见下图:<br><img src="/20180722-Decision_Tree/Decision-tree_Pruned_2.png" alt="Decision_tree_Learning_Pruned_2"></p>
+<p><strong>3. 第三层递归：</strong> 以树 $T_2=\lbrace 1\rbrace$ 为新的输入，重复第一层递归中的计算步骤：</p>
+<script type="math/tex; mode=display">
+ g(1)=\frac{C(1)-C(T_1)}{|T_1|-1}=\frac{10-0}{3-1}=5</script><p> 现在只有一个 $g(1)$，所以其也是最小的一个。对应的结点是 $t(1)$，对其进行剪枝后得到新的树 $T<em>3$ 在训练集数据上的执行情见下图:<br> <img src="/20180722-Decision_Tree/Decision-tree_Pruned_3.png" alt="Decision_tree_Learning_Pruned_3"><br>到此为止，$T_3$ 已经是一个根结点单独构成的树，触发了递归退出条件。最后得到的 $T</em>\textrm{list}=(T<em>0,T_1,T_2,T_3)$， $\alpha</em>\textrm{list}=(0,0.5714,1.6226,5)$，从结果看 $\alpha_\textrm{list}$ 中的值确实是从小到大排列，但为什么是这样的内层逻辑还需要深入思考一下。</p>
+<p><strong>4. 验证集数据交叉验证：</strong><br>以 $T_\textrm{list}$ 中的每一个决策树来预测验证集上的数据得到准确率（正确分类样本数量除以整个样本数量）列表</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+P_\textrm{list}&=\left((4,9,11,12)正确,(4,8,9,11,12)正确,(4,5,8,9,11,12)正确,(4,5,8)正确\right) \\
+&=(\frac{4}{7},\frac{5}{7},\frac{6}{7},\frac{3}{7})
+\end{aligned}</script><p>所以最终选择 $T_2$ 作为最优子树：<br> <img src="/20180722-Decision_Tree/Decision-tree_Best.png" alt="Decision-tree_Best"></p>
 <h3 id="3-3-3-两种剪枝策略对比"><a href="#3-3-3-两种剪枝策略对比" class="headerlink" title="3.3.3 两种剪枝策略对比"></a>3.3.3 两种剪枝策略对比</h3><ul>
 <li>后剪枝决策树通常比预剪枝决策树保留了更多的分支；</li>
 <li>后剪枝决策树的欠拟合风险很小，泛化性能往往优于预剪枝决策树；</li>

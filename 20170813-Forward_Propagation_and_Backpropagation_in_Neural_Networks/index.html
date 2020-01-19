@@ -282,9 +282,7 @@
 
       
         <p>周六日两天的北京大雨下个不停，无法出门。正好听说深度学习领域的大牛 <a href="http://www.andrewng.org/" target="_blank" rel="noopener">Andrew Ng</a> 的新<a href="https://www.deeplearning.ai/" target="_blank" rel="noopener">创业项目</a>竟然是与 Coursera 合作的一个关于深度学习的<a href="https://www.coursera.org/specializations/deep-learning" target="_blank" rel="noopener">系列课程</a>，果断报名参加。花了两天的时间看完了第 1 门课程 <a href="https://www.coursera.org/learn/neural-networks-deep-learning" target="_blank" rel="noopener">Neural Networks and Deep Learning</a> 的视频，也做完了相关作业。相较其它课程不同，也是其中比较有意思的一点是，每一周的课程结束都有一段 Andrew 采访当今人工智能领域权威人士的视频。通过采访视频，也能够了解到一些人工智能技术的发展历史，还是相当不错的。</p>
-<p>言归正传，下面进入正题。</p>
-<a id="more"></a>
-
+<p>言归正传，下面进入正题。<br><a id="more"></a></p>
 <h1 id="1-什么是神经网络"><a href="#1-什么是神经网络" class="headerlink" title="1. 什么是神经网络"></a>1. 什么是神经网络</h1><p>话不多说，上图为敬。一个典型的神经网络结构图如下所示：</p>
 <p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Neural_Network.001.jpg" alt="Neural Network"></p>
 <ul>
@@ -300,7 +298,7 @@
 <h2 id="2-1-节点中的细节"><a href="#2-1-节点中的细节" class="headerlink" title="2.1 节点中的细节"></a>2.1 节点中的细节</h2><p>如果深入到神经网络中的其中一个节点（以上图中的 $a_1^{[1]}$ 为例），我们会得到如下的一张结构图：</p>
 <p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Neural_Network.002.jpg" alt="Neural Node"></p>
 <p>从图中可以明显的观察到，一个节点其实是由两部分组成：一个是加权求和部分，一个是对求和结果进行处理的部分，我们称这部分为激活函数。下面分别介绍。</p>
-<h3 id="2-1-1-加权求和"><a href="#2-1-1-加权求和" class="headerlink" title="2.1.1 加权求和"></a>2.1.1 加权求和</h3><p>就上图来说，我们可以把前一层中每个节点 $(a_1^{[0]}$, $a_3^{[0]}$, $a_3^{[0]})$ 指向本节点 $(a_1^{[1]})$ 的箭头理解为上层节点的输出值对本节点的影响，不同的节点输出值对本节点的影响程度不同，即具有不同的权值。我们用带上下标的字母 $w$ 来表示这个权值，$w_{ij}^{[l]}$ 表示的是第 $l-1$ 层中第 $j$ 个节点的输出值对第 $l$ 层中第 $i$ 个节点的影响程度。图中的字母标记与该准则一致。</p>
+<h3 id="2-1-1-加权求和"><a href="#2-1-1-加权求和" class="headerlink" title="2.1.1 加权求和"></a>2.1.1 加权求和</h3><p>就上图来说，我们可以把前一层中每个节点 $(a<em>1^{[0]}$, $a_3^{[0]}$, $a_3^{[0]})$ 指向本节点 $(a_1^{[1]})$ 的箭头理解为上层节点的输出值对本节点的影响，不同的节点输出值对本节点的影响程度不同，即具有不同的权值。我们用带上下标的字母 $w$ 来表示这个权值，$w</em>{ij}^{[l]}$ 表示的是第 $l-1$ 层中第 $j$ 个节点的输出值对第 $l$ 层中第 $i$ 个节点的影响程度。图中的字母标记与该准则一致。</p>
 <p>仔细观察图中加权求和公式会发现其中含有一个常数项 $b_1^{[1]}$，我们可以把该常数项理解为节点 $a_1^{[1]}$ 对输入值敏感程度的一个纠正。推广开来，我们用 $b_i^{[l]}$ 表示第 $l$ 层中第 $i$ 个节点中的常数偏置，英文中称作 bias。</p>
 <p>我们用 $z_i^{[l]}$ 表示第 $l$ 层中第 $i$ 个节点中的加权求和结果。求和结果之后传给激活函数，经过激活函数的处理输出。</p>
 <h3 id="2-1-2-激活函数"><a href="#2-1-2-激活函数" class="headerlink" title="2.1.2 激活函数"></a>2.1.2 激活函数</h3><p>激活函数是节点之所以存在的根本原因。神经网络之所以叫神经网络，就在于其模拟了生物中的神经系统。在神经系统中的每个神经元都通过轴突与树突与很多其它的神经元相连，神经元接收一些神经元发出的电信号，同时发出一定的电信号给其它神经元。即使不懂生物学中的相关知识，凭借常识我们也能推断出，首先神经元发出的电信号不可能无限大，其次神经元也不能无脑转发所有接收到的电信号信息量，否则其存在的意义就没有了。</p>
@@ -309,62 +307,94 @@
 <ul>
 <li><strong>sigmoid 函数</strong> 数学表达式以及函数曲线如下：</li>
 </ul>
-<p>$$\sigma(z)=\frac{1}{1+e^{-z}}$$</p>
-<p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Sigmoid.png" alt="Sigmoid"></p>
+<script type="math/tex; mode=display">\sigma(z)=\frac{1}{1+e^{-z}}</script><p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Sigmoid.png" alt="Sigmoid"></p>
 <ul>
 <li><strong>tanh 函数</strong> 数学表达式以及函数曲线如下：</li>
 </ul>
-<p>$$\tanh(z)=\frac{e^{z}-e^{-z}}{e^{z}+e^{-z}}$$</p>
-<p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Tanh.png" alt="Tanh"></p>
+<script type="math/tex; mode=display">\tanh(z)=\frac{e^{z}-e^{-z}}{e^{z}+e^{-z}}</script><p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Tanh.png" alt="Tanh"></p>
 <ul>
 <li><strong>ReLU 函数</strong> 数学表达式以及函数曲线如下：</li>
 </ul>
-<p>$$<br>\max(0, z)= \begin{cases}<br>   0 &amp;\text{if } z\leq0  \<br>   z &amp;\text{if } z&gt;0<br>\end{cases}<br>$$</p>
-<p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/ReLU.png" alt="ReLU"></p>
+<script type="math/tex; mode=display">
+\max(0, z)= \begin{cases}
+   0 &\text{if } z\leq0  \\
+   z &\text{if } z>0
+\end{cases}</script><p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/ReLU.png" alt="ReLU"></p>
 <ul>
 <li><strong>Leaky ReLU 函数</strong> 数学表达式以及函数曲线如下：</li>
 </ul>
-<p>$$<br>\max(0.01z, z)= \begin{cases}<br>   0.01z &amp;\text{if } z\leq0  \<br>   z &amp;\text{if } z&gt;0<br>\end{cases}<br>$$</p>
-<p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Leaky_ReLU.png" alt="Leaky_ReLU"></p>
+<script type="math/tex; mode=display">
+\max(0.01z, z)= \begin{cases}
+   0.01z &\text{if } z\leq0  \\
+   z &\text{if } z>0
+\end{cases}</script><p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Leaky_ReLU.png" alt="Leaky_ReLU"></p>
 <h2 id="2-2-向量化表示"><a href="#2-2-向量化表示" class="headerlink" title="2.2 向量化表示"></a>2.2 向量化表示</h2><p>还是以节点 $a_1^{[1]}$ 为例，学过线性代数的我们很容易可以把 $z_1^{[1]}$ 的计算表达式写成：</p>
-<p>$$<br>z_1^{[1]}=\left[w_{11}^{[1]}, w_{12}^{[1]}, w_{13}^{[1]}\right]\begin{bmatrix}a_1^{[0]}\a_2^{[0]}\a_3^{[0]}\end{bmatrix} + b_1^{[1]}<br>$$</p>
-<p>同理，</p>
-<p>$$<br>z_2^{[1]}=\left[w_{21}^{[1]}, w_{22}^{[1]}, w_{23}^{[1]}\right]\begin{bmatrix}a_1^{[0]}\a_2^{[0]}\a_3^{[0]}\end{bmatrix} + b_2^{[1]}<br>$$</p>
-<p>以此类推，如果我们做如下定义：</p>
-<p>$$<br>\begin{aligned}<br>A^{[0]} &amp;= \left[a_1^{[0]}, a_2^{[0]}, a_3^{[0]}\right]^\mathrm{T} \<br>Z^{[1]} &amp;= \left[z_1^{[1]}, z_2^{[1]},…, z_5^{[1]}\right]^\mathrm{T} \<br>W^{[1]} &amp;= \begin{bmatrix}<br>w_{11}^{[1]}, &amp; w_{12}^{[1]}, &amp; w_{13}^{[1]}\<br>w_{21}^{[1]}, &amp; w_{22}^{[1]}, &amp; w_{23}^{[1]}\<br>\vdots, &amp; \vdots, &amp; \vdots\<br>w_{51}^{[1]}, &amp; w_{52}^{[1]}, &amp; w_{53}^{[1]}<br>\end{bmatrix} \<br>B^{[1]} &amp;= \left[B_1^{[1]}, B_2^{[1]},…, B_5^{[1]}\right]^\mathrm{T}\<br>\end{aligned}<br>$$</p>
-<p>自然就得到：</p>
-<p>$$<br>Z^{[1]}=W^{[1]}A^{[0]} + B^{[1]}<br>$$</p>
-<p>以及，第一层节点的输出值的向量化：</p>
-<p>$$<br>A^{[1]}=g^{[1]}\left(Z^{[1]}\right)<br>$$</p>
-<p>其中 $g^{[1]}$ 表示第1层各节点中的激活函数通用表达。</p>
+<script type="math/tex; mode=display">
+z_1^{[1]}=\left[w_{11}^{[1]}, w_{12}^{[1]}, w_{13}^{[1]}\right]\begin{bmatrix}a_1^{[0]}\\a_2^{[0]}\\a_3^{[0]}\end{bmatrix} + b_1^{[1]}</script><p>同理，</p>
+<script type="math/tex; mode=display">
+z_2^{[1]}=\left[w_{21}^{[1]}, w_{22}^{[1]}, w_{23}^{[1]}\right]\begin{bmatrix}a_1^{[0]}\\a_2^{[0]}\\a_3^{[0]}\end{bmatrix} + b_2^{[1]}</script><p>以此类推，如果我们做如下定义：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+A^{[0]} &= \left[a_1^{[0]}, a_2^{[0]}, a_3^{[0]}\right]^\mathrm{T} \\
+Z^{[1]} &= \left[z_1^{[1]}, z_2^{[1]},..., z_5^{[1]}\right]^\mathrm{T} \\
+W^{[1]} &= \begin{bmatrix}
+w_{11}^{[1]}, & w_{12}^{[1]}, & w_{13}^{[1]}\\
+w_{21}^{[1]}, & w_{22}^{[1]}, & w_{23}^{[1]}\\
+\vdots, & \vdots, & \vdots\\
+w_{51}^{[1]}, & w_{52}^{[1]}, & w_{53}^{[1]}
+\end{bmatrix} \\
+B^{[1]} &= \left[B_1^{[1]}, B_2^{[1]},..., B_5^{[1]}\right]^\mathrm{T}\\
+\end{aligned}</script><p>自然就得到：</p>
+<script type="math/tex; mode=display">
+Z^{[1]}=W^{[1]}A^{[0]} + B^{[1]}</script><p>以及，第一层节点的输出值的向量化：</p>
+<script type="math/tex; mode=display">
+A^{[1]}=g^{[1]}\left(Z^{[1]}\right)</script><p>其中 $g^{[1]}$ 表示第1层各节点中的激活函数通用表达。</p>
 <p>我们可以很容易地把上边的推导过程一般化：</p>
-<p>$$<br>\begin{aligned}<br>Z^{[l]}&amp;=W^{[l]}A^{[l-1]} + B^{[l]} \<br>A^{[l]}&amp;=g^{[l]}\left(Z^{[l]}\right)<br>\end{aligned}<br>$$</p>
-<p>若第 $l$ 层中节点数为 $m$，第 $l-1$ 层中节点数为 $n$ 。那么，$Z^{[l]}$, $B^{[l]}$, $A^{[l]}$, 的维度为 $m\times 1$，$A^{[l-1]}$ 的维度为 $n\times 1$，$W^{[l]}$ 的维度为 $m \times n$ 。</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+Z^{[l]}&=W^{[l]}A^{[l-1]} + B^{[l]} \\
+A^{[l]}&=g^{[l]}\left(Z^{[l]}\right)
+\end{aligned}</script><p>若第 $l$ 层中节点数为 $m$，第 $l-1$ 层中节点数为 $n$ 。那么，$Z^{[l]}$, $B^{[l]}$, $A^{[l]}$, 的维度为 $m\times 1$，$A^{[l-1]}$ 的维度为 $n\times 1$，$W^{[l]}$ 的维度为 $m \times n$ 。</p>
 <h2 id="2-3-前向传播的图形化表示"><a href="#2-3-前向传播的图形化表示" class="headerlink" title="2.3 前向传播的图形化表示"></a>2.3 前向传播的图形化表示</h2><p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Neural_Network.003.jpg" alt="Forward Propagation"></p>
 <h1 id="3-神经网络中的反向传播"><a href="#3-神经网络中的反向传播" class="headerlink" title="3. 神经网络中的反向传播"></a>3. 神经网络中的反向传播</h1><p>经过上一节的分析，我们可以得出这样的结论，所谓的前向层传播说的就是，输入数据在神经网络的各层的各个节点之间传播的过程，最终得到结果输出出去。在这个过程中，神经网络中的各个节点的参数，即 $W^{[l]}$、$B^{[l]}$ 是已知的。</p>
 <p>但是在实际的应用中，我们往往是知道了输入数据以及输出结果（针对监督学习来说，输出结果通畅指分类标签），想要求取一个结构设计好的神经网络的参数。这其实就是一个函数参数拟合问题。针对函数的参数拟合问题，数学上已经有了很成熟的通用方案。通常来说，对于比较简单的函数形式，数据量也不是很大的情况，可以尝试用<a href="https://zh.wikipedia.org/wiki/最小二乘法" target="_blank" rel="noopener">最小二乘法</a>来拟合求取函数的参数。但是对于复杂的函数形式，同时数据量非常巨大的情况，最小二乘法就不是一个很明智的选择，一般都会选择某种迭代求解的方案一步步逼近最优参数。其中用的最多，通常来说也是最有效的方法是<a href="https://zh.wikipedia.org/wiki/梯度下降法" target="_blank" rel="noopener">梯度下降法</a>。</p>
 <p>在神经网络参数确定的问题中，就采用的是梯度下降法。</p>
 <h2 id="3-1-为什么可以用梯度下降法"><a href="#3-1-为什么可以用梯度下降法" class="headerlink" title="3.1 为什么可以用梯度下降法"></a>3.1 为什么可以用梯度下降法</h2><p>梯度下降法是一个用来求取函数极值点的方法。简单来说，能够用梯度下降法来求取神经网络中各节点的参数的理由是，我们能够比较容易的构造出一个关于参数 $(W^{[l]}$, $B^{[l]})$ 的函数 $\mathcal{J}$ （神经网络的参数在这个函数中属于变量的角色），使得该函数在极值点处对应的参数 $(W^{[l]}$, $B^{[l]})$ 取值正好是对所有样本数据的最佳拟合值。一般我们称构造的函数为代价函数 (cost function)，或损失函数 (loss function)。</p>
 <p>具体的说，如果我们把神经网络的函数形式表达为：</p>
-<p>$$\hat{Y}=f \left( W^{[1]}, W^{[2]},…, W^{[L]}, B^{[1]}, B^{[2]},…, B^{[L]}, X \right)$$</p>
-<p>其中 $L$ 表示神经网络的层数，对于每一个样本 $X^{(m)}$ 都有一个对应的实际观测值 $Y^{(m)}$ 以及通过神经网络的计算结果 $\hat{Y}^{(m)}$。假设我们有 $M$ 个样本，我们可以取代价函数的形式如下：</p>
-<p>$$<br>\begin{aligned}<br>\mathcal{J} &amp;= \frac{1}{M}\sum_{m=0}^{M}\left(\hat{Y}^{(m)}-Y^{(m)}\right)^{2} \<br>&amp;= \frac{1}{M}\sum_{m=0}^{M}\left( f \left(W^{[1]}, W^{[2]},…, W^{[L]}, B^{[1]}, B^{[2]},…, B^{[L]}, X^{(m)}\right)-Y^{(m)}\right)^{2}<br>\end{aligned}<br>$$</p>
-<p>因为我们知道，平方和函数是一个只有一个极小值点的函数，在最小值点处，对应了神经网络的预测结果大部分都要与观测结果一致。也就是说，在极小值点处，神经网络的参数是最优的。当然实际应用中可以选取的代价函数具体形式有很多种，并不局限于平方和这一种方式。</p>
+<script type="math/tex; mode=display">\hat{Y}=f \left( W^{[1]}, W^{[2]},..., W^{[L]}, B^{[1]}, B^{[2]},..., B^{[L]}, X \right)</script><p>其中 $L$ 表示神经网络的层数，对于每一个样本 $X^{(m)}$ 都有一个对应的实际观测值 $Y^{(m)}$ 以及通过神经网络的计算结果 $\hat{Y}^{(m)}$。假设我们有 $M$ 个样本，我们可以取代价函数的形式如下：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\mathcal{J} &= \frac{1}{M}\sum_{m=0}^{M}\left(\hat{Y}^{(m)}-Y^{(m)}\right)^{2} \\
+&= \frac{1}{M}\sum_{m=0}^{M}\left( f \left(W^{[1]}, W^{[2]},..., W^{[L]}, B^{[1]}, B^{[2]},..., B^{[L]}, X^{(m)}\right)-Y^{(m)}\right)^{2}
+\end{aligned}</script><p>因为我们知道，平方和函数是一个只有一个极小值点的函数，在最小值点处，对应了神经网络的预测结果大部分都要与观测结果一致。也就是说，在极小值点处，神经网络的参数是最优的。当然实际应用中可以选取的代价函数具体形式有很多种，并不局限于平方和这一种方式。</p>
 <p>不管采用哪种形式的代价函数，我们的最终目的是通过梯度下降法来获得代价函数的极值点对应的参数值。</p>
 <p>梯度下降法的迭代形式为：</p>
-<p>$$<br>\begin{aligned}<br>W^{[l]}<em>{(i)} &amp;:= W^{[l]}</em>{(i-1)}-\alpha\frac{\partial \mathcal{J}}{\partial W^{[l]}} \<br>B^{[l]}<em>{(i)} &amp;:= B^{[l]}</em>{(i-1)}-\alpha\frac{\partial \mathcal{J}}{\partial B^{[l]}}<br>\end{aligned}<br>$$</p>
-<p>下标 $(i)$ 表示第 $(i)$ 次迭代。$\alpha$ 叫做迭代步长，控制了每次迭代变量改变的速度，一般会取一个较小的值。$\frac{\partial \mathcal{J}}{\partial W^{[l]}}$ 和 $\frac{\partial \mathcal{J}}{\partial B^{[l]}}$ 分别为函数 $\mathcal{J}$ 对变量 $W^{[l]}$ 和 $B^{[l]}$ 的偏导数。</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+W^{[l]}_{(i)} &:= W^{[l]}_{(i-1)}-\alpha\frac{\partial \mathcal{J}}{\partial W^{[l]}} \\
+B^{[l]}_{(i)} &:= B^{[l]}_{(i-1)}-\alpha\frac{\partial \mathcal{J}}{\partial B^{[l]}}
+\end{aligned}</script><p>下标 $(i)$ 表示第 $(i)$ 次迭代。$\alpha$ 叫做迭代步长，控制了每次迭代变量改变的速度，一般会取一个较小的值。$\frac{\partial \mathcal{J}}{\partial W^{[l]}}$ 和 $\frac{\partial \mathcal{J}}{\partial B^{[l]}}$ 分别为函数 $\mathcal{J}$ 对变量 $W^{[l]}$ 和 $B^{[l]}$ 的偏导数。</p>
 <p>我们只要给定了 $W^{[l]}$ 和 $B^{[l]}$ 的初值，确定了迭代步长，给出计算偏导数的方法，那么就可以迭代求得一个理想的参数最优解。</p>
 <h2 id="3-2-应用反向传播计算偏导数"><a href="#3-2-应用反向传播计算偏导数" class="headerlink" title="3.2 应用反向传播计算偏导数"></a>3.2 应用反向传播计算偏导数</h2><p>实际应用中，$W^{[l]}$ 和 $B^{[l]}$ 的初值好确定，采用随机数即可（不可初始化为 $0$）。迭代步长可以通过经验确定。剩下的问题就是如何求解各个参数的偏导数了。</p>
 <p>为了回答这个问题，我们把函数 $\hat{Y}=f\left(W^{[1]}, W^{[2]},…, W^{[L]}, B^{[1]}, B^{[2]},…, B^{[L]}, X \right)$ 的形式再具象化一些：</p>
-<p>$$<br>\hat{Y}=g^{[L]}\left(W^{[L]}\left(g^{[L-1]}\left(W^{[L-1]}\left(…\right)\right)+B^{[L-1]}\right)+B^{[L]}\right)<br>$$</p>
-<p>回顾一下在 <strong>2.2</strong> 节最后我们得出了神经网络各层输出值之间的关系，$Z^{[l]}=W^{[l]}A^{[l-1]} + B^{[l]}$，$A^{[l]}=g^{[l]}(Z^{[l]})$ 。对比该公式，我们可以发现在这里 $\hat{Y}$ 就是 $A^{[L]}$。进一步我们可以把上边的公式写成递归形式：</p>
-<p>$$<br>\mathcal{J}=\frac{1}{M}\sum_{m=0}^{M}\left(A^{[L](m)}-Y^{(m)}\right)^{2} \<br>A^{[L]}=g^{[L]}(Z^{[L]}),\quad Z^{[L]}=W^{[L]}A^{[L-1]} + B^{[L]} \<br>A^{[L-1]}=g^{[L-1]}(Z^{[L-1]}),\quad Z^{[L-1]}=W^{[L-1]}A^{[L-2]} + B^{[L-1]} \<br>\vdots \<br>A^{[1]}=g^{[1]}(Z^{[1]}),\quad Z^{[1]}=W^{[1]}A^{[0]} + B^{[1]}<br>$$</p>
-<p>$A^{[0]}$ 就是 $X$。显然，我们可以应用函数的链式求导法则，一步步地求得从 $\mathcal{J}$ 对 $W^{[L]}$，$B^{[L]}$ 到对 $W^{[1]}$，$B^{[1]}$ 的偏导数。</p>
-<p>$$<br>\begin{aligned}<br>\frac{\partial \mathcal{J}}{\partial Z^{[l]}} &amp;=\frac{\partial \mathcal{J}}{\partial A^{[l]}}\frac{\partial A^{[l]}}{\partial Z^{[l]}}=\frac{\partial \mathcal{J}}{\partial A^{[l]}}g^{[l]\prime}(Z^{[l]}) \<br>\frac{\partial \mathcal{J}}{\partial W^{[l]}} &amp;=\frac{\partial \mathcal{J}}{\partial Z^{[l]}}\frac{\partial Z^{[l]}}{\partial W^{[l]}}=\frac{\partial \mathcal{J}}{\partial Z^{[l]}}A^{[l-1]\mathrm{T}} \<br>\frac{\partial \mathcal{J}}{\partial B^{[l]}} &amp;=\frac{\partial \mathcal{J}}{\partial Z^{[l]}}\frac{\partial Z^{[l]}}{\partial B^{[l]}}=\frac{\partial \mathcal{J}}{\partial Z^{[l]}}<br>\end{aligned}<br>$$</p>
-<p>这里边存在一个问题，当 $l=L$ 时，我们知道 $\mathcal{J}$ 关于 $\hat{Y}$ 也就是 $A^{[L]}$ 的具体形式（因为这个函数是我们构造出来的），可以很容易的求得其偏导数。当 $l&lt;L$ 时，我们无法直接从 $\mathcal{J}$ 求出来。不过我们发现，$Z^{[l]}$ 是 $A^{[l-1]}$ 的函数。根据链式求导法则，可以得到</p>
-<p>$$<br>\frac{\partial \mathcal{J}}{\partial A^{[l-1]}}<br>=\frac{\partial \mathcal{J}}{\partial Z^{[l]}}\frac{\partial Z^{[l]}}{\partial A^{[l-1]}}<br>=\frac{\partial \mathcal{J}}{\partial Z^{[l]}}W^{[l]}<br>$$</p>
-<p>也就是说，我们可以通过 $\frac{\partial \mathcal{J}}{\partial A^{[L]}}$ 一层层的反向计算直到求得 $\frac{\partial \mathcal{J}}{\partial A^{[l]}}$。至此为止，梯度下降法求解过程中的各个环节都打通了。</p>
+<script type="math/tex; mode=display">
+\hat{Y}=g^{[L]}\left(W^{[L]}\left(g^{[L-1]}\left(W^{[L-1]}\left(...\right)\right)+B^{[L-1]}\right)+B^{[L]}\right)</script><p>回顾一下在 <strong>2.2</strong> 节最后我们得出了神经网络各层输出值之间的关系，$Z^{[l]}=W^{[l]}A^{[l-1]} + B^{[l]}$，$A^{[l]}=g^{[l]}(Z^{[l]})$ 。对比该公式，我们可以发现在这里 $\hat{Y}$ 就是 $A^{[L]}$。进一步我们可以把上边的公式写成递归形式：</p>
+<script type="math/tex; mode=display">
+\mathcal{J}=\frac{1}{M}\sum_{m=0}^{M}\left(A^{[L]\(m)}-Y^{(m)}\right)^{2} \\
+A^{[L]}=g^{[L]}(Z^{[L]}),\quad Z^{[L]}=W^{[L]}A^{[L-1]} + B^{[L]} \\
+A^{[L-1]}=g^{[L-1]}(Z^{[L-1]}),\quad Z^{[L-1]}=W^{[L-1]}A^{[L-2]} + B^{[L-1]} \\
+\vdots \\
+A^{[1]}=g^{[1]}(Z^{[1]}),\quad Z^{[1]}=W^{[1]}A^{[0]} + B^{[1]}</script><p>$A^{[0]}$ 就是 $X$。显然，我们可以应用函数的链式求导法则，一步步地求得从 $\mathcal{J}$ 对 $W^{[L]}$，$B^{[L]}$ 到对 $W^{[1]}$，$B^{[1]}$ 的偏导数。</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\frac{\partial \mathcal{J}}{\partial Z^{[l]}} &=\frac{\partial \mathcal{J}}{\partial A^{[l]}}\frac{\partial A^{[l]}}{\partial Z^{[l]}}=\frac{\partial \mathcal{J}}{\partial A^{[l]}}g^{[l]\prime}(Z^{[l]}) \\
+\frac{\partial \mathcal{J}}{\partial W^{[l]}} &=\frac{\partial \mathcal{J}}{\partial Z^{[l]}}\frac{\partial Z^{[l]}}{\partial W^{[l]}}=\frac{\partial \mathcal{J}}{\partial Z^{[l]}}A^{[l-1]\mathrm{T}} \\
+\frac{\partial \mathcal{J}}{\partial B^{[l]}} &=\frac{\partial \mathcal{J}}{\partial Z^{[l]}}\frac{\partial Z^{[l]}}{\partial B^{[l]}}=\frac{\partial \mathcal{J}}{\partial Z^{[l]}}
+\end{aligned}</script><p>这里边存在一个问题，当 $l=L$ 时，我们知道 $\mathcal{J}$ 关于 $\hat{Y}$ 也就是 $A^{[L]}$ 的具体形式（因为这个函数是我们构造出来的），可以很容易的求得其偏导数。当 $l&lt;L$ 时，我们无法直接从 $\mathcal{J}$ 求出来。不过我们发现，$Z^{[l]}$ 是 $A^{[l-1]}$ 的函数。根据链式求导法则，可以得到</p>
+<script type="math/tex; mode=display">
+\frac{\partial \mathcal{J}}{\partial A^{[l-1]}}
+=\frac{\partial \mathcal{J}}{\partial Z^{[l]}}\frac{\partial Z^{[l]}}{\partial A^{[l-1]}}
+=\frac{\partial \mathcal{J}}{\partial Z^{[l]}}W^{[l]}</script><p>也就是说，我们可以通过 $\frac{\partial \mathcal{J}}{\partial A^{[L]}}$ 一层层的反向计算直到求得 $\frac{\partial \mathcal{J}}{\partial A^{[l]}}$。至此为止，梯度下降法求解过程中的各个环节都打通了。</p>
 <h2 id="3-3-反向传播的图形化表示"><a href="#3-3-反向传播的图形化表示" class="headerlink" title="3.3 反向传播的图形化表示"></a>3.3 反向传播的图形化表示</h2><p>需要说明一点的是，图中采用了符号简写，对于变量 $a$，$\frac{\partial \mathcal{J}}{\partial a}=\mathrm{d}a$，这也是在课程 <a href="https://www.coursera.org/specializations/deep-learning" target="_blank" rel="noopener">deep learning</a> 中的表达方式。</p>
 <p><img src="/20170813-Forward_Propagation_and_Backpropagation_in_Neural_Networks/Neural_Network.004.jpg" alt="Backpropagation"></p>
 <h1 id="4-如何构建一个完整的神经网络系统"><a href="#4-如何构建一个完整的神经网络系统" class="headerlink" title="4. 如何构建一个完整的神经网络系统"></a>4. 如何构建一个完整的神经网络系统</h1><p>结合前向传播与反向传播的结构图，最终我们形成了如下的一个完整的神经网络参数计算相关的结构图，如下：</p>

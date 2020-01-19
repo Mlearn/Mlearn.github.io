@@ -46,20 +46,22 @@
   };
 </script>
 
-  <meta name="description" content="在各种开源项目中，经常会发现项目中除了代码源文件，还包含了 CMakeList.txt*、 *Makefile 文件，在项目的编译时候需要用到的命令有 cmake 、 make。本文主要介绍一下两个文件和命令之间的关系。">
+  <meta name="description" content="在各种开源项目中，经常会发现项目中除了代码源文件，还包含了 CMakeList.txt、 Makefile 文件，在项目的编译时候需要用到的命令有 cmake 、 make。本文主要介绍一下两个文件和命令之间的关系。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="cmake, make, CMakeLists.txt, Makefile 简介">
 <meta property="og:url" content="https://www.anmou.me/20161231-Intro_about_cmake_make_CMakeLists.txt_Makefile/index.html">
 <meta property="og:site_name" content="M&#39; Blog">
-<meta property="og:description" content="在各种开源项目中，经常会发现项目中除了代码源文件，还包含了 CMakeList.txt*、 *Makefile 文件，在项目的编译时候需要用到的命令有 cmake 、 make。本文主要介绍一下两个文件和命令之间的关系。">
+<meta property="og:description" content="在各种开源项目中，经常会发现项目中除了代码源文件，还包含了 CMakeList.txt、 Makefile 文件，在项目的编译时候需要用到的命令有 cmake 、 make。本文主要介绍一下两个文件和命令之间的关系。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.anmou.me/20161231-Intro_about_cmake_make_CMakeLists.txt_Makefile/ProjectBuild.png">
 <meta property="article:published_time" content="2016-12-31T07:34:05.000Z">
 <meta property="article:modified_time" content="2018-11-03T13:19:44.000Z">
 <meta property="article:author" content="Northan">
+<meta property="article:tag" content="编程">
 <meta property="article:tag" content="cmake">
 <meta property="article:tag" content="make">
-<meta property="article:tag" content="编程">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.anmou.me/20161231-Intro_about_cmake_make_CMakeLists.txt_Makefile/ProjectBuild.png">
 
 <link rel="canonical" href="https://www.anmou.me/20161231-Intro_about_cmake_make_CMakeLists.txt_Makefile/">
 
@@ -272,9 +274,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>在各种开源项目中，经常会发现项目中除了代码源文件，还包含了 <em>CMakeList.txt*、 *Makefile</em> 文件，在项目的编译时候需要用到的命令有 <strong>cmake</strong> 、 <strong>make</strong>。本文主要介绍一下两个文件和命令之间的关系。</p>
+        <p>在各种开源项目中，经常会发现项目中除了代码源文件，还包含了 <em>CMakeList.txt</em>、 <em>Makefile</em> 文件，在项目的编译时候需要用到的命令有 <strong>cmake</strong> 、 <strong>make</strong>。本文主要介绍一下两个文件和命令之间的关系。</p>
 <a id="more"></a>
-
 <h1 id="cmake-make-CMakeList-txt-Makefile之间的关系"><a href="#cmake-make-CMakeList-txt-Makefile之间的关系" class="headerlink" title="cmake, make, CMakeList.txt, Makefile之间的关系"></a>cmake, make, CMakeList.txt, Makefile之间的关系</h1><p>编写程序的大体流程为：</p>
 <ol>
 <li>用编辑器（vim、emacs等）编写源代码文件（.h、.cpp等）；</li>
@@ -282,11 +283,11 @@
 <li>用链接器连接目标文件生成可执行文件（.exe等）。</li>
 </ol>
 <p>一个程序在编写时，可能需要编写很多的代码文件，以及依赖很多第三方的库。在这种情况下，手动依次编译每个文件会变的非常麻烦，效率低下。</p>
-<p><strong>make</strong> 是一个自动化的批量编译工具，可以实现用一个命令构建整个工程的目的。但是其执行需要依赖一个规则文件，这个文件就是 <em>Makefile*。 *Makefile</em> 文件里详细描述了构建的细节（文件的依赖关系，编译的先后顺序等）。</p>
+<p><strong>make</strong> 是一个自动化的批量编译工具，可以实现用一个命令构建整个工程的目的。但是其执行需要依赖一个规则文件，这个文件就是 <em>Makefile</em>。 <em>Makefile</em> 文件里详细描述了构建的细节（文件的依赖关系，编译的先后顺序等）。</p>
 <p>对于一个大工程来说，编写 <em>Makefile</em> 文件也是一项非常复杂的事情。</p>
 <p><strong>cmake</strong>(Cross-platform Make)是一个可以自动生成 <em>Makefile</em> 文件的工具，当然它不只能生成 <em>Makefile</em> ，还能跨平台生成主流IDE(VS, xcode…)构建工程所需的 <em>project</em> 文件。 <strong>cmake</strong> 的执行同样需要依赖规则文件，这个文件就是 <em>CMakeLists.txt</em> 。</p>
 <p>综上所述，大致可以总结 <strong>cmake</strong>, <strong>make</strong>, <strong>CMakeList.txt</strong>, <strong>Makefile</strong> 之间的关系，如下图所示：</p>
-<p>![工程构建](20161231-cmake, make, CMakeLists.txt, Makefile简介/ProjectBuild.png)</p>
+<p><img src="/20161231-Intro_about_cmake_make_CMakeLists.txt_Makefile/ProjectBuild.png" alt="工程构建"></p>
 <h1 id="参考文章链接："><a href="#参考文章链接：" class="headerlink" title="参考文章链接："></a>参考文章链接：</h1><ol>
 <li><a href="http://blog.sina.com.cn/s/blog_74a459380102uxlz.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_74a459380102uxlz.html</a></li>
 <li><a href="http://blog.csdn.net/android_ruben/article/details/51698498" target="_blank" rel="noopener">http://blog.csdn.net/android_ruben/article/details/51698498</a></li>
@@ -318,9 +319,9 @@
 
       <footer class="post-footer">
           <div class="post-tags">
+              <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"># 编程</a>
               <a href="/tags/cmake/" rel="tag"># cmake</a>
               <a href="/tags/make/" rel="tag"># make</a>
-              <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"># 编程</a>
           </div>
 
         
