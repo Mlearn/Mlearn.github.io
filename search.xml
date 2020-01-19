@@ -8,7 +8,7 @@
 <p>除了开发相关的软件比如 Matlab、Miniconda、Python、Visual Studio 等软件没有给出，列表中给出的软件基本涵盖了自己的使用范围。尤其是最近几年时间，发现了越来越多免费好用的软件。</p>
 <a id="more"></a>
 
-<p>（按首字母排序）</p>
+<p>（按首字母排序，二次更新）</p>
 <table>
 <thead>
 <tr>
@@ -36,6 +36,11 @@
 <td align="center"><a href="https://www.google.com/chrome/" target="_blank" rel="noopener">Chrome</a></td>
 <td align="left">网页浏览</td>
 <td align="left">这个不用说啥，装机之后第一件事就是打开 ie 下载 Chrome</td>
+</tr>
+<tr>
+<td align="center"><a href="http://cn.ejie.me/" target="_blank" rel="noopener">Clover</a></td>
+<td align="left">Explorer 多 tab 页支持</td>
+<td align="left">因为Clover广告一度使用QTTabBar，但是QTTabBar很重并且卡，当Clover去掉广告之后又回归了</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.chuyu.me/zh-Hans/" target="_blank" rel="noopener">Dism++</a></td>
@@ -68,9 +73,9 @@
 <td align="left">可以计算文件的 MD5, SHA1, CRC32,可以被 7-Zip 右键菜单取代</td>
 </tr>
 <tr>
-<td align="center"><a href="https://www.listary.com/" target="_blank" rel="noopener">Listary</a></td>
-<td align="left">快捷启动工具</td>
-<td align="left">Double Ctrl 增强效率</td>
+<td align="center"><a href="https://joplinapp.org/" target="_blank" rel="noopener">Joplin</a></td>
+<td align="left">Evernote 替代</td>
+<td align="left">开源免费全平台，基本可以替换掉 Evernote 了，初步使用发现网页剪藏稍显简陋</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.majorgeeks.com/files/details/minibin.html" target="_blank" rel="noopener">MiniBin</a></td>
@@ -123,11 +128,6 @@
 <td align="left">带来 Mac 上的使用感受</td>
 </tr>
 <tr>
-<td align="center"><a href="http://qttabbar.wikidot.com/" target="_blank" rel="noopener">QTTabBar</a></td>
-<td align="left">Explorer 多 tab 页支持</td>
-<td align="left">原来用的 Clover，后来忍受不了越来越多的广告，发现了这款更加古老的软件</td>
-</tr>
-<tr>
 <td align="center"><a href="https://quest-app.appspot.com/" target="_blank" rel="noopener">QTranstale</a></td>
 <td align="left">桌面翻译软件</td>
 <td align="left">除了没有本地词典外，其它完全满足要求</td>
@@ -178,6 +178,16 @@
 <td align="left">为了解决 Matlab 使用微软远程桌面无法启动的问题</td>
 </tr>
 <tr>
+<td align="center"><a href="https://u.tools/" target="_blank" rel="noopener">uTools</a></td>
+<td align="left">桌面快捷启动工具</td>
+<td align="left">使用了一段时间发现比 listary 好用，切换到此工具</td>
+</tr>
+<tr>
+<td align="center"><a href="https://meta.appinn.net/t/unsplash4win/3321/2" target="_blank" rel="noopener">Unsplash4Win</a></td>
+<td align="left">桌面壁纸自动更换</td>
+<td align="left">Wallcat 用了很久发现经常假死或者下载的图片不完整，切换到 Unsplash4Win</td>
+</tr>
+<tr>
 <td align="center"><a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VS Code</a></td>
 <td align="left">代码编辑器</td>
 <td align="left">轻量级代码编辑器</td>
@@ -196,6 +206,11 @@
 <td align="center"><a href="http://www.winsetupfromusb.com/" target="_blank" rel="noopener">WinSetupFromUSB</a></td>
 <td align="left">制作多系统安装盘</td>
 <td align="left">可以把多版本的 Windows iso，Linux iso 文件烧录到 U 盘中</td>
+</tr>
+<tr>
+<td align="center"><a href="https://mail.163.com/dashi/" target="_blank" rel="noopener">网易邮箱大师</a></td>
+<td align="left">邮件收发客户端</td>
+<td align="left">使用过 FoxMail、YoMail都不太好，试用网易邮箱大师</td>
 </tr>
 <tr>
 <td align="center"><a href="https://www.futunn.com/" target="_blank" rel="noopener">富途牛牛</a></td>
@@ -1404,9 +1419,9 @@
         <category>Programming</category>
       </categories>
       <tags>
-        <tag>编程</tag>
         <tag>cmake</tag>
         <tag>make</tag>
+        <tag>编程</tag>
       </tags>
   </entry>
   <entry>
@@ -1442,9 +1457,9 @@
         <category>Programming</category>
       </categories>
       <tags>
+        <tag>编程</tag>
         <tag>Mac</tag>
         <tag>GDB</tag>
-        <tag>编程</tag>
       </tags>
   </entry>
   <entry>
