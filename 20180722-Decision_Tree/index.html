@@ -297,8 +297,8 @@
 <li>(行 6) 当前属性集为空，或是所有样本在所有属性上取值相同，无法划分。在这种情况下，把当前结点标记为叶结点，并且将其类别设定为该结点所含样本最多的类别；</li>
 <li>(行 12) 当前结点包含的样本集和为空，不能划分，把当前结点标记为叶结点，但是将其类别设定为其父结点所含样本最多的类别，周志华老师的《机器学习》中在该条件下执行了 <code>return</code>，但是按照我的理解由于这里处于 <code>for</code> 循环中，虽然属性中的一个取值样本集合为空，但是其它取值情况下还有有可能有样本集合的，如果这里执行了 <code>return</code>，那么就跳过了其它取值判断的可能。</li>
 </ol>
-<p>另外，其中第 14 行 $A \backslash \lbrace a<em>\ast \rbrace$ 表示从 $A$ 中去除 $a</em>\ast$ 属性。</p>
-<h1 id="2-最优划分属性的选择"><a href="#2-最优划分属性的选择" class="headerlink" title="2. 最优划分属性的选择"></a>2. 最优划分属性的选择</h1><p>从递归生成伪代码图示中可以看出，(行 8)选择最优划分属性 $a<em>\ast$ 是最关键的一步。如何选择决定了决策树的效率与准确率。一般而言我们希望选择一个属性 $a</em>\ast$ 之后，其分支节点所包含的样本尽可能属于同一类别，即结点的 <strong>纯度 (Purity)</strong> 越来越高。</p>
+<p>另外，其中第 14 行 $A \backslash \lbrace a_\ast \rbrace$ 表示从 $A$ 中去除 $a_\ast$ 属性。</p>
+<h1 id="2-最优划分属性的选择"><a href="#2-最优划分属性的选择" class="headerlink" title="2. 最优划分属性的选择"></a>2. 最优划分属性的选择</h1><p>从递归生成伪代码图示中可以看出，(行 8)选择最优划分属性 $a_\ast$ 是最关键的一步。如何选择决定了决策树的效率与准确率。一般而言我们希望选择一个属性 $a_\ast$ 之后，其分支节点所包含的样本尽可能属于同一类别，即结点的 <strong>纯度 (Purity)</strong> 越来越高。</p>
 <p>根据最优属性 $a_\ast$ 选择方法的不同，决策树大致分为了 <strong>ID3</strong> [Quinlan, 1986]、<strong>C4.5</strong> [Quinlan, 1993]、<strong>CART</strong> [Breiman et al., 1984]。</p>
 <p>接下来分别介绍三种方法，在之前，先给出周志华老师《机器学习》中表 $4.1$ 中的西瓜数据如下：</p>
 <div class="table-container">
@@ -544,9 +544,9 @@ H(D_3)&=0.722
 <script type="math/tex; mode=display">
 a_\ast=\arg \min \limits_{a \in A}{\textrm{Gini}_\textrm{index}(D,a)}</script><p>采用基尼指数作为划分属性的判据的决策树是一种 CART 决策树。</p>
 <h1 id="3-决策树剪枝"><a href="#3-决策树剪枝" class="headerlink" title="3. 决策树剪枝"></a>3. 决策树剪枝</h1><h2 id="3-1-决策树的损失函数"><a href="#3-1-决策树的损失函数" class="headerlink" title="3.1 决策树的损失函数"></a>3.1 决策树的损失函数</h2><p>刚开始我提到，决策树可以看作是一系列 <code>if-then</code> 规则的集合。这个规则集合有一个重要的性质：互斥并且完备。意思就是说，拿来任意一个实例，顺着规则的起点（根结点）出发，最终都有且只有一条路径到达某一个具体的叶结点（具体的分类），并且不会出现实例无法分类的情况。</p>
-<p>如果不考虑泛化能力，在训练集上生成的所有不同规则集合对应的决策树中，挑选出最优的决策树，可以根据所有叶结点中的预测误差来衡量，即模型与训练数据的拟合程度。设树 $T$ 的叶结点个数为 $|T|$，$t$ 是树 $T$ 的一个叶结点，该叶结点有 $N<em>t$ 个样本点，其中 $k$ 类的样本点有 $N</em>{tk}$ 个，$k=1,2,…,K$，$K$ 为样本空间中的所属分类数量。叶结点 $t$ 上的经验熵 $H_t(T)$ 为</p>
+<p>如果不考虑泛化能力，在训练集上生成的所有不同规则集合对应的决策树中，挑选出最优的决策树，可以根据所有叶结点中的预测误差来衡量，即模型与训练数据的拟合程度。设树 $T$ 的叶结点个数为 $|T|$，$t$ 是树 $T$ 的一个叶结点，该叶结点有 $N_t$ 个样本点，其中 $k$ 类的样本点有 $N_{tk}$ 个，$k=1,2,…,K$，$K$ 为样本空间中的所属分类数量。叶结点 $t$ 上的经验熵 $H_t(T)$ 为</p>
 <script type="math/tex; mode=display">
-H_t(T)=-\sum_k\frac{N_{tk}}{Nt}\log\frac{N_{tk}}{N_t}</script><p>代表了该叶结点的分类还有多少信息量不知道（混乱程度），可以这么考虑一个理想的极端情况，当该叶结点中只有一个分类 $k<em>n$ 时，那么 $N</em>{tk<em>n}=N_t$，其它的 $N</em>{k<em>1},…,N</em>{k<em>{n-1}},N</em>{k<em>{n+1}},…,N</em>{k_K}$ 全部为 $0$，最终 $H_t(T)=0$，这个结论与分类已经完全的结果是相吻合的。那么我们可以说，经验熵 $H_t(T)$ 就代表了连接该叶结点的整个路径对数据分类的彻底性。</p>
+H_t(T)=-\sum_k\frac{N_{tk}}{Nt}\log\frac{N_{tk}}{N_t}</script><p>代表了该叶结点的分类还有多少信息量不知道（混乱程度），可以这么考虑一个理想的极端情况，当该叶结点中只有一个分类 $k_n$ 时，那么 $N_{tk_n}=N_t$，其它的 $N_{k_1},…,N_{k_{n-1}},N_{k_{n+1}},…,N_{k_K}$ 全部为 $0$，最终 $H_t(T)=0$，这个结论与分类已经完全的结果是相吻合的。那么我们可以说，经验熵 $H_t(T)$ 就代表了连接该叶结点的整个路径对数据分类的彻底性。</p>
 <p>考虑到所有的叶结点每个叶结点中的样例个数不同，我们采用</p>
 <script type="math/tex; mode=display">
 C(T)=\sum_{t=1}^{|T|}N_tH_t(T)=-\sum_{t=1}^{|T|}\sum_{k=1}^K N_{tk}\log\frac{N_{tk}}{N_t}</script><p>来衡量模型对训练数据的整体测量误差。</p>
@@ -812,7 +812,7 @@ C_\alpha(T_t)=C_\alpha(t)</script><p>当 $\alpha$ 再继续增大时，不等式
 \end{aligned}</script><p>比较之后发现，最小的是 $g(2)$，对应的结点是 $t(2)$，对其进行剪枝后得到新的树 $T_2$ 在训练集数据上的执行情见下图:<br><img src="/20180722-Decision_Tree/Decision-tree_Pruned_2.png" alt="Decision_tree_Learning_Pruned_2"></p>
 <p><strong>3. 第三层递归：</strong> 以树 $T_2=\lbrace 1\rbrace$ 为新的输入，重复第一层递归中的计算步骤：</p>
 <script type="math/tex; mode=display">
- g(1)=\frac{C(1)-C(T_1)}{|T_1|-1}=\frac{10-0}{3-1}=5</script><p> 现在只有一个 $g(1)$，所以其也是最小的一个。对应的结点是 $t(1)$，对其进行剪枝后得到新的树 $T<em>3$ 在训练集数据上的执行情见下图:<br> <img src="/20180722-Decision_Tree/Decision-tree_Pruned_3.png" alt="Decision_tree_Learning_Pruned_3"><br>到此为止，$T_3$ 已经是一个根结点单独构成的树，触发了递归退出条件。最后得到的 $T</em>\textrm{list}=(T<em>0,T_1,T_2,T_3)$， $\alpha</em>\textrm{list}=(0,0.5714,1.6226,5)$，从结果看 $\alpha_\textrm{list}$ 中的值确实是从小到大排列，但为什么是这样的内层逻辑还需要深入思考一下。</p>
+ g(1)=\frac{C(1)-C(T_1)}{|T_1|-1}=\frac{10-0}{3-1}=5</script><p> 现在只有一个 $g(1)$，所以其也是最小的一个。对应的结点是 $t(1)$，对其进行剪枝后得到新的树 $T_3$ 在训练集数据上的执行情见下图:<br> <img src="/20180722-Decision_Tree/Decision-tree_Pruned_3.png" alt="Decision_tree_Learning_Pruned_3"><br>到此为止，$T_3$ 已经是一个根结点单独构成的树，触发了递归退出条件。最后得到的 $T_\textrm{list}=(T_0,T_1,T_2,T_3)$， $\alpha_\textrm{list}=(0,0.5714,1.6226,5)$，从结果看 $\alpha_\textrm{list}$ 中的值确实是从小到大排列，但为什么是这样的内层逻辑还需要深入思考一下。</p>
 <p><strong>4. 验证集数据交叉验证：</strong><br>以 $T_\textrm{list}$ 中的每一个决策树来预测验证集上的数据得到准确率（正确分类样本数量除以整个样本数量）列表</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
