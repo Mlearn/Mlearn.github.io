@@ -509,7 +509,7 @@ s = \int_0^s {\rm d}v = \int_0^s P_s(v){\rm d}v = \int_0^r P_r(w){\rm d}w</scrip
 </ol>
 <p>另外，其中第 14 行 $A \backslash \lbrace a<em>\ast \rbrace$ 表示从 $A$ 中去除 $a</em>\ast$ 属性。</p>
 <h1 id="2-最优划分属性的选择"><a href="#2-最优划分属性的选择" class="headerlink" title="2. 最优划分属性的选择"></a>2. 最优划分属性的选择</h1><p>从递归生成伪代码图示中可以看出，(行 8)选择最优划分属性 $a<em>\ast$ 是最关键的一步。如何选择决定了决策树的效率与准确率。一般而言我们希望选择一个属性 $a</em>\ast$ 之后，其分支节点所包含的样本尽可能属于同一类别，即结点的 <strong>纯度 (Purity)</strong> 越来越高。</p>
-<p>根绝最优属性 $a_\ast$ 选择方法的不同，决策树大致分为了 <strong>ID3</strong> [Quinlan, 1986]、<strong>C4.5</strong> [Quinlan, 1993]、<strong>CART</strong> [Breiman et al., 1984]。</p>
+<p>根据最优属性 $a_\ast$ 选择方法的不同，决策树大致分为了 <strong>ID3</strong> [Quinlan, 1986]、<strong>C4.5</strong> [Quinlan, 1993]、<strong>CART</strong> [Breiman et al., 1984]。</p>
 <p>接下来分别介绍三种方法，在之前，先给出周志华老师《机器学习》中表 $4.1$ 中的西瓜数据如下：</p>
 <div class="table-container">
 <table>
