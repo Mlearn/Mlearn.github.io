@@ -1041,8 +1041,8 @@ P_\textrm{list}&=\left((4,9,11,12)正确,(4,8,9,11,12)正确,(4,5,8,9,11,12)正�
         <category>Algorithm</category>
       </categories>
       <tags>
-        <tag>Entropy</tag>
         <tag>Decision tree</tag>
+        <tag>Entropy</tag>
         <tag>Machine Leaning</tag>
       </tags>
   </entry>
